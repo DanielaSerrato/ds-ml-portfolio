@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daniela Serrato — Data Science & Machine Learning Portfolio</title>
+<title>Daniela Serrato — Data & Analytics Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -14,6 +14,7 @@
     --red: #ff5f57;
     --yellow: #febc2e;
     --green: #28c840;
+    --blue: #6495ed;
     --grid-line: rgba(174,198,230,0.08);
     --card-shadow: 0 8px 32px rgba(0,0,0,0.3);
     --card-radius: 12px;
@@ -44,9 +45,20 @@
   }
   nav .logo { font-weight: 700; font-size: 1.1em; letter-spacing: -0.5px; }
   nav .logo .dot { color: var(--green); }
-  nav ul { list-style: none; display: flex; gap: 1.5rem; }
-  nav a { color: var(--cream); text-decoration: none; font-size: 0.8em; font-weight: 500; opacity: 0.7; transition: opacity 0.2s; }
+  nav ul { list-style: none; display: flex; gap: 1.2rem; align-items: center; }
+  nav a { color: var(--cream); text-decoration: none; font-size: 0.75em; font-weight: 500; opacity: 0.7; transition: opacity 0.2s; }
   nav a:hover { opacity: 1; }
+
+  /* LANG TOGGLE */
+  .lang-toggle {
+    display: flex; gap: 2px; background: rgba(174,198,230,0.1); border-radius: 6px; padding: 2px;
+  }
+  .lang-btn {
+    padding: 0.2rem 0.5rem; border: none; background: transparent; color: var(--cream);
+    font-family: inherit; font-size: 0.7em; font-weight: 600; cursor: pointer;
+    border-radius: 4px; opacity: 0.5; transition: all 0.2s;
+  }
+  .lang-btn.active { background: var(--green); color: var(--navy); opacity: 1; }
 
   /* SECTIONS */
   section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem 3rem; }
@@ -65,15 +77,15 @@
 
   /* HERO */
   .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.2rem; align-items: stretch; }
-  .hero-title { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; line-height: 1.15; letter-spacing: -1px; }
+  .hero-title { font-size: clamp(1.6rem, 3.5vw, 2.6rem); font-weight: 700; line-height: 1.15; letter-spacing: -1px; }
   .hero-title .accent { color: var(--green); }
-  .hero-sub { font-size: 0.85em; font-weight: 300; opacity: 0.8; margin-top: 1rem; }
-  .hero-right { display: flex; flex-direction: column; gap: 1.2rem; }
-  .stat-card { border-radius: var(--card-radius); padding: 1.2rem 1.4rem; box-shadow: var(--card-shadow); }
+  .hero-sub { font-size: 0.82em; font-weight: 300; opacity: 0.8; margin-top: 1rem; }
+  .hero-right { display: flex; flex-direction: column; gap: 1rem; }
+  .stat-card { border-radius: var(--card-radius); padding: 1.1rem 1.3rem; box-shadow: var(--card-shadow); }
   .stat-card.light { background: var(--cream); color: var(--navy); }
   .stat-card.dark  { background: var(--navy-deep); color: var(--cream); border: 1px solid rgba(174,198,230,0.1); }
-  .stat-number { font-size: 2rem; font-weight: 700; }
-  .stat-label  { font-size: 0.7em; font-weight: 400; opacity: 0.7; margin-top: 0.2rem; }
+  .stat-number { font-size: 1.8rem; font-weight: 700; }
+  .stat-label  { font-size: 0.68em; font-weight: 400; opacity: 0.7; margin-top: 0.15rem; }
 
   /* SECTION HEADERS */
   .section-header { margin-bottom: 2rem; }
@@ -81,12 +93,24 @@
   .section-header h2 .dot { color: var(--green); }
   .section-header p { font-size: 0.8em; font-weight: 300; opacity: 0.6; margin-top: 0.3rem; }
 
+  /* SECTION TABS */
+  .section-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .section-tab {
+    padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.72em; font-weight: 600;
+    cursor: pointer; transition: all 0.2s; border: 1px solid rgba(174,198,230,0.2);
+    background: transparent; color: var(--cream); opacity: 0.6;
+  }
+  .section-tab.active { background: var(--green); color: var(--navy); opacity: 1; border-color: var(--green); }
+  .section-tab:hover { opacity: 0.9; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
   /* SKILLS GRID */
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; }
   .skill-category { font-size: 0.75em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
   .skill-category .bullet { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
   .skill-list { list-style: none; }
-  .skill-list li { font-size: 0.85em; padding: 0.35rem 0; display: flex; align-items: center; gap: 0.5rem; }
+  .skill-list li { font-size: 0.82em; padding: 0.35rem 0; display: flex; align-items: center; gap: 0.5rem; }
   .skill-list li::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
   .skill-bar { flex: 1; height: 4px; background: rgba(174,198,230,0.15); border-radius: 2px; margin-left: auto; }
   .skill-bar-fill { height: 100%; border-radius: 2px; background: var(--green); }
@@ -94,67 +118,69 @@
   /* PROJECTS */
   .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
   .project-card .card-body { padding: 2.8rem 1.8rem 1.8rem; }
-  .project-tag { display: inline-block; font-size: 0.6em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.8rem; }
+  .project-tag { display: inline-block; font-size: 0.6em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.6rem; }
   .tag-ml   { background: rgba(40,200,64,0.15); color: var(--green); }
   .tag-ds   { background: rgba(254,188,46,0.15); color: var(--yellow); }
-  .tag-dl   { background: rgba(255,95,87,0.15); color: var(--red); }
-  .tag-nlp  { background: rgba(100,149,237,0.2); color: cornflowerblue; }
+  .tag-bi   { background: rgba(255,95,87,0.15); color: var(--red); }
+  .tag-nlp  { background: rgba(100,149,237,0.2); color: var(--blue); }
   .tag-geo  { background: rgba(174,198,230,0.15); color: rgba(174,198,230,0.8); }
   .tag-ts   { background: rgba(255,165,0,0.15); color: orange; }
-  .project-card h3 { font-size: 1em; font-weight: 600; margin-bottom: 0.5rem; }
+  .tag-ai   { background: rgba(180,100,255,0.15); color: #b48aff; }
+  .tag-edu  { background: rgba(0,200,200,0.15); color: #40d0d0; }
+  .project-card h3 { font-size: 1em; font-weight: 600; margin-bottom: 0.4rem; }
   .project-card p  { font-size: 0.78em; font-weight: 300; opacity: 0.75; line-height: 1.5; }
-  .project-tech { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .project-tech { margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .project-tech span { font-size: 0.6em; padding: 0.2rem 0.5rem; border: 1px solid rgba(174,198,230,0.2); border-radius: 4px; font-weight: 400; }
-  .project-link { display: inline-block; margin-top: 1rem; font-size: 0.75em; font-weight: 600; padding: 0.4rem 1rem; border-radius: 6px; text-decoration: none; transition: all 0.2s; }
-  .project-link-light { background: var(--navy); color: var(--cream); }
-  .project-link-light:hover { background: var(--green); color: var(--navy); }
-  .project-link-dark { background: var(--green); color: var(--navy); }
-  .project-link-dark:hover { background: var(--cream); }
+  .project-links { margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .project-link { display: inline-block; font-size: 0.72em; font-weight: 600; padding: 0.35rem 0.9rem; border-radius: 6px; text-decoration: none; transition: all 0.2s; }
+  .pl-solid-green { background: var(--green); color: var(--navy); }
+  .pl-solid-green:hover { background: var(--cream); }
+  .pl-outline-green { background: transparent; color: var(--green); border: 1px solid var(--green); }
+  .pl-outline-green:hover { background: var(--green); color: var(--navy); }
+  .pl-solid-navy { background: var(--navy); color: var(--cream); }
+  .pl-solid-navy:hover { background: var(--green); color: var(--navy); }
+  .pl-outline-navy { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
+  .pl-outline-navy:hover { background: var(--navy); color: var(--cream); }
 
   /* PROJECT CONTEXT */
-  .project-context { margin: 0.8rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
-  .context-block { display: flex; gap: 0.6rem; font-size: 0.78em; line-height: 1.5; align-items: baseline; }
-  .context-label {
-    font-size: 0.65em; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
-    padding: 0.15rem 0.5rem; border-radius: 3px; flex-shrink: 0;
-    background: rgba(174,198,230,0.12); color: rgba(174,198,230,0.7);
-  }
-  .context-label.result { background: rgba(40,200,64,0.15); color: var(--green); }
-  .dark-text .context-label { background: rgba(15,30,61,0.12); color: rgba(15,30,61,0.5); }
-  .dark-text .context-label.result { background: rgba(40,200,64,0.15); color: #1a7a2e; }
-  .context-block span:last-child { opacity: 0.8; font-weight: 300; }
+  .project-context { margin: 0.6rem 0; display: flex; flex-direction: column; gap: 0.4rem; }
+  .ctx { display: flex; gap: 0.5rem; font-size: 0.76em; line-height: 1.45; align-items: baseline; }
+  .ctx-l { font-size: 0.6em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 0.12rem 0.4rem; border-radius: 3px; flex-shrink: 0; background: rgba(174,198,230,0.12); color: rgba(174,198,230,0.7); }
+  .ctx-l.res { background: rgba(40,200,64,0.15); color: var(--green); }
+  .dk .ctx-l { background: rgba(15,30,61,0.12); color: rgba(15,30,61,0.5); }
+  .dk .ctx-l.res { background: rgba(40,200,64,0.15); color: #1a7a2e; }
+  .ctx span:last-child { opacity: 0.8; font-weight: 300; }
 
   /* EXPERIENCE TIMELINE */
   .timeline { position: relative; padding-left: 2rem; }
   .timeline::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: rgba(174,198,230,0.15); }
-  .timeline-item { position: relative; margin-bottom: 2rem; }
+  .timeline-item { position: relative; margin-bottom: 1.8rem; }
   .timeline-item:last-child { margin-bottom: 0; }
   .timeline-item::before { content: ''; position: absolute; left: -2rem; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--green); border: 2px solid var(--navy); }
-  .timeline-item h3 { font-size: 0.95em; font-weight: 600; }
-  .timeline-item .role { font-size: 0.78em; color: var(--green); font-weight: 500; }
-  .timeline-item .period { font-size: 0.7em; opacity: 0.5; margin-top: 0.1rem; }
-  .timeline-item p { font-size: 0.78em; opacity: 0.7; margin-top: 0.4rem; line-height: 1.5; }
+  .timeline-item h3 { font-size: 0.92em; font-weight: 600; }
+  .timeline-item .role { font-size: 0.76em; color: var(--green); font-weight: 500; }
+  .timeline-item .period { font-size: 0.68em; opacity: 0.5; margin-top: 0.1rem; }
+  .timeline-item p { font-size: 0.76em; opacity: 0.7; margin-top: 0.3rem; line-height: 1.5; }
 
   /* EDUCATION */
-  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
-  .edu-card .card-body { padding: 2.8rem 1.5rem 1.5rem; }
-  .edu-card h3 { font-size: 0.85em; font-weight: 600; margin-bottom: 0.3rem; }
-  .edu-card .institution { font-size: 0.72em; color: var(--yellow); font-weight: 500; }
-  .edu-card .year { font-size: 0.7em; opacity: 0.5; margin-top: 0.2rem; }
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .edu-card .card-body { padding: 2.5rem 1.3rem 1.3rem; }
+  .edu-card h3 { font-size: 0.82em; font-weight: 600; margin-bottom: 0.2rem; }
+  .edu-card .institution { font-size: 0.7em; color: var(--yellow); font-weight: 500; }
+  .edu-card .year { font-size: 0.68em; opacity: 0.5; margin-top: 0.15rem; }
 
   /* CONTACT */
-  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; }
-  .contact-item { display: flex; align-items: center; gap: 1rem; font-size: 0.85em; }
-  .contact-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2em; flex-shrink: 0; }
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .contact-item { display: flex; align-items: center; gap: 0.8rem; font-size: 0.82em; }
+  .contact-icon { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1em; flex-shrink: 0; }
   .contact-item a { color: var(--cream); text-decoration: none; }
   .contact-item a:hover { color: var(--green); }
 
   /* CODE BLOCK */
-  .code-block { font-size: 0.75em; line-height: 1.7; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px; margin-top: 1rem; overflow-x: auto; }
-  .code-block .kw  { color: var(--red); }
-  .code-block .fn  { color: var(--yellow); }
+  .code-block { font-size: 0.72em; line-height: 1.7; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px; margin-top: 1rem; overflow-x: auto; }
+  .code-block .kw { color: var(--red); }
+  .code-block .fn { color: var(--yellow); }
   .code-block .str { color: var(--green); }
-  .code-block .cm  { opacity: 0.4; }
 
   /* FOOTER */
   footer { text-align: center; padding: 2rem; font-size: 0.7em; opacity: 0.4; }
@@ -163,14 +189,22 @@
   @media (max-width: 768px) {
     .hero-grid { grid-template-columns: 1fr; }
     .hero-right { flex-direction: row; flex-wrap: wrap; }
-    nav ul { gap: 0.8rem; }
-    nav a { font-size: 0.7em; }
-    section { padding: 3rem 1.2rem 2rem; }
+    nav ul { gap: 0.6rem; }
+    nav a { font-size: 0.65em; }
+    section { padding: 3rem 1rem 2rem; }
+    .projects-grid { grid-template-columns: 1fr; }
   }
 
   /* ANIMATIONS */
   .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* BILINGUAL */
+  [data-lang="es"] { display: none; }
+  body.lang-es [data-lang="es"] { display: initial; }
+  body.lang-es [data-lang="en"] { display: none; }
+  body.lang-es .tab-content[data-lang="en"] { display: none !important; }
+  body.lang-es .tab-content.active[data-lang="es"] { display: block !important; }
 </style>
 </head>
 <body>
@@ -179,12 +213,18 @@
 <nav>
   <div class="logo">daniela<span class="dot">.</span>serrato</div>
   <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about" data-lang="en">About</a><a href="#about" data-lang="es">Sobre mi</a></li>
+    <li><a href="#skills" data-lang="en">Skills</a><a href="#skills" data-lang="es">Skills</a></li>
+    <li><a href="#projects" data-lang="en">Projects</a><a href="#projects" data-lang="es">Proyectos</a></li>
+    <li><a href="#experience" data-lang="en">Experience</a><a href="#experience" data-lang="es">Experiencia</a></li>
+    <li><a href="#education" data-lang="en">Education</a><a href="#education" data-lang="es">Formacion</a></li>
+    <li><a href="#contact" data-lang="en">Contact</a><a href="#contact" data-lang="es">Contacto</a></li>
+    <li>
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('es')">ES</button>
+      </div>
+    </li>
   </ul>
 </nav>
 
@@ -195,37 +235,41 @@
       <div class="card-dots"><span></span><span></span><span></span></div>
       <div class="card-body">
         <h1 class="hero-title">
-          Data Science<br>
-          <span class="accent">&</span> Machine<br>
-          Learning
+          <span data-lang="en">Data <span class="accent">&</span><br>Analytics</span>
+          <span data-lang="es">Datos <span class="accent">&</span><br>Analitica</span>
         </h1>
-        <p class="hero-sub">
-          Data & Analytics Lead with 8 years building data-driven decision systems across fintech, e-commerce, logistics, payments, and retail.
-          Hands-on Python, PySpark, SQL & Databricks. ML in production. Team leadership. Business-first approach.
+        <p class="hero-sub" data-lang="en">
+          Data & Analytics Lead with 8 years building decision systems across fintech, e-commerce, logistics, payments, and retail.
+          I build things with data: from executive dashboards and credit risk models to ML platforms and interactive learning tools.
+        </p>
+        <p class="hero-sub" data-lang="es">
+          Lider de Data & Analytics con 8 anos construyendo sistemas de decision en fintech, e-commerce, logistica, pagos y retail.
+          Construyo con datos: desde dashboards ejecutivos y modelos de riesgo crediticio hasta plataformas de ML y herramientas educativas interactivas.
         </p>
         <div class="code-block">
-<span class="kw">class</span> <span class="fn">DataScientist</span>:<br>
-&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">__init__</span>(self):<br>
-&nbsp;&nbsp;&nbsp;&nbsp;self.name = <span class="str">"Daniela Serrato"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;self.role = <span class="str">"Data & Analytics Lead"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;self.stack = [<span class="str">"Python"</span>, <span class="str">"PySpark"</span>, <span class="str">"SQL"</span>, <span class="str">"Databricks"</span>]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;self.ml = [<span class="str">"scikit-learn"</span>, <span class="str">"Monte Carlo"</span>, <span class="str">"GLM"</span>]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;self.approach = <span class="str">"business-first, data-driven"</span>
+<span class="kw">class</span> <span class="fn">DanielaSerrato</span>:<br>
+&nbsp;&nbsp;experience = <span class="str">"8 years"</span><br>
+&nbsp;&nbsp;core = [<span class="str">"BI"</span>, <span class="str">"Analytics"</span>, <span class="str">"Leadership"</span>]<br>
+&nbsp;&nbsp;stack = [<span class="str">"Python"</span>, <span class="str">"PySpark"</span>, <span class="str">"SQL"</span>, <span class="str">"Databricks"</span>]<br>
+&nbsp;&nbsp;builds = [<span class="str">"dashboards"</span>, <span class="str">"ML models"</span>, <span class="str">"AI agents"</span>, <span class="str">"edtech"</span>]
         </div>
       </div>
     </div>
     <div class="hero-right">
       <div class="stat-card light fade-in">
         <div class="stat-number" style="color: var(--navy);">8</div>
-        <div class="stat-label">Years in Data & Analytics</div>
+        <div class="stat-label" data-lang="en">Years in Data & Analytics</div>
+        <div class="stat-label" data-lang="es">Anos en Data & Analytics</div>
       </div>
       <div class="stat-card dark fade-in">
         <div class="stat-number" style="color: var(--green);">7+</div>
-        <div class="stat-label">Companies (Fintech, E-commerce, Payments, Retail)</div>
+        <div class="stat-label" data-lang="en">Companies (Fintech, E-commerce, Payments, Retail)</div>
+        <div class="stat-label" data-lang="es">Empresas (Fintech, E-commerce, Pagos, Retail)</div>
       </div>
       <div class="stat-card light fade-in">
-        <div class="stat-number" style="color: var(--navy);">2</div>
-        <div class="stat-label">Master's Degrees + Data Science Cert</div>
+        <div class="stat-number" style="color: var(--navy);">4</div>
+        <div class="stat-label" data-lang="en">Areas: BI, ML, AI, EdTech</div>
+        <div class="stat-label" data-lang="es">Areas: BI, ML, IA, EdTech</div>
       </div>
     </div>
   </div>
@@ -234,46 +278,46 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-header">
-    <h2>Technical Skills<span class="dot">.</span></h2>
-    <p>Core competencies across the data stack</p>
+    <h2 data-lang="en">Technical Skills<span class="dot">.</span></h2>
+    <h2 data-lang="es">Competencias Tecnicas<span class="dot">.</span></h2>
   </div>
   <div class="skills-grid">
+    <div class="card card-dark fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <div class="skill-category"><span class="bullet" style="background:var(--red)"></span>BI & Analytics (Core)</div>
+        <ul class="skill-list">
+          <li>Power BI (DAX, Semantic Models, Power Query) <span class="skill-bar"><span class="skill-bar-fill" style="width:95%; background:var(--red)"></span></span></li>
+          <li>SQL (SQL Server, T-SQL, Snowflake, Azure SQL) <span class="skill-bar"><span class="skill-bar-fill" style="width:95%; background:var(--red)"></span></span></li>
+          <li>Python (Pandas, NumPy, PySpark) <span class="skill-bar"><span class="skill-bar-fill" style="width:95%; background:var(--red)"></span></span></li>
+          <li>ETL/ELT, Data Modeling, KPI Governance <span class="skill-bar"><span class="skill-bar-fill" style="width:92%; background:var(--red)"></span></span></li>
+          <li>Tableau, Looker Studio, Streamlit <span class="skill-bar"><span class="skill-bar-fill" style="width:88%; background:var(--red)"></span></span></li>
+        </ul>
+      </div>
+    </div>
     <div class="card card-light fade-in">
       <div class="card-dots"><span></span><span></span><span></span></div>
       <div class="card-body">
-        <div class="skill-category"><span class="bullet" style="background:var(--green)"></span>Machine Learning & AI</div>
+        <div class="skill-category"><span class="bullet" style="background:var(--green)"></span>Data Science & ML</div>
         <ul class="skill-list">
-          <li>GLM, Poisson Regression, Bayesian Models <span class="skill-bar"><span class="skill-bar-fill" style="width:90%"></span></span></li>
-          <li>Monte Carlo Simulation & Backtesting <span class="skill-bar"><span class="skill-bar-fill" style="width:88%"></span></span></li>
           <li>Classification, Clustering, Segmentation <span class="skill-bar"><span class="skill-bar-fill" style="width:88%"></span></span></li>
-          <li>Feature Engineering & Walk-forward Validation <span class="skill-bar"><span class="skill-bar-fill" style="width:85%"></span></span></li>
-          <li>AI Agents, LLM Workflows, GenAI (n8n, Claude) <span class="skill-bar"><span class="skill-bar-fill" style="width:85%"></span></span></li>
+          <li>GLM, Poisson, Bayesian Models <span class="skill-bar"><span class="skill-bar-fill" style="width:88%"></span></span></li>
+          <li>Monte Carlo Simulation & Backtesting <span class="skill-bar"><span class="skill-bar-fill" style="width:85%"></span></span></li>
+          <li>Feature Engineering, Walk-forward Validation <span class="skill-bar"><span class="skill-bar-fill" style="width:85%"></span></span></li>
+          <li>Databricks, PySpark, Scikit-learn <span class="skill-bar"><span class="skill-bar-fill" style="width:85%"></span></span></li>
         </ul>
       </div>
     </div>
     <div class="card card-dark fade-in">
       <div class="card-dots"><span></span><span></span><span></span></div>
       <div class="card-body">
-        <div class="skill-category"><span class="bullet" style="background:var(--yellow)"></span>Data & Analytics</div>
+        <div class="skill-category"><span class="bullet" style="background:var(--yellow)"></span>AI, Leadership & Infrastructure</div>
         <ul class="skill-list">
-          <li>Python (Pandas, NumPy, PySpark) <span class="skill-bar"><span class="skill-bar-fill" style="width:95%; background:var(--yellow)"></span></span></li>
-          <li>SQL (SQL Server, T-SQL, Snowflake, Azure SQL) <span class="skill-bar"><span class="skill-bar-fill" style="width:95%; background:var(--yellow)"></span></span></li>
-          <li>Databricks, AWS, MongoDB <span class="skill-bar"><span class="skill-bar-fill" style="width:88%; background:var(--yellow)"></span></span></li>
-          <li>ETL/ELT Pipelines & Data Modeling <span class="skill-bar"><span class="skill-bar-fill" style="width:92%; background:var(--yellow)"></span></span></li>
-          <li>Statistical Analysis & Segmentation <span class="skill-bar"><span class="skill-bar-fill" style="width:90%; background:var(--yellow)"></span></span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="card card-light fade-in">
-      <div class="card-dots"><span></span><span></span><span></span></div>
-      <div class="card-body">
-        <div class="skill-category"><span class="bullet" style="background:var(--red)"></span>BI, Tools & Leadership</div>
-        <ul class="skill-list">
-          <li>Power BI (DAX, Semantic Models, Power Query) <span class="skill-bar"><span class="skill-bar-fill" style="width:95%; background:var(--red)"></span></span></li>
-          <li>Tableau, Looker Studio, Streamlit <span class="skill-bar"><span class="skill-bar-fill" style="width:88%; background:var(--red)"></span></span></li>
-          <li>GitHub Actions, CI/CD, MLOps fundamentals <span class="skill-bar"><span class="skill-bar-fill" style="width:82%; background:var(--red)"></span></span></li>
-          <li>Team Leadership & Stakeholder Management <span class="skill-bar"><span class="skill-bar-fill" style="width:90%; background:var(--red)"></span></span></li>
-          <li>Agile/Scrum, Jira, KPI Governance <span class="skill-bar"><span class="skill-bar-fill" style="width:88%; background:var(--red)"></span></span></li>
+          <li>AI Agents, LLM Workflows (n8n, Claude) <span class="skill-bar"><span class="skill-bar-fill" style="width:85%; background:var(--yellow)"></span></span></li>
+          <li>GitHub Actions, CI/CD, MLOps <span class="skill-bar"><span class="skill-bar-fill" style="width:80%; background:var(--yellow)"></span></span></li>
+          <li>Team Leadership & Stakeholder Mgmt <span class="skill-bar"><span class="skill-bar-fill" style="width:92%; background:var(--yellow)"></span></span></li>
+          <li>Agile/Scrum, Jira, Delivery <span class="skill-bar"><span class="skill-bar-fill" style="width:90%; background:var(--yellow)"></span></span></li>
+          <li>Teaching, Corporate Training, EdTech <span class="skill-bar"><span class="skill-bar-fill" style="width:90%; background:var(--yellow)"></span></span></li>
         </ul>
       </div>
     </div>
@@ -283,170 +327,256 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-header">
-    <h2>ML & Data Science Projects<span class="dot">.</span></h2>
-    <p>Each project includes full code, synthetic data, EDA, modeling, and evaluation — click to view the notebook</p>
+    <h2 data-lang="en">Projects<span class="dot">.</span></h2>
+    <h2 data-lang="es">Proyectos<span class="dot">.</span></h2>
+    <p data-lang="en">Everything I build — from dashboards to ML models to teaching tools</p>
+    <p data-lang="es">Todo lo que construyo — desde dashboards hasta modelos ML y herramientas de ensenanza</p>
   </div>
-  <div class="projects-grid">
 
-    <div class="card card-dark project-card fade-in">
+  <div class="section-tabs">
+    <button class="section-tab active" onclick="showTab('all')"><span data-lang="en">All</span><span data-lang="es">Todos</span></button>
+    <button class="section-tab" onclick="showTab('bi')">Analytics & BI</button>
+    <button class="section-tab" onclick="showTab('ml')">Data Science & ML</button>
+    <button class="section-tab" onclick="showTab('ai')">AI in Production</button>
+    <button class="section-tab" onclick="showTab('edu')">EdTech & Teaching</button>
+  </div>
+
+  <div class="projects-grid" id="projects-grid">
+
+    <!-- ═══ ANALYTICS & BI ═══ -->
+
+    <div class="card card-dark project-card fade-in" data-cat="bi">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-bi">Analytics & BI</span>
+        <h3 data-lang="en">Executive KPI Dashboard</h3>
+        <h3 data-lang="es">Dashboard Ejecutivo de KPIs</h3>
+        <div class="project-context">
+          <div class="ctx"><span class="ctx-l">Problem</span><span data-lang="en">C-suite needs real-time visibility into business performance across multiple commercial partners — reporting takes days.</span><span data-lang="es">La alta direccion necesita visibilidad en tiempo real del desempeno del negocio — la reporteria tarda dias.</span></div>
+          <div class="ctx"><span class="ctx-l">Approach</span><span data-lang="en">Designed semantic model in Power BI with automated monthly close. KPI governance across 8 partners. DAX measures for roll rates, NCL, vintage analysis.</span><span data-lang="es">Disene modelo semantico en Power BI con cierre mensual automatizado. Gobierno de KPIs para 8 socios. Medidas DAX para roll rates, NCL, vintage.</span></div>
+          <div class="ctx"><span class="ctx-l res">Result</span><span data-lang="en">Reduced reporting turnaround from several days to one. Single source of truth for executive decisions.</span><span data-lang="es">Reduje el tiempo de reporte de varios dias a uno. Fuente unica de verdad para decisiones ejecutivas.</span></div>
+        </div>
+        <div class="project-tech"><span>Power BI</span><span>DAX</span><span>SQL Server</span><span>PySpark</span><span>KPI Governance</span></div>
+        <div class="project-links">
+          <a href="dashboards/executive_kpi.html" class="project-link pl-solid-green" data-lang="en">View Dashboard &rarr;</a>
+          <a href="dashboards/executive_kpi.html" class="project-link pl-solid-green" data-lang="es">Ver Dashboard &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-light project-card fade-in" data-cat="bi">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-bi">Analytics & BI</span>
+        <h3 data-lang="en">Credit Risk Portfolio Monitor</h3>
+        <h3 data-lang="es">Monitor de Portafolio de Riesgo Crediticio</h3>
+        <div class="project-context dk">
+          <div class="ctx"><span class="ctx-l">Problem</span><span data-lang="en">Risk team manually tracks delinquency across 50GB+ portfolio tables — no centralized view of Over 30/90 metrics.</span><span data-lang="es">El equipo de riesgo rastrea mora manualmente en tablas de 50GB+ — sin vista centralizada de metricas Over 30/90.</span></div>
+          <div class="ctx"><span class="ctx-l">Approach</span><span data-lang="en">Redesigned processing with permanent indexed tables in SQL Server. Built semantic model tracking roll rates, vintage curves, delinquency bands.</span><span data-lang="es">Redisene el procesamiento con tablas permanentes indexadas en SQL Server. Modelo semantico con roll rates, curvas vintage, bandas de mora.</span></div>
+          <div class="ctx"><span class="ctx-l res">Result</span><span data-lang="en">Automated credit risk analytics for C-suite and HQ in Brazil. Scalable to growing portfolio.</span><span data-lang="es">Analitica de riesgo crediticio automatizada para la alta direccion y casa matriz en Brasil. Escalable.</span></div>
+        </div>
+        <div class="project-tech"><span>Power BI</span><span>SQL Server</span><span>PySpark</span><span>Databricks</span><span>Risk Analytics</span></div>
+        <div class="project-links">
+          <a href="dashboards/credit_risk.html" class="project-link pl-solid-navy" data-lang="en">View Dashboard &rarr;</a>
+          <a href="dashboards/credit_risk.html" class="project-link pl-solid-navy" data-lang="es">Ver Dashboard &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-dark project-card fade-in" data-cat="bi">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-bi">Analytics & BI</span>
+        <h3 data-lang="en">E-commerce Logistics Operations</h3>
+        <h3 data-lang="es">Operaciones Logisticas E-commerce</h3>
+        <div class="project-context">
+          <div class="ctx"><span class="ctx-l">Problem</span><span data-lang="en">Delivery times vary wildly across zones. No visibility into last-mile performance or carrier efficiency.</span><span data-lang="es">Los tiempos de entrega varian entre zonas. Sin visibilidad de desempeno de ultima milla o eficiencia de transportadoras.</span></div>
+          <div class="ctx"><span class="ctx-l">Approach</span><span data-lang="en">Built geospatial seller-to-carrier model. Integrated traffic, demand, and ops data. Interactive dashboard with drill-down by zone, carrier, and time.</span><span data-lang="es">Construi modelo geoespacial vendedor-transportadora. Integre datos de trafico, demanda y operacion. Dashboard interactivo con drill-down.</span></div>
+          <div class="ctx"><span class="ctx-l res">Result</span><span data-lang="en">Contributed to 23% delivery time reduction. Real-time operational visibility for business teams.</span><span data-lang="es">Contribui a reduccion del 23% en tiempos de entrega. Visibilidad operacional en tiempo real.</span></div>
+        </div>
+        <div class="project-tech"><span>Power BI</span><span>SQL</span><span>Geospatial</span><span>Logistics</span><span>Python</span></div>
+        <div class="project-links">
+          <a href="dashboards/logistics.html" class="project-link pl-solid-green" data-lang="en">View Dashboard &rarr;</a>
+          <a href="dashboards/logistics.html" class="project-link pl-solid-green" data-lang="es">Ver Dashboard &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ DATA SCIENCE & ML ═══ -->
+
+    <div class="card card-light project-card fade-in" data-cat="ml">
       <div class="card-dots"><span></span><span></span><span></span></div>
       <div class="card-body">
         <span class="project-tag tag-ml">Clustering</span>
         <h3>Customer Segmentation</h3>
-        <div class="project-context">
-          <div class="context-block">
-            <span class="context-label">Problem</span>
-            <span>An e-commerce company treats all 5,000 customers the same — campaigns are generic and retention is dropping.</span>
-          </div>
-          <div class="context-block">
-            <span class="context-label">Approach</span>
-            <span>Built RFM profiles from 50K transactions, applied K-Means with elbow + silhouette validation, and profiled 4 segments with radar charts.</span>
-          </div>
-          <div class="context-block">
-            <span class="context-label result">Result</span>
-            <span>Identified a "Gold" segment (8% of customers, 42% of revenue) and an "At Risk" cluster with targeted re-engagement strategy.</span>
-          </div>
+        <div class="project-context dk">
+          <div class="ctx"><span class="ctx-l">Problem</span><span>5,000 customers treated identically — generic campaigns, dropping retention.</span></div>
+          <div class="ctx"><span class="ctx-l">Approach</span><span>RFM profiles from 50K transactions, K-Means with elbow + silhouette, 4 segments profiled with radar charts.</span></div>
+          <div class="ctx"><span class="ctx-l res">Result</span><span>"Gold" segment: 8% of customers, 42% of revenue. "At Risk" cluster with targeted re-engagement strategy.</span></div>
         </div>
-        <div class="project-tech">
-          <span>Python</span><span>Scikit-learn</span><span>K-Means</span><span>RFM</span><span>Seaborn</span>
+        <div class="project-tech"><span>Python</span><span>Scikit-learn</span><span>K-Means</span><span>RFM</span></div>
+        <div class="project-links">
+          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/01_customer_segmentation.ipynb" target="_blank" class="project-link pl-solid-navy">Colab &rarr;</a>
+          <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/01_customer_segmentation.ipynb" target="_blank" class="project-link pl-outline-navy">GitHub</a>
         </div>
-        <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/01_customer_segmentation.ipynb" target="_blank" class="project-link project-link-dark">Open in Colab &rarr;</a>
-        <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/01_customer_segmentation.ipynb" target="_blank" class="project-link project-link-dark" style="background:transparent; color:var(--green); border:1px solid var(--green); margin-left:0.4rem;">View on GitHub</a>
       </div>
     </div>
 
-    <div class="card card-light project-card fade-in">
+    <div class="card card-dark project-card fade-in" data-cat="ml">
       <div class="card-dots"><span></span><span></span><span></span></div>
       <div class="card-body">
         <span class="project-tag tag-ml">Classification</span>
         <h3>Churn Prediction</h3>
-        <div class="project-context dark-text">
-          <div class="context-block">
-            <span class="context-label">Problem</span>
-            <span>A digital banking product loses ~20% of users quarterly, but the team only reacts after customers leave.</span>
-          </div>
-          <div class="context-block">
-            <span class="context-label">Approach</span>
-            <span>Trained 3 classifiers (LogReg, RF, XGBoost) with SMOTE for imbalance, optimized decision threshold for max F1, and estimated net business impact.</span>
-          </div>
-          <div class="context-block">
-            <span class="context-label result">Result</span>
-            <span>XGBoost achieved 0.91 AUC-ROC. Optimal threshold catches 85% of churners, enabling proactive retention saving estimated $2.4M/year.</span>
-          </div>
+        <div class="project-context">
+          <div class="ctx"><span class="ctx-l">Problem</span><span>Digital banking product loses ~20% of users quarterly — team reacts after they leave.</span></div>
+          <div class="ctx"><span class="ctx-l">Approach</span><span>3 classifiers + SMOTE, threshold optimization for max F1, net business impact estimation.</span></div>
+          <div class="ctx"><span class="ctx-l res">Result</span><span>0.91 AUC-ROC. Catches 85% of churners. Estimated $2.4M/year in retention savings.</span></div>
         </div>
-        <div class="project-tech">
-          <span>Python</span><span>XGBoost</span><span>SMOTE</span><span>GridSearchCV</span><span>Imbalanced-learn</span>
+        <div class="project-tech"><span>Python</span><span>XGBoost</span><span>SMOTE</span><span>GridSearchCV</span></div>
+        <div class="project-links">
+          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/02_churn_prediction.ipynb" target="_blank" class="project-link pl-solid-green">Colab &rarr;</a>
+          <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/02_churn_prediction.ipynb" target="_blank" class="project-link pl-outline-green">GitHub</a>
         </div>
-        <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/02_churn_prediction.ipynb" target="_blank" class="project-link project-link-light">Open in Colab &rarr;</a>
-        <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/02_churn_prediction.ipynb" target="_blank" class="project-link project-link-light" style="background:transparent; color:var(--navy); border:1px solid var(--navy); margin-left:0.4rem;">View on GitHub</a>
       </div>
     </div>
 
-    <div class="card card-dark project-card fade-in">
+    <div class="card card-light project-card fade-in" data-cat="ml">
       <div class="card-dots"><span></span><span></span><span></span></div>
       <div class="card-body">
         <span class="project-tag tag-ds">Risk</span>
         <h3>Credit Risk Scoring</h3>
-        <div class="project-context">
-          <div class="context-block">
-            <span class="context-label">Problem</span>
-            <span>A financial institution needs to assess default probability for 10K+ loan applications, replacing manual review with a data-driven scoring model.</span>
-          </div>
-          <div class="context-block">
-            <span class="context-label">Approach</span>
-            <span>WoE binning for feature transformation, compared LightGBM vs XGBoost vs LogReg. Evaluated with KS statistic, Gini, and calibration curves. Built interpretable scorecard.</span>
-          </div>
-          <div class="context-block">
-            <span class="context-label result">Result</span>
-            <span>LightGBM achieved 0.87 AUC with strong calibration. Points-based scorecard enables transparent, regulatory-compliant decisions at scale.</span>
-          </div>
+        <div class="project-context dk">
+          <div class="ctx"><span class="ctx-l">Problem</span><span>10K+ loan applications need automated default probability assessment.</span></div>
+          <div class="ctx"><span class="ctx-l">Approach</span><span>WoE binning, LightGBM vs XGBoost vs LogReg. KS/Gini, calibration curves. Points-based scorecard.</span></div>
+          <div class="ctx"><span class="ctx-l res">Result</span><span>0.87 AUC. Interpretable scorecard for regulatory-compliant decisions.</span></div>
         </div>
-        <div class="project-tech">
-          <span>Python</span><span>LightGBM</span><span>XGBoost</span><span>WoE/IV</span><span>Scorecard</span>
+        <div class="project-tech"><span>Python</span><span>LightGBM</span><span>XGBoost</span><span>Scorecard</span></div>
+        <div class="project-links">
+          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/03_credit_risk_scoring.ipynb" target="_blank" class="project-link pl-solid-navy">Colab &rarr;</a>
+          <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/03_credit_risk_scoring.ipynb" target="_blank" class="project-link pl-outline-navy">GitHub</a>
         </div>
-        <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/03_credit_risk_scoring.ipynb" target="_blank" class="project-link project-link-dark">Open in Colab &rarr;</a>
-        <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/03_credit_risk_scoring.ipynb" target="_blank" class="project-link project-link-dark" style="background:transparent; color:var(--green); border:1px solid var(--green); margin-left:0.4rem;">View on GitHub</a>
       </div>
     </div>
 
-    <div class="card card-light project-card fade-in">
+    <div class="card card-dark project-card fade-in" data-cat="ml">
       <div class="card-dots"><span></span><span></span><span></span></div>
       <div class="card-body">
         <span class="project-tag tag-ts">Time Series</span>
         <h3>Sales Forecasting</h3>
-        <div class="project-context dark-text">
-          <div class="context-block">
-            <span class="context-label">Problem</span>
-            <span>A retail company needs accurate 3-month sales forecasts for inventory planning and budget allocation.</span>
-          </div>
-          <div class="context-block">
-            <span class="context-label">Approach</span>
-            <span>Decomposed 3 years of daily data into trend + seasonality. Tested ARIMA, SARIMA (grid search), and Random Forest with lag features. Full residual diagnostics.</span>
-          </div>
-          <div class="context-block">
-            <span class="context-label result">Result</span>
-            <span>SARIMA delivered 6.2% MAPE on 12-week holdout. RF with lag features matched performance, offering a non-parametric alternative for complex patterns.</span>
-          </div>
+        <div class="project-context">
+          <div class="ctx"><span class="ctx-l">Problem</span><span>Retail company needs 3-month sales forecast for inventory and budget planning.</span></div>
+          <div class="ctx"><span class="ctx-l">Approach</span><span>ARIMA/SARIMA grid search + Random Forest with lag features. Full residual diagnostics.</span></div>
+          <div class="ctx"><span class="ctx-l res">Result</span><span>6.2% MAPE on 12-week holdout. RF matched SARIMA, offering non-parametric alternative.</span></div>
         </div>
-        <div class="project-tech">
-          <span>Python</span><span>Statsmodels</span><span>ARIMA</span><span>SARIMA</span><span>Random Forest</span>
+        <div class="project-tech"><span>Python</span><span>Statsmodels</span><span>ARIMA</span><span>SARIMA</span></div>
+        <div class="project-links">
+          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/04_sales_forecasting.ipynb" target="_blank" class="project-link pl-solid-green">Colab &rarr;</a>
+          <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/04_sales_forecasting.ipynb" target="_blank" class="project-link pl-outline-green">GitHub</a>
         </div>
-        <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/04_sales_forecasting.ipynb" target="_blank" class="project-link project-link-light">Open in Colab &rarr;</a>
-        <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/04_sales_forecasting.ipynb" target="_blank" class="project-link project-link-light" style="background:transparent; color:var(--navy); border:1px solid var(--navy); margin-left:0.4rem;">View on GitHub</a>
       </div>
     </div>
 
-    <div class="card card-dark project-card fade-in">
+    <div class="card card-light project-card fade-in" data-cat="ml">
       <div class="card-dots"><span></span><span></span><span></span></div>
       <div class="card-body">
         <span class="project-tag tag-nlp">NLP</span>
         <h3>Sentiment Analysis</h3>
-        <div class="project-context">
-          <div class="context-block">
-            <span class="context-label">Problem</span>
-            <span>An e-commerce platform receives thousands of product reviews but has no automated way to track customer sentiment across categories.</span>
-          </div>
-          <div class="context-block">
-            <span class="context-label">Approach</span>
-            <span>Built NLP pipeline: text preprocessing → TF-IDF + custom features → compared Naive Bayes, LogReg, and RF. Analyzed most informative features and misclassifications.</span>
-          </div>
-          <div class="context-block">
-            <span class="context-label result">Result</span>
-            <span>Logistic Regression on TF-IDF achieved 89% accuracy. Word clouds and feature analysis revealed key drivers of positive vs negative sentiment.</span>
-          </div>
+        <div class="project-context dk">
+          <div class="ctx"><span class="ctx-l">Problem</span><span>Thousands of product reviews with no automated sentiment tracking across categories.</span></div>
+          <div class="ctx"><span class="ctx-l">Approach</span><span>NLP pipeline: preprocessing, TF-IDF + features, Naive Bayes vs LogReg vs RF. Error analysis.</span></div>
+          <div class="ctx"><span class="ctx-l res">Result</span><span>89% accuracy. Feature analysis revealed key positive/negative sentiment drivers.</span></div>
         </div>
-        <div class="project-tech">
-          <span>Python</span><span>TF-IDF</span><span>Naive Bayes</span><span>WordCloud</span><span>Sklearn</span>
+        <div class="project-tech"><span>Python</span><span>TF-IDF</span><span>NLP</span><span>WordCloud</span></div>
+        <div class="project-links">
+          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/05_nlp_sentiment_analysis.ipynb" target="_blank" class="project-link pl-solid-navy">Colab &rarr;</a>
+          <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/05_nlp_sentiment_analysis.ipynb" target="_blank" class="project-link pl-outline-navy">GitHub</a>
         </div>
-        <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/05_nlp_sentiment_analysis.ipynb" target="_blank" class="project-link project-link-dark">Open in Colab &rarr;</a>
-        <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/05_nlp_sentiment_analysis.ipynb" target="_blank" class="project-link project-link-dark" style="background:transparent; color:var(--green); border:1px solid var(--green); margin-left:0.4rem;">View on GitHub</a>
       </div>
     </div>
 
-    <div class="card card-light project-card fade-in">
+    <div class="card card-dark project-card fade-in" data-cat="ml">
       <div class="card-dots"><span></span><span></span><span></span></div>
       <div class="card-body">
         <span class="project-tag tag-geo">Geospatial</span>
         <h3>Delivery Optimization</h3>
-        <div class="project-context dark-text">
-          <div class="context-block">
-            <span class="context-label">Problem</span>
-            <span>A logistics company in Bogota has uneven delivery times across zones and doesn't know where to place a new warehouse.</span>
-          </div>
-          <div class="context-block">
-            <span class="context-label">Approach</span>
-            <span>Spatial clustering (K-Means + DBSCAN) on 5K deliveries. Predicted delivery times with RF. Optimized warehouse assignments using SciPy. Identified coverage gaps.</span>
-          </div>
-          <div class="context-block">
-            <span class="context-label result">Result</span>
-            <span>Optimized warehouse assignment reduced avg distance by 18%. DBSCAN identified 3 high-demand hotspots. Recommended new warehouse location based on underserved cluster centroid.</span>
-          </div>
+        <div class="project-context">
+          <div class="ctx"><span class="ctx-l">Problem</span><span>Uneven delivery times across Bogota zones. Unknown optimal warehouse locations.</span></div>
+          <div class="ctx"><span class="ctx-l">Approach</span><span>K-Means + DBSCAN on 5K deliveries. RF for time prediction. SciPy for warehouse assignment.</span></div>
+          <div class="ctx"><span class="ctx-l res">Result</span><span>18% avg distance reduction. 3 hotspots identified. New warehouse location recommended.</span></div>
         </div>
-        <div class="project-tech">
-          <span>Python</span><span>DBSCAN</span><span>SciPy</span><span>Geospatial</span><span>Optimization</span>
+        <div class="project-tech"><span>Python</span><span>DBSCAN</span><span>SciPy</span><span>Geospatial</span></div>
+        <div class="project-links">
+          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/06_geospatial_delivery_optimization.ipynb" target="_blank" class="project-link pl-solid-green">Colab &rarr;</a>
+          <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/06_geospatial_delivery_optimization.ipynb" target="_blank" class="project-link pl-outline-green">GitHub</a>
         </div>
-        <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/06_geospatial_delivery_optimization.ipynb" target="_blank" class="project-link project-link-light">Open in Colab &rarr;</a>
-        <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/06_geospatial_delivery_optimization.ipynb" target="_blank" class="project-link project-link-light" style="background:transparent; color:var(--navy); border:1px solid var(--navy); margin-left:0.4rem;">View on GitHub</a>
+      </div>
+    </div>
+
+    <!-- ═══ AI IN PRODUCTION ═══ -->
+
+    <div class="card card-light project-card fade-in" data-cat="ai">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-ai">AI / ML Product</span>
+        <h3>GoliA — ML Predictive Platform</h3>
+        <div class="project-context dk">
+          <div class="ctx"><span class="ctx-l">Problem</span><span data-lang="en">World Cup prediction pools rely on gut feeling — no accessible tool applies real statistical modeling.</span><span data-lang="es">Las pollas del Mundial dependen de la intuicion — ninguna herramienta accesible aplica modelado estadistico real.</span></div>
+          <div class="ctx"><span class="ctx-l">Approach</span><span data-lang="en">Built end-to-end ML product: point-in-time features from 49K matches, Dixon-Coles GLM vs Bayesian hierarchical model, 10K Monte Carlo simulations, walk-forward backtesting, daily automated retraining via GitHub Actions.</span><span data-lang="es">Producto ML end-to-end: features point-in-time sobre 49K partidos, GLM Dixon-Coles vs modelo jerarquico bayesiano, 10K simulaciones Monte Carlo, backtesting walk-forward, reentrenamiento diario con GitHub Actions.</span></div>
+          <div class="ctx"><span class="ctx-l res">Result</span><span data-lang="en">Launched as paid product with real users. Streamlit app + landing page. Full CI/CD pipeline. Statistically validated (p &lt; 0.001).</span><span data-lang="es">Lanzado como producto de pago con usuarios reales. App Streamlit + landing page. Pipeline CI/CD completo. Validado estadisticamente (p &lt; 0.001).</span></div>
+        </div>
+        <div class="project-tech"><span>Python</span><span>Streamlit</span><span>Monte Carlo</span><span>GLM</span><span>GitHub Actions</span><span>CI/CD</span></div>
+        <div class="project-links">
+          <a href="https://golia.com.co" target="_blank" class="project-link pl-solid-navy">golia.com.co &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-dark project-card fade-in" data-cat="ai">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-ai">AI Agent</span>
+        <h3 data-lang="en">Conversational Scheduling Agent</h3>
+        <h3 data-lang="es">Agente Conversacional de Agendamiento</h3>
+        <div class="project-context">
+          <div class="ctx"><span class="ctx-l">Problem</span><span data-lang="en">Vehicle appointment booking requires manual back-and-forth via WhatsApp — time-consuming for both staff and customers.</span><span data-lang="es">El agendamiento de citas vehiculares requiere conversacion manual por WhatsApp — consume tiempo del personal y clientes.</span></div>
+          <div class="ctx"><span class="ctx-l">Approach</span><span data-lang="en">Built AI agent in n8n orchestrating LLM flows, WhatsApp Business API (Meta), calendar services, and business rules. Handles full conversation without human intervention.</span><span data-lang="es">Construi agente IA en n8n orquestando flujos LLM, API de WhatsApp Business (Meta), servicios de calendario y reglas de negocio. Maneja la conversacion completa sin intervencion humana.</span></div>
+          <div class="ctx"><span class="ctx-l res">Result</span><span data-lang="en">Running in production. Zero manual intervention. Automated notifications and confirmations.</span><span data-lang="es">En produccion. Cero intervencion manual. Notificaciones y confirmaciones automatizadas.</span></div>
+        </div>
+        <div class="project-tech"><span>n8n</span><span>LLM</span><span>WhatsApp API</span><span>Python</span><span>Automation</span></div>
+      </div>
+    </div>
+
+    <!-- ═══ EDTECH & TEACHING ═══ -->
+
+    <div class="card card-light project-card fade-in" data-cat="edu">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-edu">EdTech</span>
+        <h3>Planta SQL — Interactive SQL Learning Platform</h3>
+        <div class="project-context dk">
+          <div class="ctx"><span class="ctx-l">Problem</span><span data-lang="en">Students struggle to learn SQL with abstract examples. Traditional exercises feel disconnected from real scenarios.</span><span data-lang="es">Los estudiantes luchan por aprender SQL con ejemplos abstractos. Los ejercicios tradicionales se sienten desconectados.</span></div>
+          <div class="ctx"><span class="ctx-l">Approach</span><span data-lang="en">Created a gamified platform themed around Springfield's Nuclear Power Plant. 10 progressive topics, 100 exercises, difficulty color-coding (green/yellow/red). Study → Practice → Certify flow.</span><span data-lang="es">Cree una plataforma gamificada tematica de la Planta Nuclear de Springfield. 10 temas progresivos, 100 ejercicios, codigo de color por dificultad. Flujo Estudiar → Practicar → Certificar.</span></div>
+          <div class="ctx"><span class="ctx-l res">Result</span><span data-lang="en">Used by university students across multiple cohorts. Increased engagement and practice completion rates.</span><span data-lang="es">Usado por estudiantes universitarios en multiples cohortes. Aumento el engagement y tasas de completitud.</span></div>
+        </div>
+        <div class="project-tech"><span>Next.js</span><span>Vercel</span><span>SQL</span><span>Gamification</span><span>EdTech</span></div>
+        <div class="project-links">
+          <a href="https://planta-sql.vercel.app" target="_blank" class="project-link pl-solid-navy">planta-sql.vercel.app &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-dark project-card fade-in" data-cat="edu">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-edu">Teaching</span>
+        <h3 data-lang="en">University Courses — Python, SQL & Data Visualization</h3>
+        <h3 data-lang="es">Cursos Universitarios — Python, SQL y Visualizacion de Datos</h3>
+        <div class="project-context">
+          <div class="ctx"><span class="ctx-l">Scope</span><span data-lang="en">Adjunct Professor at Universidad de La Sabana. Advanced Programming (undergrad) + Data Visualization Tools (Master's in Analytics).</span><span data-lang="es">Profesora de catedra en Universidad de La Sabana. Programacion Avanzada (pregrado) + Herramientas de Visualizacion (Maestria en Analitica).</span></div>
+          <div class="ctx"><span class="ctx-l">Method</span><span data-lang="en">Thematic, project-based curricula: Springfield Nuclear Plant for SQL, real business cases for BI. AI-assisted workflows. Corporate training and executive education.</span><span data-lang="es">Curriculo tematico basado en proyectos: Planta Nuclear de Springfield para SQL, casos reales de negocio para BI. Flujos asistidos por IA. Formacion corporativa y educacion ejecutiva.</span></div>
+          <div class="ctx"><span class="ctx-l res">Impact</span><span data-lang="en">Custom interactive HTML presentations, hands-on exercises, and tools built specifically for each course. Designed content from scratch for multiple cohorts.</span><span data-lang="es">Presentaciones HTML interactivas personalizadas, ejercicios practicos y herramientas construidas para cada curso. Contenido disenado desde cero para multiples cohortes.</span></div>
+        </div>
+        <div class="project-tech"><span>Python</span><span>SQL</span><span>Power BI</span><span>Tableau</span><span>Looker Studio</span><span>Pedagogy</span></div>
       </div>
     </div>
 
@@ -456,66 +586,78 @@
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-header">
-    <h2>Professional Experience<span class="dot">.</span></h2>
-    <p>8 years across fintech, e-commerce, payments, logistics, retail, and academia</p>
+    <h2 data-lang="en">Professional Experience<span class="dot">.</span></h2>
+    <h2 data-lang="es">Experiencia Profesional<span class="dot">.</span></h2>
+    <p data-lang="en">8 years across fintech, e-commerce, payments, logistics, retail, and academia</p>
+    <p data-lang="es">8 anos en fintech, e-commerce, pagos, logistica, retail y academia</p>
   </div>
   <div class="card card-dark fade-in">
     <div class="card-dots"><span></span><span></span><span></span></div>
     <div class="card-body">
       <div class="timeline">
         <div class="timeline-item">
-          <div class="role">Adjunct Professor — Master's in Analytics</div>
+          <div class="role" data-lang="en">Adjunct Professor — Master's in Analytics</div>
+          <div class="role" data-lang="es">Profesora de catedra — Maestria en Analitica</div>
           <h3>Universidad de La Sabana</h3>
-          <div class="period">Jan 2026 — Present &middot; Concurrent</div>
-          <p>Teaching Advanced Programming (Python, SQL, DB design) and Data Visualization (Power BI, Tableau, Looker Studio). Corporate training and executive education. AI-assisted project-based curricula.</p>
+          <div class="period">Ene 2026 — <span data-lang="en">Present</span><span data-lang="es">Actualidad</span></div>
+          <p data-lang="en">Advanced Programming (Python, SQL, DB design) and Data Visualization (Power BI, Tableau, Looker Studio). Corporate training. AI-assisted project-based curricula.</p>
+          <p data-lang="es">Programacion Avanzada (Python, SQL, diseno de BD) y Visualizacion de Datos (Power BI, Tableau, Looker Studio). Formacion corporativa. Curriculo basado en proyectos con IA.</p>
         </div>
         <div class="timeline-item">
           <div class="role">BI & Analytics Manager</div>
           <h3>BradesCard</h3>
           <div class="period">Mar 2025 — Jul 2026 &middot; Remote, Mexico &middot; Payments</div>
-          <p>Built credit risk analytics for C-suite and HQ in Brazil (roll rates, NCL, vintage, Over 30/90). Led 4-person team. Managed data portfolio for 8 commercial partners simultaneously. Automated monthly close reducing turnaround from days to one.</p>
+          <p data-lang="en">Credit risk analytics for C-suite (roll rates, NCL, vintage, Over 30/90). Led 4-person team. Managed 8 commercial partners. Automated monthly close: days → one day.</p>
+          <p data-lang="es">Analitica de riesgo crediticio para la alta direccion (roll rates, NCL, vintage, Over 30/90). Equipo de 4. 8 socios comerciales. Automatice cierre mensual: dias → un dia.</p>
         </div>
         <div class="timeline-item">
-          <div class="role">BI Lead &larr; Promoted from Senior Data & Insights Analyst</div>
+          <div class="role">BI Lead &larr; <span data-lang="en">Promoted from Senior Data & Insights Analyst</span><span data-lang="es">Promovida desde Senior Data & Insights Analyst</span></div>
           <h3>RappiPay</h3>
-          <div class="period">Dec 2022 — Nov 2024 &middot; Bogota, Colombia</div>
-          <p>Built analytics from scratch for RappiCuenta launch. Designed customer/day P&L model in Snowflake across full customer base. Behavioral segmentation of 857K customers. Led multidisciplinary team (2 analysts + 1 data scientist) with Agile/Scrum.</p>
+          <div class="period">Dic 2022 — Nov 2024 &middot; Bogota</div>
+          <p data-lang="en">Built analytics from scratch for RappiCuenta launch. Customer/day P&L in Snowflake. Segmentation of 857K customers. Led team (2 analysts + 1 data scientist), Agile/Scrum.</p>
+          <p data-lang="es">Construi analitica desde cero para el lanzamiento de RappiCuenta. P&L cliente/dia en Snowflake. Segmentacion de 857K clientes. Equipo (2 analistas + 1 cientifico de datos), Agile/Scrum.</p>
         </div>
         <div class="timeline-item">
           <div class="role">Senior Associate, Business Intelligence</div>
           <h3>Shopee</h3>
-          <div class="period">Apr 2022 — Sep 2022 &middot; E-commerce & Logistics</div>
-          <p>Built geospatial seller-to-carrier assignment model. Integrated traffic, demand, and ops data into last-mile analytics, contributing to 23% delivery time reduction in Bogota.</p>
+          <div class="period">Abr 2022 — Sep 2022 &middot; E-commerce & Logistics</div>
+          <p data-lang="en">Geospatial seller-to-carrier model. Last-mile analytics integrating traffic, demand, ops. 23% delivery time reduction.</p>
+          <p data-lang="es">Modelo geoespacial vendedor-transportadora. Analitica de ultima milla integrando trafico, demanda, operacion. Reduccion del 23% en tiempos de entrega.</p>
         </div>
         <div class="timeline-item">
-          <div class="role">BI Specialist</div>
-          <h3>Justo</h3>
+          <div class="role">BI Specialist &middot; Justo</div>
+          <h3></h3>
           <div class="period">May 2021 — Mar 2022 &middot; Retail</div>
-          <p>End-to-end ETL pipelines in Python, SQL, and MongoDB. Converted imperfect multi-source data into reliable analytics datasets.</p>
+          <p data-lang="en">End-to-end ETL pipelines (Python, SQL, MongoDB). Multi-source data → reliable analytics datasets.</p>
+          <p data-lang="es">Pipelines ETL end-to-end (Python, SQL, MongoDB). Datos multi-fuente → datasets confiables.</p>
         </div>
         <div class="timeline-item">
-          <div class="role">BI Consultant</div>
-          <h3>Rollup Consulting</h3>
+          <div class="role">BI Consultant &middot; Rollup Consulting</div>
+          <h3></h3>
           <div class="period">Mar 2021 — Mar 2022 &middot; Part-time &middot; Multi-industry</div>
-          <p>Delivered BI projects for external clients: requirements, solution design, SQL data models, ETL, and Power BI dashboards.</p>
+          <p data-lang="en">BI projects for external clients: requirements, SQL data models, ETL, Power BI dashboards.</p>
+          <p data-lang="es">Proyectos BI para clientes externos: requerimientos, modelos SQL, ETL, dashboards Power BI.</p>
         </div>
         <div class="timeline-item">
-          <div class="role">BI Analyst</div>
-          <h3>Turia Group</h3>
-          <div class="period">2020 — 2021 &middot; Bogota</div>
-          <p>Standardized metrics and rebuilt the company's reporting suite.</p>
+          <div class="role">BI Analyst &middot; Turia Group</div>
+          <h3></h3>
+          <div class="period">2020 — 2021</div>
+          <p data-lang="en">Standardized metrics and rebuilt the reporting suite.</p>
+          <p data-lang="es">Estandarice metricas y reconstrui la suite de reportes.</p>
         </div>
         <div class="timeline-item">
-          <div class="role">Data & Technology Implementation Coordinator</div>
-          <h3>Sprach</h3>
-          <div class="period">2018 — 2020 &middot; Bogota</div>
-          <p>First data hire. Built the reporting function and the company's first databases from scratch.</p>
+          <div class="role">Data & Technology Coordinator &middot; Sprach</div>
+          <h3></h3>
+          <div class="period">2018 — 2020</div>
+          <p data-lang="en">First data hire. Built reporting function and first databases from scratch.</p>
+          <p data-lang="es">Primera contratacion de datos. Construi la funcion de reporteria y primeras bases de datos.</p>
         </div>
         <div class="timeline-item">
-          <div class="role">Intern, Maintenance Management</div>
-          <h3>Avianca</h3>
-          <div class="period">2018 &middot; Bogota</div>
-          <p>Developed two internal applications: database design, data integration, and reporting logic.</p>
+          <div class="role">Intern &middot; Avianca</div>
+          <h3></h3>
+          <div class="period">2018</div>
+          <p data-lang="en">Two internal applications: DB design, data integration, reporting logic.</p>
+          <p data-lang="es">Dos aplicaciones internas: diseno de BD, integracion de datos, logica de reporteria.</p>
         </div>
       </div>
     </div>
@@ -525,14 +667,15 @@
 <!-- EDUCATION -->
 <section id="education">
   <div class="section-header">
-    <h2>Education<span class="dot">.</span></h2>
-    <p>Academic background</p>
+    <h2 data-lang="en">Education<span class="dot">.</span></h2>
+    <h2 data-lang="es">Formacion<span class="dot">.</span></h2>
   </div>
   <div class="edu-grid">
     <div class="card card-light edu-card fade-in">
       <div class="card-dots"><span></span><span></span><span></span></div>
       <div class="card-body">
-        <h3>Master's in Digital Transformation Leadership</h3>
+        <h3 data-lang="en">M.S. Digital Transformation Leadership</h3>
+        <h3 data-lang="es">Maestria Liderazgo en Transformacion Digital</h3>
         <div class="institution">CESA, Bogota</div>
         <div class="year">2023 — 2024</div>
       </div>
@@ -540,8 +683,9 @@
     <div class="card card-dark edu-card fade-in">
       <div class="card-dots"><span></span><span></span><span></span></div>
       <div class="card-body">
-        <h3>Master's in Digital Business</h3>
-        <div class="institution">ESIC Business & Marketing School, Madrid</div>
+        <h3 data-lang="en">M.S. Digital Business</h3>
+        <h3 data-lang="es">Maestria Digital Business</h3>
+        <div class="institution">ESIC, Madrid</div>
         <div class="year">2023 — 2024</div>
       </div>
     </div>
@@ -550,22 +694,25 @@
       <div class="card-body">
         <h3>Professional ML Engineer</h3>
         <div class="institution">Google Cloud</div>
-        <div class="year">In progress</div>
+        <div class="year" data-lang="en">In progress</div>
+        <div class="year" data-lang="es">En curso</div>
       </div>
     </div>
     <div class="card card-dark edu-card fade-in">
       <div class="card-dots"><span></span><span></span><span></span></div>
       <div class="card-body">
-        <h3>Data Science Certification</h3>
-        <div class="institution">Universidad Nacional de Colombia</div>
+        <h3 data-lang="en">Data Science Cert.</h3>
+        <h3 data-lang="es">Cert. Ciencia de Datos</h3>
+        <div class="institution">UNAL, Bogota</div>
         <div class="year">2020</div>
       </div>
     </div>
     <div class="card card-light edu-card fade-in">
       <div class="card-dots"><span></span><span></span><span></span></div>
       <div class="card-body">
-        <h3>B.S. Business Administration</h3>
-        <div class="institution">Pontificia Universidad Javeriana, Bogota</div>
+        <h3 data-lang="en">B.S. Business Admin.</h3>
+        <h3 data-lang="es">Admon. de Empresas</h3>
+        <div class="institution">Javeriana, Bogota</div>
         <div class="year">2019</div>
       </div>
     </div>
@@ -575,8 +722,8 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-header">
-    <h2>Let's Connect<span class="dot">.</span></h2>
-    <p>Open to collaboration and opportunities</p>
+    <h2 data-lang="en">Let's Connect<span class="dot">.</span></h2>
+    <h2 data-lang="es">Conectemos<span class="dot">.</span></h2>
   </div>
   <div class="card card-dark fade-in">
     <div class="card-dots"><span></span><span></span><span></span></div>
@@ -585,22 +732,29 @@
         <div class="contact-item">
           <div class="contact-icon" style="background: rgba(40,200,64,0.15); color: var(--green);">@</div>
           <div>
-            <div style="font-size:0.7em; opacity:0.5;">Email</div>
+            <div style="font-size:0.68em; opacity:0.5;">Email</div>
             <a href="mailto:daniserrato.012@gmail.com">daniserrato.012@gmail.com</a>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon" style="background: rgba(40,200,64,0.1); color: var(--green);">tel</div>
           <div>
-            <div style="font-size:0.7em; opacity:0.5;">Phone</div>
+            <div style="font-size:0.68em; opacity:0.5;">Phone</div>
             <span>+57 312 456 5617</span>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon" style="background: rgba(254,188,46,0.15); color: var(--yellow);">in</div>
           <div>
-            <div style="font-size:0.7em; opacity:0.5;">LinkedIn</div>
-            <a href="https://linkedin.com/in/daniela-serrato">linkedin.com/in/daniela-serrato</a>
+            <div style="font-size:0.68em; opacity:0.5;">LinkedIn</div>
+            <a href="https://linkedin.com/in/daniela-serrato" target="_blank">linkedin.com/in/daniela-serrato</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon" style="background: rgba(174,198,230,0.15); color: var(--cream);">GH</div>
+          <div>
+            <div style="font-size:0.68em; opacity:0.5;">GitHub</div>
+            <a href="https://github.com/DanielaSerrato" target="_blank">github.com/DanielaSerrato</a>
           </div>
         </div>
       </div>
@@ -609,15 +763,30 @@
 </section>
 
 <footer>
-  &copy; 2026 Daniela Serrato — Built with Python & data
+  &copy; 2026 Daniela Serrato
 </footer>
 
 <script>
 // Fade-in on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+// Language toggle
+function setLang(lang) {
+  document.body.classList.toggle('lang-es', lang === 'es');
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === lang.toUpperCase()));
+}
+
+// Project filter tabs
+function showTab(cat) {
+  document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+  });
+}
 </script>
 
 </body>
