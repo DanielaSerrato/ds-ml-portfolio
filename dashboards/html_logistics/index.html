@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logistics Operations Dashboard | Daniela Serrato</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0F1E3D;
+  --card: #091327;
+  --card-border: rgba(247, 244, 237, 0.08);
+  --text: #F7F4ED;
+  --text-muted: rgba(247, 244, 237, 0.55);
+  --green: #28c840;
+  --red: #ff5f57;
+  --yellow: #febc2e;
+  --accent-blue: #5b9cf6;
+  --font: 'JetBrains Mono', monospace;
+}
+
+html { font-size: 14px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.dashboard {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+/* --- Header --- */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 16px;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header h1 span {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 2px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  color: var(--text-muted);
+  font-family: var(--font);
+  font-size: 0.78rem;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.pill:hover {
+  border-color: var(--accent-blue);
+  color: var(--text);
+}
+
+.pill.active {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* --- Card --- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+.card-dots {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.card-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background: var(--red); }
+.dot-yellow { background: var(--yellow); }
+.dot-green { background: var(--green); }
+
+.card-title {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* --- Grid --- */
+.row { display: grid; gap: 16px; margin-bottom: 16px; }
+.row-5 { grid-template-columns: repeat(5, 1fr); }
+.row-2 { grid-template-columns: 1fr 1fr; }
+.row-1 { grid-template-columns: 1fr; }
+
+@media (max-width: 1100px) {
+  .row-5 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .row-5, .row-2 { grid-template-columns: 1fr; }
+  body { padding: 12px; }
+}
+
+/* --- KPI Cards --- */
+.kpi-value {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.kpi-change {
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.kpi-change.up { color: var(--green); }
+.kpi-change.down { color: var(--red); }
+
+.kpi-sparkline {
+  height: 32px;
+  margin-top: 10px;
+}
+
+/* --- Chart containers --- */
+.chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 280px;
+}
+
+.chart-wrap-tall {
+  height: 340px;
+}
+
+/* --- Heatmap --- */
+.heatmap-container {
+  overflow-x: auto;
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: 48px repeat(16, 1fr);
+  gap: 3px;
+  min-width: 600px;
+}
+
+.heatmap-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.heatmap-cell {
+  aspect-ratio: 1;
+  border-radius: 4px;
+  min-height: 28px;
+  transition: transform 0.15s ease, opacity 0.3s ease;
+  position: relative;
+  cursor: default;
+}
+
+.heatmap-cell:hover {
+  transform: scale(1.15);
+  z-index: 2;
+}
+
+/* --- Table --- */
+.perf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.perf-table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-size: 0.7rem;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.perf-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(247,244,237,0.04);
+  transition: background 0.3s ease;
+}
+
+.perf-table tbody tr:hover td {
+  background: rgba(91, 156, 246, 0.06);
+}
+
+.perf-table tbody tr:nth-child(even) td {
+  background: rgba(247,244,237,0.02);
+}
+
+.perf-table tbody tr:nth-child(even):hover td {
+  background: rgba(91, 156, 246, 0.06);
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.badge-green { background: rgba(40,200,64,0.15); color: var(--green); }
+.badge-yellow { background: rgba(254,188,46,0.15); color: var(--yellow); }
+.badge-red { background: rgba(255,95,87,0.15); color: var(--red); }
+
+/* --- Footer --- */
+.footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  margin-top: 32px;
+  padding: 16px 0;
+  border-top: 1px solid var(--card-border);
+}
+
+/* --- Tooltip for heatmap --- */
+.hm-tooltip {
+  position: fixed;
+  background: #0a1628;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.72rem;
+  color: var(--text);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 999;
+  white-space: nowrap;
+}
+
+.hm-tooltip.visible { opacity: 1; }
+
+/* --- Fade-in animation --- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card { animation: fadeUp 0.4s ease forwards; }
+.row .card:nth-child(2) { animation-delay: 0.05s; }
+.row .card:nth-child(3) { animation-delay: 0.10s; }
+.row .card:nth-child(4) { animation-delay: 0.15s; }
+.row .card:nth-child(5) { animation-delay: 0.20s; }
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Logistics Operations Dashboard<span>E-commerce Last-Mile Delivery -- Bogota, Colombia</span></h1>
+    <div class="filters" id="filters">
+      <button class="pill active" data-zone="all">All Zones</button>
+      <button class="pill" data-zone="usaquen">Usaquen</button>
+      <button class="pill" data-zone="chapinero">Chapinero</button>
+      <button class="pill" data-zone="kennedy">Kennedy</button>
+      <button class="pill" data-zone="suba">Suba</button>
+      <button class="pill" data-zone="centro">Centro</button>
+    </div>
+  </div>
+
+  <!-- Row 1: KPIs -->
+  <div class="row row-5" id="kpi-row"></div>
+
+  <!-- Row 2: Charts -->
+  <div class="row row-2">
+    <div class="card" id="card-hourly">
+      <div class="card-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
+      <div class="card-title">Deliveries by Hour</div>
+      <div class="chart-wrap"><canvas id="chart-hourly"></canvas></div>
+    </div>
+    <div class="card" id="card-ontime-zone">
+      <div class="card-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
+      <div class="card-title">On-Time Rate by Zone</div>
+      <div class="chart-wrap"><canvas id="chart-ontime-zone"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 3: Charts -->
+  <div class="row row-2">
+    <div class="card" id="card-distribution">
+      <div class="card-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
+      <div class="card-title">Delivery Time Distribution (minutes)</div>
+      <div class="chart-wrap"><canvas id="chart-distribution"></canvas></div>
+    </div>
+    <div class="card" id="card-weekly">
+      <div class="card-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
+      <div class="card-title">Weekly Trend (8 weeks)</div>
+      <div class="chart-wrap"><canvas id="chart-weekly"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Row 4: Heatmap -->
+  <div class="row row-1">
+    <div class="card" id="card-heatmap">
+      <div class="card-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
+      <div class="card-title">Delivery Volume Heatmap (Day / Hour)</div>
+      <div class="heatmap-container" id="heatmap-container"></div>
+    </div>
+  </div>
+
+  <!-- Row 5: Table -->
+  <div class="row row-1">
+    <div class="card" id="card-table">
+      <div class="card-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
+      <div class="card-title">Zone Performance Summary</div>
+      <div style="overflow-x:auto;">
+        <table class="perf-table" id="perf-table">
+          <thead>
+            <tr>
+              <th>Zone</th>
+              <th>Deliveries</th>
+              <th>On-Time %</th>
+              <th>Avg Time (min)</th>
+              <th>Failed %</th>
+              <th>Top Carrier</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">Data updated: Sep 30, 2026 | Bogota, Colombia | Built by Daniela Serrato</div>
+</div>
+
+<div class="hm-tooltip" id="hm-tooltip"></div>
+
+<script>
+// ========================================================================
+// DATA
+// ========================================================================
+
+const ZONES = {
+  usaquen:   { label: 'Usaquen',   deliveries: 1124, onTime: 85.1, avgTime: 36, failed: 2.1, topCarrier: 'RappiCargo',   sparkDel: [148,162,155,170,160,158,171], sparkOT: [84,85,86,84,85,86,85], change: +2.3 },
+  chapinero: { label: 'Chapinero', deliveries: 1053, onTime: 80.4, avgTime: 39, failed: 2.8, topCarrier: 'EnviaYa',      sparkDel: [140,138,152,148,155,150,170], sparkOT: [79,80,81,80,80,81,80], change: +1.1 },
+  kennedy:   { label: 'Kennedy',   deliveries: 1187, onTime: 71.2, avgTime: 51, failed: 4.7, topCarrier: 'ServiEntrega', sparkDel: [165,170,172,168,175,162,175], sparkOT: [70,71,72,70,71,72,71], change: -0.8 },
+  suba:      { label: 'Suba',      deliveries: 1012, onTime: 78.9, avgTime: 43, failed: 3.1, topCarrier: 'Coordinadora', sparkDel: [135,140,142,148,145,150,152], sparkOT: [78,79,79,78,79,79,79], change: +0.6 },
+  centro:    { label: 'Centro',    deliveries:  871, onTime: 76.3, avgTime: 45, failed: 3.9, topCarrier: 'TCC Express',  sparkDel: [118,120,125,128,122,130,128], sparkOT: [75,76,77,76,76,77,76], change: -0.3 }
+};
+
+// Hourly delivery distribution (6am = index 0, 10pm = index 16)
+const HOURS = Array.from({length: 17}, (_, i) => i + 6);
+const HOUR_LABELS = HOURS.map(h => (h <= 12 ? h + (h < 12 ? 'am' : 'pm') : (h - 12) + 'pm'));
+
+const HOURLY_BASE = {
+  usaquen:   [12,18,32,45,62,78,95,88,72,55,48,68,82,74,52,38,22],
+  chapinero: [10,16,28,42,58,72,88,82,68,50,44,64,78,70,48,35,18],
+  kennedy:   [15,22,38,52,70,85,102,96,80,62,54,76,92,82,58,42,26],
+  suba:      [10,15,26,38,52,68,80,74,62,46,40,58,72,64,44,32,16],
+  centro:    [8,14,24,35,48,60,72,66,56,42,36,52,64,58,40,28,14]
+};
+
+// Weekly trend (8 weeks)
+const WEEK_LABELS = ['W31','W32','W33','W34','W35','W36','W37','W38'];
+const WEEKLY_BASE = {
+  usaquen:   { del: [680,710,720,740,750,760,770,780], ot: [83,84,84,85,85,85,86,85] },
+  chapinero: { del: [640,650,660,670,680,690,700,720], ot: [78,79,79,80,80,80,81,80] },
+  kennedy:   { del: [720,730,740,750,760,770,780,790], ot: [69,70,70,71,71,71,72,71] },
+  suba:      { del: [600,610,620,630,640,650,660,680], ot: [77,78,78,78,79,79,79,79] },
+  centro:    { del: [520,530,540,550,560,570,580,600], ot: [74,75,75,76,76,76,77,76] }
+};
+
+// Distribution (delivery time buckets 15-90 min, 5-min bins)
+const DIST_LABELS = ['15-20','20-25','25-30','30-35','35-40','40-45','45-50','50-55','55-60','60-65','65-70','70-75','75-80','80-85','85-90'];
+const DIST_BASE = {
+  usaquen:   [30,65,120,185,210,195,140,80,42,25,14,8,5,3,2],
+  chapinero: [22,50,100,165,190,180,130,78,48,30,20,14,10,8,8],
+  kennedy:   [10,25,55,90,130,155,170,160,120,85,60,42,30,30,25],
+  suba:      [18,40,85,140,170,165,125,75,50,38,28,22,18,18,20],
+  centro:    [14,32,70,120,150,148,120,80,55,40,30,22,18,18,14]
+};
+
+// Heatmap: deliveries per day/hour
+const DAYS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+function generateHeatmap(zone) {
+  const weekdayScale = [1.0, 1.02, 1.05, 1.03, 1.08, 0.72, 0.55];
+  const hourScale = [0.08,0.12,0.21,0.30,0.42,0.54,0.65,0.60,0.50,0.38,0.33,0.47,0.56,0.50,0.35,0.25,0.14];
+  const base = ZONES[zone].deliveries / 7;
+  const grid = [];
+  for (let d = 0; d < 7; d++) {
+    const row = [];
+    for (let h = 0; h < 17; h++) {
+      row.push(Math.round(base * weekdayScale[d] * hourScale[h] * (0.9 + Math.random() * 0.2)));
+    }
+    grid.push(row);
+  }
+  return grid;
+}
+
+const HEATMAP_DATA = {};
+Object.keys(ZONES).forEach(z => { HEATMAP_DATA[z] = generateHeatmap(z); });
+
+// ========================================================================
+// STATE
+// ========================================================================
+let activeZone = 'all';
+let charts = {};
+
+// ========================================================================
+// HELPERS
+// ========================================================================
+function sumArrays(...arrays) {
+  return arrays[0].map((_, i) => arrays.reduce((s, a) => s + a[i], 0));
+}
+
+function avgArrays(...arrays) {
+  return arrays[0].map((_, i) => +(arrays.reduce((s, a) => s + a[i], 0) / arrays.length).toFixed(1));
+}
+
+function getActiveZones() {
+  return activeZone === 'all' ? Object.keys(ZONES) : [activeZone];
+}
+
+function getAggKPI() {
+  const zs = getActiveZones();
+  const totalDel = zs.reduce((s, z) => s + ZONES[z].deliveries, 0);
+  const wtdOT = zs.reduce((s, z) => s + ZONES[z].onTime * ZONES[z].deliveries, 0) / totalDel;
+  const wtdAvg = zs.reduce((s, z) => s + ZONES[z].avgTime * ZONES[z].deliveries, 0) / totalDel;
+  const wtdFail = zs.reduce((s, z) => s + ZONES[z].failed * ZONES[z].deliveries, 0) / totalDel;
+  const carriers = zs.length === 1 ? 5 : 23;
+  const sparkDel = zs.length === 1 ? ZONES[zs[0]].sparkDel : sumArrays(...zs.map(z => ZONES[z].sparkDel));
+  const sparkOT = zs.length === 1 ? ZONES[zs[0]].sparkOT : avgArrays(...zs.map(z => ZONES[z].sparkOT));
+  const change = zs.length === 1 ? ZONES[zs[0]].change : +((zs.reduce((s,z) => s + ZONES[z].change, 0) / zs.length).toFixed(1));
+  return { totalDel, onTime: +wtdOT.toFixed(1), avgTime: Math.round(wtdAvg), failed: +wtdFail.toFixed(1), carriers, sparkDel, sparkOT, change };
+}
+
+function colorForOT(val) {
+  if (val >= 80) return 'var(--green)';
+  if (val >= 75) return 'var(--yellow)';
+  return 'var(--red)';
+}
+
+function badgeClass(val) {
+  if (val >= 80) return 'badge-green';
+  if (val >= 75) return 'badge-yellow';
+  return 'badge-red';
+}
+
+function heatColor(val, max) {
+  const ratio = val / max;
+  const r = Math.round(9 + ratio * (91 - 9));
+  const g = Math.round(19 + ratio * (156 - 19));
+  const b = Math.round(39 + ratio * (246 - 39));
+  const a = 0.15 + ratio * 0.85;
+  return `rgba(${r},${g},${b},${a})`;
+}
+
+// ========================================================================
+// CHART.JS DEFAULTS
+// ========================================================================
+Chart.defaults.color = 'rgba(247,244,237,0.55)';
+Chart.defaults.font.family = "'JetBrains Mono', monospace";
+Chart.defaults.font.size = 11;
+Chart.defaults.plugins.legend.display = false;
+Chart.defaults.scale.grid = { color: 'rgba(247,244,237,0.06)' };
+Chart.defaults.scale.border = { color: 'rgba(247,244,237,0.08)' };
+Chart.defaults.animation = { duration: 500, easing: 'easeOutQuart' };
+
+// ========================================================================
+// RENDER FUNCTIONS
+// ========================================================================
+
+function renderKPIs() {
+  const kpi = getAggKPI();
+  const items = [
+    { title: 'Total Deliveries', value: kpi.totalDel.toLocaleString(), spark: kpi.sparkDel, color: 'var(--accent-blue)', change: null },
+    { title: 'On-Time Rate', value: kpi.onTime + '%', spark: kpi.sparkOT, color: 'var(--green)', change: kpi.change },
+    { title: 'Avg Delivery Time', value: kpi.avgTime + ' min', spark: kpi.sparkDel.map((v,i) => kpi.avgTime + (i-3)*1.5), color: 'var(--yellow)', change: null },
+    { title: 'Failed Deliveries', value: kpi.failed + '%', spark: [3.5,3.4,3.3,3.2,3.3,3.2,3.2], color: 'var(--red)', change: -0.3 },
+    { title: 'Active Carriers', value: kpi.carriers, spark: [20,21,22,22,23,23,23], color: 'var(--accent-blue)', change: null }
+  ];
+
+  const row = document.getElementById('kpi-row');
+  row.innerHTML = '';
+
+  items.forEach((item, idx) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.animationDelay = (idx * 0.05) + 's';
+
+    const changeHTML = item.change !== null
+      ? `<div class="kpi-change ${item.change >= 0 ? 'up' : 'down'}">${item.change >= 0 ? '+' : ''}${item.change}% vs last week</div>`
+      : '';
+
+    card.innerHTML = `
+      <div class="card-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
+      <div class="card-title">${item.title}</div>
+      <div class="kpi-value">${item.value}</div>
+      ${changeHTML}
+      <div class="kpi-sparkline"><canvas id="spark-${idx}"></canvas></div>
+    `;
+    row.appendChild(card);
+
+    // Sparkline
+    const ctx = card.querySelector(`#spark-${idx}`).getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: item.spark.map((_, i) => i),
+        datasets: [{
+          data: item.spark,
+          borderColor: item.color,
+          borderWidth: 2,
+          pointRadius: 0,
+          tension: 0.4,
+          fill: {
+            target: 'origin',
+            above: item.color.replace(')', ',0.08)').replace('var(', '').replace('rgb', 'rgba')
+          }
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { enabled: false } },
+        scales: {
+          x: { display: false },
+          y: { display: false }
+        }
+      }
+    });
+  });
+}
+
+function renderHourlyChart() {
+  const zs = getActiveZones();
+  const data = zs.length === 1 ? HOURLY_BASE[zs[0]] : sumArrays(...zs.map(z => HOURLY_BASE[z]));
+
+  if (charts.hourly) {
+    charts.hourly.data.datasets[0].data = data;
+    charts.hourly.update();
+    return;
+  }
+
+  const ctx = document.getElementById('chart-hourly').getContext('2d');
+  charts.hourly = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: HOUR_LABELS,
+      datasets: [{
+        data: data,
+        backgroundColor: data.map((v, i) => {
+          const peak = (i === 6 || i === 12); // 12pm, 6pm
+          return peak ? 'rgba(91,156,246,0.85)' : 'rgba(91,156,246,0.45)';
+        }),
+        borderRadius: 4,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        tooltip: {
+          backgroundColor: '#0a1628',
+          borderColor: 'rgba(247,244,237,0.1)',
+          borderWidth: 1,
+          titleFont: { family: "'JetBrains Mono'" },
+          bodyFont: { family: "'JetBrains Mono'" },
+          callbacks: {
+            label: ctx => ctx.parsed.y + ' deliveries'
+          }
+        }
+      },
+      scales: {
+        x: { grid: { display: false } },
+        y: { beginAtZero: true }
+      }
+    }
+  });
+}
+
+function renderOntimeZoneChart() {
+  const zones = Object.keys(ZONES);
+  const labels = zones.map(z => ZONES[z].label);
+  const values = zones.map(z => ZONES[z].onTime);
+  const colors = values.map(v => colorForOT(v));
+  const highlight = activeZone !== 'all' ? zones.indexOf(activeZone) : -1;
+  const bgColors = values.map((v, i) => {
+    const base = colorForOT(v);
+    if (highlight >= 0 && i !== highlight) return 'rgba(247,244,237,0.1)';
+    return base;
+  });
+
+  if (charts.ontimeZone) {
+    charts.ontimeZone.data.datasets[0].data = values;
+    charts.ontimeZone.data.datasets[0].backgroundColor = bgColors;
+    charts.ontimeZone.update();
+    return;
+  }
+
+  const ctx = document.getElementById('chart-ontime-zone').getContext('2d');
+  charts.ontimeZone = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: values,
+        backgroundColor: bgColors,
+        borderRadius: 4,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        tooltip: {
+          backgroundColor: '#0a1628',
+          borderColor: 'rgba(247,244,237,0.1)',
+          borderWidth: 1,
+          callbacks: {
+            label: ctx => ctx.parsed.x + '%'
+          }
+        }
+      },
+      scales: {
+        x: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } },
+        y: { grid: { display: false } }
+      }
+    }
+  });
+}
+
+function renderDistributionChart() {
+  const zs = getActiveZones();
+  const data = zs.length === 1 ? DIST_BASE[zs[0]] : sumArrays(...zs.map(z => DIST_BASE[z]));
+
+  if (charts.distribution) {
+    charts.distribution.data.datasets[0].data = data;
+    charts.distribution.update();
+    return;
+  }
+
+  const gradient_colors = data.map((_, i) => {
+    const ratio = i / (data.length - 1);
+    if (ratio < 0.4) return 'rgba(40,200,64,0.6)';
+    if (ratio < 0.65) return 'rgba(254,188,46,0.6)';
+    return 'rgba(255,95,87,0.6)';
+  });
+
+  const ctx = document.getElementById('chart-distribution').getContext('2d');
+  charts.distribution = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: DIST_LABELS,
+      datasets: [{
+        data: data,
+        backgroundColor: gradient_colors,
+        borderRadius: 3,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        tooltip: {
+          backgroundColor: '#0a1628',
+          borderColor: 'rgba(247,244,237,0.1)',
+          borderWidth: 1,
+          callbacks: {
+            label: ctx => ctx.parsed.y + ' deliveries'
+          }
+        }
+      },
+      scales: {
+        x: { grid: { display: false } },
+        y: { beginAtZero: true }
+      }
+    }
+  });
+}
+
+function renderWeeklyChart() {
+  const zs = getActiveZones();
+  const delData = zs.length === 1 ? WEEKLY_BASE[zs[0]].del : sumArrays(...zs.map(z => WEEKLY_BASE[z].del));
+  const otData = zs.length === 1 ? WEEKLY_BASE[zs[0]].ot : avgArrays(...zs.map(z => WEEKLY_BASE[z].ot));
+
+  if (charts.weekly) {
+    charts.weekly.data.datasets[0].data = delData;
+    charts.weekly.data.datasets[1].data = otData;
+    charts.weekly.update();
+    return;
+  }
+
+  const ctx = document.getElementById('chart-weekly').getContext('2d');
+  charts.weekly = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: WEEK_LABELS,
+      datasets: [
+        {
+          label: 'Deliveries',
+          data: delData,
+          backgroundColor: 'rgba(91,156,246,0.5)',
+          borderRadius: 4,
+          borderSkipped: false,
+          yAxisID: 'y',
+          order: 2
+        },
+        {
+          label: 'On-Time %',
+          data: otData,
+          type: 'line',
+          borderColor: 'var(--green)',
+          backgroundColor: 'rgba(40,200,64,0.1)',
+          borderWidth: 2.5,
+          pointRadius: 4,
+          pointBackgroundColor: 'var(--green)',
+          tension: 0.3,
+          fill: true,
+          yAxisID: 'y1',
+          order: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top',
+          align: 'end',
+          labels: {
+            boxWidth: 12,
+            boxHeight: 12,
+            borderRadius: 3,
+            useBorderRadius: true,
+            padding: 16,
+            font: { size: 10 }
+          }
+        },
+        tooltip: {
+          backgroundColor: '#0a1628',
+          borderColor: 'rgba(247,244,237,0.1)',
+          borderWidth: 1
+        }
+      },
+      scales: {
+        x: { grid: { display: false } },
+        y: { beginAtZero: true, position: 'left', title: { display: true, text: 'Deliveries', font: { size: 10 } } },
+        y1: { position: 'right', min: 60, max: 100, ticks: { callback: v => v + '%' }, grid: { drawOnChartArea: false }, title: { display: true, text: 'On-Time %', font: { size: 10 } } }
+      }
+    }
+  });
+}
+
+function renderHeatmap() {
+  const container = document.getElementById('heatmap-container');
+  container.innerHTML = '';
+
+  const zs = getActiveZones();
+  let grid;
+  if (zs.length === 1) {
+    grid = HEATMAP_DATA[zs[0]];
+  } else {
+    grid = HEATMAP_DATA[Object.keys(ZONES)[0]].map((row, d) =>
+      row.map((_, h) => zs.reduce((s, z) => s + HEATMAP_DATA[z][d][h], 0))
+    );
+  }
+
+  const maxVal = Math.max(...grid.flat());
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'heatmap-grid';
+
+  // Header row
+  wrapper.innerHTML += '<div class="heatmap-label"></div>';
+  HOURS.forEach(h => {
+    const label = h <= 12 ? h + (h < 12 ? 'a' : 'p') : (h - 12) + 'p';
+    wrapper.innerHTML += `<div class="heatmap-label">${label}</div>`;
+  });
+
+  // Data rows
+  const tooltip = document.getElementById('hm-tooltip');
+  DAYS.forEach((day, d) => {
+    wrapper.innerHTML += `<div class="heatmap-label">${day}</div>`;
+    grid[d].forEach((val, h) => {
+      const cell = document.createElement('div');
+      cell.className = 'heatmap-cell';
+      cell.style.background = heatColor(val, maxVal);
+      cell.dataset.day = day;
+      cell.dataset.hour = HOUR_LABELS[h];
+      cell.dataset.val = val;
+      cell.addEventListener('mouseenter', e => {
+        tooltip.textContent = `${day} ${HOUR_LABELS[h]}: ${val} deliveries`;
+        tooltip.classList.add('visible');
+      });
+      cell.addEventListener('mousemove', e => {
+        tooltip.style.left = (e.clientX + 12) + 'px';
+        tooltip.style.top = (e.clientY - 32) + 'px';
+      });
+      cell.addEventListener('mouseleave', () => {
+        tooltip.classList.remove('visible');
+      });
+      wrapper.appendChild(cell);
+    });
+  });
+
+  container.appendChild(wrapper);
+}
+
+function renderTable() {
+  const tbody = document.getElementById('table-body');
+  tbody.innerHTML = '';
+  const zs = activeZone === 'all' ? Object.keys(ZONES) : [activeZone];
+
+  // Sort by on-time desc
+  const sorted = [...zs].sort((a, b) => ZONES[b].onTime - ZONES[a].onTime);
+
+  sorted.forEach(z => {
+    const d = ZONES[z];
+    const otClass = badgeClass(d.onTime);
+    const failClass = d.failed >= 4 ? 'badge-red' : d.failed >= 3 ? 'badge-yellow' : 'badge-green';
+    tbody.innerHTML += `
+      <tr>
+        <td style="font-weight:600">${d.label}</td>
+        <td>${d.deliveries.toLocaleString()}</td>
+        <td><span class="badge ${otClass}">${d.onTime}%</span></td>
+        <td>${d.avgTime} min</td>
+        <td><span class="badge ${failClass}">${d.failed}%</span></td>
+        <td>${d.topCarrier}</td>
+      </tr>
+    `;
+  });
+}
+
+// ========================================================================
+// FILTER LOGIC
+// ========================================================================
+document.getElementById('filters').addEventListener('click', e => {
+  if (!e.target.classList.contains('pill')) return;
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+  e.target.classList.add('active');
+  activeZone = e.target.dataset.zone;
+  renderAll();
+});
+
+function renderAll() {
+  renderKPIs();
+  renderHourlyChart();
+  renderOntimeZoneChart();
+  renderDistributionChart();
+  renderWeeklyChart();
+  renderHeatmap();
+  renderTable();
+}
+
+// ========================================================================
+// INIT
+// ========================================================================
+renderAll();
+</script>
+</body>
+</html>
