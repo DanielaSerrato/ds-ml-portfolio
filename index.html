@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniela Serrato — Data Science & Machine Learning Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F1E3D;
+    --navy-deep: #091327;
+    --cream: #F7F4ED;
+    --red: #ff5f57;
+    --yellow: #febc2e;
+    --green: #28c840;
+    --grid-line: rgba(174,198,230,0.08);
+    --card-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    --card-radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--navy);
+    color: var(--cream);
+    min-height: 100vh;
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 70px 70px;
+    font-size: clamp(14px, 1.6vw, 18px);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(15,30,61,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(174,198,230,0.12);
+    padding: 0.8rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  nav .logo { font-weight: 700; font-size: 1.1em; letter-spacing: -0.5px; }
+  nav .logo .dot { color: var(--green); }
+  nav ul { list-style: none; display: flex; gap: 1.5rem; }
+  nav a { color: var(--cream); text-decoration: none; font-size: 0.8em; font-weight: 500; opacity: 0.7; transition: opacity 0.2s; }
+  nav a:hover { opacity: 1; }
+
+  /* SECTIONS */
+  section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem 3rem; }
+  section:first-of-type { padding-top: 7rem; }
+
+  /* macOS CARD */
+  .card { border-radius: var(--card-radius); box-shadow: var(--card-shadow); overflow: hidden; position: relative; }
+  .card-light { background: var(--cream); color: var(--navy); }
+  .card-dark  { background: var(--navy-deep); color: var(--cream); border: 1px solid rgba(174,198,230,0.1); }
+  .card-dots { display: flex; gap: 6px; padding: 12px 16px; position: absolute; top: 0; left: 0; z-index: 2; }
+  .card-dots span { width: 12px; height: 12px; border-radius: 50%; }
+  .card-dots span:nth-child(1) { background: var(--red); }
+  .card-dots span:nth-child(2) { background: var(--yellow); }
+  .card-dots span:nth-child(3) { background: var(--green); }
+  .card-body { padding: 2.5rem 2rem 2rem; }
+
+  /* HERO */
+  .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.2rem; align-items: stretch; }
+  .hero-title { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; line-height: 1.15; letter-spacing: -1px; }
+  .hero-title .accent { color: var(--green); }
+  .hero-sub { font-size: 0.85em; font-weight: 300; opacity: 0.8; margin-top: 1rem; }
+  .hero-right { display: flex; flex-direction: column; gap: 1.2rem; }
+  .stat-card { border-radius: var(--card-radius); padding: 1.2rem 1.4rem; box-shadow: var(--card-shadow); }
+  .stat-card.light { background: var(--cream); color: var(--navy); }
+  .stat-card.dark  { background: var(--navy-deep); color: var(--cream); border: 1px solid rgba(174,198,230,0.1); }
+  .stat-number { font-size: 2rem; font-weight: 700; }
+  .stat-label  { font-size: 0.7em; font-weight: 400; opacity: 0.7; margin-top: 0.2rem; }
+
+  /* SECTION HEADERS */
+  .section-header { margin-bottom: 2rem; }
+  .section-header h2 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 700; letter-spacing: -0.5px; }
+  .section-header h2 .dot { color: var(--green); }
+  .section-header p { font-size: 0.8em; font-weight: 300; opacity: 0.6; margin-top: 0.3rem; }
+
+  /* SKILLS GRID */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; }
+  .skill-category { font-size: 0.75em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
+  .skill-category .bullet { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  .skill-list { list-style: none; }
+  .skill-list li { font-size: 0.85em; padding: 0.35rem 0; display: flex; align-items: center; gap: 0.5rem; }
+  .skill-list li::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+  .skill-bar { flex: 1; height: 4px; background: rgba(174,198,230,0.15); border-radius: 2px; margin-left: auto; }
+  .skill-bar-fill { height: 100%; border-radius: 2px; background: var(--green); }
+
+  /* PROJECTS */
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+  .project-card .card-body { padding: 2.8rem 1.8rem 1.8rem; }
+  .project-tag { display: inline-block; font-size: 0.6em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.8rem; }
+  .tag-ml   { background: rgba(40,200,64,0.15); color: var(--green); }
+  .tag-ds   { background: rgba(254,188,46,0.15); color: var(--yellow); }
+  .tag-dl   { background: rgba(255,95,87,0.15); color: var(--red); }
+  .tag-nlp  { background: rgba(100,149,237,0.2); color: cornflowerblue; }
+  .tag-geo  { background: rgba(174,198,230,0.15); color: rgba(174,198,230,0.8); }
+  .tag-ts   { background: rgba(255,165,0,0.15); color: orange; }
+  .project-card h3 { font-size: 1em; font-weight: 600; margin-bottom: 0.5rem; }
+  .project-card p  { font-size: 0.78em; font-weight: 300; opacity: 0.75; line-height: 1.5; }
+  .project-tech { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .project-tech span { font-size: 0.6em; padding: 0.2rem 0.5rem; border: 1px solid rgba(174,198,230,0.2); border-radius: 4px; font-weight: 400; }
+  .project-link { display: inline-block; margin-top: 1rem; font-size: 0.75em; font-weight: 600; padding: 0.4rem 1rem; border-radius: 6px; text-decoration: none; transition: all 0.2s; }
+  .project-link-light { background: var(--navy); color: var(--cream); }
+  .project-link-light:hover { background: var(--green); color: var(--navy); }
+  .project-link-dark { background: var(--green); color: var(--navy); }
+  .project-link-dark:hover { background: var(--cream); }
+
+  /* PROJECT CONTEXT */
+  .project-context { margin: 0.8rem 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .context-block { display: flex; gap: 0.6rem; font-size: 0.78em; line-height: 1.5; align-items: baseline; }
+  .context-label {
+    font-size: 0.65em; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    padding: 0.15rem 0.5rem; border-radius: 3px; flex-shrink: 0;
+    background: rgba(174,198,230,0.12); color: rgba(174,198,230,0.7);
+  }
+  .context-label.result { background: rgba(40,200,64,0.15); color: var(--green); }
+  .dark-text .context-label { background: rgba(15,30,61,0.12); color: rgba(15,30,61,0.5); }
+  .dark-text .context-label.result { background: rgba(40,200,64,0.15); color: #1a7a2e; }
+  .context-block span:last-child { opacity: 0.8; font-weight: 300; }
+
+  /* EXPERIENCE TIMELINE */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: rgba(174,198,230,0.15); }
+  .timeline-item { position: relative; margin-bottom: 2rem; }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-item::before { content: ''; position: absolute; left: -2rem; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--green); border: 2px solid var(--navy); }
+  .timeline-item h3 { font-size: 0.95em; font-weight: 600; }
+  .timeline-item .role { font-size: 0.78em; color: var(--green); font-weight: 500; }
+  .timeline-item .period { font-size: 0.7em; opacity: 0.5; margin-top: 0.1rem; }
+  .timeline-item p { font-size: 0.78em; opacity: 0.7; margin-top: 0.4rem; line-height: 1.5; }
+
+  /* EDUCATION */
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
+  .edu-card .card-body { padding: 2.8rem 1.5rem 1.5rem; }
+  .edu-card h3 { font-size: 0.85em; font-weight: 600; margin-bottom: 0.3rem; }
+  .edu-card .institution { font-size: 0.72em; color: var(--yellow); font-weight: 500; }
+  .edu-card .year { font-size: 0.7em; opacity: 0.5; margin-top: 0.2rem; }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; }
+  .contact-item { display: flex; align-items: center; gap: 1rem; font-size: 0.85em; }
+  .contact-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2em; flex-shrink: 0; }
+  .contact-item a { color: var(--cream); text-decoration: none; }
+  .contact-item a:hover { color: var(--green); }
+
+  /* CODE BLOCK */
+  .code-block { font-size: 0.75em; line-height: 1.7; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px; margin-top: 1rem; overflow-x: auto; }
+  .code-block .kw  { color: var(--red); }
+  .code-block .fn  { color: var(--yellow); }
+  .code-block .str { color: var(--green); }
+  .code-block .cm  { opacity: 0.4; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 2rem; font-size: 0.7em; opacity: 0.4; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-right { flex-direction: row; flex-wrap: wrap; }
+    nav ul { gap: 0.8rem; }
+    nav a { font-size: 0.7em; }
+    section { padding: 3rem 1.2rem 2rem; }
+  }
+
+  /* ANIMATIONS */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">daniela<span class="dot">.</span>serrato</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="about">
+  <div class="hero-grid">
+    <div class="card card-dark fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <h1 class="hero-title">
+          Data Science<br>
+          <span class="accent">&</span> Machine<br>
+          Learning
+        </h1>
+        <p class="hero-sub">
+          Analytics & BI leader with 6+ years building data-driven decision systems across fintech, banking, retail, and tech.
+          Connecting business strategy with ML, KPI governance, and automation at scale.
+        </p>
+        <div class="code-block">
+<span class="kw">class</span> <span class="fn">DataScientist</span>:<br>
+&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">__init__</span>(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;self.name = <span class="str">"Daniela Serrato"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;self.role = <span class="str">"BI & Analytics Manager"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;self.stack = [<span class="str">"Python"</span>, <span class="str">"SQL"</span>, <span class="str">"Power BI"</span>, <span class="str">"ML"</span>]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;self.approach = <span class="str">"business-first, data-driven"</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stat-card light fade-in">
+        <div class="stat-number" style="color: var(--navy);">6+</div>
+        <div class="stat-label">Years in Data & Analytics</div>
+      </div>
+      <div class="stat-card dark fade-in">
+        <div class="stat-number" style="color: var(--green);">5</div>
+        <div class="stat-label">Companies (Fintech, E-commerce, Consulting)</div>
+      </div>
+      <div class="stat-card light fade-in">
+        <div class="stat-number" style="color: var(--navy);">2</div>
+        <div class="stat-label">Master's Degrees</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <h2>Technical Skills<span class="dot">.</span></h2>
+    <p>Core competencies across the data stack</p>
+  </div>
+  <div class="skills-grid">
+    <div class="card card-light fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <div class="skill-category"><span class="bullet" style="background:var(--green)"></span>Machine Learning & AI</div>
+        <ul class="skill-list">
+          <li>Supervised Learning (XGBoost, LightGBM, LogReg) <span class="skill-bar"><span class="skill-bar-fill" style="width:90%"></span></span></li>
+          <li>Unsupervised Learning (K-Means, DBSCAN, PCA) <span class="skill-bar"><span class="skill-bar-fill" style="width:85%"></span></span></li>
+          <li>NLP & Sentiment Analysis <span class="skill-bar"><span class="skill-bar-fill" style="width:80%"></span></span></li>
+          <li>Time Series Forecasting (ARIMA, SARIMA) <span class="skill-bar"><span class="skill-bar-fill" style="width:82%"></span></span></li>
+          <li>AI Agents & LLM Workflows <span class="skill-bar"><span class="skill-bar-fill" style="width:85%"></span></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card card-dark fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <div class="skill-category"><span class="bullet" style="background:var(--yellow)"></span>Data & Analytics</div>
+        <ul class="skill-list">
+          <li>Advanced SQL (SQL Server, Teradata, MongoDB) <span class="skill-bar"><span class="skill-bar-fill" style="width:95%; background:var(--yellow)"></span></span></li>
+          <li>Python (Pandas, NumPy, Scikit-learn) <span class="skill-bar"><span class="skill-bar-fill" style="width:92%; background:var(--yellow)"></span></span></li>
+          <li>ETL/ELT Pipeline Development <span class="skill-bar"><span class="skill-bar-fill" style="width:90%; background:var(--yellow)"></span></span></li>
+          <li>Statistical Analysis & Hypothesis Testing <span class="skill-bar"><span class="skill-bar-fill" style="width:88%; background:var(--yellow)"></span></span></li>
+          <li>Data Modeling (Conceptual/Logical/Physical) <span class="skill-bar"><span class="skill-bar-fill" style="width:92%; background:var(--yellow)"></span></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card card-light fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <div class="skill-category"><span class="bullet" style="background:var(--red)"></span>BI & Tools</div>
+        <ul class="skill-list">
+          <li>Power BI / DAX / Power Query (M) <span class="skill-bar"><span class="skill-bar-fill" style="width:95%; background:var(--red)"></span></span></li>
+          <li>Tableau & Looker Studio <span class="skill-bar"><span class="skill-bar-fill" style="width:85%; background:var(--red)"></span></span></li>
+          <li>Streamlit & Web Apps <span class="skill-bar"><span class="skill-bar-fill" style="width:82%; background:var(--red)"></span></span></li>
+          <li>Power Platform & Automation <span class="skill-bar"><span class="skill-bar-fill" style="width:88%; background:var(--red)"></span></span></li>
+          <li>Git & Version Control <span class="skill-bar"><span class="skill-bar-fill" style="width:80%; background:var(--red)"></span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <h2>ML & Data Science Projects<span class="dot">.</span></h2>
+    <p>Each project includes full code, synthetic data, EDA, modeling, and evaluation — click to view the notebook</p>
+  </div>
+  <div class="projects-grid">
+
+    <div class="card card-dark project-card fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-ml">Clustering</span>
+        <h3>Customer Segmentation</h3>
+        <div class="project-context">
+          <div class="context-block">
+            <span class="context-label">Problem</span>
+            <span>An e-commerce company treats all 5,000 customers the same — campaigns are generic and retention is dropping.</span>
+          </div>
+          <div class="context-block">
+            <span class="context-label">Approach</span>
+            <span>Built RFM profiles from 50K transactions, applied K-Means with elbow + silhouette validation, and profiled 4 segments with radar charts.</span>
+          </div>
+          <div class="context-block">
+            <span class="context-label result">Result</span>
+            <span>Identified a "Gold" segment (8% of customers, 42% of revenue) and an "At Risk" cluster with targeted re-engagement strategy.</span>
+          </div>
+        </div>
+        <div class="project-tech">
+          <span>Python</span><span>Scikit-learn</span><span>K-Means</span><span>RFM</span><span>Seaborn</span>
+        </div>
+        <a href="notebooks/01_customer_segmentation.ipynb" class="project-link project-link-dark">View Notebook &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-light project-card fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-ml">Classification</span>
+        <h3>Churn Prediction</h3>
+        <div class="project-context dark-text">
+          <div class="context-block">
+            <span class="context-label">Problem</span>
+            <span>A digital banking product loses ~20% of users quarterly, but the team only reacts after customers leave.</span>
+          </div>
+          <div class="context-block">
+            <span class="context-label">Approach</span>
+            <span>Trained 3 classifiers (LogReg, RF, XGBoost) with SMOTE for imbalance, optimized decision threshold for max F1, and estimated net business impact.</span>
+          </div>
+          <div class="context-block">
+            <span class="context-label result">Result</span>
+            <span>XGBoost achieved 0.91 AUC-ROC. Optimal threshold catches 85% of churners, enabling proactive retention saving estimated $2.4M/year.</span>
+          </div>
+        </div>
+        <div class="project-tech">
+          <span>Python</span><span>XGBoost</span><span>SMOTE</span><span>GridSearchCV</span><span>Imbalanced-learn</span>
+        </div>
+        <a href="notebooks/02_churn_prediction.ipynb" class="project-link project-link-light">View Notebook &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-dark project-card fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-ds">Risk</span>
+        <h3>Credit Risk Scoring</h3>
+        <div class="project-context">
+          <div class="context-block">
+            <span class="context-label">Problem</span>
+            <span>A financial institution needs to assess default probability for 10K+ loan applications, replacing manual review with a data-driven scoring model.</span>
+          </div>
+          <div class="context-block">
+            <span class="context-label">Approach</span>
+            <span>WoE binning for feature transformation, compared LightGBM vs XGBoost vs LogReg. Evaluated with KS statistic, Gini, and calibration curves. Built interpretable scorecard.</span>
+          </div>
+          <div class="context-block">
+            <span class="context-label result">Result</span>
+            <span>LightGBM achieved 0.87 AUC with strong calibration. Points-based scorecard enables transparent, regulatory-compliant decisions at scale.</span>
+          </div>
+        </div>
+        <div class="project-tech">
+          <span>Python</span><span>LightGBM</span><span>XGBoost</span><span>WoE/IV</span><span>Scorecard</span>
+        </div>
+        <a href="notebooks/03_credit_risk_scoring.ipynb" class="project-link project-link-dark">View Notebook &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-light project-card fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-ts">Time Series</span>
+        <h3>Sales Forecasting</h3>
+        <div class="project-context dark-text">
+          <div class="context-block">
+            <span class="context-label">Problem</span>
+            <span>A retail company needs accurate 3-month sales forecasts for inventory planning and budget allocation.</span>
+          </div>
+          <div class="context-block">
+            <span class="context-label">Approach</span>
+            <span>Decomposed 3 years of daily data into trend + seasonality. Tested ARIMA, SARIMA (grid search), and Random Forest with lag features. Full residual diagnostics.</span>
+          </div>
+          <div class="context-block">
+            <span class="context-label result">Result</span>
+            <span>SARIMA delivered 6.2% MAPE on 12-week holdout. RF with lag features matched performance, offering a non-parametric alternative for complex patterns.</span>
+          </div>
+        </div>
+        <div class="project-tech">
+          <span>Python</span><span>Statsmodels</span><span>ARIMA</span><span>SARIMA</span><span>Random Forest</span>
+        </div>
+        <a href="notebooks/04_sales_forecasting.ipynb" class="project-link project-link-light">View Notebook &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-dark project-card fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-nlp">NLP</span>
+        <h3>Sentiment Analysis</h3>
+        <div class="project-context">
+          <div class="context-block">
+            <span class="context-label">Problem</span>
+            <span>An e-commerce platform receives thousands of product reviews but has no automated way to track customer sentiment across categories.</span>
+          </div>
+          <div class="context-block">
+            <span class="context-label">Approach</span>
+            <span>Built NLP pipeline: text preprocessing → TF-IDF + custom features → compared Naive Bayes, LogReg, and RF. Analyzed most informative features and misclassifications.</span>
+          </div>
+          <div class="context-block">
+            <span class="context-label result">Result</span>
+            <span>Logistic Regression on TF-IDF achieved 89% accuracy. Word clouds and feature analysis revealed key drivers of positive vs negative sentiment.</span>
+          </div>
+        </div>
+        <div class="project-tech">
+          <span>Python</span><span>TF-IDF</span><span>Naive Bayes</span><span>WordCloud</span><span>Sklearn</span>
+        </div>
+        <a href="notebooks/05_nlp_sentiment_analysis.ipynb" class="project-link project-link-dark">View Notebook &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-light project-card fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-geo">Geospatial</span>
+        <h3>Delivery Optimization</h3>
+        <div class="project-context dark-text">
+          <div class="context-block">
+            <span class="context-label">Problem</span>
+            <span>A logistics company in Bogota has uneven delivery times across zones and doesn't know where to place a new warehouse.</span>
+          </div>
+          <div class="context-block">
+            <span class="context-label">Approach</span>
+            <span>Spatial clustering (K-Means + DBSCAN) on 5K deliveries. Predicted delivery times with RF. Optimized warehouse assignments using SciPy. Identified coverage gaps.</span>
+          </div>
+          <div class="context-block">
+            <span class="context-label result">Result</span>
+            <span>Optimized warehouse assignment reduced avg distance by 18%. DBSCAN identified 3 high-demand hotspots. Recommended new warehouse location based on underserved cluster centroid.</span>
+          </div>
+        </div>
+        <div class="project-tech">
+          <span>Python</span><span>DBSCAN</span><span>SciPy</span><span>Geospatial</span><span>Optimization</span>
+        </div>
+        <a href="notebooks/06_geospatial_delivery_optimization.ipynb" class="project-link project-link-light">View Notebook &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <h2>Professional Experience<span class="dot">.</span></h2>
+    <p>6+ years across fintech, e-commerce, consulting, and academia</p>
+  </div>
+  <div class="card card-dark fade-in">
+    <div class="card-dots"><span></span><span></span><span></span></div>
+    <div class="card-body">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="role">BI & Analytics Manager</div>
+          <h3>BradesCard</h3>
+          <div class="period">Mar 2025 — Present &middot; Remote, Mexico</div>
+          <p>Leading BI and analytics for Credit & Risk. Portfolio monitoring, KPI governance, digital transformation. Automated credit risk workflows reducing reporting turnaround from days to same-day.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="role">Team Lead, Business Intelligence</div>
+          <h3>RappiPay</h3>
+          <div class="period">Jun 2024 — Nov 2024 &middot; Bogota, Colombia</div>
+          <p>Built and led a multidisciplinary analytics team (2 analysts + 1 data scientist). Defined executive KPI frameworks for Product, Growth, Operations, and Finance.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="role">Senior Data & Insights Analyst</div>
+          <h3>RappiPay</h3>
+          <div class="period">Dec 2022 — Jun 2024 &middot; Bogota, Colombia</div>
+          <p>Designed granular P&L model at customer/day level. Advanced statistical analysis supporting product and operations roadmap decisions.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="role">Senior Associate, Business Intelligence</div>
+          <h3>Shopee</h3>
+          <div class="period">Apr 2022 — Sep 2022 &middot; Bogota, Colombia</div>
+          <p>Built logistics and geospatial analytics dashboards. Supported optimization efforts linked to 23% improvement in delivery times.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="role">BI Specialist</div>
+          <h3>Justo</h3>
+          <div class="period">May 2021 — Mar 2022 &middot; Bogota, Colombia</div>
+          <p>End-to-end ETL pipelines, automated reporting, data model development for fast-moving e-commerce operations.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="role">BI Consultant</div>
+          <h3>Rollup Consulting</h3>
+          <div class="period">Mar 2021 — Mar 2022 &middot; Bogota, Colombia</div>
+          <p>Delivered BI, automation, and reporting solutions for clients across retail, finance, and technology.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="role">Adjunct Professor</div>
+          <h3>Universidad de La Sabana</h3>
+          <div class="period">Jan 2026 — Present &middot; Bogota, Colombia</div>
+          <p>Teaching Advanced Programming (Python, SQL) and Data Visualization (Power BI, Tableau, Looker Studio). Concept-to-code pedagogical methodology.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header">
+    <h2>Education<span class="dot">.</span></h2>
+    <p>Academic background</p>
+  </div>
+  <div class="edu-grid">
+    <div class="card card-light edu-card fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <h3>Master's in Digital Transformation Leadership</h3>
+        <div class="institution">CESA, Bogota</div>
+      </div>
+    </div>
+    <div class="card card-dark edu-card fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <h3>Master's in Digital Business</h3>
+        <div class="institution">ESIC Business & Marketing School, Madrid</div>
+      </div>
+    </div>
+    <div class="card card-light edu-card fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <h3>B.S. in Business Administration</h3>
+        <div class="institution">Pontificia Universidad Javeriana, Bogota</div>
+      </div>
+    </div>
+    <div class="card card-dark edu-card fade-in">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <h3>Data Science Certification</h3>
+        <div class="institution">Universidad Nacional de Colombia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <h2>Let's Connect<span class="dot">.</span></h2>
+    <p>Open to collaboration and opportunities</p>
+  </div>
+  <div class="card card-dark fade-in">
+    <div class="card-dots"><span></span><span></span><span></span></div>
+    <div class="card-body">
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-icon" style="background: rgba(40,200,64,0.15); color: var(--green);">@</div>
+          <div>
+            <div style="font-size:0.7em; opacity:0.5;">Email</div>
+            <a href="mailto:daniserrato.012@gmail.com">daniserrato.012@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon" style="background: rgba(254,188,46,0.15); color: var(--yellow);">in</div>
+          <div>
+            <div style="font-size:0.7em; opacity:0.5;">LinkedIn</div>
+            <a href="https://linkedin.com/in/daniela-serrato">linkedin.com/in/daniela-serrato</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon" style="background: rgba(255,95,87,0.15); color: var(--red);">+57</div>
+          <div>
+            <div style="font-size:0.7em; opacity:0.5;">Phone</div>
+            <span>312 456 561</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Daniela Serrato — Built with Python & data
+</footer>
+
+<script>
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
