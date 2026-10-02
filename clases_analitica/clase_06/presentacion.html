@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 6 — Power BI: importar, modelar, primer visual</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --navy: #0F1E3D;
+            --navy-light: #1A2E55;
+            --accent: #4A9DFF;
+            --green: #34D399;
+            --orange: #F59E0B;
+            --red: #EF4444;
+            --text: #E2E8F0;
+            --text-muted: #94A3B8;
+            --card-bg: rgba(255,255,255,0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--navy);
+            color: var(--text);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: clamp(2rem, 5vw, 6rem);
+            text-align: center;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .slide.active { display: flex; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(1.6rem, 3.5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        p, li {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 900px;
+        }
+
+        .highlight { color: var(--accent); font-weight: 600; }
+        .highlight-green { color: var(--green); font-weight: 600; }
+        .highlight-orange { color: var(--orange); font-weight: 600; }
+        .highlight-red { color: var(--red); font-weight: 600; }
+
+        ul {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        ul li {
+            padding: 0.6rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '\25B8';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+
+        .card h4 {
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        }
+
+        .big-icon {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(74,157,255,0.3);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+            margin-top: 1rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .pipeline {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .pipeline-step {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.2rem 1.8rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .pipeline-step .icon {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .pipeline-step span {
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+            font-weight: 600;
+        }
+
+        .pipeline-arrow {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--accent);
+        }
+
+        .table-visual {
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+        }
+
+        .table-visual th {
+            background: var(--accent);
+            color: var(--navy);
+            padding: 0.8rem 1.5rem;
+            font-weight: 700;
+        }
+
+        .table-visual td {
+            padding: 0.6rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+        }
+
+        .table-visual tr:nth-child(even) td {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+
+        .nav button {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s;
+        }
+
+        .nav button:hover {
+            background: var(--accent);
+            color: var(--navy);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 2.2rem;
+            left: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 100;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .exercise-box {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .exercise-box h4 {
+            color: var(--green);
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .schema-diagram {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .schema-table {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+            min-width: 220px;
+        }
+
+        .schema-table .table-header {
+            padding: 0.8rem 1.2rem;
+            font-weight: 700;
+            font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+        }
+
+        .schema-table .table-row {
+            padding: 0.4rem 1.2rem;
+            font-size: clamp(0.8rem, 1.3vw, 1rem);
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .schema-table .pk { color: var(--orange); }
+        .schema-table .fk { color: var(--accent); }
+
+        .schema-line {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--orange);
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--navy);
+            font-weight: 700;
+            width: 2.2rem;
+            height: 2.2rem;
+            line-height: 2.2rem;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        .visual-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            max-width: 900px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .visual-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+        }
+
+        .visual-card .icon {
+            font-size: clamp(2rem, 4vw, 3rem);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .visual-card h4 {
+            font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+            color: var(--accent);
+            margin-bottom: 0.3rem;
+        }
+
+        .visual-card p {
+            font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+        }
+
+        .tip-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .tip-box h4 {
+            color: var(--orange);
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Slide 1: Title -->
+<div class="slide active" id="slide-1">
+    <div class="big-icon">📊</div>
+    <h1>Power BI: importar, modelar, primer visual</h1>
+    <p class="subtitle">Clase 6 — Herramientas de Analisis de Datos</p>
+    <p>Del archivo CSV al dashboard interactivo.<br>
+    Hoy usamos datos reales del <span class="highlight">DANE (GEIH)</span> sobre mercado laboral en Colombia.</p>
+</div>
+
+<!-- Slide 2: The Power BI flow -->
+<div class="slide" id="slide-2">
+    <h2>El flujo de Power BI</h2>
+    <p>Todo proyecto sigue este pipeline:</p>
+    <div class="pipeline">
+        <div class="pipeline-step">
+            <span class="icon">📁</span>
+            <span>Datos</span>
+        </div>
+        <div class="pipeline-arrow">&#10132;</div>
+        <div class="pipeline-step" style="border-color: rgba(74,157,255,0.4);">
+            <span class="icon">🔧</span>
+            <span>Modelo</span>
+        </div>
+        <div class="pipeline-arrow">&#10132;</div>
+        <div class="pipeline-step" style="border-color: rgba(52,211,153,0.4);">
+            <span class="icon">📈</span>
+            <span>Visual</span>
+        </div>
+        <div class="pipeline-arrow">&#10132;</div>
+        <div class="pipeline-step" style="border-color: rgba(245,158,11,0.4);">
+            <span class="icon">🌐</span>
+            <span>Publicar</span>
+        </div>
+    </div>
+    <p style="margin-top: 2rem;">Hoy cubrimos los <span class="highlight">tres primeros pasos</span>: importar, modelar y visualizar.</p>
+</div>
+
+<!-- Slide 3: Dataset DANE GEIH -->
+<div class="slide" id="slide-3">
+    <h2>Dataset: DANE GEIH</h2>
+    <h3>Gran Encuesta Integrada de Hogares</h3>
+    <table class="table-visual">
+        <tr>
+            <th>Columna</th>
+            <th>Descripcion</th>
+            <th>Ejemplo</th>
+        </tr>
+        <tr>
+            <td><span class="highlight">departamento</span></td>
+            <td>Region de Colombia</td>
+            <td>Antioquia</td>
+        </tr>
+        <tr>
+            <td><span class="highlight">trimestre</span></td>
+            <td>Periodo temporal</td>
+            <td>2024-Q1</td>
+        </tr>
+        <tr>
+            <td><span class="highlight-orange">tasa_desempleo</span></td>
+            <td>% desempleados</td>
+            <td>11.2</td>
+        </tr>
+        <tr>
+            <td><span class="highlight-green">tasa_ocupacion</span></td>
+            <td>% ocupados</td>
+            <td>56.8</td>
+        </tr>
+        <tr>
+            <td><span class="highlight-red">tasa_informalidad</span></td>
+            <td>% informales</td>
+            <td>48.3</td>
+        </tr>
+    </table>
+    <p style="margin-top: 1.5rem;">Archivo: <code style="color: var(--accent); font-family: 'JetBrains Mono', monospace;">DANE_mercado_laboral_GEIH.csv</code></p>
+</div>
+
+<!-- Slide 4: Step 1 — Import -->
+<div class="slide" id="slide-4">
+    <h2><span class="step-number">1</span> Importar datos</h2>
+    <h3>Obtener datos &rarr; Desde CSV &rarr; Preview &rarr; Cargar</h3>
+    <div class="code-block">
+        <span style="color: var(--text-muted);">-- Pasos en Power BI Desktop:</span><br><br>
+        <span class="highlight">1.</span> Inicio &rarr; Obtener datos &rarr; Texto/CSV<br>
+        <span class="highlight">2.</span> Buscar el archivo <span style="color: var(--orange);">DANE_mercado_laboral_GEIH.csv</span><br>
+        <span class="highlight">3.</span> Verificar la vista previa (delimitador, tipos)<br>
+        <span class="highlight">4.</span> Clic en <span style="color: var(--green);">Cargar</span> o <span style="color: var(--accent);">Transformar datos</span>
+    </div>
+    <div class="tip-box" style="margin-top: 1.5rem;">
+        <h4>Tip</h4>
+        <p>Siempre revisen la vista previa antes de cargar. Verifiquen que las columnas se detectaron correctamente.</p>
+    </div>
+</div>
+
+<!-- Slide 5: Step 2 — Power Query -->
+<div class="slide" id="slide-5">
+    <h2><span class="step-number">2</span> Power Query: limpiar datos</h2>
+    <h3>ETL: Extract &rarr; Transform &rarr; Load</h3>
+    <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card">
+            <h4>Extract</h4>
+            <p>Conectarse a la fuente de datos (CSV, Excel, SQL, API...)</p>
+        </div>
+        <div class="card" style="border-color: rgba(74,157,255,0.4);">
+            <h4>Transform</h4>
+            <p>Renombrar columnas, cambiar tipos, eliminar filas vacias, filtrar</p>
+        </div>
+        <div class="card" style="border-color: rgba(52,211,153,0.4);">
+            <h4>Load</h4>
+            <p>Enviar los datos limpios al modelo de Power BI</p>
+        </div>
+    </div>
+    <div class="code-block" style="margin-top: 1.5rem;">
+        <span style="color: var(--text-muted);">-- Operaciones comunes en Power Query:</span><br><br>
+        Renombrar columnas &rarr; doble clic en encabezado<br>
+        Cambiar tipo &rarr; clic en icono de tipo (ABC, 123, fecha)<br>
+        Eliminar filas &rarr; Quitar filas en blanco<br>
+        Cerrar y aplicar &rarr; <span style="color: var(--green);">Cerrar &amp; Aplicar</span>
+    </div>
+</div>
+
+<!-- Slide 6: Exercise 1 -->
+<div class="slide" id="slide-6">
+    <h2>Ejercicio 1</h2>
+    <div class="exercise-box">
+        <h4>Importar y limpiar en Power Query (15 min)</h4>
+        <ul>
+            <li>Abrir Power BI Desktop y crear un nuevo archivo .pbix</li>
+            <li>Importar <code style="color: var(--green); font-family: 'JetBrains Mono', monospace;">DANE_mercado_laboral_GEIH.csv</code></li>
+            <li>En Power Query: verificar que <span class="highlight">tasa_desempleo</span>, <span class="highlight">tasa_ocupacion</span> y <span class="highlight">tasa_informalidad</span> sean tipo <strong>Numero decimal</strong></li>
+            <li>Renombrar la columna <code style="font-family: 'JetBrains Mono', monospace; color: var(--accent);">departamento</code> a <code style="font-family: 'JetBrains Mono', monospace; color: var(--accent);">Departamento</code> (mayuscula)</li>
+            <li>Eliminar filas con valores nulos si las hay</li>
+            <li>Clic en <span class="highlight-green">Cerrar &amp; Aplicar</span></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Slide 7: Step 3 — Date table -->
+<div class="slide" id="slide-7">
+    <h2><span class="step-number">3</span> Tabla de fechas: DimFecha</h2>
+    <h3>Por que necesitamos una tabla de fechas?</h3>
+    <ul>
+        <li><span class="highlight">Inteligencia temporal</span>: comparar trimestres, calcular YoY, filtrar por anio</li>
+        <li>Power BI necesita una tabla de fechas <strong>continua</strong> para funciones de tiempo (DAX)</li>
+        <li>Mejora la organizacion del modelo: separa hechos de dimensiones</li>
+    </ul>
+    <div class="code-block" style="margin-top: 1.5rem;">
+        <span style="color: var(--text-muted);">-- Crear tabla DimFecha en Power Query o DAX:</span><br><br>
+        <span style="color: var(--accent);">Columnas sugeridas:</span><br>
+        &nbsp;&nbsp;fecha &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2023-01-01, 2023-04-01, ...)<br>
+        &nbsp;&nbsp;anio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2023, 2024, 2025)<br>
+        &nbsp;&nbsp;trimestre &nbsp;(Q1, Q2, Q3, Q4)<br>
+        &nbsp;&nbsp;anio_trim &nbsp;(2023-Q1, 2024-Q2, ...)
+    </div>
+</div>
+
+<!-- Slide 8: Star schema -->
+<div class="slide" id="slide-8">
+    <h2>Esquema estrella simplificado</h2>
+    <h3>Fact table + Dimension table</h3>
+    <div class="schema-diagram">
+        <div class="schema-table" style="border-color: rgba(245,158,11,0.4);">
+            <div class="table-header" style="background: rgba(245,158,11,0.15); color: var(--orange);">
+                DimFecha
+            </div>
+            <div class="table-row"><span class="pk">PK</span> fecha</div>
+            <div class="table-row">&nbsp;&nbsp;&nbsp; anio</div>
+            <div class="table-row">&nbsp;&nbsp;&nbsp; trimestre</div>
+            <div class="table-row">&nbsp;&nbsp;&nbsp; anio_trim</div>
+        </div>
+        <div class="schema-line">&#10231;</div>
+        <div class="schema-table" style="border-color: rgba(74,157,255,0.4);">
+            <div class="table-header" style="background: rgba(74,157,255,0.15); color: var(--accent);">
+                FactEmpleo
+            </div>
+            <div class="table-row"><span class="fk">FK</span> fecha</div>
+            <div class="table-row">&nbsp;&nbsp;&nbsp; departamento</div>
+            <div class="table-row">&nbsp;&nbsp;&nbsp; tasa_desempleo</div>
+            <div class="table-row">&nbsp;&nbsp;&nbsp; tasa_ocupacion</div>
+            <div class="table-row">&nbsp;&nbsp;&nbsp; tasa_informalidad</div>
+        </div>
+    </div>
+    <p style="margin-top: 2rem;">
+        <span class="highlight-orange">Dimension</span> = describe el contexto (cuando, donde) &nbsp;|&nbsp;
+        <span class="highlight">Hecho</span> = contiene las medidas (tasas, conteos)
+    </p>
+</div>
+
+<!-- Slide 9: Step 4 — First visual -->
+<div class="slide" id="slide-9">
+    <h2><span class="step-number">4</span> Primer visual: grafico de barras</h2>
+    <h3>Tasa de desempleo por departamento</h3>
+    <div class="code-block">
+        <span style="color: var(--text-muted);">-- Pasos para crear el grafico:</span><br><br>
+        <span class="highlight">1.</span> Ir a la vista de <span style="color: var(--orange);">Informe</span> (icono de grafico)<br>
+        <span class="highlight">2.</span> En Visualizaciones &rarr; seleccionar <span style="color: var(--green);">Grafico de barras agrupadas</span><br>
+        <span class="highlight">3.</span> Arrastrar <strong>Departamento</strong> al eje Y<br>
+        <span class="highlight">4.</span> Arrastrar <strong>tasa_desempleo</strong> al eje X<br>
+        <span class="highlight">5.</span> Ordenar de mayor a menor (clic en &ldquo;...&rdquo; del visual)
+    </div>
+    <p style="margin-top: 1rem;">Resultado: un ranking visual de <span class="highlight-orange">desempleo por departamento</span>.</p>
+</div>
+
+<!-- Slide 10: Types of visuals -->
+<div class="slide" id="slide-10">
+    <h2>Tipos de visuales en Power BI</h2>
+    <h3>Cuando usar cada uno?</h3>
+    <div class="visual-grid">
+        <div class="visual-card">
+            <span class="icon">🔢</span>
+            <h4>Tarjeta (KPI)</h4>
+            <p>Un numero clave: promedio, total, maximo</p>
+        </div>
+        <div class="visual-card">
+            <span class="icon">📊</span>
+            <h4>Barras</h4>
+            <p>Comparar categorias: departamentos, regiones</p>
+        </div>
+        <div class="visual-card">
+            <span class="icon">📈</span>
+            <h4>Lineas</h4>
+            <p>Tendencias en el tiempo: trimestres, anios</p>
+        </div>
+        <div class="visual-card">
+            <span class="icon">🗺️</span>
+            <h4>Mapa</h4>
+            <p>Datos geograficos: desempleo por region</p>
+        </div>
+        <div class="visual-card">
+            <span class="icon">📋</span>
+            <h4>Tabla</h4>
+            <p>Detalle exacto: todas las filas y columnas</p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">Regla: el visual debe responder una <span class="highlight">pregunta especifica</span>, no decorar.</p>
+</div>
+
+<!-- Slide 11: Exercise 2 -->
+<div class="slide" id="slide-11">
+    <h2>Ejercicio 2</h2>
+    <div class="exercise-box">
+        <h4>Crear barras + lineas de desempleo (20 min)</h4>
+        <ul>
+            <li><strong>Visual 1 — Barras:</strong> tasa de desempleo promedio por departamento. Ordenar de mayor a menor.</li>
+            <li><strong>Visual 2 — Lineas:</strong> tendencia de tasa de desempleo por trimestre (eje X = trimestre, eje Y = tasa).</li>
+            <li><strong>Visual 3 — Tarjeta:</strong> mostrar el promedio general de desempleo como KPI.</li>
+            <li>Organizar los tres visuales en una sola pagina del informe.</li>
+            <li>Verificar que los ejes tengan <span class="highlight">titulos claros</span>.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Slide 12: Slicers and filters -->
+<div class="slide" id="slide-12">
+    <h2>Slicers y filtros: interactividad</h2>
+    <h3>Hacer el dashboard dinamico</h3>
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="card">
+            <h4>Slicer de Anio</h4>
+            <p>Permite al usuario filtrar por <span class="highlight">2023</span>, <span class="highlight">2024</span> o <span class="highlight">2025</span>. Todos los visuales se actualizan al seleccionar.</p>
+        </div>
+        <div class="card">
+            <h4>Slicer de Departamento</h4>
+            <p>Lista desplegable o botones para elegir uno o varios <span class="highlight-orange">departamentos</span>. Ideal para comparar regiones.</p>
+        </div>
+    </div>
+    <div class="code-block" style="margin-top: 1.5rem;">
+        <span style="color: var(--text-muted);">-- Como agregar un slicer:</span><br><br>
+        <span class="highlight">1.</span> Visualizaciones &rarr; <span style="color: var(--green);">Segmentacion de datos</span><br>
+        <span class="highlight">2.</span> Arrastrar el campo (anio o departamento) al slicer<br>
+        <span class="highlight">3.</span> Formatear: estilo lista, desplegable o botones<br>
+        <span class="highlight">4.</span> Probar: clic en un valor y ver como cambian los graficos
+    </div>
+</div>
+
+<!-- Slide 13: Professional formatting -->
+<div class="slide" id="slide-13">
+    <h2>Formato profesional</h2>
+    <h3>&ldquo;Menos es mas&rdquo;</h3>
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="card" style="border-color: rgba(52,211,153,0.3);">
+            <h4 style="color: var(--green);">Buenas practicas</h4>
+            <ul style="max-width: 100%;">
+                <li>Titulo descriptivo en cada visual</li>
+                <li>Etiquetas en los ejes (unidad: %)</li>
+                <li>Paleta de colores consistente</li>
+                <li>Maximo 4-5 visuales por pagina</li>
+                <li>Espacio en blanco = claridad</li>
+            </ul>
+        </div>
+        <div class="card" style="border-color: rgba(239,68,68,0.3);">
+            <h4 style="color: var(--red);">Errores comunes</h4>
+            <ul style="max-width: 100%;">
+                <li>Demasiados colores sin proposito</li>
+                <li>Graficos 3D (distorsionan datos)</li>
+                <li>Sin titulo ni etiquetas</li>
+                <li>Demasiados visuales en una pagina</li>
+                <li>Fuentes pequenas ilegibles</li>
+            </ul>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">Un dashboard profesional <span class="highlight">comunica</span>, no impresiona.</p>
+</div>
+
+<!-- Slide 14: Deliverable -->
+<div class="slide" id="slide-14">
+    <h2>Entregable de hoy</h2>
+    <div class="card" style="max-width: 700px; border-color: rgba(74,157,255,0.4); text-align: left;">
+        <h4 style="font-size: clamp(1.1rem, 2vw, 1.5rem);">Archivo .pbix con dashboard de 1 pagina</h4>
+        <ul style="max-width: 100%; margin-top: 1rem;">
+            <li><span class="highlight">Grafico de barras:</span> desempleo promedio por departamento</li>
+            <li><span class="highlight">Grafico de lineas:</span> tendencia temporal de desempleo</li>
+            <li><span class="highlight-orange">Tarjeta KPI:</span> promedio general de desempleo</li>
+            <li><span class="highlight-green">Slicers:</span> filtro por anio y por departamento</li>
+            <li>Titulos claros, ejes etiquetados, formato limpio</li>
+        </ul>
+    </div>
+    <p style="margin-top: 2rem; font-size: clamp(1.1rem, 2vw, 1.5rem); color: var(--text);">
+        Subir el archivo <code style="color: var(--accent); font-family: 'JetBrains Mono', monospace;">.pbix</code> a la plataforma antes de la proxima clase.
+    </p>
+</div>
+
+<!-- Slide 15: What's coming -->
+<div class="slide" id="slide-15">
+    <h2>Lo que viene</h2>
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="card" style="border-color: rgba(52,211,153,0.3);">
+            <h4 style="color: var(--green);">Clase 6 (hoy)</h4>
+            <p>Importar datos, modelar, crear primeros visuales en Power BI</p>
+        </div>
+        <div class="card" style="border-color: var(--accent);">
+            <h4>Clase 7</h4>
+            <p>DAX, relaciones entre tablas, filtros avanzados</p>
+        </div>
+        <div class="card">
+            <h4>Clase 8</h4>
+            <p>Dashboard avanzado: storytelling con datos</p>
+        </div>
+        <div class="card">
+            <h4>Proyecto final</h4>
+            <p>Dashboard integrador con datos reales</p>
+        </div>
+    </div>
+    <p style="margin-top: 2rem; font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--text);">
+        Ya importaron, limpiaron y visualizaron.<br>
+        Siguiente paso: <span class="highlight">calcular con DAX y relacionar tablas</span>.
+    </p>
+</div>
+
+<div class="slide-counter" id="slideCounter">1 / 15</div>
+
+<div class="nav">
+    <button onclick="changeSlide(-1)">&larr; Anterior</button>
+    <button onclick="changeSlide(1)">Siguiente &rarr;</button>
+</div>
+
+<script>
+    let current = 1;
+    const total = 15;
+
+    function changeSlide(dir) {
+        const next = current + dir;
+        if (next < 1 || next > total) return;
+        document.getElementById('slide-' + current).classList.remove('active');
+        current = next;
+        document.getElementById('slide-' + current).classList.add('active');
+        document.getElementById('slideCounter').textContent = current + ' / ' + total;
+        document.getElementById('progressBar').style.width = ((current / total) * 100) + '%';
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); changeSlide(1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); changeSlide(-1); }
+    });
+
+    document.getElementById('progressBar').style.width = ((1 / total) * 100) + '%';
+</script>
+
+</body>
+</html>

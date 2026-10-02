@@ -1,0 +1,161 @@
+﻿departamento,capital,ano,poblacion
+Amazonas,Leticia,2022,79610
+Amazonas,Leticia,2023,80213
+Amazonas,Leticia,2024,80845
+Amazonas,Leticia,2025,81499
+Amazonas,Leticia,2026,82177
+Antioquia,Medellín,2022,6977984
+Antioquia,Medellín,2023,7010812
+Antioquia,Medellín,2024,7044013
+Antioquia,Medellín,2025,7077587
+Antioquia,Medellín,2026,7111532
+Arauca,Arauca,2022,283642
+Arauca,Arauca,2023,285178
+Arauca,Arauca,2024,286733
+Arauca,Arauca,2025,288306
+Arauca,Arauca,2026,289897
+Atlántico,Barranquilla,2022,2685908
+Atlántico,Barranquilla,2023,2703946
+Atlántico,Barranquilla,2024,2722128
+Atlántico,Barranquilla,2025,2740453
+Atlántico,Barranquilla,2026,2758919
+Bolívar,Cartagena,2022,2199072
+Bolívar,Cartagena,2023,2217474
+Bolívar,Cartagena,2024,2236073
+Bolívar,Cartagena,2025,2254868
+Bolívar,Cartagena,2026,2273859
+Boyacá,Tunja,2022,1264263
+Boyacá,Tunja,2023,1266914
+Boyacá,Tunja,2024,1269581
+Boyacá,Tunja,2025,1272263
+Boyacá,Tunja,2026,1274962
+Caldas,Manizales,2022,1003475
+Caldas,Manizales,2023,1005681
+Caldas,Manizales,2024,1007896
+Caldas,Manizales,2025,1010119
+Caldas,Manizales,2026,1012351
+Caquetá,Florencia,2022,510042
+Caquetá,Florencia,2023,514239
+Caquetá,Florencia,2024,518476
+Caquetá,Florencia,2025,522752
+Caquetá,Florencia,2026,527068
+Casanare,Yopal,2022,439093
+Casanare,Yopal,2023,443929
+Casanare,Yopal,2024,448813
+Casanare,Yopal,2025,453745
+Casanare,Yopal,2026,458726
+Cauca,Popayán,2022,1491508
+Cauca,Popayán,2023,1498835
+Cauca,Popayán,2024,1506202
+Cauca,Popayán,2025,1513608
+Cauca,Popayán,2026,1521053
+Cesar,Valledupar,2022,1243975
+Cesar,Valledupar,2023,1254247
+Cesar,Valledupar,2024,1264612
+Cesar,Valledupar,2025,1275069
+Cesar,Valledupar,2026,1285618
+Chocó,Quibdó,2022,544764
+Chocó,Quibdó,2023,549010
+Chocó,Quibdó,2024,553294
+Chocó,Quibdó,2025,557615
+Chocó,Quibdó,2026,561974
+Córdoba,Montería,2022,1879265
+Córdoba,Montería,2023,1894102
+Córdoba,Montería,2024,1909071
+Córdoba,Montería,2025,1924171
+Córdoba,Montería,2026,1939401
+Cundinamarca,Bogotá,2022,3190224
+Cundinamarca,Bogotá,2023,3216396
+Cundinamarca,Bogotá,2024,3242999
+Cundinamarca,Bogotá,2025,3270034
+Cundinamarca,Bogotá,2026,3297502
+Guainía,Inírida,2022,50834
+Guainía,Inírida,2023,51642
+Guainía,Inírida,2024,52466
+Guainía,Inírida,2025,53305
+Guainía,Inírida,2026,54160
+Guaviare,San José,2022,87844
+Guaviare,San José,2023,88716
+Guaviare,San José,2024,89601
+Guaviare,San José,2025,90498
+Guaviare,San José,2026,91408
+Huila,Neiva,2022,1211163
+Huila,Neiva,2023,1218608
+Huila,Neiva,2024,1226096
+Huila,Neiva,2025,1233627
+Huila,Neiva,2026,1241201
+La Guajira,Riohacha,2022,1067063
+La Guajira,Riohacha,2023,1085284
+La Guajira,Riohacha,2024,1103729
+La Guajira,Riohacha,2025,1122397
+La Guajira,Riohacha,2026,1141289
+Magdalena,Santa Marta,2022,1398882
+Magdalena,Santa Marta,2023,1411847
+Magdalena,Santa Marta,2024,1424937
+Magdalena,Santa Marta,2025,1438150
+Magdalena,Santa Marta,2026,1451487
+Meta,Villavicencio,2022,1063454
+Meta,Villavicencio,2023,1076393
+Meta,Villavicencio,2024,1089466
+Meta,Villavicencio,2025,1102672
+Meta,Villavicencio,2026,1116012
+Nariño,Pasto,2022,1866347
+Nariño,Pasto,2023,1876194
+Nariño,Pasto,2024,1886097
+Nariño,Pasto,2025,1896055
+Nariño,Pasto,2026,1906068
+Norte de Santander,Cúcuta,2022,1491689
+Norte de Santander,Cúcuta,2023,1503977
+Norte de Santander,Cúcuta,2024,1516381
+Norte de Santander,Cúcuta,2025,1528900
+Norte de Santander,Cúcuta,2026,1541533
+Putumayo,Mocoa,2022,371425
+Putumayo,Mocoa,2023,375414
+Putumayo,Mocoa,2024,379441
+Putumayo,Mocoa,2025,383506
+Putumayo,Mocoa,2026,387610
+Quindío,Armenia,2022,579411
+Quindío,Armenia,2023,581668
+Quindío,Armenia,2024,583935
+Quindío,Armenia,2025,586212
+Quindío,Armenia,2026,588500
+Risaralda,Pereira,2022,994532
+Risaralda,Pereira,2023,998990
+Risaralda,Pereira,2024,1003466
+Risaralda,Pereira,2025,1007960
+Risaralda,Pereira,2026,1012472
+San Andrés,San Andrés,2022,83403
+San Andrés,San Andrés,2023,83804
+San Andrés,San Andrés,2024,84208
+San Andrés,San Andrés,2025,84614
+San Andrés,San Andrés,2026,85023
+Santander,Bucaramanga,2022,2218023
+Santander,Bucaramanga,2023,2227148
+Santander,Bucaramanga,2024,2236327
+Santander,Bucaramanga,2025,2245560
+Santander,Bucaramanga,2026,2254847
+Sucre,Sincelejo,2022,921868
+Sucre,Sincelejo,2023,929591
+Sucre,Sincelejo,2024,937393
+Sucre,Sincelejo,2025,945274
+Sucre,Sincelejo,2026,953233
+Tolima,Ibagué,2022,1412710
+Tolima,Ibagué,2023,1413905
+Tolima,Ibagué,2024,1415107
+Tolima,Ibagué,2025,1416317
+Tolima,Ibagué,2026,1417535
+Valle del Cauca,Cali,2022,4832005
+Valle del Cauca,Cali,2023,4852663
+Valle del Cauca,Cali,2024,4873548
+Valle del Cauca,Cali,2025,4894660
+Valle del Cauca,Cali,2026,4915999
+Vaupés,Mitú,2022,46381
+Vaupés,Mitú,2023,47143
+Vaupés,Mitú,2024,47919
+Vaupés,Mitú,2025,48708
+Vaupés,Mitú,2026,49511
+Vichada,Puerto Carreño,2022,112958
+Vichada,Puerto Carreño,2023,115618
+Vichada,Puerto Carreño,2024,118341
+Vichada,Puerto Carreño,2025,121128
+Vichada,Puerto Carreño,2026,123980

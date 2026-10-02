@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 5 — Análisis exploratorio: hacer preguntas a los datos</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --navy: #0F1E3D;
+            --navy-light: #1A2E55;
+            --accent: #4A9DFF;
+            --accent-green: #34D399;
+            --accent-orange: #F59E0B;
+            --accent-red: #EF4444;
+            --text: #E2E8F0;
+            --text-muted: #94A3B8;
+            --card-bg: rgba(255,255,255,0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--navy);
+            color: var(--text);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: clamp(2rem, 5vw, 6rem);
+            text-align: center;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .slide.active { display: flex; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(1.6rem, 3.5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        p, li {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 900px;
+        }
+
+        .highlight { color: var(--accent); font-weight: 600; }
+        .highlight-green { color: var(--accent-green); font-weight: 600; }
+        .highlight-orange { color: var(--accent-orange); font-weight: 600; }
+        .highlight-red { color: var(--accent-red); font-weight: 600; }
+
+        ul {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        ul li {
+            padding: 0.6rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '\25B8';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+
+        .card h4 {
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        }
+
+        .big-icon {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(74,157,255,0.3);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+            margin-top: 1rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .table-visual {
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+        }
+
+        .table-visual th {
+            background: var(--accent);
+            color: var(--navy);
+            padding: 0.8rem 1.5rem;
+            font-weight: 700;
+        }
+
+        .table-visual td {
+            padding: 0.6rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+        }
+
+        .table-visual tr:nth-child(even) td {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+
+        .nav button {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s;
+        }
+
+        .nav button:hover {
+            background: var(--accent);
+            color: var(--navy);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 2.2rem;
+            left: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 100;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .exercise-box {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .exercise-box h4 {
+            color: var(--accent-green);
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .pipeline {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+            max-width: 1000px;
+        }
+
+        .pipeline-step {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            min-width: 140px;
+        }
+
+        .pipeline-step .step-icon {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            margin-bottom: 0.4rem;
+        }
+
+        .pipeline-step .step-label {
+            font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .pipeline-step .step-desc {
+            font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+
+        .pipeline-arrow {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 12px 12px 0;
+            padding: 1rem 1.5rem;
+            margin: 0.5rem 0;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .question-card p {
+            font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+            color: var(--text);
+            font-style: italic;
+        }
+
+        .question-card .q-num {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent);
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .comparison-table {
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            font-size: clamp(0.8rem, 1.4vw, 1.05rem);
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .comparison-table th {
+            padding: 0.8rem 1.2rem;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .comparison-table th:first-child {
+            background: transparent;
+            color: var(--text-muted);
+        }
+
+        .comparison-table th.excel-col {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--accent-red);
+            border-radius: 8px 0 0 0;
+        }
+
+        .comparison-table th.pbi-col {
+            background: rgba(74, 157, 255, 0.15);
+            color: var(--accent);
+            border-radius: 0 8px 0 0;
+        }
+
+        .comparison-table td {
+            padding: 0.6rem 1.2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            color: var(--text-muted);
+            text-align: left;
+        }
+
+        .comparison-table td:first-child {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .vs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .vs-box {
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .vs-box h4 {
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .vs-box p, .vs-box li {
+            font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+        }
+
+        .vs-excel {
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .vs-excel h4 { color: var(--accent-red); }
+
+        .vs-pbi {
+            background: rgba(74, 157, 255, 0.08);
+            border: 1px solid rgba(74, 157, 255, 0.3);
+        }
+
+        .vs-pbi h4 { color: var(--accent); }
+
+        .caution-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .caution-box h4 {
+            color: var(--accent-orange);
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .mind-blown {
+            background: linear-gradient(135deg, rgba(74,157,255,0.15), rgba(52,211,153,0.15));
+            border: 1px solid rgba(74,157,255,0.3);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Slide 1: Title -->
+<div class="slide active" id="slide-1">
+    <div class="big-icon">&#128269;</div>
+    <h1>Análisis exploratorio:<br><span class="highlight">hacer preguntas a los datos</span></h1>
+    <p class="subtitle">Clase 5 — Analítica de datos</p>
+    <p style="margin-top: 1rem;">De Excel a Power BI: la transición comienza hoy.</p>
+</div>
+
+<!-- Slide 2: The method -->
+<div class="slide" id="slide-2">
+    <h2>El método del analista</h2>
+    <h3>Del dato a la decisión, paso a paso</h3>
+    <div class="pipeline">
+        <div class="pipeline-step" style="border-color: rgba(74,157,255,0.4);">
+            <div class="step-icon">&#10067;</div>
+            <div class="step-label" style="color: var(--accent);">Pregunta</div>
+            <div class="step-desc">Qué quiero saber</div>
+        </div>
+        <div class="pipeline-arrow">&#10132;</div>
+        <div class="pipeline-step" style="border-color: rgba(52,211,153,0.4);">
+            <div class="step-icon">&#128202;</div>
+            <div class="step-label" style="color: var(--accent-green);">Dato</div>
+            <div class="step-desc">Dónde buscar</div>
+        </div>
+        <div class="pipeline-arrow">&#10132;</div>
+        <div class="pipeline-step" style="border-color: rgba(245,158,11,0.4);">
+            <div class="step-icon">&#128270;</div>
+            <div class="step-label" style="color: var(--accent-orange);">Análisis</div>
+            <div class="step-desc">Filtrar, agrupar, comparar</div>
+        </div>
+        <div class="pipeline-arrow">&#10132;</div>
+        <div class="pipeline-step" style="border-color: rgba(239,68,68,0.4);">
+            <div class="step-icon">&#128161;</div>
+            <div class="step-label" style="color: var(--accent-red);">Hallazgo</div>
+            <div class="step-desc">Qué descubrí</div>
+        </div>
+        <div class="pipeline-arrow">&#10132;</div>
+        <div class="pipeline-step" style="border-color: rgba(167,139,250,0.4);">
+            <div class="step-icon">&#127919;</div>
+            <div class="step-label" style="color: #A78BFA;">Recomendación</div>
+            <div class="step-desc">Qué hacer con eso</div>
+        </div>
+    </div>
+    <p style="margin-top: 2rem;">Sin pregunta, no hay análisis. <span class="highlight">La pregunta es el punto de partida.</span></p>
+</div>
+
+<!-- Slide 3: Dataset -->
+<div class="slide" id="slide-3">
+    <h2>El dataset de hoy</h2>
+    <h3>MinEducación: matrículas y deserción escolar</h3>
+    <table class="table-visual">
+        <thead>
+            <tr>
+                <th>Departamento</th>
+                <th>Municipio</th>
+                <th>Nivel educativo</th>
+                <th>Año</th>
+                <th>Matriculados</th>
+                <th>Desertores</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Antioquia</td>
+                <td>Medellín</td>
+                <td>Secundaria</td>
+                <td>2019</td>
+                <td>245,310</td>
+                <td>8,420</td>
+            </tr>
+            <tr>
+                <td>Chocó</td>
+                <td>Quibdó</td>
+                <td>Primaria</td>
+                <td>2020</td>
+                <td>32,180</td>
+                <td>4,560</td>
+            </tr>
+            <tr>
+                <td>La Guajira</td>
+                <td>Riohacha</td>
+                <td>Media</td>
+                <td>2021</td>
+                <td>18,940</td>
+                <td>3,890</td>
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align: center; color: var(--accent);">... miles de registros por departamento, nivel y año</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="margin-top: 1.5rem;">Datos reales del Ministerio de Educación Nacional. <span class="highlight">La tasa de deserción = desertores / matriculados.</span></p>
+</div>
+
+<!-- Slide 4: Formulating questions -->
+<div class="slide" id="slide-4">
+    <h2>Formular preguntas</h2>
+    <h3>5 preguntas que los datos pueden responder</h3>
+    <div class="question-card">
+        <p><span class="q-num">Q1</span> ¿Dónde es mayor la deserción escolar?</p>
+    </div>
+    <div class="question-card" style="border-left-color: var(--accent-green);">
+        <p><span class="q-num" style="color: var(--accent-green);">Q2</span> ¿Ha mejorado la cobertura educativa en los últimos 5 años?</p>
+    </div>
+    <div class="question-card" style="border-left-color: var(--accent-orange);">
+        <p><span class="q-num" style="color: var(--accent-orange);">Q3</span> ¿Qué nivel educativo pierde más estudiantes?</p>
+    </div>
+    <div class="question-card" style="border-left-color: var(--accent-red);">
+        <p><span class="q-num" style="color: var(--accent-red);">Q4</span> ¿Cómo afectó el COVID la matrícula entre 2019 y 2021?</p>
+    </div>
+    <div class="question-card" style="border-left-color: #A78BFA;">
+        <p><span class="q-num" style="color: #A78BFA;">Q5</span> ¿Hay relación entre pobreza y deserción?</p>
+    </div>
+    <p style="margin-top: 1.5rem;">Noten el patrón: cada pregunta es <span class="highlight">específica</span>, <span class="highlight-green">medible</span> y <span class="highlight-orange">respondible con datos</span>.</p>
+</div>
+
+<!-- Slide 5: Exercise 1 -->
+<div class="slide" id="slide-5">
+    <h2>Ejercicio 1 — Formular preguntas</h2>
+    <div class="exercise-box">
+        <h4>&#9997;&#65039; Instrucciones</h4>
+        <ul>
+            <li>Piense en <span class="highlight">su área de trabajo o interés</span> (salud, transporte, finanzas, educación...)</li>
+            <li>Escriba <span class="highlight-green">5 preguntas</span> que los datos podrían responder en esa área</li>
+            <li>Cada pregunta debe ser <span class="highlight-orange">específica y medible</span> (no: "¿cómo va la empresa?")</li>
+            <li>Para cada pregunta, anote <span class="highlight">qué dato necesitaría</span> para responderla</li>
+            <li>Ejemplo: "¿En qué trimestre vendemos más?" → dato: ventas mensuales por producto</li>
+        </ul>
+    </div>
+    <p style="margin-top: 1.5rem;">&#9201; <span class="highlight-orange">10 minutos</span></p>
+</div>
+
+<!-- Slide 6: Answering with data -->
+<div class="slide" id="slide-6">
+    <h2>Respondiendo con datos</h2>
+    <h3>Segmentar para descubrir</h3>
+    <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card">
+            <h4>Por departamento</h4>
+            <p>Agrupar desertores por departamento → ¿dónde se concentra el problema?</p>
+            <div class="code-block" style="margin-top: 0.8rem; padding: 0.8rem; font-size: clamp(0.75rem, 1.2vw, 0.95rem);">
+                Chocó: <span style="color: var(--accent-red);">14.2%</span><br>
+                La Guajira: <span style="color: var(--accent-red);">12.8%</span><br>
+                Bogotá: <span style="color: var(--accent-green);">3.4%</span>
+            </div>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-green);">Por nivel educativo</h4>
+            <p>¿Primaria, secundaria o media pierde más estudiantes?</p>
+            <div class="code-block" style="margin-top: 0.8rem; padding: 0.8rem; font-size: clamp(0.75rem, 1.2vw, 0.95rem);">
+                Media: <span style="color: var(--accent-red);">9.8%</span><br>
+                Secundaria: <span style="color: var(--accent-orange);">6.2%</span><br>
+                Primaria: <span style="color: var(--accent-green);">3.1%</span>
+            </div>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-orange);">Por año</h4>
+            <p>¿La deserción crece o baja? ¿El COVID tuvo impacto?</p>
+            <div class="code-block" style="margin-top: 0.8rem; padding: 0.8rem; font-size: clamp(0.75rem, 1.2vw, 0.95rem);">
+                2019: <span style="color: var(--accent-green);">5.2%</span><br>
+                2020: <span style="color: var(--accent-red);">7.8%</span><br>
+                2023: <span style="color: var(--accent-orange);">5.5%</span>
+            </div>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">La misma tabla, <span class="highlight">tres preguntas distintas</span>. Segmentar es la clave del análisis exploratorio.</p>
+</div>
+
+<!-- Slide 7: Crossing data sources -->
+<div class="slide" id="slide-7">
+    <h2>Cruzar fuentes de datos</h2>
+    <h3>Educación + Pobreza = una historia más completa</h3>
+    <div class="vs-grid">
+        <div class="card" style="border-color: rgba(74,157,255,0.3);">
+            <h4>Fuente 1: MinEducación</h4>
+            <p>Matrículas y deserción por departamento</p>
+            <div style="margin-top: 0.8rem; font-family: 'JetBrains Mono', monospace; font-size: clamp(0.8rem, 1.2vw, 0.95rem); color: var(--accent);">
+                Chocó → deserción 14.2%<br>
+                Bogotá → deserción 3.4%
+            </div>
+        </div>
+        <div class="card" style="border-color: rgba(52,211,153,0.3);">
+            <h4 style="color: var(--accent-green);">Fuente 2: DANE (Clase 4)</h4>
+            <p>Incidencia de pobreza por departamento</p>
+            <div style="margin-top: 0.8rem; font-family: 'JetBrains Mono', monospace; font-size: clamp(0.8rem, 1.2vw, 0.95rem); color: var(--accent-green);">
+                Chocó → pobreza 67.0%<br>
+                Bogotá → pobreza 28.1%
+            </div>
+        </div>
+    </div>
+    <p style="margin-top: 2rem; font-size: clamp(1.1rem, 2.2vw, 1.6rem); color: var(--text);">
+        Al cruzar datos, emerge un patrón: <span class="highlight">donde hay más pobreza, hay más deserción</span>.
+    </p>
+    <p style="margin-top: 0.5rem;">Este es su primer <span class="highlight-green">análisis multi-fuente</span> — una habilidad clave del analista.</p>
+</div>
+
+<!-- Slide 8: Correlation vs causation -->
+<div class="slide" id="slide-8">
+    <h2>Correlación &#8800; Causalidad</h2>
+    <h3>La trampa más común del análisis</h3>
+    <div class="caution-box">
+        <h4>&#9888;&#65039; Cuidado con las conclusiones</h4>
+        <ul>
+            <li><span class="highlight">Observamos:</span> Departamentos con más pobreza tienen más deserción escolar</li>
+            <li><span class="highlight-green">Correcto:</span> "La pobreza y la deserción están correlacionadas"</li>
+            <li><span class="highlight-red">Incorrecto:</span> "La pobreza causa la deserción" (puede haber otros factores: conflicto, distancia, infraestructura...)</li>
+        </ul>
+    </div>
+    <div class="card" style="max-width: 800px; margin-top: 1.5rem; text-align: center;">
+        <p style="font-size: clamp(0.95rem, 1.6vw, 1.2rem);">
+            <span style="color: var(--accent-orange);">Ejemplo clásico:</span> El consumo de helado y los ahogamientos correlacionan. ¿El helado causa ahogamientos? No. <span class="highlight">Ambos suben en verano.</span>
+        </p>
+    </div>
+    <p style="margin-top: 1.5rem;">Un buen analista reporta la relación <span class="highlight">sin saltar a conclusiones causales</span>.</p>
+</div>
+
+<!-- Slide 9: Exercise 2 -->
+<div class="slide" id="slide-9">
+    <h2>Ejercicio 2 — Responder con datos</h2>
+    <div class="exercise-box">
+        <h4>&#128200; Instrucciones</h4>
+        <ul>
+            <li>Tome <span class="highlight">3 de las 5 preguntas</span> que formuló en el Ejercicio 1</li>
+            <li>Usando los datos de educación (matrículas y deserción), <span class="highlight-green">responda cada pregunta</span></li>
+            <li>Para cada respuesta: cree una <span class="highlight-orange">tabla resumen o gráfico</span> en Excel</li>
+            <li>Escriba el hallazgo en <span class="highlight">una oración clara</span> (título como hallazgo)</li>
+            <li>Si su pregunta requiere cruzar con datos de pobreza (Clase 4), <span class="highlight">hágalo</span></li>
+        </ul>
+        <p style="margin-top: 1rem; color: var(--accent-green);">Recuerde: segmentar por departamento, nivel o año para encontrar patrones.</p>
+    </div>
+    <p style="margin-top: 1.5rem;">&#9201; <span class="highlight-orange">25 minutos</span></p>
+</div>
+
+<!-- Slide 10: Introduction to Power BI -->
+<div class="slide" id="slide-10">
+    <h2>¿Por qué ir más allá de Excel?</h2>
+    <h3>Introducción a Power BI</h3>
+    <div class="card-grid">
+        <div class="card">
+            <h4>&#128200; Escala</h4>
+            <p>Excel se frena con 100K+ filas. Power BI maneja <span class="highlight">millones</span> sin problema.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-green);">&#128260; Automatización</h4>
+            <p>Los datos se <span class="highlight-green">actualizan solos</span>. No más copiar y pegar cada mes.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-orange);">&#127912; Interactividad</h4>
+            <p>Filtros dinámicos: <span class="highlight-orange">clic en un departamento</span> y todo el dashboard se actualiza.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: #A78BFA;">&#128101; Compartir</h4>
+            <p>Publicar en la web. <span style="color: #A78BFA; font-weight: 600;">Toda la organización</span> ve el mismo dashboard actualizado.</p>
+        </div>
+    </div>
+    <p style="margin-top: 2rem;">Excel es excelente para explorar. Power BI es para <span class="highlight">producción y comunicación</span>.</p>
+</div>
+
+<!-- Slide 11: First look at Power BI -->
+<div class="slide" id="slide-11">
+    <h2>Primer vistazo a Power BI</h2>
+    <h3>Del Excel al dashboard en 3 clics</h3>
+    <div class="code-block" style="max-width: 850px;">
+        <span style="color: var(--accent);">Paso 1:</span> Abrir Power BI Desktop → Obtener datos → Excel<br>
+        <span style="color: var(--accent-green);">Paso 2:</span> Seleccionar la hoja con datos de educación → Cargar<br>
+        <span style="color: var(--accent-orange);">Paso 3:</span> Arrastrar "Departamento" al eje y "Desertores" al valor<br>
+        <span style="color: #A78BFA;">Resultado:</span> Un gráfico de barras interactivo aparece al instante
+    </div>
+    <div class="mind-blown">
+        <p style="font-size: clamp(1.1rem, 2vw, 1.5rem); color: var(--text);">
+            &#129327; <span class="highlight">Momento revelación:</span> hagan clic en una barra del gráfico...<br>
+            <span style="color: var(--accent-green);">Todos los demás visuales se filtran automáticamente.</span>
+        </p>
+    </div>
+    <p style="margin-top: 1.5rem;">Eso que en Excel tomaría <span class="highlight-red">horas de fórmulas y macros</span>, en Power BI es un clic.</p>
+</div>
+
+<!-- Slide 12: Excel vs Power BI -->
+<div class="slide" id="slide-12">
+    <h2>Excel vs Power BI</h2>
+    <h3>No se reemplaza, se complementa</h3>
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Criterio</th>
+                <th class="excel-col">Excel</th>
+                <th class="pbi-col">Power BI</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Filas de datos</td>
+                <td>~1 millón (se frena antes)</td>
+                <td>Millones sin problema</td>
+            </tr>
+            <tr>
+                <td>Actualización</td>
+                <td>Manual (copiar/pegar)</td>
+                <td>Automática (programada)</td>
+            </tr>
+            <tr>
+                <td>Compartir</td>
+                <td>Enviar archivo por correo</td>
+                <td>Link web, todos ven lo mismo</td>
+            </tr>
+            <tr>
+                <td>Visuales</td>
+                <td>Gráficos estáticos</td>
+                <td>Interactivos con filtros cruzados</td>
+            </tr>
+            <tr>
+                <td>Múltiples fuentes</td>
+                <td>BUSCARV entre hojas</td>
+                <td>Modelo relacional integrado</td>
+            </tr>
+            <tr>
+                <td>Mejor para...</td>
+                <td><span style="color: var(--accent-red);">Explorar, calcular, prototipar</span></td>
+                <td><span style="color: var(--accent);">Comunicar, monitorear, decidir</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="margin-top: 1.5rem;">Use Excel para <span class="highlight-orange">entender los datos</span>. Use Power BI para <span class="highlight">contar la historia</span>.</p>
+</div>
+
+<!-- Slide 13: Exercise 3 -->
+<div class="slide" id="slide-13">
+    <h2>Ejercicio 3 — Primer visual en Power BI</h2>
+    <div class="exercise-box">
+        <h4>&#128640; Instrucciones</h4>
+        <ul>
+            <li>Abra <span class="highlight">Power BI Desktop</span> (ya instalado en sus equipos)</li>
+            <li>Obtener datos → seleccione el <span class="highlight-green">archivo CSV/Excel</span> de educación</li>
+            <li>Cree un gráfico: <span class="highlight-orange">Departamento vs. Tasa de deserción</span></li>
+            <li>Agregue un segundo visual: <span class="highlight">línea de tendencia por año</span></li>
+            <li>Haga <span class="highlight">clic en un departamento</span> y observe cómo se filtra el otro visual</li>
+        </ul>
+        <p style="margin-top: 1rem; color: var(--accent-green);">Si algo no funciona, no se preocupe. En la Clase 6 profundizamos en Power BI.</p>
+    </div>
+    <p style="margin-top: 1.5rem;">&#9201; <span class="highlight-orange">15 minutos</span></p>
+</div>
+
+<!-- Slide 14: Deliverable -->
+<div class="slide" id="slide-14">
+    <h2>Entregable de hoy</h2>
+    <div class="exercise-box">
+        <h4>&#128221; Para entregar</h4>
+        <ul>
+            <li>Documento con <span class="highlight">5 preguntas</span> formuladas sobre su área de interés</li>
+            <li><span class="highlight-green">3 respuestas</span> con tabla resumen o gráfico de soporte</li>
+            <li>Cada respuesta con un <span class="highlight-orange">hallazgo en una oración</span> (título como hallazgo)</li>
+            <li>Al menos <span class="highlight">1 recomendación</span> basada en los hallazgos</li>
+            <li>Bonus: captura de pantalla de su <span class="highlight">primer visual en Power BI</span></li>
+        </ul>
+    </div>
+    <p style="margin-top: 2rem; font-size: clamp(1.1rem, 2.2vw, 1.6rem); color: var(--text);">
+        Un análisis sin recomendación es solo <span class="highlight-red">un ejercicio académico</span>.
+    </p>
+</div>
+
+<!-- Slide 15: What's coming -->
+<div class="slide" id="slide-15">
+    <h2>Lo que viene</h2>
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="card" style="border-color: rgba(52,211,153,0.3);">
+            <h4 style="color: var(--accent-green);">Clase 5 (hoy)</h4>
+            <p>Análisis exploratorio, preguntas a los datos, primer vistazo a Power BI</p>
+        </div>
+        <div class="card" style="border-color: var(--accent);">
+            <h4>Clase 6</h4>
+            <p>Power BI inmersión total — modelo de datos, DAX básico, dashboards completos</p>
+        </div>
+        <div class="card">
+            <h4>Clase 7</h4>
+            <p>Power BI avanzado — relaciones, medidas, publicación</p>
+        </div>
+        <div class="card">
+            <h4>Clase 8</h4>
+            <p>Proyecto final — dashboard integrador con datos reales</p>
+        </div>
+    </div>
+    <p style="margin-top: 2rem; font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--text);">
+        Hoy aprendieron a <span class="highlight">hacer preguntas</span>.<br>
+        En la Clase 6, Power BI les dará <span class="highlight-green">superpoderes para responderlas</span>.
+    </p>
+</div>
+
+<div class="slide-counter" id="slideCounter">1 / 15</div>
+
+<div class="nav">
+    <button onclick="changeSlide(-1)">&larr; Anterior</button>
+    <button onclick="changeSlide(1)">Siguiente &rarr;</button>
+</div>
+
+<script>
+    let current = 1;
+    const total = 15;
+
+    function changeSlide(dir) {
+        const next = current + dir;
+        if (next < 1 || next > total) return;
+        document.getElementById('slide-' + current).classList.remove('active');
+        current = next;
+        document.getElementById('slide-' + current).classList.add('active');
+        document.getElementById('slideCounter').textContent = current + ' / ' + total;
+        document.getElementById('progressBar').style.width = ((current / total) * 100) + '%';
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); changeSlide(1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); changeSlide(-1); }
+    });
+
+    document.getElementById('progressBar').style.width = ((1 / total) * 100) + '%';
+</script>
+
+</body>
+</html>

@@ -1,0 +1,745 @@
+﻿departamento,ano,nivel_educativo,matriculados,desertores,tasa_desercion,cobertura_neta
+Amazonas,2019,Preescolar,1248,55,0.0448,0.81
+Amazonas,2019,Básica Primaria,5633,188,0.0334,0.86
+Amazonas,2019,Básica Secundaria,3659,229,0.0628,0.78
+Amazonas,2019,Media,1842,94,0.0513,0.81
+Amazonas,2020,Preescolar,1063,79,0.0752,0.79
+Amazonas,2020,Básica Primaria,5177,274,0.053,0.95
+Amazonas,2020,Básica Secundaria,3240,260,0.0805,0.77
+Amazonas,2020,Media,1720,124,0.0726,0.61
+Amazonas,2021,Preescolar,1116,57,0.0516,0.8
+Amazonas,2021,Básica Primaria,5215,241,0.0464,0.92
+Amazonas,2021,Básica Secundaria,3309,276,0.0837,0.99
+Amazonas,2021,Media,1769,121,0.0688,0.8
+Amazonas,2022,Preescolar,1140,58,0.0514,0.77
+Amazonas,2022,Básica Primaria,5498,231,0.0421,0.78
+Amazonas,2022,Básica Secundaria,3545,256,0.0724,0.88
+Amazonas,2022,Media,1715,109,0.0638,0.57
+Amazonas,2023,Preescolar,1279,69,0.054,0.93
+Amazonas,2023,Básica Primaria,5814,222,0.0382,0.8
+Amazonas,2023,Básica Secundaria,3700,240,0.0651,0.93
+Amazonas,2023,Media,1833,106,0.0582,0.56
+Amazonas,2024,Preescolar,1242,50,0.0407,0.84
+Amazonas,2024,Básica Primaria,5867,196,0.0335,0.99
+Amazonas,2024,Básica Secundaria,3880,249,0.0642,0.76
+Amazonas,2024,Media,1859,100,0.0543,0.58
+Antioquia,2019,Preescolar,110430,2882,0.0261,0.95
+Antioquia,2019,Básica Primaria,528229,14156,0.0268,0.93
+Antioquia,2019,Básica Secundaria,340668,11310,0.0332,0.87
+Antioquia,2019,Media,173462,6036,0.0348,0.56
+Antioquia,2020,Preescolar,98588,3598,0.0365,0.97
+Antioquia,2020,Básica Primaria,448559,14443,0.0322,0.86
+Antioquia,2020,Básica Secundaria,323000,15407,0.0477,0.81
+Antioquia,2020,Media,159761,6326,0.0396,0.6
+Antioquia,2021,Preescolar,101984,4313,0.0423,0.81
+Antioquia,2021,Básica Primaria,481883,13830,0.0287,0.99
+Antioquia,2021,Básica Secundaria,328018,16171,0.0493,0.87
+Antioquia,2021,Media,156874,6980,0.0445,0.58
+Antioquia,2022,Preescolar,111795,3432,0.0307,0.82
+Antioquia,2022,Básica Primaria,494726,11725,0.0237,0.89
+Antioquia,2022,Básica Secundaria,317127,11416,0.036,0.78
+Antioquia,2022,Media,158881,6291,0.0396,0.7
+Antioquia,2023,Preescolar,117013,3767,0.0322,0.79
+Antioquia,2023,Básica Primaria,540660,12435,0.023,0.86
+Antioquia,2023,Básica Secundaria,344472,13951,0.0405,0.93
+Antioquia,2023,Media,167160,5934,0.0355,0.68
+Antioquia,2024,Preescolar,112645,3717,0.033,0.96
+Antioquia,2024,Básica Primaria,538459,12115,0.0225,0.97
+Antioquia,2024,Básica Secundaria,356126,15527,0.0436,0.93
+Antioquia,2024,Media,181943,5840,0.0321,0.77
+Arauca,2019,Preescolar,4421,171,0.0388,0.87
+Arauca,2019,Básica Primaria,19161,655,0.0342,0.84
+Arauca,2019,Básica Secundaria,13221,666,0.0504,0.92
+Arauca,2019,Media,6328,230,0.0365,0.75
+Arauca,2020,Preescolar,3816,196,0.0516,0.94
+Arauca,2020,Básica Primaria,17003,822,0.0484,0.89
+Arauca,2020,Básica Secundaria,11943,871,0.073,0.76
+Arauca,2020,Media,5651,352,0.0624,0.73
+Arauca,2021,Preescolar,4142,218,0.0528,0.82
+Arauca,2021,Básica Primaria,17763,779,0.0439,0.76
+Arauca,2021,Básica Secundaria,12277,788,0.0642,0.98
+Arauca,2021,Media,5875,325,0.0554,0.57
+Arauca,2022,Preescolar,4195,184,0.0439,0.95
+Arauca,2022,Básica Primaria,18108,659,0.0364,0.79
+Arauca,2022,Básica Secundaria,12524,780,0.0623,0.95
+Arauca,2022,Media,6054,236,0.0391,0.56
+Arauca,2023,Preescolar,4510,149,0.0332,0.94
+Arauca,2023,Básica Primaria,20348,685,0.0337,0.97
+Arauca,2023,Básica Secundaria,13336,724,0.0543,0.88
+Arauca,2023,Media,6691,243,0.0364,0.72
+Arauca,2024,Preescolar,4624,172,0.0372,0.92
+Arauca,2024,Básica Primaria,19200,587,0.0306,0.88
+Arauca,2024,Básica Secundaria,13581,636,0.0469,0.86
+Arauca,2024,Media,6407,274,0.0428,0.83
+Atlántico,2019,Preescolar,45751,1509,0.033,0.88
+Atlántico,2019,Básica Primaria,201904,5390,0.0267,0.8
+Atlántico,2019,Básica Secundaria,140409,6529,0.0465,0.82
+Atlántico,2019,Media,70584,2301,0.0326,0.74
+Atlántico,2020,Preescolar,41259,1819,0.0441,0.94
+Atlántico,2020,Básica Primaria,186088,6271,0.0337,0.8
+Atlántico,2020,Básica Secundaria,123355,7351,0.0596,0.95
+Atlántico,2020,Media,64032,3015,0.0471,0.64
+Atlántico,2021,Preescolar,42816,1909,0.0446,0.87
+Atlántico,2021,Básica Primaria,201426,5921,0.0294,0.79
+Atlántico,2021,Básica Secundaria,125414,5957,0.0475,0.85
+Atlántico,2021,Media,66083,2920,0.0442,0.76
+Atlántico,2022,Preescolar,47058,1778,0.0378,0.91
+Atlántico,2022,Básica Primaria,210297,5909,0.0281,0.86
+Atlántico,2022,Básica Secundaria,141700,7056,0.0498,0.84
+Atlántico,2022,Media,70524,2595,0.0368,0.78
+Atlántico,2023,Preescolar,44955,1456,0.0324,0.98
+Atlántico,2023,Básica Primaria,211104,5910,0.028,0.91
+Atlántico,2023,Básica Secundaria,134814,4772,0.0354,0.83
+Atlántico,2023,Media,74140,2654,0.0358,0.73
+Atlántico,2024,Preescolar,49140,1479,0.0301,0.79
+Atlántico,2024,Básica Primaria,212291,6007,0.0283,0.79
+Atlántico,2024,Básica Secundaria,142196,5403,0.038,0.84
+Atlántico,2024,Media,68249,2620,0.0384,0.63
+Bogotá D.C.,2019,Preescolar,121951,2304,0.0189,0.85
+Bogotá D.C.,2019,Básica Primaria,507995,8737,0.0172,0.87
+Bogotá D.C.,2019,Básica Secundaria,353144,8687,0.0246,0.9
+Bogotá D.C.,2019,Media,169530,4373,0.0258,0.69
+Bogotá D.C.,2020,Preescolar,110253,3164,0.0287,0.76
+Bogotá D.C.,2020,Básica Primaria,467631,11737,0.0251,0.87
+Bogotá D.C.,2020,Básica Secundaria,319861,12218,0.0382,0.96
+Bogotá D.C.,2020,Media,163723,5255,0.0321,0.73
+Bogotá D.C.,2021,Preescolar,116805,2639,0.0226,0.91
+Bogotá D.C.,2021,Básica Primaria,510562,11436,0.0224,0.79
+Bogotá D.C.,2021,Básica Secundaria,348900,12804,0.0367,0.82
+Bogotá D.C.,2021,Media,176465,4358,0.0247,0.71
+Bogotá D.C.,2022,Preescolar,111351,2327,0.0209,0.9
+Bogotá D.C.,2022,Básica Primaria,533431,9815,0.0184,0.81
+Bogotá D.C.,2022,Básica Secundaria,350031,10220,0.0292,0.84
+Bogotá D.C.,2022,Media,172669,4282,0.0248,0.66
+Bogotá D.C.,2023,Preescolar,116330,2442,0.021,0.82
+Bogotá D.C.,2023,Básica Primaria,559966,10695,0.0191,0.93
+Bogotá D.C.,2023,Básica Secundaria,356513,9554,0.0268,0.93
+Bogotá D.C.,2023,Media,176429,4375,0.0248,0.56
+Bogotá D.C.,2024,Preescolar,127170,2721,0.0214,0.94
+Bogotá D.C.,2024,Básica Primaria,552188,10270,0.0186,0.85
+Bogotá D.C.,2024,Básica Secundaria,349558,8599,0.0246,0.93
+Bogotá D.C.,2024,Media,191045,3992,0.0209,0.7
+Bolívar,2019,Preescolar,41379,1497,0.0362,0.81
+Bolívar,2019,Básica Primaria,185907,5075,0.0273,0.83
+Bolívar,2019,Básica Secundaria,121890,6033,0.0495,0.98
+Bolívar,2019,Media,60275,2453,0.0407,0.61
+Bolívar,2020,Preescolar,38200,1780,0.0466,0.75
+Bolívar,2020,Básica Primaria,164390,7742,0.0471,0.81
+Bolívar,2020,Básica Secundaria,110732,6732,0.0608,0.82
+Bolívar,2020,Media,57985,3757,0.0648,0.58
+Bolívar,2021,Preescolar,39977,1906,0.0477,0.78
+Bolívar,2021,Básica Primaria,169783,7436,0.0438,0.79
+Bolívar,2021,Básica Secundaria,117717,8240,0.07,0.97
+Bolívar,2021,Media,58820,3464,0.0589,0.58
+Bolívar,2022,Preescolar,40213,1938,0.0482,0.88
+Bolívar,2022,Básica Primaria,168896,5354,0.0317,0.86
+Bolívar,2022,Básica Secundaria,117299,6815,0.0581,0.79
+Bolívar,2022,Media,56247,2711,0.0482,0.85
+Bolívar,2023,Preescolar,40986,1664,0.0406,0.92
+Bolívar,2023,Básica Primaria,187905,6294,0.0335,0.76
+Bolívar,2023,Básica Secundaria,125666,6094,0.0485,0.84
+Bolívar,2023,Media,63447,2360,0.0372,0.83
+Bolívar,2024,Preescolar,42542,1803,0.0424,0.97
+Bolívar,2024,Básica Primaria,180419,5719,0.0317,0.97
+Bolívar,2024,Básica Secundaria,124304,6488,0.0522,0.78
+Bolívar,2024,Media,62920,2258,0.0359,0.7
+Boyacá,2019,Preescolar,15724,415,0.0264,0.78
+Boyacá,2019,Básica Primaria,72599,1444,0.0199,0.91
+Boyacá,2019,Básica Secundaria,49647,1936,0.039,0.94
+Boyacá,2019,Media,25275,791,0.0313,0.71
+Boyacá,2020,Preescolar,15594,598,0.0384,0.84
+Boyacá,2020,Básica Primaria,67628,1819,0.0269,0.8
+Boyacá,2020,Básica Secundaria,46108,2250,0.0488,0.85
+Boyacá,2020,Media,21855,832,0.0381,0.81
+Boyacá,2021,Preescolar,16150,541,0.0335,0.97
+Boyacá,2021,Básica Primaria,71061,2138,0.0301,0.79
+Boyacá,2021,Básica Secundaria,49186,2183,0.0444,0.78
+Boyacá,2021,Media,22500,742,0.033,0.55
+Boyacá,2022,Preescolar,16622,556,0.0335,0.81
+Boyacá,2022,Básica Primaria,71293,1974,0.0277,0.81
+Boyacá,2022,Básica Secundaria,50467,2190,0.0434,0.85
+Boyacá,2022,Media,24157,785,0.0325,0.66
+Boyacá,2023,Preescolar,17177,506,0.0295,0.99
+Boyacá,2023,Básica Primaria,72878,1537,0.0211,0.88
+Boyacá,2023,Básica Secundaria,51974,2146,0.0413,0.95
+Boyacá,2023,Media,24227,794,0.0328,0.62
+Boyacá,2024,Preescolar,16800,409,0.0244,0.76
+Boyacá,2024,Básica Primaria,75586,1882,0.0249,0.82
+Boyacá,2024,Básica Secundaria,48359,1842,0.0381,0.82
+Boyacá,2024,Media,24324,673,0.0277,0.81
+Caldas,2019,Preescolar,13627,372,0.0273,0.86
+Caldas,2019,Básica Primaria,60087,1249,0.0208,0.84
+Caldas,2019,Básica Secundaria,40410,1491,0.0369,0.96
+Caldas,2019,Media,19791,643,0.0325,0.8
+Caldas,2020,Preescolar,11737,467,0.0398,0.88
+Caldas,2020,Básica Primaria,52403,1467,0.028,0.84
+Caldas,2020,Básica Secundaria,37778,1598,0.0423,0.98
+Caldas,2020,Media,18894,761,0.0403,0.74
+Caldas,2021,Preescolar,12202,358,0.0294,0.75
+Caldas,2021,Básica Primaria,57305,1438,0.0251,0.87
+Caldas,2021,Básica Secundaria,36544,1366,0.0374,0.84
+Caldas,2021,Media,18597,784,0.0422,0.7
+Caldas,2022,Preescolar,13445,391,0.0291,0.95
+Caldas,2022,Básica Primaria,57882,1192,0.0206,0.97
+Caldas,2022,Básica Secundaria,39243,1550,0.0395,0.85
+Caldas,2022,Media,18314,664,0.0363,0.57
+Caldas,2023,Preescolar,12840,380,0.0296,0.82
+Caldas,2023,Básica Primaria,59167,1207,0.0204,0.86
+Caldas,2023,Básica Secundaria,41252,1373,0.0333,0.78
+Caldas,2023,Media,20148,570,0.0283,0.82
+Caldas,2024,Preescolar,12842,341,0.0266,0.85
+Caldas,2024,Básica Primaria,62304,1233,0.0198,0.94
+Caldas,2024,Básica Secundaria,40497,1563,0.0386,0.94
+Caldas,2024,Media,20150,636,0.0316,0.59
+Caquetá,2019,Preescolar,8506,353,0.0416,0.88
+Caquetá,2019,Básica Primaria,36083,1490,0.0413,0.85
+Caquetá,2019,Básica Secundaria,25275,1481,0.0586,0.92
+Caquetá,2019,Media,12063,644,0.0534,0.67
+Caquetá,2020,Preescolar,7740,557,0.072,0.91
+Caquetá,2020,Básica Primaria,35221,1789,0.0508,0.86
+Caquetá,2020,Básica Secundaria,23841,1935,0.0812,0.76
+Caquetá,2020,Media,11232,771,0.0687,0.55
+Caquetá,2021,Preescolar,7564,439,0.0581,0.79
+Caquetá,2021,Básica Primaria,37031,1492,0.0403,0.82
+Caquetá,2021,Básica Secundaria,22681,1601,0.0706,0.75
+Caquetá,2021,Media,11954,657,0.055,0.58
+Caquetá,2022,Preescolar,8010,354,0.0443,0.81
+Caquetá,2022,Básica Primaria,38196,1447,0.0379,0.92
+Caquetá,2022,Básica Secundaria,24771,1676,0.0677,0.86
+Caquetá,2022,Media,12122,688,0.0568,0.59
+Caquetá,2023,Preescolar,8076,323,0.0401,0.76
+Caquetá,2023,Básica Primaria,37942,1210,0.0319,0.86
+Caquetá,2023,Básica Secundaria,25567,1378,0.0539,0.91
+Caquetá,2023,Media,12704,593,0.0467,0.71
+Caquetá,2024,Preescolar,8106,373,0.0461,0.79
+Caquetá,2024,Básica Primaria,39977,1479,0.037,0.88
+Caquetá,2024,Básica Secundaria,24781,1266,0.0511,0.79
+Caquetá,2024,Media,12562,560,0.0446,0.82
+Casanare,2019,Preescolar,6156,200,0.0325,0.84
+Casanare,2019,Básica Primaria,27902,669,0.024,0.91
+Casanare,2019,Básica Secundaria,19479,849,0.0436,0.81
+Casanare,2019,Media,9678,300,0.0311,0.76
+Casanare,2020,Preescolar,5744,242,0.0422,0.98
+Casanare,2020,Básica Primaria,24903,876,0.0352,0.91
+Casanare,2020,Básica Secundaria,16552,1069,0.0646,0.75
+Casanare,2020,Media,8390,471,0.0562,0.56
+Casanare,2021,Preescolar,6189,230,0.0373,0.84
+Casanare,2021,Básica Primaria,26322,916,0.0348,0.9
+Casanare,2021,Básica Secundaria,17316,858,0.0496,0.87
+Casanare,2021,Media,9322,417,0.0448,0.74
+Casanare,2022,Preescolar,6346,244,0.0385,0.95
+Casanare,2022,Básica Primaria,27379,856,0.0313,0.77
+Casanare,2022,Básica Secundaria,17929,733,0.0409,0.96
+Casanare,2022,Media,8935,352,0.0394,0.65
+Casanare,2023,Preescolar,6268,185,0.0296,0.86
+Casanare,2023,Básica Primaria,28821,772,0.0268,0.91
+Casanare,2023,Básica Secundaria,19950,861,0.0432,0.88
+Casanare,2023,Media,9303,323,0.0348,0.64
+Casanare,2024,Preescolar,6572,193,0.0295,0.86
+Casanare,2024,Básica Primaria,28202,837,0.0297,0.79
+Casanare,2024,Básica Secundaria,19465,786,0.0404,0.89
+Casanare,2024,Media,9199,359,0.0391,0.64
+Cauca,2019,Preescolar,25340,1140,0.045,0.97
+Cauca,2019,Básica Primaria,115949,4092,0.0353,0.77
+Cauca,2019,Básica Secundaria,74235,3771,0.0508,0.96
+Cauca,2019,Media,36561,1897,0.0519,0.65
+Cauca,2020,Preescolar,24190,1465,0.0606,0.97
+Cauca,2020,Básica Primaria,104818,4622,0.0441,0.84
+Cauca,2020,Básica Secundaria,71334,5021,0.0704,0.9
+Cauca,2020,Media,36535,2067,0.0566,0.84
+Cauca,2021,Preescolar,23927,1339,0.056,0.97
+Cauca,2021,Básica Primaria,110853,5487,0.0495,0.93
+Cauca,2021,Básica Secundaria,75832,5763,0.076,0.87
+Cauca,2021,Media,35519,2195,0.0618,0.8
+Cauca,2022,Preescolar,23977,1258,0.0525,0.85
+Cauca,2022,Básica Primaria,109626,3716,0.0339,0.93
+Cauca,2022,Básica Secundaria,74738,3983,0.0533,0.81
+Cauca,2022,Media,35935,1753,0.0488,0.6
+Cauca,2023,Preescolar,25900,989,0.0382,0.75
+Cauca,2023,Básica Primaria,119561,4734,0.0396,0.92
+Cauca,2023,Básica Secundaria,75394,4825,0.064,0.95
+Cauca,2023,Media,40929,1878,0.0459,0.71
+Cauca,2024,Preescolar,26523,1331,0.0502,0.98
+Cauca,2024,Básica Primaria,116033,3480,0.03,0.89
+Cauca,2024,Básica Secundaria,80723,3955,0.049,0.96
+Cauca,2024,Media,37728,1893,0.0502,0.79
+Cesar,2019,Preescolar,22514,846,0.0376,0.87
+Cesar,2019,Básica Primaria,92932,3178,0.0342,0.98
+Cesar,2019,Básica Secundaria,67287,2974,0.0442,0.78
+Cesar,2019,Media,33840,1671,0.0494,0.77
+Cesar,2020,Preescolar,20306,1118,0.0551,0.9
+Cesar,2020,Básica Primaria,92614,4112,0.0444,0.84
+Cesar,2020,Básica Secundaria,58046,4144,0.0714,0.89
+Cesar,2020,Media,28856,1575,0.0546,0.62
+Cesar,2021,Preescolar,19652,884,0.045,0.85
+Cesar,2021,Básica Primaria,94322,3678,0.039,0.91
+Cesar,2021,Básica Secundaria,61265,4006,0.0654,0.97
+Cesar,2021,Media,29563,1688,0.0571,0.64
+Cesar,2022,Preescolar,20677,949,0.0459,0.99
+Cesar,2022,Básica Primaria,90341,3008,0.0333,0.97
+Cesar,2022,Básica Secundaria,61212,3440,0.0562,0.81
+Cesar,2022,Media,30448,1552,0.051,0.81
+Cesar,2023,Preescolar,22247,952,0.0428,0.82
+Cesar,2023,Básica Primaria,102183,3126,0.0306,0.8
+Cesar,2023,Básica Secundaria,66465,3110,0.0468,0.95
+Cesar,2023,Media,32563,1582,0.0486,0.74
+Cesar,2024,Preescolar,23073,837,0.0363,0.81
+Cesar,2024,Básica Primaria,100204,2976,0.0297,0.88
+Cesar,2024,Básica Secundaria,64477,3507,0.0544,0.94
+Cesar,2024,Media,34413,1600,0.0465,0.61
+Chocó,2019,Preescolar,10251,604,0.059,0.91
+Chocó,2019,Básica Primaria,45477,2005,0.0441,0.82
+Chocó,2019,Básica Secundaria,32340,1901,0.0588,0.95
+Chocó,2019,Media,15447,1007,0.0652,0.84
+Chocó,2020,Preescolar,9439,760,0.0806,0.85
+Chocó,2020,Básica Primaria,45505,2616,0.0575,0.91
+Chocó,2020,Básica Secundaria,30262,2466,0.0815,0.87
+Chocó,2020,Media,15158,1376,0.0908,0.83
+Chocó,2021,Preescolar,10094,711,0.0705,0.96
+Chocó,2021,Básica Primaria,44788,2019,0.0451,0.94
+Chocó,2021,Básica Secundaria,31002,2594,0.0837,0.9
+Chocó,2021,Media,14299,1149,0.0804,0.69
+Chocó,2022,Preescolar,9961,540,0.0543,0.81
+Chocó,2022,Básica Primaria,45786,2074,0.0453,0.92
+Chocó,2022,Básica Secundaria,31900,2079,0.0652,0.89
+Chocó,2022,Media,15858,945,0.0596,0.65
+Chocó,2023,Preescolar,10272,540,0.0526,0.78
+Chocó,2023,Básica Primaria,48977,1763,0.036,0.98
+Chocó,2023,Básica Secundaria,32655,1991,0.061,0.88
+Chocó,2023,Media,15707,879,0.056,0.8
+Chocó,2024,Preescolar,11130,602,0.0541,0.92
+Chocó,2024,Básica Primaria,48890,1769,0.0362,0.98
+Chocó,2024,Básica Secundaria,31120,2265,0.0728,0.87
+Chocó,2024,Media,16746,879,0.0525,0.77
+Córdoba,2019,Preescolar,35708,1396,0.0391,0.82
+Córdoba,2019,Básica Primaria,159969,5294,0.0331,0.85
+Córdoba,2019,Básica Secundaria,103863,6013,0.0579,0.75
+Córdoba,2019,Media,54039,2431,0.045,0.55
+Córdoba,2020,Preescolar,31883,1836,0.0576,0.84
+Córdoba,2020,Básica Primaria,143208,5900,0.0412,0.91
+Córdoba,2020,Básica Secundaria,93118,7468,0.0802,0.82
+Córdoba,2020,Media,46560,3412,0.0733,0.8
+Córdoba,2021,Preescolar,33045,1658,0.0502,0.78
+Córdoba,2021,Básica Primaria,148307,6110,0.0412,0.94
+Córdoba,2021,Básica Secundaria,93067,6430,0.0691,0.76
+Córdoba,2021,Media,49003,2709,0.0553,0.66
+Córdoba,2022,Preescolar,32193,1393,0.0433,0.78
+Córdoba,2022,Básica Primaria,147836,5883,0.0398,0.81
+Córdoba,2022,Básica Secundaria,104514,5978,0.0572,0.99
+Córdoba,2022,Media,48598,2473,0.0509,0.59
+Córdoba,2023,Preescolar,35756,1351,0.0378,0.84
+Córdoba,2023,Básica Primaria,163668,5090,0.0311,0.85
+Córdoba,2023,Básica Secundaria,101160,5806,0.0574,0.88
+Córdoba,2023,Media,51835,2472,0.0477,0.74
+Córdoba,2024,Preescolar,36543,1732,0.0474,0.9
+Córdoba,2024,Básica Primaria,160643,4787,0.0298,0.75
+Córdoba,2024,Básica Secundaria,101959,5597,0.0549,0.95
+Córdoba,2024,Media,53812,2351,0.0437,0.63
+Cundinamarca,2019,Preescolar,47270,997,0.0211,0.98
+Cundinamarca,2019,Básica Primaria,210159,3719,0.0177,0.95
+Cundinamarca,2019,Básica Secundaria,137882,4274,0.031,0.78
+Cundinamarca,2019,Media,71347,1876,0.0263,0.78
+Cundinamarca,2020,Preescolar,40046,1397,0.0349,0.78
+Cundinamarca,2020,Básica Primaria,181212,5309,0.0293,0.89
+Cundinamarca,2020,Básica Secundaria,125296,4748,0.0379,0.95
+Cundinamarca,2020,Media,63970,2034,0.0318,0.66
+Cundinamarca,2021,Preescolar,43550,1258,0.0289,0.85
+Cundinamarca,2021,Básica Primaria,187405,4966,0.0265,0.82
+Cundinamarca,2021,Básica Secundaria,134555,5153,0.0383,0.98
+Cundinamarca,2021,Media,61911,1888,0.0305,0.78
+Cundinamarca,2022,Preescolar,43187,1027,0.0238,0.84
+Cundinamarca,2022,Básica Primaria,205891,4714,0.0229,0.92
+Cundinamarca,2022,Básica Secundaria,133538,4620,0.0346,0.82
+Cundinamarca,2022,Media,66198,1807,0.0273,0.73
+Cundinamarca,2023,Preescolar,48260,1245,0.0258,0.97
+Cundinamarca,2023,Básica Primaria,203076,4000,0.0197,0.84
+Cundinamarca,2023,Básica Secundaria,144171,4209,0.0292,0.87
+Cundinamarca,2023,Media,67087,1522,0.0227,0.82
+Cundinamarca,2024,Preescolar,45700,1046,0.0229,0.96
+Cundinamarca,2024,Básica Primaria,201164,3560,0.0177,0.76
+Cundinamarca,2024,Básica Secundaria,141267,4139,0.0293,0.8
+Cundinamarca,2024,Media,73291,2140,0.0292,0.68
+Huila,2019,Preescolar,18652,585,0.0314,0.92
+Huila,2019,Básica Primaria,84837,2316,0.0273,0.91
+Huila,2019,Básica Secundaria,54214,2136,0.0394,0.81
+Huila,2019,Media,26701,1054,0.0395,0.66
+Huila,2020,Preescolar,17359,867,0.05,0.89
+Huila,2020,Básica Primaria,73441,2930,0.0399,0.84
+Huila,2020,Básica Secundaria,51312,3689,0.0719,0.92
+Huila,2020,Media,26205,1456,0.0556,0.63
+Huila,2021,Preescolar,16729,749,0.0448,0.78
+Huila,2021,Básica Primaria,74785,2295,0.0307,0.99
+Huila,2021,Básica Secundaria,53560,2967,0.0554,0.85
+Huila,2021,Media,25350,1214,0.0479,0.72
+Huila,2022,Preescolar,17206,579,0.0337,0.81
+Huila,2022,Básica Primaria,80470,2760,0.0343,0.98
+Huila,2022,Básica Secundaria,51647,2809,0.0544,0.81
+Huila,2022,Media,27116,1233,0.0455,0.68
+Huila,2023,Preescolar,19174,722,0.0377,0.82
+Huila,2023,Básica Primaria,82276,2632,0.032,0.91
+Huila,2023,Básica Secundaria,54745,2146,0.0392,0.86
+Huila,2023,Media,28510,1188,0.0417,0.58
+Huila,2024,Preescolar,19520,622,0.0319,0.89
+Huila,2024,Básica Primaria,88941,2463,0.0277,0.83
+Huila,2024,Básica Secundaria,57066,2248,0.0394,0.78
+Huila,2024,Media,28987,1040,0.0359,0.71
+La Guajira,2019,Preescolar,20519,1060,0.0517,0.76
+La Guajira,2019,Básica Primaria,90283,3286,0.0364,0.88
+La Guajira,2019,Básica Secundaria,63759,4227,0.0663,0.8
+La Guajira,2019,Media,30811,1805,0.0586,0.81
+La Guajira,2020,Preescolar,19320,1468,0.076,0.91
+La Guajira,2020,Básica Primaria,83967,5105,0.0608,0.78
+La Guajira,2020,Básica Secundaria,55861,5312,0.0951,0.96
+La Guajira,2020,Media,29617,2384,0.0805,0.64
+La Guajira,2021,Preescolar,19712,1324,0.0672,0.84
+La Guajira,2021,Básica Primaria,86237,3966,0.046,0.78
+La Guajira,2021,Básica Secundaria,58675,4271,0.0728,0.83
+La Guajira,2021,Media,28750,2173,0.0756,0.58
+La Guajira,2022,Preescolar,20193,1217,0.0603,0.88
+La Guajira,2022,Básica Primaria,92353,4248,0.046,0.98
+La Guajira,2022,Básica Secundaria,60388,4257,0.0705,0.86
+La Guajira,2022,Media,29616,1702,0.0575,0.58
+La Guajira,2023,Preescolar,21370,1141,0.0534,0.94
+La Guajira,2023,Básica Primaria,92388,3501,0.0379,0.82
+La Guajira,2023,Básica Secundaria,64679,4508,0.0697,0.9
+La Guajira,2023,Media,31041,1421,0.0458,0.6
+La Guajira,2024,Preescolar,21254,935,0.044,0.77
+La Guajira,2024,Básica Primaria,94527,3336,0.0353,0.92
+La Guajira,2024,Básica Secundaria,67564,4425,0.0655,0.8
+La Guajira,2024,Media,31149,1906,0.0612,0.81
+Magdalena,2019,Preescolar,24200,1072,0.0443,0.98
+Magdalena,2019,Básica Primaria,111230,3870,0.0348,0.89
+Magdalena,2019,Básica Secundaria,71597,3801,0.0531,0.85
+Magdalena,2019,Media,36862,1769,0.048,0.56
+Magdalena,2020,Preescolar,22985,1413,0.0615,0.88
+Magdalena,2020,Básica Primaria,104653,4866,0.0465,0.82
+Magdalena,2020,Básica Secundaria,64912,4621,0.0712,0.89
+Magdalena,2020,Media,33537,2059,0.0614,0.73
+Magdalena,2021,Preescolar,23717,1392,0.0587,0.99
+Magdalena,2021,Básica Primaria,101069,4719,0.0467,0.82
+Magdalena,2021,Básica Secundaria,68888,4050,0.0588,0.91
+Magdalena,2021,Media,35022,2136,0.061,0.81
+Magdalena,2022,Preescolar,22887,924,0.0404,0.89
+Magdalena,2022,Básica Primaria,107212,3677,0.0343,0.83
+Magdalena,2022,Básica Secundaria,70448,4466,0.0634,0.87
+Magdalena,2022,Media,34903,1588,0.0455,0.57
+Magdalena,2023,Preescolar,24942,965,0.0387,0.85
+Magdalena,2023,Básica Primaria,107600,3744,0.0348,0.97
+Magdalena,2023,Básica Secundaria,74712,3997,0.0535,0.8
+Magdalena,2023,Media,36517,1752,0.048,0.74
+Magdalena,2024,Preescolar,24966,1138,0.0456,0.86
+Magdalena,2024,Básica Primaria,115535,4378,0.0379,0.8
+Magdalena,2024,Básica Secundaria,76186,4022,0.0528,0.98
+Magdalena,2024,Media,35559,1529,0.043,0.72
+Meta,2019,Preescolar,15869,457,0.0288,0.78
+Meta,2019,Básica Primaria,70978,1717,0.0242,0.75
+Meta,2019,Básica Secundaria,45617,1966,0.0431,0.92
+Meta,2019,Media,23330,898,0.0385,0.75
+Meta,2020,Preescolar,14316,720,0.0503,0.95
+Meta,2020,Básica Primaria,61309,1876,0.0306,0.92
+Meta,2020,Básica Secundaria,42215,2372,0.0562,0.95
+Meta,2020,Media,20330,957,0.0471,0.59
+Meta,2021,Preescolar,14631,586,0.0401,0.8
+Meta,2021,Básica Primaria,66924,1954,0.0292,0.76
+Meta,2021,Básica Secundaria,42568,2328,0.0547,0.94
+Meta,2021,Media,21508,980,0.0456,0.62
+Meta,2022,Preescolar,14550,458,0.0315,0.92
+Meta,2022,Básica Primaria,67786,2013,0.0297,0.89
+Meta,2022,Básica Secundaria,43913,2063,0.047,0.93
+Meta,2022,Media,21668,801,0.037,0.7
+Meta,2023,Preescolar,15938,573,0.036,0.81
+Meta,2023,Básica Primaria,66818,1469,0.022,0.78
+Meta,2023,Básica Secundaria,48622,1789,0.0368,0.82
+Meta,2023,Media,23215,796,0.0343,0.78
+Meta,2024,Preescolar,15913,450,0.0283,0.82
+Meta,2024,Básica Primaria,71397,1713,0.024,0.94
+Meta,2024,Básica Secundaria,46812,1783,0.0381,0.78
+Meta,2024,Media,22331,786,0.0352,0.67
+Nariño,2019,Preescolar,30255,1213,0.0401,0.98
+Nariño,2019,Básica Primaria,134029,4369,0.0326,0.94
+Nariño,2019,Básica Secundaria,90749,5326,0.0587,0.82
+Nariño,2019,Media,45119,2012,0.0446,0.7
+Nariño,2020,Preescolar,27686,1395,0.0504,0.94
+Nariño,2020,Básica Primaria,125298,6390,0.051,0.8
+Nariño,2020,Básica Secundaria,80387,6374,0.0793,0.76
+Nariño,2020,Media,40898,2629,0.0643,0.65
+Nariño,2021,Preescolar,28006,1285,0.0459,0.92
+Nariño,2021,Básica Primaria,130202,5989,0.046,0.76
+Nariño,2021,Básica Secundaria,83548,5773,0.0691,0.82
+Nariño,2021,Media,45107,2160,0.0479,0.66
+Nariño,2022,Preescolar,28178,1276,0.0453,0.8
+Nariño,2022,Básica Primaria,127736,4483,0.0351,0.98
+Nariño,2022,Básica Secundaria,87578,5640,0.0644,0.88
+Nariño,2022,Media,46186,1958,0.0424,0.7
+Nariño,2023,Preescolar,31677,1324,0.0418,0.97
+Nariño,2023,Básica Primaria,135202,4015,0.0297,0.9
+Nariño,2023,Básica Secundaria,95727,4901,0.0512,0.81
+Nariño,2023,Media,45863,2105,0.0459,0.78
+Nariño,2024,Preescolar,31663,1187,0.0375,0.92
+Nariño,2024,Básica Primaria,140861,4310,0.0306,0.81
+Nariño,2024,Básica Secundaria,93542,4920,0.0526,0.98
+Nariño,2024,Media,47050,1820,0.0387,0.79
+Norte de Santander,2019,Preescolar,22387,924,0.0413,0.87
+Norte de Santander,2019,Básica Primaria,105269,3294,0.0313,0.8
+Norte de Santander,2019,Básica Secundaria,70057,3951,0.0564,0.79
+Norte de Santander,2019,Media,34333,1486,0.0433,0.76
+Norte de Santander,2020,Preescolar,20329,1142,0.0562,0.82
+Norte de Santander,2020,Básica Primaria,96972,4441,0.0458,0.76
+Norte de Santander,2020,Básica Secundaria,65149,4579,0.0703,0.89
+Norte de Santander,2020,Media,30254,1745,0.0577,0.67
+Norte de Santander,2021,Preescolar,20899,856,0.041,0.85
+Norte de Santander,2021,Básica Primaria,93223,3850,0.0413,0.86
+Norte de Santander,2021,Básica Secundaria,66969,4232,0.0632,0.85
+Norte de Santander,2021,Media,32833,1470,0.0448,0.67
+Norte de Santander,2022,Preescolar,23075,996,0.0432,0.85
+Norte de Santander,2022,Básica Primaria,104581,3764,0.036,0.85
+Norte de Santander,2022,Básica Secundaria,69264,3567,0.0515,0.9
+Norte de Santander,2022,Media,34595,1788,0.0517,0.56
+Norte de Santander,2023,Preescolar,22972,781,0.034,0.86
+Norte de Santander,2023,Básica Primaria,104841,3019,0.0288,0.89
+Norte de Santander,2023,Básica Secundaria,71813,3640,0.0507,0.8
+Norte de Santander,2023,Media,33992,1417,0.0417,0.59
+Norte de Santander,2024,Preescolar,23457,896,0.0382,0.92
+Norte de Santander,2024,Básica Primaria,100115,2933,0.0293,0.84
+Norte de Santander,2024,Básica Secundaria,72261,3193,0.0442,0.78
+Norte de Santander,2024,Media,34861,1607,0.0461,0.66
+Putumayo,2019,Preescolar,6120,256,0.0419,0.81
+Putumayo,2019,Básica Primaria,27078,926,0.0342,0.85
+Putumayo,2019,Básica Secundaria,17816,994,0.0558,0.81
+Putumayo,2019,Media,9512,503,0.0529,0.67
+Putumayo,2020,Preescolar,5746,321,0.056,0.84
+Putumayo,2020,Básica Primaria,26050,1380,0.053,0.99
+Putumayo,2020,Básica Secundaria,16952,1147,0.0677,0.9
+Putumayo,2020,Media,8209,519,0.0633,0.59
+Putumayo,2021,Preescolar,6027,335,0.0556,0.94
+Putumayo,2021,Básica Primaria,26110,1258,0.0482,0.85
+Putumayo,2021,Básica Secundaria,16481,993,0.0603,0.85
+Putumayo,2021,Media,8988,599,0.0667,0.67
+Putumayo,2022,Preescolar,5717,234,0.041,0.93
+Putumayo,2022,Básica Primaria,27669,1103,0.0399,0.81
+Putumayo,2022,Básica Secundaria,18478,1212,0.0656,0.97
+Putumayo,2022,Media,9280,491,0.053,0.6
+Putumayo,2023,Preescolar,6322,249,0.0395,0.78
+Putumayo,2023,Básica Primaria,26558,794,0.0299,0.94
+Putumayo,2023,Básica Secundaria,19051,910,0.0478,0.86
+Putumayo,2023,Media,9054,400,0.0442,0.59
+Putumayo,2024,Preescolar,6062,229,0.0379,0.83
+Putumayo,2024,Básica Primaria,28722,1042,0.0363,0.83
+Putumayo,2024,Básica Secundaria,18693,1043,0.0558,0.87
+Putumayo,2024,Media,9720,454,0.0468,0.7
+Quindío,2019,Preescolar,7162,159,0.0223,0.82
+Quindío,2019,Básica Primaria,32034,618,0.0193,0.96
+Quindío,2019,Básica Secundaria,20578,728,0.0354,0.84
+Quindío,2019,Media,10334,298,0.0289,0.7
+Quindío,2020,Preescolar,6707,211,0.0316,0.93
+Quindío,2020,Básica Primaria,28552,688,0.0241,0.97
+Quindío,2020,Básica Secundaria,18649,865,0.0464,0.92
+Quindío,2020,Media,9551,385,0.0404,0.68
+Quindío,2021,Preescolar,6942,235,0.0339,0.91
+Quindío,2021,Básica Primaria,28567,785,0.0275,0.91
+Quindío,2021,Básica Secundaria,20743,806,0.0389,0.82
+Quindío,2021,Media,10082,346,0.0344,0.8
+Quindío,2022,Preescolar,6559,186,0.0285,0.87
+Quindío,2022,Básica Primaria,30930,600,0.0194,0.8
+Quindío,2022,Básica Secundaria,21031,742,0.0353,0.79
+Quindío,2022,Media,10610,306,0.0289,0.63
+Quindío,2023,Preescolar,6836,189,0.0277,0.91
+Quindío,2023,Básica Primaria,31242,593,0.019,0.87
+Quindío,2023,Básica Secundaria,22084,755,0.0342,0.77
+Quindío,2023,Media,11135,290,0.0261,0.73
+Quindío,2024,Preescolar,7091,162,0.0229,0.9
+Quindío,2024,Básica Primaria,31278,644,0.0206,0.93
+Quindío,2024,Básica Secundaria,20808,684,0.0329,0.85
+Quindío,2024,Media,11017,289,0.0263,0.59
+Risaralda,2019,Preescolar,12648,297,0.0235,0.95
+Risaralda,2019,Básica Primaria,59372,1318,0.0222,0.8
+Risaralda,2019,Básica Secundaria,38051,1278,0.0336,0.75
+Risaralda,2019,Media,18934,496,0.0262,0.82
+Risaralda,2020,Preescolar,11532,384,0.0333,0.76
+Risaralda,2020,Básica Primaria,54611,1736,0.0318,0.83
+Risaralda,2020,Básica Secundaria,35458,1886,0.0532,0.76
+Risaralda,2020,Media,17171,719,0.0419,0.8
+Risaralda,2021,Preescolar,12175,381,0.0313,0.92
+Risaralda,2021,Básica Primaria,55439,1252,0.0226,0.88
+Risaralda,2021,Básica Secundaria,37634,1723,0.0458,0.92
+Risaralda,2021,Media,18506,566,0.0306,0.61
+Risaralda,2022,Preescolar,12407,354,0.0286,0.95
+Risaralda,2022,Básica Primaria,57566,1180,0.0205,0.96
+Risaralda,2022,Básica Secundaria,38694,1489,0.0385,0.82
+Risaralda,2022,Media,18784,514,0.0274,0.77
+Risaralda,2023,Preescolar,13596,334,0.0246,0.89
+Risaralda,2023,Básica Primaria,59403,1093,0.0184,0.81
+Risaralda,2023,Básica Secundaria,39729,1326,0.0334,0.83
+Risaralda,2023,Media,20718,596,0.0288,0.76
+Risaralda,2024,Preescolar,12854,359,0.028,0.79
+Risaralda,2024,Básica Primaria,58722,1368,0.0233,0.93
+Risaralda,2024,Básica Secundaria,38284,1458,0.0381,0.84
+Risaralda,2024,Media,19968,597,0.0299,0.7
+San Andrés,2019,Preescolar,986,20,0.0206,0.94
+San Andrés,2019,Básica Primaria,4717,84,0.0179,0.9
+San Andrés,2019,Básica Secundaria,3136,85,0.0272,0.88
+San Andrés,2019,Media,1457,40,0.0276,0.73
+San Andrés,2020,Preescolar,891,31,0.0348,0.94
+San Andrés,2020,Básica Primaria,4238,122,0.0288,0.91
+San Andrés,2020,Básica Secundaria,2697,113,0.0422,0.94
+San Andrés,2020,Media,1325,43,0.033,0.76
+San Andrés,2021,Preescolar,914,27,0.0296,0.89
+San Andrés,2021,Básica Primaria,4376,104,0.0239,0.75
+San Andrés,2021,Básica Secundaria,2941,91,0.0311,0.86
+San Andrés,2021,Media,1394,46,0.0333,0.67
+San Andrés,2022,Preescolar,1010,27,0.0273,0.93
+San Andrés,2022,Básica Primaria,4517,98,0.0219,0.86
+San Andrés,2022,Básica Secundaria,2952,96,0.0328,0.82
+San Andrés,2022,Media,1489,45,0.0306,0.58
+San Andrés,2023,Preescolar,988,22,0.023,0.81
+San Andrés,2023,Básica Primaria,4800,84,0.0176,0.78
+San Andrés,2023,Básica Secundaria,3136,104,0.0332,0.88
+San Andrés,2023,Media,1514,34,0.0231,0.62
+San Andrés,2024,Preescolar,1014,25,0.025,0.77
+San Andrés,2024,Básica Primaria,4829,96,0.0199,0.93
+San Andrés,2024,Básica Secundaria,2975,91,0.0308,0.89
+San Andrés,2024,Media,1525,35,0.023,0.66
+Santander,2019,Preescolar,32815,744,0.0227,0.95
+Santander,2019,Básica Primaria,142764,3354,0.0235,0.91
+Santander,2019,Básica Secundaria,94676,2859,0.0302,0.79
+Santander,2019,Media,47957,1165,0.0243,0.83
+Santander,2020,Preescolar,27754,1099,0.0396,0.97
+Santander,2020,Básica Primaria,133391,3334,0.025,0.76
+Santander,2020,Básica Secundaria,88049,4516,0.0513,0.78
+Santander,2020,Media,42005,1726,0.0411,0.61
+Santander,2021,Preescolar,29700,1051,0.0354,0.9
+Santander,2021,Básica Primaria,138443,4167,0.0301,0.92
+Santander,2021,Básica Secundaria,88506,3398,0.0384,0.89
+Santander,2021,Media,45139,1715,0.038,0.84
+Santander,2022,Preescolar,30375,902,0.0297,0.87
+Santander,2022,Básica Primaria,137825,2839,0.0206,0.98
+Santander,2022,Básica Secundaria,91210,3766,0.0413,0.96
+Santander,2022,Media,45537,1238,0.0272,0.56
+Santander,2023,Preescolar,31531,781,0.0248,0.86
+Santander,2023,Básica Primaria,148899,3380,0.0227,0.87
+Santander,2023,Básica Secundaria,92332,2797,0.0303,0.78
+Santander,2023,Media,49420,1373,0.0278,0.56
+Santander,2024,Preescolar,32046,874,0.0273,0.76
+Santander,2024,Básica Primaria,141328,3179,0.0225,0.98
+Santander,2024,Básica Secundaria,93126,3212,0.0345,0.84
+Santander,2024,Media,47732,1331,0.0279,0.81
+Sucre,2019,Preescolar,16960,681,0.0402,0.82
+Sucre,2019,Básica Primaria,79278,2885,0.0364,0.97
+Sucre,2019,Básica Secundaria,51647,2892,0.056,0.81
+Sucre,2019,Media,24952,1240,0.0497,0.62
+Sucre,2020,Preescolar,16150,894,0.0554,0.97
+Sucre,2020,Básica Primaria,67511,2875,0.0426,0.89
+Sucre,2020,Básica Secundaria,46960,3216,0.0685,0.83
+Sucre,2020,Media,22615,1562,0.0691,0.61
+Sucre,2021,Preescolar,15590,756,0.0485,0.8
+Sucre,2021,Básica Primaria,72337,3269,0.0452,0.83
+Sucre,2021,Básica Secundaria,49296,3519,0.0714,0.85
+Sucre,2021,Media,23811,1359,0.0571,0.8
+Sucre,2022,Preescolar,16464,828,0.0503,0.92
+Sucre,2022,Básica Primaria,74204,2611,0.0352,0.79
+Sucre,2022,Básica Secundaria,50276,2910,0.0579,0.81
+Sucre,2022,Media,25332,1413,0.0558,0.66
+Sucre,2023,Preescolar,17827,837,0.047,0.88
+Sucre,2023,Básica Primaria,79279,2402,0.0303,0.77
+Sucre,2023,Básica Secundaria,49660,2334,0.047,0.84
+Sucre,2023,Media,26298,1335,0.0508,0.58
+Sucre,2024,Preescolar,16613,716,0.0431,0.88
+Sucre,2024,Básica Primaria,78984,2882,0.0365,0.92
+Sucre,2024,Básica Secundaria,51678,2857,0.0553,0.82
+Sucre,2024,Media,24956,1040,0.0417,0.58
+Tolima,2019,Preescolar,19791,730,0.0369,0.85
+Tolima,2019,Básica Primaria,86155,2438,0.0283,0.86
+Tolima,2019,Básica Secundaria,58439,2805,0.048,0.96
+Tolima,2019,Media,30172,965,0.032,0.58
+Tolima,2020,Preescolar,18503,975,0.0527,0.91
+Tolima,2020,Básica Primaria,79426,3065,0.0386,0.81
+Tolima,2020,Básica Secundaria,54151,3671,0.0678,0.87
+Tolima,2020,Media,27342,1271,0.0465,0.58
+Tolima,2021,Preescolar,18616,807,0.0434,0.94
+Tolima,2021,Básica Primaria,81295,2536,0.0312,0.98
+Tolima,2021,Básica Secundaria,56832,2619,0.0461,0.82
+Tolima,2021,Media,28108,1127,0.0401,0.6
+Tolima,2022,Preescolar,20363,737,0.0362,0.87
+Tolima,2022,Básica Primaria,88843,2869,0.0323,0.98
+Tolima,2022,Básica Secundaria,60203,2811,0.0467,0.8
+Tolima,2022,Media,28442,1046,0.0368,0.84
+Tolima,2023,Preescolar,20777,745,0.0359,0.85
+Tolima,2023,Básica Primaria,88751,2627,0.0296,0.97
+Tolima,2023,Básica Secundaria,59798,2822,0.0472,0.79
+Tolima,2023,Media,30714,1219,0.0397,0.76
+Tolima,2024,Preescolar,20242,625,0.0309,0.86
+Tolima,2024,Básica Primaria,88240,2408,0.0273,0.92
+Tolima,2024,Básica Secundaria,59845,2417,0.0404,0.82
+Tolima,2024,Media,31146,956,0.0307,0.74
+Valle del Cauca,2019,Preescolar,70293,1855,0.0264,0.9
+Valle del Cauca,2019,Básica Primaria,314559,6259,0.0199,0.79
+Valle del Cauca,2019,Básica Secundaria,229816,8020,0.0349,0.75
+Valle del Cauca,2019,Media,109398,3303,0.0302,0.58
+Valle del Cauca,2020,Preescolar,67828,2428,0.0358,0.75
+Valle del Cauca,2020,Básica Primaria,307623,10366,0.0337,0.9
+Valle del Cauca,2020,Básica Secundaria,193186,10779,0.0558,0.9
+Valle del Cauca,2020,Media,99044,4516,0.0456,0.64
+Valle del Cauca,2021,Preescolar,71230,2243,0.0315,0.87
+Valle del Cauca,2021,Básica Primaria,308911,9885,0.032,0.93
+Valle del Cauca,2021,Básica Secundaria,205932,8690,0.0422,0.89
+Valle del Cauca,2021,Media,104542,3721,0.0356,0.62
+Valle del Cauca,2022,Preescolar,73535,2198,0.0299,0.91
+Valle del Cauca,2022,Básica Primaria,337801,7364,0.0218,0.86
+Valle del Cauca,2022,Básica Secundaria,214437,8470,0.0395,0.84
+Valle del Cauca,2022,Media,104704,3570,0.0341,0.7
+Valle del Cauca,2023,Preescolar,78065,1889,0.0242,0.84
+Valle del Cauca,2023,Básica Primaria,350960,8563,0.0244,0.98
+Valle del Cauca,2023,Básica Secundaria,223279,6943,0.0311,0.83
+Valle del Cauca,2023,Media,116531,4055,0.0348,0.85
+Valle del Cauca,2024,Preescolar,74385,2238,0.0301,0.8
+Valle del Cauca,2024,Básica Primaria,320671,6349,0.0198,0.87
+Valle del Cauca,2024,Básica Secundaria,218091,7240,0.0332,0.97
+Valle del Cauca,2024,Media,107592,3077,0.0286,0.64
+Vaupés,2019,Preescolar,783,41,0.0535,0.83
+Vaupés,2019,Básica Primaria,3403,158,0.0467,0.86
+Vaupés,2019,Básica Secundaria,2392,142,0.0596,0.83
+Vaupés,2019,Media,1188,65,0.0554,0.69
+Vaupés,2020,Preescolar,684,56,0.0828,0.79
+Vaupés,2020,Básica Primaria,3050,158,0.0519,0.85
+Vaupés,2020,Básica Secundaria,2174,203,0.0934,0.95
+Vaupés,2020,Media,1054,89,0.0846,0.65
+Vaupés,2021,Preescolar,764,53,0.0705,0.88
+Vaupés,2021,Básica Primaria,3129,160,0.0514,0.99
+Vaupés,2021,Básica Secundaria,2182,171,0.0788,0.86
+Vaupés,2021,Media,1042,83,0.0801,0.75
+Vaupés,2022,Preescolar,751,45,0.0609,0.79
+Vaupés,2022,Básica Primaria,3502,153,0.0437,0.89
+Vaupés,2022,Básica Secundaria,2267,178,0.0786,0.94
+Vaupés,2022,Media,1138,66,0.0585,0.66
+Vaupés,2023,Preescolar,764,43,0.0573,0.93
+Vaupés,2023,Básica Primaria,3586,162,0.0454,0.75
+Vaupés,2023,Básica Secundaria,2287,151,0.0664,0.78
+Vaupés,2023,Media,1182,75,0.0636,0.72
+Vaupés,2024,Preescolar,775,43,0.0558,0.97
+Vaupés,2024,Básica Primaria,3532,140,0.0399,0.81
+Vaupés,2024,Básica Secundaria,2408,165,0.0689,0.92
+Vaupés,2024,Media,1217,59,0.049,0.79
+Vichada,2019,Preescolar,2070,98,0.0478,0.97
+Vichada,2019,Básica Primaria,8741,384,0.044,0.8
+Vichada,2019,Básica Secundaria,5782,320,0.0555,0.97
+Vichada,2019,Media,2914,165,0.0569,0.65
+Vichada,2020,Preescolar,1894,115,0.0608,0.94
+Vichada,2020,Básica Primaria,8222,511,0.0622,0.85
+Vichada,2020,Básica Secundaria,5766,452,0.0784,0.77
+Vichada,2020,Media,2816,189,0.0672,0.76
+Vichada,2021,Preescolar,1874,111,0.0594,0.87
+Vichada,2021,Básica Primaria,8807,427,0.0485,0.97
+Vichada,2021,Básica Secundaria,5541,485,0.0877,0.8
+Vichada,2021,Media,2980,177,0.0594,0.8
+Vichada,2022,Preescolar,1892,103,0.0545,0.83
+Vichada,2022,Básica Primaria,9102,458,0.0504,0.89
+Vichada,2022,Básica Secundaria,5800,386,0.0667,0.89
+Vichada,2022,Media,2841,153,0.0541,0.76
+Vichada,2023,Preescolar,2098,96,0.0458,0.89
+Vichada,2023,Básica Primaria,8928,397,0.0445,0.87
+Vichada,2023,Básica Secundaria,6245,427,0.0684,0.84
+Vichada,2023,Media,3036,176,0.058,0.85
+Vichada,2024,Preescolar,2089,97,0.0467,0.94
+Vichada,2024,Básica Primaria,9526,359,0.0377,0.88
+Vichada,2024,Básica Secundaria,6446,377,0.0585,0.86
+Vichada,2024,Media,3187,167,0.0527,0.72

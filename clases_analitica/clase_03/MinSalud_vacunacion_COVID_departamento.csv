@@ -1,0 +1,3958 @@
+﻿departamento,grupo_etario,tipo_dosis,vacuna,dosis_aplicadas
+Amazonas,12-17,Primera dosis,Pfizer,831
+Amazonas,12-17,Primera dosis,Sinovac,835
+Amazonas,12-17,Primera dosis,AstraZeneca,432
+Amazonas,12-17,Primera dosis,Janssen,244
+Amazonas,12-17,Primera dosis,Moderna,236
+Amazonas,12-17,Segunda dosis,Pfizer,655
+Amazonas,12-17,Segunda dosis,Sinovac,620
+Amazonas,12-17,Segunda dosis,AstraZeneca,218
+Amazonas,12-17,Segunda dosis,Janssen,129
+Amazonas,12-17,Segunda dosis,Moderna,499
+Amazonas,12-17,Refuerzo,Pfizer,375
+Amazonas,12-17,Refuerzo,Sinovac,270
+Amazonas,12-17,Refuerzo,AstraZeneca,128
+Amazonas,12-17,Refuerzo,Janssen,88
+Amazonas,12-17,Refuerzo,Moderna,208
+Amazonas,18-29,Primera dosis,Pfizer,2366
+Amazonas,18-29,Primera dosis,Sinovac,1557
+Amazonas,18-29,Primera dosis,AstraZeneca,1121
+Amazonas,18-29,Primera dosis,Janssen,527
+Amazonas,18-29,Primera dosis,Moderna,639
+Amazonas,18-29,Segunda dosis,Pfizer,1746
+Amazonas,18-29,Segunda dosis,Sinovac,1388
+Amazonas,18-29,Segunda dosis,AstraZeneca,1023
+Amazonas,18-29,Segunda dosis,Janssen,349
+Amazonas,18-29,Segunda dosis,Moderna,721
+Amazonas,18-29,Refuerzo,Pfizer,918
+Amazonas,18-29,Refuerzo,Sinovac,770
+Amazonas,18-29,Refuerzo,AstraZeneca,548
+Amazonas,18-29,Refuerzo,Janssen,238
+Amazonas,18-29,Refuerzo,Moderna,493
+Amazonas,30-39,Primera dosis,Pfizer,2264
+Amazonas,30-39,Primera dosis,Sinovac,1640
+Amazonas,30-39,Primera dosis,AstraZeneca,884
+Amazonas,30-39,Primera dosis,Janssen,521
+Amazonas,30-39,Primera dosis,Moderna,388
+Amazonas,30-39,Segunda dosis,Pfizer,1841
+Amazonas,30-39,Segunda dosis,Sinovac,1710
+Amazonas,30-39,Segunda dosis,AstraZeneca,802
+Amazonas,30-39,Segunda dosis,Janssen,433
+Amazonas,30-39,Segunda dosis,Moderna,300
+Amazonas,30-39,Refuerzo,Pfizer,863
+Amazonas,30-39,Refuerzo,Sinovac,773
+Amazonas,30-39,Refuerzo,AstraZeneca,365
+Amazonas,30-39,Refuerzo,Janssen,153
+Amazonas,30-39,Refuerzo,Moderna,679
+Amazonas,40-49,Primera dosis,Pfizer,1673
+Amazonas,40-49,Primera dosis,Sinovac,1318
+Amazonas,40-49,Primera dosis,AstraZeneca,630
+Amazonas,40-49,Primera dosis,Janssen,278
+Amazonas,40-49,Primera dosis,Moderna,701
+Amazonas,40-49,Segunda dosis,Pfizer,1247
+Amazonas,40-49,Segunda dosis,Sinovac,1312
+Amazonas,40-49,Segunda dosis,AstraZeneca,629
+Amazonas,40-49,Segunda dosis,Janssen,307
+Amazonas,40-49,Segunda dosis,Moderna,322
+Amazonas,40-49,Refuerzo,Pfizer,612
+Amazonas,40-49,Refuerzo,Sinovac,623
+Amazonas,40-49,Refuerzo,AstraZeneca,224
+Amazonas,40-49,Refuerzo,Janssen,133
+Amazonas,40-49,Refuerzo,Moderna,337
+Amazonas,50-59,Primera dosis,Pfizer,1476
+Amazonas,50-59,Primera dosis,Sinovac,1339
+Amazonas,50-59,Primera dosis,AstraZeneca,711
+Amazonas,50-59,Primera dosis,Janssen,246
+Amazonas,50-59,Primera dosis,Moderna,233
+Amazonas,50-59,Segunda dosis,Pfizer,1073
+Amazonas,50-59,Segunda dosis,Sinovac,996
+Amazonas,50-59,Segunda dosis,AstraZeneca,448
+Amazonas,50-59,Segunda dosis,Janssen,214
+Amazonas,50-59,Segunda dosis,Moderna,807
+Amazonas,50-59,Refuerzo,Pfizer,783
+Amazonas,50-59,Refuerzo,Sinovac,670
+Amazonas,50-59,Refuerzo,AstraZeneca,261
+Amazonas,50-59,Refuerzo,Janssen,164
+Amazonas,50-59,Refuerzo,Moderna,106
+Amazonas,60-69,Primera dosis,Pfizer,904
+Amazonas,60-69,Primera dosis,Sinovac,761
+Amazonas,60-69,Primera dosis,AstraZeneca,432
+Amazonas,60-69,Primera dosis,Janssen,174
+Amazonas,60-69,Primera dosis,Moderna,497
+Amazonas,60-69,Segunda dosis,Pfizer,905
+Amazonas,60-69,Segunda dosis,Sinovac,857
+Amazonas,60-69,Segunda dosis,AstraZeneca,353
+Amazonas,60-69,Segunda dosis,Janssen,153
+Amazonas,60-69,Segunda dosis,Moderna,254
+Amazonas,60-69,Refuerzo,Pfizer,546
+Amazonas,60-69,Refuerzo,Sinovac,411
+Amazonas,60-69,Refuerzo,AstraZeneca,149
+Amazonas,60-69,Refuerzo,Janssen,71
+Amazonas,60-69,Refuerzo,Moderna,188
+Amazonas,70-79,Primera dosis,Pfizer,535
+Amazonas,70-79,Primera dosis,Sinovac,401
+Amazonas,70-79,Primera dosis,AstraZeneca,216
+Amazonas,70-79,Primera dosis,Janssen,156
+Amazonas,70-79,Primera dosis,Moderna,255
+Amazonas,70-79,Segunda dosis,Pfizer,487
+Amazonas,70-79,Segunda dosis,Sinovac,479
+Amazonas,70-79,Segunda dosis,AstraZeneca,256
+Amazonas,70-79,Segunda dosis,Janssen,69
+Amazonas,70-79,Segunda dosis,Moderna,87
+Amazonas,70-79,Refuerzo,Pfizer,312
+Amazonas,70-79,Refuerzo,Sinovac,267
+Amazonas,70-79,Refuerzo,AstraZeneca,129
+Amazonas,70-79,Refuerzo,Janssen,53
+Amazonas,70-79,Refuerzo,Moderna,77
+Amazonas,80+,Primera dosis,Pfizer,439
+Amazonas,80+,Primera dosis,Sinovac,439
+Amazonas,80+,Primera dosis,AstraZeneca,238
+Amazonas,80+,Primera dosis,Janssen,80
+Amazonas,80+,Primera dosis,Moderna,74
+Amazonas,80+,Segunda dosis,Pfizer,370
+Amazonas,80+,Segunda dosis,Sinovac,283
+Amazonas,80+,Segunda dosis,AstraZeneca,202
+Amazonas,80+,Segunda dosis,Janssen,98
+Amazonas,80+,Segunda dosis,Moderna,102
+Amazonas,80+,Refuerzo,Pfizer,187
+Amazonas,80+,Refuerzo,Sinovac,177
+Amazonas,80+,Refuerzo,AstraZeneca,91
+Amazonas,80+,Refuerzo,Janssen,32
+Amazonas,80+,Refuerzo,Moderna,78
+Antioquia,12-17,Primera dosis,Pfizer,139342
+Antioquia,12-17,Primera dosis,Sinovac,98697
+Antioquia,12-17,Primera dosis,AstraZeneca,52264
+Antioquia,12-17,Primera dosis,Janssen,20119
+Antioquia,12-17,Primera dosis,Moderna,84275
+Antioquia,12-17,Segunda dosis,Pfizer,135531
+Antioquia,12-17,Segunda dosis,Sinovac,116546
+Antioquia,12-17,Segunda dosis,AstraZeneca,63181
+Antioquia,12-17,Segunda dosis,Janssen,22550
+Antioquia,12-17,Segunda dosis,Moderna,7131
+Antioquia,12-17,Refuerzo,Pfizer,63892
+Antioquia,12-17,Refuerzo,Sinovac,70580
+Antioquia,12-17,Refuerzo,AstraZeneca,40679
+Antioquia,12-17,Refuerzo,Janssen,11341
+Antioquia,12-17,Refuerzo,Moderna,22446
+Antioquia,18-29,Primera dosis,Pfizer,351249
+Antioquia,18-29,Primera dosis,Sinovac,245157
+Antioquia,18-29,Primera dosis,AstraZeneca,137603
+Antioquia,18-29,Primera dosis,Janssen,72277
+Antioquia,18-29,Primera dosis,Moderna,126439
+Antioquia,18-29,Segunda dosis,Pfizer,251830
+Antioquia,18-29,Segunda dosis,Sinovac,260112
+Antioquia,18-29,Segunda dosis,AstraZeneca,109765
+Antioquia,18-29,Segunda dosis,Janssen,46732
+Antioquia,18-29,Segunda dosis,Moderna,102849
+Antioquia,18-29,Refuerzo,Pfizer,164368
+Antioquia,18-29,Refuerzo,Sinovac,150001
+Antioquia,18-29,Refuerzo,AstraZeneca,55782
+Antioquia,18-29,Refuerzo,Janssen,30458
+Antioquia,18-29,Refuerzo,Moderna,63798
+Antioquia,30-39,Primera dosis,Pfizer,308311
+Antioquia,30-39,Primera dosis,Sinovac,229728
+Antioquia,30-39,Primera dosis,AstraZeneca,107343
+Antioquia,30-39,Primera dosis,Janssen,58640
+Antioquia,30-39,Primera dosis,Moderna,172464
+Antioquia,30-39,Segunda dosis,Pfizer,278338
+Antioquia,30-39,Segunda dosis,Sinovac,211770
+Antioquia,30-39,Segunda dosis,AstraZeneca,94650
+Antioquia,30-39,Segunda dosis,Janssen,41537
+Antioquia,30-39,Segunda dosis,Moderna,149385
+Antioquia,30-39,Refuerzo,Pfizer,151424
+Antioquia,30-39,Refuerzo,Sinovac,113802
+Antioquia,30-39,Refuerzo,AstraZeneca,79460
+Antioquia,30-39,Refuerzo,Janssen,38775
+Antioquia,30-39,Refuerzo,Moderna,33558
+Antioquia,40-49,Primera dosis,Pfizer,219728
+Antioquia,40-49,Primera dosis,Sinovac,179947
+Antioquia,40-49,Primera dosis,AstraZeneca,132313
+Antioquia,40-49,Primera dosis,Janssen,53699
+Antioquia,40-49,Primera dosis,Moderna,97921
+Antioquia,40-49,Segunda dosis,Pfizer,200314
+Antioquia,40-49,Segunda dosis,Sinovac,189466
+Antioquia,40-49,Segunda dosis,AstraZeneca,104261
+Antioquia,40-49,Segunda dosis,Janssen,34333
+Antioquia,40-49,Segunda dosis,Moderna,48454
+Antioquia,40-49,Refuerzo,Pfizer,104289
+Antioquia,40-49,Refuerzo,Sinovac,98703
+Antioquia,40-49,Refuerzo,AstraZeneca,47939
+Antioquia,40-49,Refuerzo,Janssen,24701
+Antioquia,40-49,Refuerzo,Moderna,61117
+Antioquia,50-59,Primera dosis,Pfizer,182843
+Antioquia,50-59,Primera dosis,Sinovac,171289
+Antioquia,50-59,Primera dosis,AstraZeneca,79034
+Antioquia,50-59,Primera dosis,Janssen,54930
+Antioquia,50-59,Primera dosis,Moderna,102021
+Antioquia,50-59,Segunda dosis,Pfizer,170110
+Antioquia,50-59,Segunda dosis,Sinovac,140868
+Antioquia,50-59,Segunda dosis,AstraZeneca,75854
+Antioquia,50-59,Segunda dosis,Janssen,37227
+Antioquia,50-59,Segunda dosis,Moderna,99573
+Antioquia,50-59,Refuerzo,Pfizer,111045
+Antioquia,50-59,Refuerzo,Sinovac,93136
+Antioquia,50-59,Refuerzo,AstraZeneca,65141
+Antioquia,50-59,Refuerzo,Janssen,24439
+Antioquia,50-59,Refuerzo,Moderna,44939
+Antioquia,60-69,Primera dosis,Pfizer,175308
+Antioquia,60-69,Primera dosis,Sinovac,146234
+Antioquia,60-69,Primera dosis,AstraZeneca,86310
+Antioquia,60-69,Primera dosis,Janssen,42221
+Antioquia,60-69,Segunda dosis,Pfizer,147624
+Antioquia,60-69,Segunda dosis,Sinovac,102271
+Antioquia,60-69,Segunda dosis,AstraZeneca,56984
+Antioquia,60-69,Segunda dosis,Janssen,23277
+Antioquia,60-69,Segunda dosis,Moderna,53411
+Antioquia,60-69,Refuerzo,Pfizer,60023
+Antioquia,60-69,Refuerzo,Sinovac,45156
+Antioquia,60-69,Refuerzo,AstraZeneca,24336
+Antioquia,60-69,Refuerzo,Janssen,17518
+Antioquia,60-69,Refuerzo,Moderna,29450
+Antioquia,70-79,Primera dosis,Pfizer,82277
+Antioquia,70-79,Primera dosis,Sinovac,83102
+Antioquia,70-79,Primera dosis,AstraZeneca,47963
+Antioquia,70-79,Primera dosis,Janssen,18697
+Antioquia,70-79,Primera dosis,Moderna,8325
+Antioquia,70-79,Segunda dosis,Pfizer,80297
+Antioquia,70-79,Segunda dosis,Sinovac,57329
+Antioquia,70-79,Segunda dosis,AstraZeneca,28001
+Antioquia,70-79,Segunda dosis,Janssen,21256
+Antioquia,70-79,Segunda dosis,Moderna,29060
+Antioquia,70-79,Refuerzo,Pfizer,41814
+Antioquia,70-79,Refuerzo,Sinovac,35541
+Antioquia,70-79,Refuerzo,AstraZeneca,20421
+Antioquia,70-79,Refuerzo,Janssen,6175
+Antioquia,70-79,Refuerzo,Moderna,12875
+Antioquia,80+,Primera dosis,Pfizer,60354
+Antioquia,80+,Primera dosis,Sinovac,66152
+Antioquia,80+,Primera dosis,AstraZeneca,20646
+Antioquia,80+,Primera dosis,Janssen,11333
+Antioquia,80+,Primera dosis,Moderna,32662
+Antioquia,80+,Segunda dosis,Pfizer,59804
+Antioquia,80+,Segunda dosis,Sinovac,52820
+Antioquia,80+,Segunda dosis,AstraZeneca,20548
+Antioquia,80+,Segunda dosis,Janssen,9314
+Antioquia,80+,Segunda dosis,Moderna,23865
+Antioquia,80+,Refuerzo,Pfizer,40159
+Antioquia,80+,Refuerzo,Sinovac,28348
+Antioquia,80+,Refuerzo,AstraZeneca,16460
+Antioquia,80+,Refuerzo,Janssen,8358
+Antioquia,80+,Refuerzo,Moderna,9902
+Arauca,12-17,Primera dosis,Pfizer,4229
+Arauca,12-17,Primera dosis,Sinovac,2907
+Arauca,12-17,Primera dosis,AstraZeneca,1844
+Arauca,12-17,Primera dosis,Janssen,665
+Arauca,12-17,Primera dosis,Moderna,1102
+Arauca,12-17,Segunda dosis,Pfizer,3206
+Arauca,12-17,Segunda dosis,Sinovac,2994
+Arauca,12-17,Segunda dosis,AstraZeneca,1227
+Arauca,12-17,Segunda dosis,Janssen,621
+Arauca,12-17,Segunda dosis,Moderna,1392
+Arauca,12-17,Refuerzo,Pfizer,1964
+Arauca,12-17,Refuerzo,Sinovac,1346
+Arauca,12-17,Refuerzo,AstraZeneca,763
+Arauca,12-17,Refuerzo,Janssen,523
+Arauca,12-17,Refuerzo,Moderna,637
+Arauca,18-29,Primera dosis,Pfizer,9020
+Arauca,18-29,Primera dosis,Sinovac,9485
+Arauca,18-29,Primera dosis,AstraZeneca,5196
+Arauca,18-29,Primera dosis,Janssen,2595
+Arauca,18-29,Primera dosis,Moderna,1328
+Arauca,18-29,Segunda dosis,Pfizer,7701
+Arauca,18-29,Segunda dosis,Sinovac,6074
+Arauca,18-29,Segunda dosis,AstraZeneca,4191
+Arauca,18-29,Segunda dosis,Janssen,1946
+Arauca,18-29,Segunda dosis,Moderna,2942
+Arauca,18-29,Refuerzo,Pfizer,4066
+Arauca,18-29,Refuerzo,Sinovac,3926
+Arauca,18-29,Refuerzo,AstraZeneca,1862
+Arauca,18-29,Refuerzo,Janssen,567
+Arauca,18-29,Refuerzo,Moderna,836
+Arauca,30-39,Primera dosis,Pfizer,9564
+Arauca,30-39,Primera dosis,Sinovac,6396
+Arauca,30-39,Primera dosis,AstraZeneca,2708
+Arauca,30-39,Primera dosis,Janssen,1343
+Arauca,30-39,Primera dosis,Moderna,4268
+Arauca,30-39,Segunda dosis,Pfizer,7332
+Arauca,30-39,Segunda dosis,Sinovac,5721
+Arauca,30-39,Segunda dosis,AstraZeneca,3311
+Arauca,30-39,Segunda dosis,Janssen,1772
+Arauca,30-39,Segunda dosis,Moderna,2498
+Arauca,30-39,Refuerzo,Pfizer,3852
+Arauca,30-39,Refuerzo,Sinovac,3768
+Arauca,30-39,Refuerzo,AstraZeneca,1519
+Arauca,30-39,Refuerzo,Janssen,894
+Arauca,30-39,Refuerzo,Moderna,1988
+Arauca,40-49,Primera dosis,Pfizer,7170
+Arauca,40-49,Primera dosis,Sinovac,5815
+Arauca,40-49,Primera dosis,AstraZeneca,2101
+Arauca,40-49,Primera dosis,Janssen,1854
+Arauca,40-49,Primera dosis,Moderna,4001
+Arauca,40-49,Segunda dosis,Pfizer,6890
+Arauca,40-49,Segunda dosis,Sinovac,5232
+Arauca,40-49,Segunda dosis,AstraZeneca,3298
+Arauca,40-49,Segunda dosis,Janssen,1469
+Arauca,40-49,Segunda dosis,Moderna,2053
+Arauca,40-49,Refuerzo,Pfizer,3042
+Arauca,40-49,Refuerzo,Sinovac,2227
+Arauca,40-49,Refuerzo,AstraZeneca,954
+Arauca,40-49,Refuerzo,Janssen,835
+Arauca,40-49,Refuerzo,Moderna,1815
+Arauca,50-59,Primera dosis,Pfizer,6059
+Arauca,50-59,Primera dosis,Sinovac,4478
+Arauca,50-59,Primera dosis,AstraZeneca,1906
+Arauca,50-59,Primera dosis,Janssen,1106
+Arauca,50-59,Primera dosis,Moderna,3362
+Arauca,50-59,Segunda dosis,Pfizer,5767
+Arauca,50-59,Segunda dosis,Sinovac,4875
+Arauca,50-59,Segunda dosis,AstraZeneca,2752
+Arauca,50-59,Segunda dosis,Janssen,1404
+Arauca,50-59,Refuerzo,Pfizer,2929
+Arauca,50-59,Refuerzo,Sinovac,2508
+Arauca,50-59,Refuerzo,AstraZeneca,1006
+Arauca,50-59,Refuerzo,Janssen,812
+Arauca,50-59,Refuerzo,Moderna,1868
+Arauca,60-69,Primera dosis,Pfizer,3905
+Arauca,60-69,Primera dosis,Sinovac,4246
+Arauca,60-69,Primera dosis,AstraZeneca,2308
+Arauca,60-69,Primera dosis,Janssen,1223
+Arauca,60-69,Primera dosis,Moderna,696
+Arauca,60-69,Segunda dosis,Pfizer,4059
+Arauca,60-69,Segunda dosis,Sinovac,3602
+Arauca,60-69,Segunda dosis,AstraZeneca,1091
+Arauca,60-69,Segunda dosis,Janssen,925
+Arauca,60-69,Segunda dosis,Moderna,974
+Arauca,60-69,Refuerzo,Pfizer,2037
+Arauca,60-69,Refuerzo,Sinovac,2098
+Arauca,60-69,Refuerzo,AstraZeneca,1102
+Arauca,60-69,Refuerzo,Janssen,570
+Arauca,60-69,Refuerzo,Moderna,307
+Arauca,70-79,Primera dosis,Pfizer,2222
+Arauca,70-79,Primera dosis,Sinovac,2411
+Arauca,70-79,Primera dosis,AstraZeneca,1329
+Arauca,70-79,Primera dosis,Janssen,437
+Arauca,70-79,Primera dosis,Moderna,750
+Arauca,70-79,Segunda dosis,Pfizer,2310
+Arauca,70-79,Segunda dosis,Sinovac,1792
+Arauca,70-79,Segunda dosis,AstraZeneca,790
+Arauca,70-79,Segunda dosis,Janssen,543
+Arauca,70-79,Segunda dosis,Moderna,617
+Arauca,70-79,Refuerzo,Pfizer,1187
+Arauca,70-79,Refuerzo,Sinovac,928
+Arauca,70-79,Refuerzo,AstraZeneca,438
+Arauca,70-79,Refuerzo,Janssen,244
+Arauca,70-79,Refuerzo,Moderna,879
+Arauca,80+,Primera dosis,Pfizer,2015
+Arauca,80+,Primera dosis,Sinovac,1604
+Arauca,80+,Primera dosis,AstraZeneca,1096
+Arauca,80+,Primera dosis,Janssen,425
+Arauca,80+,Primera dosis,Moderna,392
+Arauca,80+,Segunda dosis,Pfizer,1998
+Arauca,80+,Segunda dosis,Sinovac,1326
+Arauca,80+,Segunda dosis,AstraZeneca,999
+Arauca,80+,Segunda dosis,Janssen,298
+Arauca,80+,Segunda dosis,Moderna,449
+Arauca,80+,Refuerzo,Pfizer,1016
+Arauca,80+,Refuerzo,Sinovac,709
+Arauca,80+,Refuerzo,AstraZeneca,284
+Arauca,80+,Refuerzo,Janssen,184
+Arauca,80+,Refuerzo,Moderna,371
+Atlántico,12-17,Primera dosis,Pfizer,50644
+Atlántico,12-17,Primera dosis,Sinovac,41612
+Atlántico,12-17,Primera dosis,AstraZeneca,22738
+Atlántico,12-17,Primera dosis,Janssen,9048
+Atlántico,12-17,Primera dosis,Moderna,20183
+Atlántico,12-17,Segunda dosis,Pfizer,45540
+Atlántico,12-17,Segunda dosis,Sinovac,30718
+Atlántico,12-17,Segunda dosis,AstraZeneca,23644
+Atlántico,12-17,Segunda dosis,Janssen,9445
+Atlántico,12-17,Segunda dosis,Moderna,13442
+Atlántico,12-17,Refuerzo,Pfizer,26089
+Atlántico,12-17,Refuerzo,Sinovac,22740
+Atlántico,12-17,Refuerzo,AstraZeneca,11718
+Atlántico,12-17,Refuerzo,Janssen,4784
+Atlántico,12-17,Refuerzo,Moderna,4810
+Atlántico,18-29,Primera dosis,Pfizer,108602
+Atlántico,18-29,Primera dosis,Sinovac,109720
+Atlántico,18-29,Primera dosis,AstraZeneca,56359
+Atlántico,18-29,Primera dosis,Janssen,21306
+Atlántico,18-29,Primera dosis,Moderna,31728
+Atlántico,18-29,Segunda dosis,Pfizer,96133
+Atlántico,18-29,Segunda dosis,Sinovac,84487
+Atlántico,18-29,Segunda dosis,AstraZeneca,40739
+Atlántico,18-29,Segunda dosis,Janssen,18819
+Atlántico,18-29,Segunda dosis,Moderna,50316
+Atlántico,18-29,Refuerzo,Pfizer,46880
+Atlántico,18-29,Refuerzo,Sinovac,43779
+Atlántico,18-29,Refuerzo,AstraZeneca,29087
+Atlántico,18-29,Refuerzo,Janssen,12572
+Atlántico,18-29,Refuerzo,Moderna,17587
+Atlántico,30-39,Primera dosis,Pfizer,113007
+Atlántico,30-39,Primera dosis,Sinovac,79642
+Atlántico,30-39,Primera dosis,AstraZeneca,40990
+Atlántico,30-39,Primera dosis,Janssen,22772
+Atlántico,30-39,Primera dosis,Moderna,62104
+Atlántico,30-39,Segunda dosis,Pfizer,100522
+Atlántico,30-39,Segunda dosis,Sinovac,88580
+Atlántico,30-39,Segunda dosis,AstraZeneca,41135
+Atlántico,30-39,Segunda dosis,Janssen,20247
+Atlántico,30-39,Segunda dosis,Moderna,30303
+Atlántico,30-39,Refuerzo,Pfizer,46037
+Atlántico,30-39,Refuerzo,Sinovac,42592
+Atlántico,30-39,Refuerzo,AstraZeneca,27235
+Atlántico,30-39,Refuerzo,Janssen,12864
+Atlántico,30-39,Refuerzo,Moderna,14524
+Atlántico,40-49,Primera dosis,Pfizer,91992
+Atlántico,40-49,Primera dosis,Sinovac,71792
+Atlántico,40-49,Primera dosis,AstraZeneca,46045
+Atlántico,40-49,Primera dosis,Janssen,22170
+Atlántico,40-49,Primera dosis,Moderna,21216
+Atlántico,40-49,Segunda dosis,Pfizer,77049
+Atlántico,40-49,Segunda dosis,Sinovac,57158
+Atlántico,40-49,Segunda dosis,AstraZeneca,25155
+Atlántico,40-49,Segunda dosis,Janssen,10745
+Atlántico,40-49,Segunda dosis,Moderna,39674
+Atlántico,40-49,Refuerzo,Pfizer,37649
+Atlántico,40-49,Refuerzo,Sinovac,34520
+Atlántico,40-49,Refuerzo,AstraZeneca,21462
+Atlántico,40-49,Refuerzo,Janssen,6224
+Atlántico,40-49,Refuerzo,Moderna,16173
+Atlántico,50-59,Primera dosis,Pfizer,77512
+Atlántico,50-59,Primera dosis,Sinovac,62791
+Atlántico,50-59,Primera dosis,AstraZeneca,26086
+Atlántico,50-59,Primera dosis,Janssen,17363
+Atlántico,50-59,Primera dosis,Moderna,25945
+Atlántico,50-59,Segunda dosis,Pfizer,55650
+Atlántico,50-59,Segunda dosis,Sinovac,60194
+Atlántico,50-59,Segunda dosis,AstraZeneca,32773
+Atlántico,50-59,Segunda dosis,Janssen,10244
+Atlántico,50-59,Segunda dosis,Moderna,26295
+Atlántico,50-59,Refuerzo,Pfizer,31004
+Atlántico,50-59,Refuerzo,Sinovac,24222
+Atlántico,50-59,Refuerzo,AstraZeneca,17723
+Atlántico,50-59,Refuerzo,Janssen,6870
+Atlántico,50-59,Refuerzo,Moderna,10699
+Atlántico,60-69,Primera dosis,Pfizer,51200
+Atlántico,60-69,Primera dosis,Sinovac,48903
+Atlántico,60-69,Primera dosis,AstraZeneca,24701
+Atlántico,60-69,Primera dosis,Janssen,14723
+Atlántico,60-69,Primera dosis,Moderna,8600
+Atlántico,60-69,Segunda dosis,Pfizer,44999
+Atlántico,60-69,Segunda dosis,Sinovac,43179
+Atlántico,60-69,Segunda dosis,AstraZeneca,23672
+Atlántico,60-69,Segunda dosis,Janssen,10091
+Atlántico,60-69,Segunda dosis,Moderna,3213
+Atlántico,60-69,Refuerzo,Pfizer,28844
+Atlántico,60-69,Refuerzo,Sinovac,23303
+Atlántico,60-69,Refuerzo,AstraZeneca,14196
+Atlántico,60-69,Refuerzo,Janssen,6002
+Atlántico,60-69,Refuerzo,Moderna,5207
+Atlántico,70-79,Primera dosis,Pfizer,30580
+Atlántico,70-79,Primera dosis,Sinovac,25776
+Atlántico,70-79,Primera dosis,AstraZeneca,15365
+Atlántico,70-79,Primera dosis,Janssen,8284
+Atlántico,70-79,Primera dosis,Moderna,13820
+Atlántico,70-79,Segunda dosis,Pfizer,29549
+Atlántico,70-79,Segunda dosis,Sinovac,26238
+Atlántico,70-79,Segunda dosis,AstraZeneca,10695
+Atlántico,70-79,Segunda dosis,Janssen,4520
+Atlántico,70-79,Segunda dosis,Moderna,12911
+Atlántico,70-79,Refuerzo,Pfizer,15024
+Atlántico,70-79,Refuerzo,Sinovac,12674
+Atlántico,70-79,Refuerzo,AstraZeneca,6034
+Atlántico,70-79,Refuerzo,Janssen,3521
+Atlántico,70-79,Refuerzo,Moderna,8472
+Atlántico,80+,Primera dosis,Pfizer,24826
+Atlántico,80+,Primera dosis,Sinovac,17175
+Atlántico,80+,Primera dosis,AstraZeneca,9428
+Atlántico,80+,Primera dosis,Janssen,5166
+Atlántico,80+,Primera dosis,Moderna,10385
+Atlántico,80+,Segunda dosis,Pfizer,19290
+Atlántico,80+,Segunda dosis,Sinovac,15286
+Atlántico,80+,Segunda dosis,AstraZeneca,8020
+Atlántico,80+,Segunda dosis,Janssen,5378
+Atlántico,80+,Segunda dosis,Moderna,8498
+Atlántico,80+,Refuerzo,Pfizer,11917
+Atlántico,80+,Refuerzo,Sinovac,10625
+Atlántico,80+,Refuerzo,AstraZeneca,6173
+Atlántico,80+,Refuerzo,Janssen,2935
+Atlántico,80+,Refuerzo,Moderna,1598
+Bolívar,12-17,Primera dosis,Pfizer,39472
+Bolívar,12-17,Primera dosis,Sinovac,35265
+Bolívar,12-17,Primera dosis,AstraZeneca,20542
+Bolívar,12-17,Primera dosis,Janssen,7461
+Bolívar,12-17,Primera dosis,Moderna,2420
+Bolívar,12-17,Segunda dosis,Pfizer,32339
+Bolívar,12-17,Segunda dosis,Sinovac,26286
+Bolívar,12-17,Segunda dosis,AstraZeneca,13835
+Bolívar,12-17,Segunda dosis,Janssen,5266
+Bolívar,12-17,Segunda dosis,Moderna,8567
+Bolívar,12-17,Refuerzo,Pfizer,14456
+Bolívar,12-17,Refuerzo,Sinovac,13182
+Bolívar,12-17,Refuerzo,AstraZeneca,4620
+Bolívar,12-17,Refuerzo,Janssen,2999
+Bolívar,12-17,Refuerzo,Moderna,9643
+Bolívar,18-29,Primera dosis,Pfizer,91233
+Bolívar,18-29,Primera dosis,Sinovac,69138
+Bolívar,18-29,Primera dosis,AstraZeneca,42684
+Bolívar,18-29,Primera dosis,Janssen,13510
+Bolívar,18-29,Primera dosis,Moderna,46552
+Bolívar,18-29,Segunda dosis,Pfizer,76839
+Bolívar,18-29,Segunda dosis,Sinovac,69376
+Bolívar,18-29,Segunda dosis,AstraZeneca,23253
+Bolívar,18-29,Segunda dosis,Janssen,18595
+Bolívar,18-29,Segunda dosis,Moderna,38331
+Bolívar,18-29,Refuerzo,Pfizer,34289
+Bolívar,18-29,Refuerzo,Sinovac,32386
+Bolívar,18-29,Refuerzo,AstraZeneca,11484
+Bolívar,18-29,Refuerzo,Janssen,7540
+Bolívar,18-29,Refuerzo,Moderna,23650
+Bolívar,30-39,Primera dosis,Pfizer,75846
+Bolívar,30-39,Primera dosis,Sinovac,72992
+Bolívar,30-39,Primera dosis,AstraZeneca,41118
+Bolívar,30-39,Primera dosis,Janssen,14053
+Bolívar,30-39,Primera dosis,Moderna,20443
+Bolívar,30-39,Segunda dosis,Pfizer,58984
+Bolívar,30-39,Segunda dosis,Sinovac,48218
+Bolívar,30-39,Segunda dosis,AstraZeneca,29462
+Bolívar,30-39,Segunda dosis,Janssen,19138
+Bolívar,30-39,Segunda dosis,Moderna,35585
+Bolívar,30-39,Refuerzo,Pfizer,38612
+Bolívar,30-39,Refuerzo,Sinovac,36309
+Bolívar,30-39,Refuerzo,AstraZeneca,20531
+Bolívar,30-39,Refuerzo,Janssen,9519
+Bolívar,30-39,Refuerzo,Moderna,10290
+Bolívar,40-49,Primera dosis,Pfizer,61220
+Bolívar,40-49,Primera dosis,Sinovac,53761
+Bolívar,40-49,Primera dosis,AstraZeneca,22827
+Bolívar,40-49,Primera dosis,Janssen,16919
+Bolívar,40-49,Primera dosis,Moderna,47962
+Bolívar,40-49,Segunda dosis,Pfizer,66095
+Bolívar,40-49,Segunda dosis,Sinovac,50406
+Bolívar,40-49,Segunda dosis,AstraZeneca,31517
+Bolívar,40-49,Segunda dosis,Janssen,16384
+Bolívar,40-49,Segunda dosis,Moderna,21052
+Bolívar,40-49,Refuerzo,Pfizer,28779
+Bolívar,40-49,Refuerzo,Sinovac,28229
+Bolívar,40-49,Refuerzo,AstraZeneca,15879
+Bolívar,40-49,Refuerzo,Janssen,5062
+Bolívar,40-49,Refuerzo,Moderna,12898
+Bolívar,50-59,Primera dosis,Pfizer,49848
+Bolívar,50-59,Primera dosis,Sinovac,46327
+Bolívar,50-59,Primera dosis,AstraZeneca,27634
+Bolívar,50-59,Primera dosis,Janssen,16130
+Bolívar,50-59,Primera dosis,Moderna,24810
+Bolívar,50-59,Segunda dosis,Pfizer,51286
+Bolívar,50-59,Segunda dosis,Sinovac,48543
+Bolívar,50-59,Segunda dosis,AstraZeneca,16246
+Bolívar,50-59,Segunda dosis,Janssen,12763
+Bolívar,50-59,Segunda dosis,Moderna,22150
+Bolívar,50-59,Refuerzo,Pfizer,25829
+Bolívar,50-59,Refuerzo,Sinovac,18528
+Bolívar,50-59,Refuerzo,AstraZeneca,12621
+Bolívar,50-59,Refuerzo,Janssen,6587
+Bolívar,50-59,Refuerzo,Moderna,7642
+Bolívar,60-69,Primera dosis,Pfizer,44731
+Bolívar,60-69,Primera dosis,Sinovac,33669
+Bolívar,60-69,Primera dosis,AstraZeneca,16891
+Bolívar,60-69,Primera dosis,Janssen,8103
+Bolívar,60-69,Primera dosis,Moderna,14858
+Bolívar,60-69,Segunda dosis,Pfizer,34499
+Bolívar,60-69,Segunda dosis,Sinovac,27957
+Bolívar,60-69,Segunda dosis,AstraZeneca,18200
+Bolívar,60-69,Segunda dosis,Janssen,8965
+Bolívar,60-69,Segunda dosis,Moderna,8778
+Bolívar,60-69,Refuerzo,Pfizer,19764
+Bolívar,60-69,Refuerzo,Sinovac,22025
+Bolívar,60-69,Refuerzo,AstraZeneca,10409
+Bolívar,60-69,Refuerzo,Janssen,5819
+Bolívar,60-69,Refuerzo,Moderna,5624
+Bolívar,70-79,Primera dosis,Pfizer,27572
+Bolívar,70-79,Primera dosis,Sinovac,19260
+Bolívar,70-79,Primera dosis,AstraZeneca,12572
+Bolívar,70-79,Primera dosis,Janssen,5347
+Bolívar,70-79,Primera dosis,Moderna,4777
+Bolívar,70-79,Segunda dosis,Pfizer,20915
+Bolívar,70-79,Segunda dosis,Sinovac,17626
+Bolívar,70-79,Segunda dosis,AstraZeneca,10393
+Bolívar,70-79,Segunda dosis,Janssen,3807
+Bolívar,70-79,Segunda dosis,Moderna,7299
+Bolívar,70-79,Refuerzo,Pfizer,13801
+Bolívar,70-79,Refuerzo,Sinovac,11934
+Bolívar,70-79,Refuerzo,AstraZeneca,3893
+Bolívar,70-79,Refuerzo,Janssen,3371
+Bolívar,70-79,Refuerzo,Moderna,2830
+Bolívar,80+,Primera dosis,Pfizer,17271
+Bolívar,80+,Primera dosis,Sinovac,12925
+Bolívar,80+,Primera dosis,AstraZeneca,9460
+Bolívar,80+,Primera dosis,Janssen,3020
+Bolívar,80+,Primera dosis,Moderna,8436
+Bolívar,80+,Segunda dosis,Pfizer,14225
+Bolívar,80+,Segunda dosis,Sinovac,14605
+Bolívar,80+,Segunda dosis,AstraZeneca,5936
+Bolívar,80+,Segunda dosis,Janssen,4163
+Bolívar,80+,Segunda dosis,Moderna,5356
+Bolívar,80+,Refuerzo,Pfizer,9376
+Bolívar,80+,Refuerzo,Sinovac,7033
+Bolívar,80+,Refuerzo,AstraZeneca,2559
+Bolívar,80+,Refuerzo,Janssen,2467
+Bolívar,80+,Refuerzo,Moderna,3897
+Boyacá,12-17,Primera dosis,Pfizer,22090
+Boyacá,12-17,Primera dosis,Sinovac,18754
+Boyacá,12-17,Primera dosis,AstraZeneca,9674
+Boyacá,12-17,Primera dosis,Janssen,4381
+Boyacá,12-17,Primera dosis,Moderna,3878
+Boyacá,12-17,Segunda dosis,Pfizer,19886
+Boyacá,12-17,Segunda dosis,Sinovac,13595
+Boyacá,12-17,Segunda dosis,AstraZeneca,6404
+Boyacá,12-17,Segunda dosis,Janssen,4435
+Boyacá,12-17,Segunda dosis,Moderna,8108
+Boyacá,12-17,Refuerzo,Pfizer,9494
+Boyacá,12-17,Refuerzo,Sinovac,8849
+Boyacá,12-17,Refuerzo,AstraZeneca,4230
+Boyacá,12-17,Refuerzo,Janssen,2198
+Boyacá,12-17,Refuerzo,Moderna,3944
+Boyacá,18-29,Primera dosis,Pfizer,54732
+Boyacá,18-29,Primera dosis,Sinovac,40957
+Boyacá,18-29,Primera dosis,AstraZeneca,18497
+Boyacá,18-29,Primera dosis,Janssen,8282
+Boyacá,18-29,Primera dosis,Moderna,25342
+Boyacá,18-29,Segunda dosis,Pfizer,42215
+Boyacá,18-29,Segunda dosis,Sinovac,34638
+Boyacá,18-29,Segunda dosis,AstraZeneca,20308
+Boyacá,18-29,Segunda dosis,Janssen,11650
+Boyacá,18-29,Segunda dosis,Moderna,23416
+Boyacá,18-29,Refuerzo,Pfizer,21739
+Boyacá,18-29,Refuerzo,Sinovac,18539
+Boyacá,18-29,Refuerzo,AstraZeneca,10129
+Boyacá,18-29,Refuerzo,Janssen,5885
+Boyacá,18-29,Refuerzo,Moderna,11957
+Boyacá,30-39,Primera dosis,Pfizer,43252
+Boyacá,30-39,Primera dosis,Sinovac,37582
+Boyacá,30-39,Primera dosis,AstraZeneca,17123
+Boyacá,30-39,Primera dosis,Janssen,8226
+Boyacá,30-39,Primera dosis,Moderna,33314
+Boyacá,30-39,Segunda dosis,Pfizer,36684
+Boyacá,30-39,Segunda dosis,Sinovac,36927
+Boyacá,30-39,Segunda dosis,AstraZeneca,15509
+Boyacá,30-39,Segunda dosis,Janssen,12014
+Boyacá,30-39,Segunda dosis,Moderna,20571
+Boyacá,30-39,Refuerzo,Pfizer,21908
+Boyacá,30-39,Refuerzo,Sinovac,19713
+Boyacá,30-39,Refuerzo,AstraZeneca,6944
+Boyacá,30-39,Refuerzo,Janssen,5760
+Boyacá,30-39,Refuerzo,Moderna,7329
+Boyacá,40-49,Primera dosis,Pfizer,39473
+Boyacá,40-49,Primera dosis,Sinovac,33455
+Boyacá,40-49,Primera dosis,AstraZeneca,13475
+Boyacá,40-49,Primera dosis,Janssen,5981
+Boyacá,40-49,Primera dosis,Moderna,21391
+Boyacá,40-49,Segunda dosis,Pfizer,40682
+Boyacá,40-49,Segunda dosis,Sinovac,30737
+Boyacá,40-49,Segunda dosis,AstraZeneca,18808
+Boyacá,40-49,Segunda dosis,Janssen,7229
+Boyacá,40-49,Segunda dosis,Moderna,5767
+Boyacá,40-49,Refuerzo,Pfizer,17922
+Boyacá,40-49,Refuerzo,Sinovac,18245
+Boyacá,40-49,Refuerzo,AstraZeneca,6142
+Boyacá,40-49,Refuerzo,Janssen,3350
+Boyacá,40-49,Refuerzo,Moderna,12641
+Boyacá,50-59,Primera dosis,Pfizer,28864
+Boyacá,50-59,Primera dosis,Sinovac,30215
+Boyacá,50-59,Primera dosis,AstraZeneca,14867
+Boyacá,50-59,Primera dosis,Janssen,8287
+Boyacá,50-59,Primera dosis,Moderna,10324
+Boyacá,50-59,Segunda dosis,Pfizer,25389
+Boyacá,50-59,Segunda dosis,Sinovac,23790
+Boyacá,50-59,Segunda dosis,AstraZeneca,11416
+Boyacá,50-59,Segunda dosis,Janssen,5677
+Boyacá,50-59,Segunda dosis,Moderna,12435
+Boyacá,50-59,Refuerzo,Pfizer,19711
+Boyacá,50-59,Refuerzo,Sinovac,17821
+Boyacá,50-59,Refuerzo,AstraZeneca,6665
+Boyacá,50-59,Refuerzo,Janssen,4138
+Boyacá,50-59,Refuerzo,Moderna,2726
+Boyacá,60-69,Primera dosis,Pfizer,21874
+Boyacá,60-69,Primera dosis,Sinovac,18486
+Boyacá,60-69,Primera dosis,AstraZeneca,11322
+Boyacá,60-69,Primera dosis,Janssen,3945
+Boyacá,60-69,Primera dosis,Moderna,12562
+Boyacá,60-69,Segunda dosis,Pfizer,19348
+Boyacá,60-69,Segunda dosis,Sinovac,15698
+Boyacá,60-69,Segunda dosis,AstraZeneca,6112
+Boyacá,60-69,Segunda dosis,Janssen,4421
+Boyacá,60-69,Segunda dosis,Moderna,15382
+Boyacá,60-69,Refuerzo,Pfizer,14010
+Boyacá,60-69,Refuerzo,Sinovac,10882
+Boyacá,60-69,Refuerzo,AstraZeneca,4801
+Boyacá,60-69,Refuerzo,Janssen,3327
+Boyacá,60-69,Refuerzo,Moderna,5964
+Boyacá,70-79,Primera dosis,Pfizer,15711
+Boyacá,70-79,Primera dosis,Sinovac,13164
+Boyacá,70-79,Primera dosis,AstraZeneca,6506
+Boyacá,70-79,Primera dosis,Janssen,3325
+Boyacá,70-79,Primera dosis,Moderna,1331
+Boyacá,70-79,Segunda dosis,Pfizer,13630
+Boyacá,70-79,Segunda dosis,Sinovac,10135
+Boyacá,70-79,Segunda dosis,AstraZeneca,5352
+Boyacá,70-79,Segunda dosis,Janssen,2854
+Boyacá,70-79,Segunda dosis,Moderna,2677
+Boyacá,70-79,Refuerzo,Pfizer,7955
+Boyacá,70-79,Refuerzo,Sinovac,6771
+Boyacá,70-79,Refuerzo,AstraZeneca,2180
+Boyacá,70-79,Refuerzo,Janssen,1186
+Boyacá,70-79,Refuerzo,Moderna,2260
+Boyacá,80+,Primera dosis,Pfizer,9747
+Boyacá,80+,Primera dosis,Sinovac,7778
+Boyacá,80+,Primera dosis,AstraZeneca,5005
+Boyacá,80+,Primera dosis,Janssen,2519
+Boyacá,80+,Primera dosis,Moderna,4589
+Boyacá,80+,Segunda dosis,Pfizer,10457
+Boyacá,80+,Segunda dosis,Sinovac,7958
+Boyacá,80+,Segunda dosis,AstraZeneca,3962
+Boyacá,80+,Segunda dosis,Janssen,1432
+Boyacá,80+,Segunda dosis,Moderna,2712
+Boyacá,80+,Refuerzo,Pfizer,4546
+Boyacá,80+,Refuerzo,Sinovac,4384
+Boyacá,80+,Refuerzo,AstraZeneca,1977
+Boyacá,80+,Refuerzo,Janssen,934
+Boyacá,80+,Refuerzo,Moderna,3111
+Caldas,12-17,Primera dosis,Pfizer,16935
+Caldas,12-17,Primera dosis,Sinovac,16345
+Caldas,12-17,Primera dosis,AstraZeneca,9471
+Caldas,12-17,Primera dosis,Janssen,3960
+Caldas,12-17,Primera dosis,Moderna,655
+Caldas,12-17,Segunda dosis,Pfizer,14189
+Caldas,12-17,Segunda dosis,Sinovac,11024
+Caldas,12-17,Segunda dosis,AstraZeneca,7621
+Caldas,12-17,Segunda dosis,Janssen,3190
+Caldas,12-17,Segunda dosis,Moderna,7372
+Caldas,12-17,Refuerzo,Pfizer,9780
+Caldas,12-17,Refuerzo,Sinovac,9149
+Caldas,12-17,Refuerzo,AstraZeneca,3164
+Caldas,12-17,Refuerzo,Janssen,2123
+Caldas,12-17,Refuerzo,Moderna,2566
+Caldas,18-29,Primera dosis,Pfizer,40696
+Caldas,18-29,Primera dosis,Sinovac,34440
+Caldas,18-29,Primera dosis,AstraZeneca,20301
+Caldas,18-29,Primera dosis,Janssen,11290
+Caldas,18-29,Primera dosis,Moderna,14826
+Caldas,18-29,Segunda dosis,Pfizer,35180
+Caldas,18-29,Segunda dosis,Sinovac,33742
+Caldas,18-29,Segunda dosis,AstraZeneca,13610
+Caldas,18-29,Segunda dosis,Janssen,10275
+Caldas,18-29,Segunda dosis,Moderna,12844
+Caldas,18-29,Refuerzo,Pfizer,18866
+Caldas,18-29,Refuerzo,Sinovac,15089
+Caldas,18-29,Refuerzo,AstraZeneca,7197
+Caldas,18-29,Refuerzo,Janssen,3251
+Caldas,18-29,Refuerzo,Moderna,5067
+Caldas,30-39,Primera dosis,Pfizer,37024
+Caldas,30-39,Primera dosis,Sinovac,36745
+Caldas,30-39,Primera dosis,AstraZeneca,17462
+Caldas,30-39,Primera dosis,Janssen,8125
+Caldas,30-39,Primera dosis,Moderna,5986
+Caldas,30-39,Segunda dosis,Pfizer,32972
+Caldas,30-39,Segunda dosis,Sinovac,25962
+Caldas,30-39,Segunda dosis,AstraZeneca,13155
+Caldas,30-39,Segunda dosis,Janssen,8483
+Caldas,30-39,Segunda dosis,Moderna,16027
+Caldas,30-39,Refuerzo,Pfizer,18590
+Caldas,30-39,Refuerzo,Sinovac,16716
+Caldas,30-39,Refuerzo,AstraZeneca,6171
+Caldas,30-39,Refuerzo,Janssen,3972
+Caldas,30-39,Refuerzo,Moderna,5827
+Caldas,40-49,Primera dosis,Pfizer,29853
+Caldas,40-49,Primera dosis,Sinovac,33217
+Caldas,40-49,Primera dosis,AstraZeneca,15387
+Caldas,40-49,Primera dosis,Janssen,5926
+Caldas,40-49,Primera dosis,Moderna,11255
+Caldas,40-49,Segunda dosis,Pfizer,26092
+Caldas,40-49,Segunda dosis,Sinovac,25204
+Caldas,40-49,Segunda dosis,AstraZeneca,12823
+Caldas,40-49,Segunda dosis,Janssen,4515
+Caldas,40-49,Segunda dosis,Moderna,13977
+Caldas,40-49,Refuerzo,Pfizer,19447
+Caldas,40-49,Refuerzo,Sinovac,16625
+Caldas,40-49,Refuerzo,AstraZeneca,7119
+Caldas,40-49,Refuerzo,Janssen,2721
+Caldas,40-49,Refuerzo,Moderna,2799
+Caldas,50-59,Primera dosis,Pfizer,26856
+Caldas,50-59,Primera dosis,Sinovac,21227
+Caldas,50-59,Primera dosis,AstraZeneca,14042
+Caldas,50-59,Primera dosis,Janssen,7578
+Caldas,50-59,Primera dosis,Moderna,6833
+Caldas,50-59,Segunda dosis,Pfizer,21595
+Caldas,50-59,Segunda dosis,Sinovac,20314
+Caldas,50-59,Segunda dosis,AstraZeneca,9211
+Caldas,50-59,Segunda dosis,Janssen,6397
+Caldas,50-59,Segunda dosis,Moderna,9057
+Caldas,50-59,Refuerzo,Pfizer,13857
+Caldas,50-59,Refuerzo,Sinovac,13348
+Caldas,50-59,Refuerzo,AstraZeneca,7363
+Caldas,50-59,Refuerzo,Janssen,2520
+Caldas,50-59,Refuerzo,Moderna,2410
+Caldas,60-69,Primera dosis,Pfizer,19608
+Caldas,60-69,Primera dosis,Sinovac,18561
+Caldas,60-69,Primera dosis,AstraZeneca,7171
+Caldas,60-69,Primera dosis,Janssen,3629
+Caldas,60-69,Primera dosis,Moderna,6929
+Caldas,60-69,Segunda dosis,Pfizer,17273
+Caldas,60-69,Segunda dosis,Sinovac,16849
+Caldas,60-69,Segunda dosis,AstraZeneca,7173
+Caldas,60-69,Segunda dosis,Janssen,2765
+Caldas,60-69,Segunda dosis,Moderna,4094
+Caldas,60-69,Refuerzo,Pfizer,10852
+Caldas,60-69,Refuerzo,Sinovac,8725
+Caldas,60-69,Refuerzo,AstraZeneca,4759
+Caldas,60-69,Refuerzo,Janssen,2366
+Caldas,60-69,Refuerzo,Moderna,3964
+Caldas,70-79,Primera dosis,Pfizer,11634
+Caldas,70-79,Primera dosis,Sinovac,9665
+Caldas,70-79,Primera dosis,AstraZeneca,3881
+Caldas,70-79,Primera dosis,Janssen,2793
+Caldas,70-79,Primera dosis,Moderna,3490
+Caldas,70-79,Segunda dosis,Pfizer,8160
+Caldas,70-79,Segunda dosis,Sinovac,8700
+Caldas,70-79,Segunda dosis,AstraZeneca,4572
+Caldas,70-79,Segunda dosis,Janssen,2428
+Caldas,70-79,Segunda dosis,Moderna,2951
+Caldas,70-79,Refuerzo,Pfizer,4427
+Caldas,70-79,Refuerzo,Sinovac,4137
+Caldas,70-79,Refuerzo,AstraZeneca,2380
+Caldas,70-79,Refuerzo,Janssen,1295
+Caldas,70-79,Refuerzo,Moderna,835
+Caldas,80+,Primera dosis,Pfizer,8734
+Caldas,80+,Primera dosis,Sinovac,8197
+Caldas,80+,Primera dosis,AstraZeneca,4559
+Caldas,80+,Primera dosis,Janssen,1751
+Caldas,80+,Primera dosis,Moderna,1084
+Caldas,80+,Segunda dosis,Pfizer,7065
+Caldas,80+,Segunda dosis,Sinovac,5925
+Caldas,80+,Segunda dosis,AstraZeneca,3451
+Caldas,80+,Segunda dosis,Janssen,1412
+Caldas,80+,Segunda dosis,Moderna,2183
+Caldas,80+,Refuerzo,Pfizer,4031
+Caldas,80+,Refuerzo,Sinovac,2927
+Caldas,80+,Refuerzo,AstraZeneca,1620
+Caldas,80+,Refuerzo,Janssen,1086
+Caldas,80+,Refuerzo,Moderna,1364
+Caquetá,12-17,Primera dosis,Pfizer,7151
+Caquetá,12-17,Primera dosis,Sinovac,6224
+Caquetá,12-17,Primera dosis,AstraZeneca,3452
+Caquetá,12-17,Primera dosis,Janssen,1281
+Caquetá,12-17,Primera dosis,Moderna,457
+Caquetá,12-17,Segunda dosis,Pfizer,5476
+Caquetá,12-17,Segunda dosis,Sinovac,5314
+Caquetá,12-17,Segunda dosis,AstraZeneca,2904
+Caquetá,12-17,Segunda dosis,Janssen,1545
+Caquetá,12-17,Segunda dosis,Moderna,1269
+Caquetá,12-17,Refuerzo,Pfizer,2906
+Caquetá,12-17,Refuerzo,Sinovac,2459
+Caquetá,12-17,Refuerzo,AstraZeneca,1561
+Caquetá,12-17,Refuerzo,Janssen,919
+Caquetá,12-17,Refuerzo,Moderna,1727
+Caquetá,18-29,Primera dosis,Pfizer,14907
+Caquetá,18-29,Primera dosis,Sinovac,15077
+Caquetá,18-29,Primera dosis,AstraZeneca,9009
+Caquetá,18-29,Primera dosis,Janssen,3472
+Caquetá,18-29,Primera dosis,Moderna,5645
+Caquetá,18-29,Segunda dosis,Pfizer,15900
+Caquetá,18-29,Segunda dosis,Sinovac,14650
+Caquetá,18-29,Segunda dosis,AstraZeneca,4502
+Caquetá,18-29,Segunda dosis,Janssen,3865
+Caquetá,18-29,Segunda dosis,Moderna,4125
+Caquetá,18-29,Refuerzo,Pfizer,7609
+Caquetá,18-29,Refuerzo,Sinovac,6642
+Caquetá,18-29,Refuerzo,AstraZeneca,2646
+Caquetá,18-29,Refuerzo,Janssen,1768
+Caquetá,18-29,Refuerzo,Moderna,4437
+Caquetá,30-39,Primera dosis,Pfizer,12700
+Caquetá,30-39,Primera dosis,Sinovac,13904
+Caquetá,30-39,Primera dosis,AstraZeneca,6681
+Caquetá,30-39,Primera dosis,Janssen,2559
+Caquetá,30-39,Primera dosis,Moderna,5404
+Caquetá,30-39,Segunda dosis,Pfizer,14514
+Caquetá,30-39,Segunda dosis,Sinovac,9804
+Caquetá,30-39,Segunda dosis,AstraZeneca,5419
+Caquetá,30-39,Segunda dosis,Janssen,2325
+Caquetá,30-39,Segunda dosis,Moderna,5029
+Caquetá,30-39,Refuerzo,Pfizer,5844
+Caquetá,30-39,Refuerzo,Sinovac,4505
+Caquetá,30-39,Refuerzo,AstraZeneca,3239
+Caquetá,30-39,Refuerzo,Janssen,1706
+Caquetá,30-39,Refuerzo,Moderna,2657
+Caquetá,40-49,Primera dosis,Pfizer,11933
+Caquetá,40-49,Primera dosis,Sinovac,11013
+Caquetá,40-49,Primera dosis,AstraZeneca,5846
+Caquetá,40-49,Primera dosis,Janssen,2540
+Caquetá,40-49,Primera dosis,Moderna,4336
+Caquetá,40-49,Segunda dosis,Pfizer,9689
+Caquetá,40-49,Segunda dosis,Sinovac,9973
+Caquetá,40-49,Segunda dosis,AstraZeneca,3575
+Caquetá,40-49,Segunda dosis,Janssen,2064
+Caquetá,40-49,Segunda dosis,Moderna,4510
+Caquetá,40-49,Refuerzo,Pfizer,5590
+Caquetá,40-49,Refuerzo,Sinovac,4392
+Caquetá,40-49,Refuerzo,AstraZeneca,2522
+Caquetá,40-49,Refuerzo,Janssen,1263
+Caquetá,40-49,Refuerzo,Moderna,2279
+Caquetá,50-59,Primera dosis,Pfizer,10866
+Caquetá,50-59,Primera dosis,Sinovac,8241
+Caquetá,50-59,Primera dosis,AstraZeneca,4651
+Caquetá,50-59,Primera dosis,Janssen,2503
+Caquetá,50-59,Primera dosis,Moderna,3440
+Caquetá,50-59,Segunda dosis,Pfizer,9448
+Caquetá,50-59,Segunda dosis,Sinovac,6432
+Caquetá,50-59,Segunda dosis,AstraZeneca,4053
+Caquetá,50-59,Segunda dosis,Janssen,1888
+Caquetá,50-59,Segunda dosis,Moderna,3410
+Caquetá,50-59,Refuerzo,Pfizer,6359
+Caquetá,50-59,Refuerzo,Sinovac,4538
+Caquetá,50-59,Refuerzo,AstraZeneca,2930
+Caquetá,50-59,Refuerzo,Janssen,1308
+Caquetá,50-59,Refuerzo,Moderna,1152
+Caquetá,60-69,Primera dosis,Pfizer,7522
+Caquetá,60-69,Primera dosis,Sinovac,6587
+Caquetá,60-69,Primera dosis,AstraZeneca,3393
+Caquetá,60-69,Primera dosis,Janssen,1879
+Caquetá,60-69,Primera dosis,Moderna,1069
+Caquetá,60-69,Segunda dosis,Pfizer,6557
+Caquetá,60-69,Segunda dosis,Sinovac,6150
+Caquetá,60-69,Segunda dosis,AstraZeneca,2975
+Caquetá,60-69,Segunda dosis,Janssen,1182
+Caquetá,60-69,Segunda dosis,Moderna,1206
+Caquetá,60-69,Refuerzo,Pfizer,3570
+Caquetá,60-69,Refuerzo,Sinovac,3195
+Caquetá,60-69,Refuerzo,AstraZeneca,1797
+Caquetá,60-69,Refuerzo,Janssen,565
+Caquetá,60-69,Refuerzo,Moderna,1247
+Caquetá,70-79,Primera dosis,Pfizer,3705
+Caquetá,70-79,Primera dosis,Sinovac,3595
+Caquetá,70-79,Primera dosis,AstraZeneca,2332
+Caquetá,70-79,Primera dosis,Janssen,905
+Caquetá,70-79,Primera dosis,Moderna,1291
+Caquetá,70-79,Segunda dosis,Pfizer,4142
+Caquetá,70-79,Segunda dosis,Sinovac,3524
+Caquetá,70-79,Segunda dosis,AstraZeneca,1330
+Caquetá,70-79,Segunda dosis,Janssen,965
+Caquetá,70-79,Segunda dosis,Moderna,620
+Caquetá,70-79,Refuerzo,Pfizer,1787
+Caquetá,70-79,Refuerzo,Sinovac,1697
+Caquetá,70-79,Refuerzo,AstraZeneca,896
+Caquetá,70-79,Refuerzo,Janssen,343
+Caquetá,70-79,Refuerzo,Moderna,408
+Caquetá,80+,Primera dosis,Pfizer,3547
+Caquetá,80+,Primera dosis,Sinovac,3004
+Caquetá,80+,Primera dosis,AstraZeneca,1541
+Caquetá,80+,Primera dosis,Janssen,885
+Caquetá,80+,Segunda dosis,Pfizer,3250
+Caquetá,80+,Segunda dosis,Sinovac,2707
+Caquetá,80+,Segunda dosis,AstraZeneca,1119
+Caquetá,80+,Segunda dosis,Janssen,733
+Caquetá,80+,Segunda dosis,Moderna,382
+Caquetá,80+,Refuerzo,Pfizer,1180
+Caquetá,80+,Refuerzo,Sinovac,1189
+Caquetá,80+,Refuerzo,AstraZeneca,569
+Caquetá,80+,Refuerzo,Janssen,327
+Caquetá,80+,Refuerzo,Moderna,649
+Casanare,12-17,Primera dosis,Pfizer,7932
+Casanare,12-17,Primera dosis,Sinovac,5251
+Casanare,12-17,Primera dosis,AstraZeneca,2484
+Casanare,12-17,Primera dosis,Janssen,1031
+Casanare,12-17,Primera dosis,Moderna,3432
+Casanare,12-17,Segunda dosis,Pfizer,6869
+Casanare,12-17,Segunda dosis,Sinovac,5414
+Casanare,12-17,Segunda dosis,AstraZeneca,3387
+Casanare,12-17,Segunda dosis,Janssen,1079
+Casanare,12-17,Segunda dosis,Moderna,934
+Casanare,12-17,Refuerzo,Pfizer,3328
+Casanare,12-17,Refuerzo,Sinovac,3612
+Casanare,12-17,Refuerzo,AstraZeneca,2074
+Casanare,12-17,Refuerzo,Janssen,707
+Casanare,12-17,Refuerzo,Moderna,1143
+Casanare,18-29,Primera dosis,Pfizer,15737
+Casanare,18-29,Primera dosis,Sinovac,14252
+Casanare,18-29,Primera dosis,AstraZeneca,5225
+Casanare,18-29,Primera dosis,Janssen,4494
+Casanare,18-29,Primera dosis,Moderna,7916
+Casanare,18-29,Segunda dosis,Pfizer,12454
+Casanare,18-29,Segunda dosis,Sinovac,11731
+Casanare,18-29,Segunda dosis,AstraZeneca,6635
+Casanare,18-29,Segunda dosis,Janssen,3461
+Casanare,18-29,Segunda dosis,Moderna,5436
+Casanare,18-29,Refuerzo,Pfizer,10018
+Casanare,18-29,Refuerzo,Sinovac,7411
+Casanare,18-29,Refuerzo,AstraZeneca,4423
+Casanare,18-29,Refuerzo,Janssen,1465
+Casanare,18-29,Refuerzo,Moderna,2070
+Casanare,30-39,Primera dosis,Pfizer,14522
+Casanare,30-39,Primera dosis,Sinovac,14707
+Casanare,30-39,Primera dosis,AstraZeneca,4400
+Casanare,30-39,Primera dosis,Janssen,2920
+Casanare,30-39,Primera dosis,Moderna,6061
+Casanare,30-39,Segunda dosis,Pfizer,12176
+Casanare,30-39,Segunda dosis,Sinovac,12202
+Casanare,30-39,Segunda dosis,AstraZeneca,6561
+Casanare,30-39,Segunda dosis,Janssen,1943
+Casanare,30-39,Segunda dosis,Moderna,2478
+Casanare,30-39,Refuerzo,Pfizer,7140
+Casanare,30-39,Refuerzo,Sinovac,5898
+Casanare,30-39,Refuerzo,AstraZeneca,3831
+Casanare,30-39,Refuerzo,Janssen,1316
+Casanare,30-39,Refuerzo,Moderna,1186
+Casanare,40-49,Primera dosis,Pfizer,13999
+Casanare,40-49,Primera dosis,Sinovac,10749
+Casanare,40-49,Primera dosis,AstraZeneca,6049
+Casanare,40-49,Primera dosis,Janssen,2986
+Casanare,40-49,Primera dosis,Moderna,2596
+Casanare,40-49,Segunda dosis,Pfizer,10979
+Casanare,40-49,Segunda dosis,Sinovac,7695
+Casanare,40-49,Segunda dosis,AstraZeneca,5453
+Casanare,40-49,Segunda dosis,Janssen,1897
+Casanare,40-49,Segunda dosis,Moderna,4495
+Casanare,40-49,Refuerzo,Pfizer,4526
+Casanare,40-49,Refuerzo,Sinovac,4437
+Casanare,40-49,Refuerzo,AstraZeneca,1547
+Casanare,40-49,Refuerzo,Janssen,1278
+Casanare,40-49,Refuerzo,Moderna,2691
+Casanare,50-59,Primera dosis,Pfizer,9592
+Casanare,50-59,Primera dosis,Sinovac,7629
+Casanare,50-59,Primera dosis,AstraZeneca,5477
+Casanare,50-59,Primera dosis,Janssen,1445
+Casanare,50-59,Primera dosis,Moderna,4674
+Casanare,50-59,Segunda dosis,Pfizer,9357
+Casanare,50-59,Segunda dosis,Sinovac,6414
+Casanare,50-59,Segunda dosis,AstraZeneca,2740
+Casanare,50-59,Segunda dosis,Janssen,1516
+Casanare,50-59,Segunda dosis,Moderna,4223
+Casanare,50-59,Refuerzo,Pfizer,4803
+Casanare,50-59,Refuerzo,Sinovac,4783
+Casanare,50-59,Refuerzo,AstraZeneca,1552
+Casanare,50-59,Refuerzo,Janssen,767
+Casanare,50-59,Refuerzo,Moderna,3224
+Casanare,60-69,Primera dosis,Pfizer,7110
+Casanare,60-69,Primera dosis,Sinovac,5717
+Casanare,60-69,Primera dosis,AstraZeneca,3901
+Casanare,60-69,Primera dosis,Janssen,1709
+Casanare,60-69,Primera dosis,Moderna,3962
+Casanare,60-69,Segunda dosis,Pfizer,7080
+Casanare,60-69,Segunda dosis,Sinovac,5625
+Casanare,60-69,Segunda dosis,AstraZeneca,3360
+Casanare,60-69,Segunda dosis,Janssen,1430
+Casanare,60-69,Segunda dosis,Moderna,1405
+Casanare,60-69,Refuerzo,Pfizer,3024
+Casanare,60-69,Refuerzo,Sinovac,2922
+Casanare,60-69,Refuerzo,AstraZeneca,1892
+Casanare,60-69,Refuerzo,Janssen,507
+Casanare,60-69,Refuerzo,Moderna,1381
+Casanare,70-79,Primera dosis,Pfizer,4504
+Casanare,70-79,Primera dosis,Sinovac,4511
+Casanare,70-79,Primera dosis,AstraZeneca,1381
+Casanare,70-79,Primera dosis,Janssen,963
+Casanare,70-79,Primera dosis,Moderna,1664
+Casanare,70-79,Segunda dosis,Pfizer,4016
+Casanare,70-79,Segunda dosis,Sinovac,3762
+Casanare,70-79,Segunda dosis,AstraZeneca,1759
+Casanare,70-79,Segunda dosis,Janssen,1127
+Casanare,70-79,Segunda dosis,Moderna,1142
+Casanare,70-79,Refuerzo,Pfizer,2011
+Casanare,70-79,Refuerzo,Sinovac,1689
+Casanare,70-79,Refuerzo,AstraZeneca,1052
+Casanare,70-79,Refuerzo,Janssen,348
+Casanare,70-79,Refuerzo,Moderna,1442
+Casanare,80+,Primera dosis,Pfizer,3170
+Casanare,80+,Primera dosis,Sinovac,3332
+Casanare,80+,Primera dosis,AstraZeneca,1459
+Casanare,80+,Primera dosis,Janssen,693
+Casanare,80+,Primera dosis,Moderna,879
+Casanare,80+,Segunda dosis,Pfizer,3036
+Casanare,80+,Segunda dosis,Sinovac,2189
+Casanare,80+,Segunda dosis,AstraZeneca,1433
+Casanare,80+,Segunda dosis,Janssen,780
+Casanare,80+,Segunda dosis,Moderna,983
+Casanare,80+,Refuerzo,Pfizer,1720
+Casanare,80+,Refuerzo,Sinovac,1540
+Casanare,80+,Refuerzo,AstraZeneca,811
+Casanare,80+,Refuerzo,Janssen,286
+Casanare,80+,Refuerzo,Moderna,354
+Cauca,12-17,Primera dosis,Pfizer,19929
+Cauca,12-17,Primera dosis,Sinovac,16827
+Cauca,12-17,Primera dosis,AstraZeneca,6319
+Cauca,12-17,Primera dosis,Janssen,4116
+Cauca,12-17,Primera dosis,Moderna,10514
+Cauca,12-17,Segunda dosis,Pfizer,17826
+Cauca,12-17,Segunda dosis,Sinovac,13980
+Cauca,12-17,Segunda dosis,AstraZeneca,5606
+Cauca,12-17,Segunda dosis,Janssen,4676
+Cauca,12-17,Segunda dosis,Moderna,6548
+Cauca,12-17,Refuerzo,Pfizer,7724
+Cauca,12-17,Refuerzo,Sinovac,8390
+Cauca,12-17,Refuerzo,AstraZeneca,2753
+Cauca,12-17,Refuerzo,Janssen,1380
+Cauca,12-17,Refuerzo,Moderna,4935
+Cauca,18-29,Primera dosis,Pfizer,51713
+Cauca,18-29,Primera dosis,Sinovac,44145
+Cauca,18-29,Primera dosis,AstraZeneca,19172
+Cauca,18-29,Primera dosis,Janssen,8090
+Cauca,18-29,Primera dosis,Moderna,21069
+Cauca,18-29,Segunda dosis,Pfizer,43577
+Cauca,18-29,Segunda dosis,Sinovac,41131
+Cauca,18-29,Segunda dosis,AstraZeneca,22743
+Cauca,18-29,Segunda dosis,Janssen,12137
+Cauca,18-29,Segunda dosis,Moderna,10352
+Cauca,18-29,Refuerzo,Pfizer,27138
+Cauca,18-29,Refuerzo,Sinovac,25296
+Cauca,18-29,Refuerzo,AstraZeneca,11672
+Cauca,18-29,Refuerzo,Janssen,4928
+Cauca,18-29,Refuerzo,Moderna,3896
+Cauca,30-39,Primera dosis,Pfizer,40915
+Cauca,30-39,Primera dosis,Sinovac,33098
+Cauca,30-39,Primera dosis,AstraZeneca,23417
+Cauca,30-39,Primera dosis,Janssen,8677
+Cauca,30-39,Primera dosis,Moderna,20790
+Cauca,30-39,Segunda dosis,Pfizer,40168
+Cauca,30-39,Segunda dosis,Sinovac,32817
+Cauca,30-39,Segunda dosis,AstraZeneca,19293
+Cauca,30-39,Segunda dosis,Janssen,9849
+Cauca,30-39,Segunda dosis,Moderna,4627
+Cauca,30-39,Refuerzo,Pfizer,24666
+Cauca,30-39,Refuerzo,Sinovac,20594
+Cauca,30-39,Refuerzo,AstraZeneca,10014
+Cauca,30-39,Refuerzo,Janssen,5097
+Cauca,30-39,Refuerzo,Moderna,1688
+Cauca,40-49,Primera dosis,Pfizer,33521
+Cauca,40-49,Primera dosis,Sinovac,27498
+Cauca,40-49,Primera dosis,AstraZeneca,17468
+Cauca,40-49,Primera dosis,Janssen,6714
+Cauca,40-49,Primera dosis,Moderna,17388
+Cauca,40-49,Segunda dosis,Pfizer,31279
+Cauca,40-49,Segunda dosis,Sinovac,23471
+Cauca,40-49,Segunda dosis,AstraZeneca,17512
+Cauca,40-49,Segunda dosis,Janssen,7334
+Cauca,40-49,Segunda dosis,Moderna,14058
+Cauca,40-49,Refuerzo,Pfizer,19616
+Cauca,40-49,Refuerzo,Sinovac,15238
+Cauca,40-49,Refuerzo,AstraZeneca,9420
+Cauca,40-49,Refuerzo,Janssen,2972
+Cauca,40-49,Refuerzo,Moderna,10433
+Cauca,50-59,Primera dosis,Pfizer,29775
+Cauca,50-59,Primera dosis,Sinovac,25578
+Cauca,50-59,Primera dosis,AstraZeneca,15343
+Cauca,50-59,Primera dosis,Janssen,7917
+Cauca,50-59,Primera dosis,Moderna,10507
+Cauca,50-59,Segunda dosis,Pfizer,26756
+Cauca,50-59,Segunda dosis,Sinovac,19386
+Cauca,50-59,Segunda dosis,AstraZeneca,7894
+Cauca,50-59,Segunda dosis,Janssen,4340
+Cauca,50-59,Segunda dosis,Moderna,16620
+Cauca,50-59,Refuerzo,Pfizer,14487
+Cauca,50-59,Refuerzo,Sinovac,12710
+Cauca,50-59,Refuerzo,AstraZeneca,5094
+Cauca,50-59,Refuerzo,Janssen,3327
+Cauca,50-59,Refuerzo,Moderna,4425
+Cauca,60-69,Primera dosis,Pfizer,23917
+Cauca,60-69,Primera dosis,Sinovac,16648
+Cauca,60-69,Primera dosis,AstraZeneca,9107
+Cauca,60-69,Primera dosis,Janssen,4086
+Cauca,60-69,Primera dosis,Moderna,9934
+Cauca,60-69,Segunda dosis,Pfizer,20248
+Cauca,60-69,Segunda dosis,Sinovac,16440
+Cauca,60-69,Segunda dosis,AstraZeneca,9176
+Cauca,60-69,Segunda dosis,Janssen,2877
+Cauca,60-69,Segunda dosis,Moderna,6302
+Cauca,60-69,Refuerzo,Pfizer,9431
+Cauca,60-69,Refuerzo,Sinovac,8609
+Cauca,60-69,Refuerzo,AstraZeneca,2799
+Cauca,60-69,Refuerzo,Janssen,1807
+Cauca,60-69,Refuerzo,Moderna,5130
+Cauca,70-79,Primera dosis,Pfizer,11994
+Cauca,70-79,Primera dosis,Sinovac,9038
+Cauca,70-79,Primera dosis,AstraZeneca,6296
+Cauca,70-79,Primera dosis,Janssen,2118
+Cauca,70-79,Primera dosis,Moderna,6592
+Cauca,70-79,Segunda dosis,Pfizer,10156
+Cauca,70-79,Segunda dosis,Sinovac,9626
+Cauca,70-79,Segunda dosis,AstraZeneca,4507
+Cauca,70-79,Segunda dosis,Janssen,2754
+Cauca,70-79,Segunda dosis,Moderna,3002
+Cauca,70-79,Refuerzo,Pfizer,5730
+Cauca,70-79,Refuerzo,Sinovac,3872
+Cauca,70-79,Refuerzo,AstraZeneca,2803
+Cauca,70-79,Refuerzo,Janssen,784
+Cauca,70-79,Refuerzo,Moderna,1865
+Cauca,80+,Primera dosis,Pfizer,9727
+Cauca,80+,Primera dosis,Sinovac,8360
+Cauca,80+,Primera dosis,AstraZeneca,4650
+Cauca,80+,Primera dosis,Janssen,1928
+Cauca,80+,Primera dosis,Moderna,2536
+Cauca,80+,Segunda dosis,Pfizer,7729
+Cauca,80+,Segunda dosis,Sinovac,6255
+Cauca,80+,Segunda dosis,AstraZeneca,3287
+Cauca,80+,Segunda dosis,Janssen,2234
+Cauca,80+,Segunda dosis,Moderna,5306
+Cauca,80+,Refuerzo,Pfizer,5587
+Cauca,80+,Refuerzo,Sinovac,5145
+Cauca,80+,Refuerzo,AstraZeneca,2964
+Cauca,80+,Refuerzo,Janssen,840
+Cauca,80+,Refuerzo,Moderna,905
+Cesar,12-17,Primera dosis,Pfizer,20006
+Cesar,12-17,Primera dosis,Sinovac,16440
+Cesar,12-17,Primera dosis,AstraZeneca,7438
+Cesar,12-17,Primera dosis,Janssen,3802
+Cesar,12-17,Primera dosis,Moderna,9085
+Cesar,12-17,Segunda dosis,Pfizer,15977
+Cesar,12-17,Segunda dosis,Sinovac,12789
+Cesar,12-17,Segunda dosis,AstraZeneca,7240
+Cesar,12-17,Segunda dosis,Janssen,2670
+Cesar,12-17,Segunda dosis,Moderna,9257
+Cesar,12-17,Refuerzo,Pfizer,9552
+Cesar,12-17,Refuerzo,Sinovac,9269
+Cesar,12-17,Refuerzo,AstraZeneca,3672
+Cesar,12-17,Refuerzo,Janssen,2350
+Cesar,12-17,Refuerzo,Moderna,2370
+Cesar,18-29,Primera dosis,Pfizer,43276
+Cesar,18-29,Primera dosis,Sinovac,37098
+Cesar,18-29,Primera dosis,AstraZeneca,22039
+Cesar,18-29,Primera dosis,Janssen,12105
+Cesar,18-29,Primera dosis,Moderna,23021
+Cesar,18-29,Segunda dosis,Pfizer,45325
+Cesar,18-29,Segunda dosis,Sinovac,33194
+Cesar,18-29,Segunda dosis,AstraZeneca,21982
+Cesar,18-29,Segunda dosis,Janssen,9263
+Cesar,18-29,Segunda dosis,Moderna,14227
+Cesar,18-29,Refuerzo,Pfizer,23148
+Cesar,18-29,Refuerzo,Sinovac,20098
+Cesar,18-29,Refuerzo,AstraZeneca,8933
+Cesar,18-29,Refuerzo,Janssen,5931
+Cesar,18-29,Refuerzo,Moderna,3543
+Cesar,30-39,Primera dosis,Pfizer,46349
+Cesar,30-39,Primera dosis,Sinovac,37509
+Cesar,30-39,Primera dosis,AstraZeneca,13805
+Cesar,30-39,Primera dosis,Janssen,6406
+Cesar,30-39,Primera dosis,Moderna,15873
+Cesar,30-39,Segunda dosis,Pfizer,36478
+Cesar,30-39,Segunda dosis,Sinovac,29702
+Cesar,30-39,Segunda dosis,AstraZeneca,13508
+Cesar,30-39,Segunda dosis,Janssen,5596
+Cesar,30-39,Segunda dosis,Moderna,20688
+Cesar,30-39,Refuerzo,Pfizer,21368
+Cesar,30-39,Refuerzo,Sinovac,17122
+Cesar,30-39,Refuerzo,AstraZeneca,8845
+Cesar,30-39,Refuerzo,Janssen,3219
+Cesar,30-39,Refuerzo,Moderna,10368
+Cesar,40-49,Primera dosis,Pfizer,40599
+Cesar,40-49,Primera dosis,Sinovac,32803
+Cesar,40-49,Primera dosis,AstraZeneca,15870
+Cesar,40-49,Primera dosis,Janssen,7701
+Cesar,40-49,Primera dosis,Moderna,8332
+Cesar,40-49,Segunda dosis,Pfizer,30979
+Cesar,40-49,Segunda dosis,Sinovac,28691
+Cesar,40-49,Segunda dosis,AstraZeneca,16524
+Cesar,40-49,Segunda dosis,Janssen,6317
+Cesar,40-49,Segunda dosis,Moderna,4646
+Cesar,40-49,Refuerzo,Pfizer,20682
+Cesar,40-49,Refuerzo,Sinovac,17110
+Cesar,40-49,Refuerzo,AstraZeneca,7174
+Cesar,40-49,Refuerzo,Janssen,4005
+Cesar,40-49,Refuerzo,Moderna,5314
+Cesar,50-59,Primera dosis,Pfizer,30978
+Cesar,50-59,Primera dosis,Sinovac,22591
+Cesar,50-59,Primera dosis,AstraZeneca,13620
+Cesar,50-59,Primera dosis,Janssen,5976
+Cesar,50-59,Primera dosis,Moderna,6283
+Cesar,50-59,Segunda dosis,Pfizer,20824
+Cesar,50-59,Segunda dosis,Sinovac,18036
+Cesar,50-59,Segunda dosis,AstraZeneca,9437
+Cesar,50-59,Segunda dosis,Janssen,4724
+Cesar,50-59,Segunda dosis,Moderna,12617
+Cesar,50-59,Refuerzo,Pfizer,10884
+Cesar,50-59,Refuerzo,Sinovac,8214
+Cesar,50-59,Refuerzo,AstraZeneca,4241
+Cesar,50-59,Refuerzo,Janssen,1981
+Cesar,50-59,Refuerzo,Moderna,5574
+Cesar,60-69,Primera dosis,Pfizer,22667
+Cesar,60-69,Primera dosis,Sinovac,18827
+Cesar,60-69,Primera dosis,AstraZeneca,6376
+Cesar,60-69,Primera dosis,Janssen,3273
+Cesar,60-69,Primera dosis,Moderna,8675
+Cesar,60-69,Segunda dosis,Pfizer,18788
+Cesar,60-69,Segunda dosis,Sinovac,14220
+Cesar,60-69,Segunda dosis,AstraZeneca,8804
+Cesar,60-69,Segunda dosis,Janssen,4230
+Cesar,60-69,Segunda dosis,Moderna,5033
+Cesar,60-69,Refuerzo,Pfizer,11364
+Cesar,60-69,Refuerzo,Sinovac,9813
+Cesar,60-69,Refuerzo,AstraZeneca,3879
+Cesar,60-69,Refuerzo,Janssen,2302
+Cesar,60-69,Refuerzo,Moderna,1732
+Cesar,70-79,Primera dosis,Pfizer,12525
+Cesar,70-79,Primera dosis,Sinovac,9793
+Cesar,70-79,Primera dosis,AstraZeneca,5401
+Cesar,70-79,Primera dosis,Janssen,3281
+Cesar,70-79,Primera dosis,Moderna,2863
+Cesar,70-79,Segunda dosis,Pfizer,9582
+Cesar,70-79,Segunda dosis,Sinovac,8329
+Cesar,70-79,Segunda dosis,AstraZeneca,5187
+Cesar,70-79,Segunda dosis,Janssen,2624
+Cesar,70-79,Segunda dosis,Moderna,3229
+Cesar,70-79,Refuerzo,Pfizer,6838
+Cesar,70-79,Refuerzo,Sinovac,6202
+Cesar,70-79,Refuerzo,AstraZeneca,3239
+Cesar,70-79,Refuerzo,Janssen,1570
+Cesar,70-79,Refuerzo,Moderna,781
+Cesar,80+,Primera dosis,Pfizer,9117
+Cesar,80+,Primera dosis,Sinovac,7763
+Cesar,80+,Primera dosis,AstraZeneca,3200
+Cesar,80+,Primera dosis,Janssen,1646
+Cesar,80+,Primera dosis,Moderna,5392
+Cesar,80+,Segunda dosis,Pfizer,9470
+Cesar,80+,Segunda dosis,Sinovac,7164
+Cesar,80+,Segunda dosis,AstraZeneca,2942
+Cesar,80+,Segunda dosis,Janssen,1364
+Cesar,80+,Segunda dosis,Moderna,3048
+Cesar,80+,Refuerzo,Pfizer,3947
+Cesar,80+,Refuerzo,Sinovac,4289
+Cesar,80+,Refuerzo,AstraZeneca,1412
+Cesar,80+,Refuerzo,Janssen,1135
+Cesar,80+,Refuerzo,Moderna,2041
+Chocó,12-17,Primera dosis,Pfizer,5609
+Chocó,12-17,Primera dosis,Sinovac,5490
+Chocó,12-17,Primera dosis,AstraZeneca,1901
+Chocó,12-17,Primera dosis,Janssen,1157
+Chocó,12-17,Primera dosis,Moderna,2651
+Chocó,12-17,Segunda dosis,Pfizer,4828
+Chocó,12-17,Segunda dosis,Sinovac,5086
+Chocó,12-17,Segunda dosis,AstraZeneca,2704
+Chocó,12-17,Segunda dosis,Janssen,1381
+Chocó,12-17,Segunda dosis,Moderna,1268
+Chocó,12-17,Refuerzo,Pfizer,2211
+Chocó,12-17,Refuerzo,Sinovac,2052
+Chocó,12-17,Refuerzo,AstraZeneca,985
+Chocó,12-17,Refuerzo,Janssen,585
+Chocó,12-17,Refuerzo,Moderna,1151
+Chocó,18-29,Primera dosis,Pfizer,14419
+Chocó,18-29,Primera dosis,Sinovac,11343
+Chocó,18-29,Primera dosis,AstraZeneca,5901
+Chocó,18-29,Primera dosis,Janssen,2518
+Chocó,18-29,Primera dosis,Moderna,4284
+Chocó,18-29,Segunda dosis,Pfizer,12664
+Chocó,18-29,Segunda dosis,Sinovac,9872
+Chocó,18-29,Segunda dosis,AstraZeneca,6102
+Chocó,18-29,Segunda dosis,Janssen,2274
+Chocó,18-29,Segunda dosis,Moderna,2338
+Chocó,18-29,Refuerzo,Pfizer,6654
+Chocó,18-29,Refuerzo,Sinovac,5874
+Chocó,18-29,Refuerzo,AstraZeneca,2464
+Chocó,18-29,Refuerzo,Janssen,1080
+Chocó,18-29,Refuerzo,Moderna,785
+Chocó,30-39,Primera dosis,Pfizer,13322
+Chocó,30-39,Primera dosis,Sinovac,11523
+Chocó,30-39,Primera dosis,AstraZeneca,3973
+Chocó,30-39,Primera dosis,Janssen,2181
+Chocó,30-39,Primera dosis,Moderna,3903
+Chocó,30-39,Segunda dosis,Pfizer,11092
+Chocó,30-39,Segunda dosis,Sinovac,10278
+Chocó,30-39,Segunda dosis,AstraZeneca,4735
+Chocó,30-39,Segunda dosis,Janssen,1679
+Chocó,30-39,Segunda dosis,Moderna,2677
+Chocó,30-39,Refuerzo,Pfizer,7536
+Chocó,30-39,Refuerzo,Sinovac,6566
+Chocó,30-39,Refuerzo,AstraZeneca,2518
+Chocó,30-39,Refuerzo,Janssen,1727
+Chocó,30-39,Refuerzo,Moderna,1246
+Chocó,40-49,Primera dosis,Pfizer,10148
+Chocó,40-49,Primera dosis,Sinovac,10174
+Chocó,40-49,Primera dosis,AstraZeneca,3607
+Chocó,40-49,Primera dosis,Janssen,2142
+Chocó,40-49,Primera dosis,Moderna,3449
+Chocó,40-49,Segunda dosis,Pfizer,9004
+Chocó,40-49,Segunda dosis,Sinovac,6791
+Chocó,40-49,Segunda dosis,AstraZeneca,2831
+Chocó,40-49,Segunda dosis,Janssen,2018
+Chocó,40-49,Segunda dosis,Moderna,6235
+Chocó,40-49,Refuerzo,Pfizer,4170
+Chocó,40-49,Refuerzo,Sinovac,4503
+Chocó,40-49,Refuerzo,AstraZeneca,1771
+Chocó,40-49,Refuerzo,Janssen,662
+Chocó,40-49,Refuerzo,Moderna,1779
+Chocó,50-59,Primera dosis,Pfizer,9649
+Chocó,50-59,Primera dosis,Sinovac,6712
+Chocó,50-59,Primera dosis,AstraZeneca,3275
+Chocó,50-59,Primera dosis,Janssen,2328
+Chocó,50-59,Primera dosis,Moderna,3484
+Chocó,50-59,Segunda dosis,Pfizer,8502
+Chocó,50-59,Segunda dosis,Sinovac,6070
+Chocó,50-59,Segunda dosis,AstraZeneca,3923
+Chocó,50-59,Segunda dosis,Janssen,1666
+Chocó,50-59,Segunda dosis,Moderna,2841
+Chocó,50-59,Refuerzo,Pfizer,4009
+Chocó,50-59,Refuerzo,Sinovac,3441
+Chocó,50-59,Refuerzo,AstraZeneca,1675
+Chocó,50-59,Refuerzo,Janssen,1224
+Chocó,50-59,Refuerzo,Moderna,2991
+Chocó,60-69,Primera dosis,Pfizer,5593
+Chocó,60-69,Primera dosis,Sinovac,5013
+Chocó,60-69,Primera dosis,AstraZeneca,2339
+Chocó,60-69,Primera dosis,Janssen,941
+Chocó,60-69,Primera dosis,Moderna,4091
+Chocó,60-69,Segunda dosis,Pfizer,5489
+Chocó,60-69,Segunda dosis,Sinovac,5287
+Chocó,60-69,Segunda dosis,AstraZeneca,2338
+Chocó,60-69,Segunda dosis,Janssen,891
+Chocó,60-69,Segunda dosis,Moderna,2044
+Chocó,60-69,Refuerzo,Pfizer,3482
+Chocó,60-69,Refuerzo,Sinovac,2761
+Chocó,60-69,Refuerzo,AstraZeneca,906
+Chocó,60-69,Refuerzo,Janssen,675
+Chocó,60-69,Refuerzo,Moderna,1091
+Chocó,70-79,Primera dosis,Pfizer,3665
+Chocó,70-79,Primera dosis,Sinovac,2779
+Chocó,70-79,Primera dosis,AstraZeneca,1436
+Chocó,70-79,Primera dosis,Janssen,843
+Chocó,70-79,Primera dosis,Moderna,1415
+Chocó,70-79,Segunda dosis,Pfizer,2610
+Chocó,70-79,Segunda dosis,Sinovac,2939
+Chocó,70-79,Segunda dosis,AstraZeneca,903
+Chocó,70-79,Segunda dosis,Janssen,645
+Chocó,70-79,Segunda dosis,Moderna,1361
+Chocó,70-79,Refuerzo,Pfizer,1589
+Chocó,70-79,Refuerzo,Sinovac,1581
+Chocó,70-79,Refuerzo,AstraZeneca,704
+Chocó,70-79,Refuerzo,Janssen,315
+Chocó,70-79,Refuerzo,Moderna,342
+Chocó,80+,Primera dosis,Pfizer,2600
+Chocó,80+,Primera dosis,Sinovac,2010
+Chocó,80+,Primera dosis,AstraZeneca,1429
+Chocó,80+,Primera dosis,Janssen,537
+Chocó,80+,Primera dosis,Moderna,1413
+Chocó,80+,Segunda dosis,Pfizer,2635
+Chocó,80+,Segunda dosis,Sinovac,2208
+Chocó,80+,Segunda dosis,AstraZeneca,1250
+Chocó,80+,Segunda dosis,Janssen,612
+Chocó,80+,Segunda dosis,Moderna,352
+Chocó,80+,Refuerzo,Pfizer,1520
+Chocó,80+,Refuerzo,Sinovac,1160
+Chocó,80+,Refuerzo,AstraZeneca,705
+Chocó,80+,Refuerzo,Janssen,413
+Chocó,80+,Refuerzo,Moderna,762
+Córdoba,12-17,Primera dosis,Pfizer,26756
+Córdoba,12-17,Primera dosis,Sinovac,22675
+Córdoba,12-17,Primera dosis,AstraZeneca,13115
+Córdoba,12-17,Primera dosis,Janssen,3848
+Córdoba,12-17,Primera dosis,Moderna,6008
+Córdoba,12-17,Segunda dosis,Pfizer,24549
+Córdoba,12-17,Segunda dosis,Sinovac,19228
+Córdoba,12-17,Segunda dosis,AstraZeneca,8408
+Córdoba,12-17,Segunda dosis,Janssen,3392
+Córdoba,12-17,Segunda dosis,Moderna,9431
+Córdoba,12-17,Refuerzo,Pfizer,11292
+Córdoba,12-17,Refuerzo,Sinovac,8971
+Córdoba,12-17,Refuerzo,AstraZeneca,6824
+Córdoba,12-17,Refuerzo,Janssen,2674
+Córdoba,12-17,Refuerzo,Moderna,5532
+Córdoba,18-29,Primera dosis,Pfizer,71549
+Córdoba,18-29,Primera dosis,Sinovac,51301
+Córdoba,18-29,Primera dosis,AstraZeneca,25868
+Córdoba,18-29,Primera dosis,Janssen,16974
+Córdoba,18-29,Primera dosis,Moderna,24938
+Córdoba,18-29,Segunda dosis,Pfizer,64431
+Córdoba,18-29,Segunda dosis,Sinovac,47199
+Córdoba,18-29,Segunda dosis,AstraZeneca,18741
+Córdoba,18-29,Segunda dosis,Janssen,11400
+Córdoba,18-29,Segunda dosis,Moderna,24897
+Córdoba,18-29,Refuerzo,Pfizer,32455
+Córdoba,18-29,Refuerzo,Sinovac,27063
+Córdoba,18-29,Refuerzo,AstraZeneca,15809
+Córdoba,18-29,Refuerzo,Janssen,5785
+Córdoba,18-29,Refuerzo,Moderna,2330
+Córdoba,30-39,Primera dosis,Pfizer,66790
+Córdoba,30-39,Primera dosis,Sinovac,51387
+Córdoba,30-39,Primera dosis,AstraZeneca,30655
+Córdoba,30-39,Primera dosis,Janssen,14697
+Córdoba,30-39,Primera dosis,Moderna,6667
+Córdoba,30-39,Segunda dosis,Pfizer,45569
+Córdoba,30-39,Segunda dosis,Sinovac,45918
+Córdoba,30-39,Segunda dosis,AstraZeneca,26971
+Córdoba,30-39,Segunda dosis,Janssen,11436
+Córdoba,30-39,Segunda dosis,Moderna,18109
+Córdoba,30-39,Refuerzo,Pfizer,27011
+Córdoba,30-39,Refuerzo,Sinovac,20983
+Córdoba,30-39,Refuerzo,AstraZeneca,13508
+Córdoba,30-39,Refuerzo,Janssen,5312
+Córdoba,30-39,Refuerzo,Moderna,14513
+Córdoba,40-49,Primera dosis,Pfizer,47057
+Córdoba,40-49,Primera dosis,Sinovac,35696
+Córdoba,40-49,Primera dosis,AstraZeneca,26256
+Córdoba,40-49,Primera dosis,Janssen,9495
+Córdoba,40-49,Primera dosis,Moderna,21900
+Córdoba,40-49,Segunda dosis,Pfizer,48423
+Córdoba,40-49,Segunda dosis,Sinovac,33604
+Córdoba,40-49,Segunda dosis,AstraZeneca,23981
+Córdoba,40-49,Segunda dosis,Janssen,11796
+Córdoba,40-49,Segunda dosis,Moderna,3310
+Córdoba,40-49,Refuerzo,Pfizer,21897
+Córdoba,40-49,Refuerzo,Sinovac,22341
+Córdoba,40-49,Refuerzo,AstraZeneca,9708
+Córdoba,40-49,Refuerzo,Janssen,6412
+Córdoba,40-49,Refuerzo,Moderna,10849
+Córdoba,50-59,Primera dosis,Pfizer,41222
+Córdoba,50-59,Primera dosis,Sinovac,37494
+Córdoba,50-59,Primera dosis,AstraZeneca,11824
+Córdoba,50-59,Primera dosis,Janssen,6097
+Córdoba,50-59,Primera dosis,Moderna,17627
+Córdoba,50-59,Segunda dosis,Pfizer,39517
+Córdoba,50-59,Segunda dosis,Sinovac,29977
+Córdoba,50-59,Segunda dosis,AstraZeneca,14462
+Córdoba,50-59,Segunda dosis,Janssen,8195
+Córdoba,50-59,Segunda dosis,Moderna,12431
+Córdoba,50-59,Refuerzo,Pfizer,18043
+Córdoba,50-59,Refuerzo,Sinovac,15911
+Córdoba,50-59,Refuerzo,AstraZeneca,9753
+Córdoba,50-59,Refuerzo,Janssen,3433
+Córdoba,50-59,Refuerzo,Moderna,2907
+Córdoba,60-69,Primera dosis,Pfizer,28707
+Córdoba,60-69,Primera dosis,Sinovac,26608
+Córdoba,60-69,Primera dosis,AstraZeneca,10557
+Córdoba,60-69,Primera dosis,Janssen,4703
+Córdoba,60-69,Primera dosis,Moderna,13906
+Córdoba,60-69,Segunda dosis,Pfizer,27690
+Córdoba,60-69,Segunda dosis,Sinovac,22230
+Córdoba,60-69,Segunda dosis,AstraZeneca,10281
+Córdoba,60-69,Segunda dosis,Janssen,5787
+Córdoba,60-69,Segunda dosis,Moderna,8134
+Córdoba,60-69,Refuerzo,Pfizer,13440
+Córdoba,60-69,Refuerzo,Sinovac,11373
+Córdoba,60-69,Refuerzo,AstraZeneca,5959
+Córdoba,60-69,Refuerzo,Janssen,4113
+Córdoba,60-69,Refuerzo,Moderna,6318
+Córdoba,70-79,Primera dosis,Pfizer,14634
+Córdoba,70-79,Primera dosis,Sinovac,15713
+Córdoba,70-79,Primera dosis,AstraZeneca,6805
+Córdoba,70-79,Primera dosis,Janssen,4449
+Córdoba,70-79,Primera dosis,Moderna,5263
+Córdoba,70-79,Segunda dosis,Pfizer,14719
+Córdoba,70-79,Segunda dosis,Sinovac,11056
+Córdoba,70-79,Segunda dosis,AstraZeneca,7186
+Córdoba,70-79,Segunda dosis,Janssen,3942
+Córdoba,70-79,Segunda dosis,Moderna,5821
+Córdoba,70-79,Refuerzo,Pfizer,7775
+Córdoba,70-79,Refuerzo,Sinovac,6669
+Córdoba,70-79,Refuerzo,AstraZeneca,2494
+Córdoba,70-79,Refuerzo,Janssen,1806
+Córdoba,70-79,Refuerzo,Moderna,4677
+Córdoba,80+,Primera dosis,Pfizer,15051
+Córdoba,80+,Primera dosis,Sinovac,12025
+Córdoba,80+,Primera dosis,AstraZeneca,6874
+Córdoba,80+,Primera dosis,Janssen,2891
+Córdoba,80+,Primera dosis,Moderna,1482
+Córdoba,80+,Segunda dosis,Pfizer,10828
+Córdoba,80+,Segunda dosis,Sinovac,9369
+Córdoba,80+,Segunda dosis,AstraZeneca,3950
+Córdoba,80+,Segunda dosis,Janssen,3105
+Córdoba,80+,Segunda dosis,Moderna,7436
+Córdoba,80+,Refuerzo,Pfizer,6218
+Córdoba,80+,Refuerzo,Sinovac,6275
+Córdoba,80+,Refuerzo,AstraZeneca,2812
+Córdoba,80+,Refuerzo,Janssen,1853
+Córdoba,80+,Refuerzo,Moderna,3388
+Cundinamarca,12-17,Primera dosis,Pfizer,55123
+Cundinamarca,12-17,Primera dosis,Sinovac,58293
+Cundinamarca,12-17,Primera dosis,AstraZeneca,28631
+Cundinamarca,12-17,Primera dosis,Janssen,12706
+Cundinamarca,12-17,Primera dosis,Moderna,11816
+Cundinamarca,12-17,Segunda dosis,Pfizer,55324
+Cundinamarca,12-17,Segunda dosis,Sinovac,48780
+Cundinamarca,12-17,Segunda dosis,AstraZeneca,15760
+Cundinamarca,12-17,Segunda dosis,Janssen,14475
+Cundinamarca,12-17,Segunda dosis,Moderna,12440
+Cundinamarca,12-17,Refuerzo,Pfizer,24979
+Cundinamarca,12-17,Refuerzo,Sinovac,20231
+Cundinamarca,12-17,Refuerzo,AstraZeneca,11522
+Cundinamarca,12-17,Refuerzo,Janssen,4610
+Cundinamarca,12-17,Refuerzo,Moderna,7237
+Cundinamarca,18-29,Primera dosis,Pfizer,132899
+Cundinamarca,18-29,Primera dosis,Sinovac,144774
+Cundinamarca,18-29,Primera dosis,AstraZeneca,59835
+Cundinamarca,18-29,Primera dosis,Janssen,39901
+Cundinamarca,18-29,Primera dosis,Moderna,40254
+Cundinamarca,18-29,Segunda dosis,Pfizer,114600
+Cundinamarca,18-29,Segunda dosis,Sinovac,98425
+Cundinamarca,18-29,Segunda dosis,AstraZeneca,43246
+Cundinamarca,18-29,Segunda dosis,Janssen,21841
+Cundinamarca,18-29,Segunda dosis,Moderna,96959
+Cundinamarca,18-29,Refuerzo,Pfizer,72027
+Cundinamarca,18-29,Refuerzo,Sinovac,69570
+Cundinamarca,18-29,Refuerzo,AstraZeneca,29178
+Cundinamarca,18-29,Refuerzo,Janssen,21037
+Cundinamarca,18-29,Refuerzo,Moderna,24962
+Cundinamarca,30-39,Primera dosis,Pfizer,135970
+Cundinamarca,30-39,Primera dosis,Sinovac,114117
+Cundinamarca,30-39,Primera dosis,AstraZeneca,42087
+Cundinamarca,30-39,Primera dosis,Janssen,24366
+Cundinamarca,30-39,Primera dosis,Moderna,57511
+Cundinamarca,30-39,Segunda dosis,Pfizer,119560
+Cundinamarca,30-39,Segunda dosis,Sinovac,101596
+Cundinamarca,30-39,Segunda dosis,AstraZeneca,39542
+Cundinamarca,30-39,Segunda dosis,Janssen,32848
+Cundinamarca,30-39,Segunda dosis,Moderna,44816
+Cundinamarca,30-39,Refuerzo,Pfizer,53376
+Cundinamarca,30-39,Refuerzo,Sinovac,53453
+Cundinamarca,30-39,Refuerzo,AstraZeneca,29117
+Cundinamarca,30-39,Refuerzo,Janssen,13581
+Cundinamarca,30-39,Refuerzo,Moderna,19695
+Cundinamarca,40-49,Primera dosis,Pfizer,96393
+Cundinamarca,40-49,Primera dosis,Sinovac,81022
+Cundinamarca,40-49,Primera dosis,AstraZeneca,52247
+Cundinamarca,40-49,Primera dosis,Janssen,25094
+Cundinamarca,40-49,Primera dosis,Moderna,63543
+Cundinamarca,40-49,Segunda dosis,Pfizer,101846
+Cundinamarca,40-49,Segunda dosis,Sinovac,91130
+Cundinamarca,40-49,Segunda dosis,AstraZeneca,39515
+Cundinamarca,40-49,Segunda dosis,Janssen,22859
+Cundinamarca,40-49,Segunda dosis,Moderna,23594
+Cundinamarca,40-49,Refuerzo,Pfizer,60013
+Cundinamarca,40-49,Refuerzo,Sinovac,53650
+Cundinamarca,40-49,Refuerzo,AstraZeneca,22126
+Cundinamarca,40-49,Refuerzo,Janssen,16784
+Cundinamarca,40-49,Refuerzo,Moderna,18988
+Cundinamarca,50-59,Primera dosis,Pfizer,81826
+Cundinamarca,50-59,Primera dosis,Sinovac,63848
+Cundinamarca,50-59,Primera dosis,AstraZeneca,26301
+Cundinamarca,50-59,Primera dosis,Janssen,17861
+Cundinamarca,50-59,Primera dosis,Moderna,58312
+Cundinamarca,50-59,Segunda dosis,Pfizer,77856
+Cundinamarca,50-59,Segunda dosis,Sinovac,60421
+Cundinamarca,50-59,Segunda dosis,AstraZeneca,35901
+Cundinamarca,50-59,Segunda dosis,Janssen,14664
+Cundinamarca,50-59,Segunda dosis,Moderna,34607
+Cundinamarca,50-59,Refuerzo,Pfizer,48771
+Cundinamarca,50-59,Refuerzo,Sinovac,42421
+Cundinamarca,50-59,Refuerzo,AstraZeneca,24406
+Cundinamarca,50-59,Refuerzo,Janssen,12954
+Cundinamarca,50-59,Refuerzo,Moderna,2609
+Cundinamarca,60-69,Primera dosis,Pfizer,58269
+Cundinamarca,60-69,Primera dosis,Sinovac,52078
+Cundinamarca,60-69,Primera dosis,AstraZeneca,22251
+Cundinamarca,60-69,Primera dosis,Janssen,10954
+Cundinamarca,60-69,Primera dosis,Moderna,32003
+Cundinamarca,60-69,Segunda dosis,Pfizer,46594
+Cundinamarca,60-69,Segunda dosis,Sinovac,41981
+Cundinamarca,60-69,Segunda dosis,AstraZeneca,20826
+Cundinamarca,60-69,Segunda dosis,Janssen,12152
+Cundinamarca,60-69,Segunda dosis,Moderna,28905
+Cundinamarca,60-69,Refuerzo,Pfizer,27482
+Cundinamarca,60-69,Refuerzo,Sinovac,28473
+Cundinamarca,60-69,Refuerzo,AstraZeneca,9811
+Cundinamarca,60-69,Refuerzo,Janssen,5615
+Cundinamarca,60-69,Refuerzo,Moderna,13224
+Cundinamarca,70-79,Primera dosis,Pfizer,37390
+Cundinamarca,70-79,Primera dosis,Sinovac,32221
+Cundinamarca,70-79,Primera dosis,AstraZeneca,16019
+Cundinamarca,70-79,Primera dosis,Janssen,6992
+Cundinamarca,70-79,Primera dosis,Moderna,14257
+Cundinamarca,70-79,Segunda dosis,Pfizer,27506
+Cundinamarca,70-79,Segunda dosis,Sinovac,31346
+Cundinamarca,70-79,Segunda dosis,AstraZeneca,13697
+Cundinamarca,70-79,Segunda dosis,Janssen,8946
+Cundinamarca,70-79,Segunda dosis,Moderna,9487
+Cundinamarca,70-79,Refuerzo,Pfizer,17628
+Cundinamarca,70-79,Refuerzo,Sinovac,15642
+Cundinamarca,70-79,Refuerzo,AstraZeneca,5760
+Cundinamarca,70-79,Refuerzo,Janssen,4098
+Cundinamarca,70-79,Refuerzo,Moderna,11700
+Cundinamarca,80+,Primera dosis,Pfizer,29989
+Cundinamarca,80+,Primera dosis,Sinovac,28382
+Cundinamarca,80+,Primera dosis,AstraZeneca,12133
+Cundinamarca,80+,Primera dosis,Janssen,7981
+Cundinamarca,80+,Primera dosis,Moderna,6308
+Cundinamarca,80+,Segunda dosis,Pfizer,27986
+Cundinamarca,80+,Segunda dosis,Sinovac,24505
+Cundinamarca,80+,Segunda dosis,AstraZeneca,10255
+Cundinamarca,80+,Segunda dosis,Janssen,5257
+Cundinamarca,80+,Segunda dosis,Moderna,7075
+Cundinamarca,80+,Refuerzo,Pfizer,14585
+Cundinamarca,80+,Refuerzo,Sinovac,11008
+Cundinamarca,80+,Refuerzo,AstraZeneca,6345
+Cundinamarca,80+,Refuerzo,Janssen,2192
+Cundinamarca,80+,Refuerzo,Moderna,6720
+Guainía,12-17,Primera dosis,Pfizer,556
+Guainía,12-17,Primera dosis,Sinovac,443
+Guainía,12-17,Primera dosis,AstraZeneca,156
+Guainía,12-17,Primera dosis,Janssen,137
+Guainía,12-17,Primera dosis,Moderna,101
+Guainía,12-17,Segunda dosis,Pfizer,424
+Guainía,12-17,Segunda dosis,Sinovac,412
+Guainía,12-17,Segunda dosis,AstraZeneca,167
+Guainía,12-17,Segunda dosis,Janssen,121
+Guainía,12-17,Segunda dosis,Moderna,125
+Guainía,12-17,Refuerzo,Pfizer,237
+Guainía,12-17,Refuerzo,Sinovac,170
+Guainía,12-17,Refuerzo,AstraZeneca,95
+Guainía,12-17,Refuerzo,Janssen,47
+Guainía,12-17,Refuerzo,Moderna,81
+Guainía,18-29,Primera dosis,Pfizer,1123
+Guainía,18-29,Primera dosis,Sinovac,956
+Guainía,18-29,Primera dosis,AstraZeneca,519
+Guainía,18-29,Primera dosis,Janssen,245
+Guainía,18-29,Primera dosis,Moderna,389
+Guainía,18-29,Segunda dosis,Pfizer,897
+Guainía,18-29,Segunda dosis,Sinovac,839
+Guainía,18-29,Segunda dosis,AstraZeneca,313
+Guainía,18-29,Segunda dosis,Janssen,268
+Guainía,18-29,Segunda dosis,Moderna,377
+Guainía,18-29,Refuerzo,Pfizer,520
+Guainía,18-29,Refuerzo,Sinovac,389
+Guainía,18-29,Refuerzo,AstraZeneca,186
+Guainía,18-29,Refuerzo,Janssen,127
+Guainía,18-29,Refuerzo,Moderna,168
+Guainía,30-39,Primera dosis,Pfizer,1159
+Guainía,30-39,Primera dosis,Sinovac,871
+Guainía,30-39,Primera dosis,AstraZeneca,508
+Guainía,30-39,Primera dosis,Janssen,300
+Guainía,30-39,Primera dosis,Moderna,198
+Guainía,30-39,Segunda dosis,Pfizer,970
+Guainía,30-39,Segunda dosis,Sinovac,892
+Guainía,30-39,Segunda dosis,AstraZeneca,467
+Guainía,30-39,Segunda dosis,Janssen,228
+Guainía,30-39,Segunda dosis,Moderna,148
+Guainía,30-39,Refuerzo,Pfizer,417
+Guainía,30-39,Refuerzo,Sinovac,410
+Guainía,30-39,Refuerzo,AstraZeneca,271
+Guainía,30-39,Refuerzo,Janssen,123
+Guainía,30-39,Refuerzo,Moderna,157
+Guainía,40-49,Primera dosis,Pfizer,954
+Guainía,40-49,Primera dosis,Sinovac,711
+Guainía,40-49,Primera dosis,AstraZeneca,433
+Guainía,40-49,Primera dosis,Janssen,215
+Guainía,40-49,Primera dosis,Moderna,348
+Guainía,40-49,Segunda dosis,Pfizer,897
+Guainía,40-49,Segunda dosis,Sinovac,618
+Guainía,40-49,Segunda dosis,AstraZeneca,392
+Guainía,40-49,Segunda dosis,Janssen,120
+Guainía,40-49,Segunda dosis,Moderna,307
+Guainía,40-49,Refuerzo,Pfizer,548
+Guainía,40-49,Refuerzo,Sinovac,362
+Guainía,40-49,Refuerzo,AstraZeneca,141
+Guainía,40-49,Refuerzo,Janssen,91
+Guainía,40-49,Refuerzo,Moderna,245
+Guainía,50-59,Primera dosis,Pfizer,762
+Guainía,50-59,Primera dosis,Sinovac,690
+Guainía,50-59,Primera dosis,AstraZeneca,378
+Guainía,50-59,Primera dosis,Janssen,175
+Guainía,50-59,Primera dosis,Moderna,12
+Guainía,50-59,Segunda dosis,Pfizer,549
+Guainía,50-59,Segunda dosis,Sinovac,473
+Guainía,50-59,Segunda dosis,AstraZeneca,216
+Guainía,50-59,Segunda dosis,Janssen,118
+Guainía,50-59,Segunda dosis,Moderna,436
+Guainía,50-59,Refuerzo,Pfizer,349
+Guainía,50-59,Refuerzo,Sinovac,288
+Guainía,50-59,Refuerzo,AstraZeneca,125
+Guainía,50-59,Refuerzo,Janssen,56
+Guainía,50-59,Refuerzo,Moderna,134
+Guainía,60-69,Primera dosis,Pfizer,602
+Guainía,60-69,Primera dosis,Sinovac,514
+Guainía,60-69,Primera dosis,AstraZeneca,262
+Guainía,60-69,Primera dosis,Janssen,135
+Guainía,60-69,Primera dosis,Moderna,82
+Guainía,60-69,Segunda dosis,Pfizer,492
+Guainía,60-69,Segunda dosis,Sinovac,367
+Guainía,60-69,Segunda dosis,AstraZeneca,170
+Guainía,60-69,Segunda dosis,Janssen,106
+Guainía,60-69,Segunda dosis,Moderna,228
+Guainía,60-69,Refuerzo,Pfizer,228
+Guainía,60-69,Refuerzo,Sinovac,246
+Guainía,60-69,Refuerzo,AstraZeneca,92
+Guainía,60-69,Refuerzo,Janssen,45
+Guainía,60-69,Refuerzo,Moderna,96
+Guainía,70-79,Primera dosis,Pfizer,290
+Guainía,70-79,Primera dosis,Sinovac,297
+Guainía,70-79,Primera dosis,AstraZeneca,155
+Guainía,70-79,Primera dosis,Janssen,55
+Guainía,70-79,Primera dosis,Moderna,68
+Guainía,70-79,Segunda dosis,Pfizer,240
+Guainía,70-79,Segunda dosis,Sinovac,244
+Guainía,70-79,Segunda dosis,AstraZeneca,106
+Guainía,70-79,Segunda dosis,Janssen,76
+Guainía,70-79,Segunda dosis,Moderna,102
+Guainía,70-79,Refuerzo,Pfizer,150
+Guainía,70-79,Refuerzo,Sinovac,136
+Guainía,70-79,Refuerzo,AstraZeneca,71
+Guainía,70-79,Refuerzo,Janssen,25
+Guainía,70-79,Refuerzo,Moderna,10
+Guainía,80+,Primera dosis,Pfizer,231
+Guainía,80+,Primera dosis,Sinovac,185
+Guainía,80+,Primera dosis,AstraZeneca,99
+Guainía,80+,Primera dosis,Janssen,40
+Guainía,80+,Primera dosis,Moderna,115
+Guainía,80+,Segunda dosis,Pfizer,211
+Guainía,80+,Segunda dosis,Sinovac,205
+Guainía,80+,Segunda dosis,AstraZeneca,101
+Guainía,80+,Segunda dosis,Janssen,34
+Guainía,80+,Segunda dosis,Moderna,45
+Guainía,80+,Refuerzo,Pfizer,112
+Guainía,80+,Refuerzo,Sinovac,96
+Guainía,80+,Refuerzo,AstraZeneca,38
+Guainía,80+,Refuerzo,Janssen,25
+Guainía,80+,Refuerzo,Moderna,37
+Guaviare,12-17,Primera dosis,Pfizer,1008
+Guaviare,12-17,Primera dosis,Sinovac,951
+Guaviare,12-17,Primera dosis,AstraZeneca,325
+Guaviare,12-17,Primera dosis,Janssen,261
+Guaviare,12-17,Primera dosis,Moderna,408
+Guaviare,12-17,Segunda dosis,Pfizer,784
+Guaviare,12-17,Segunda dosis,Sinovac,796
+Guaviare,12-17,Segunda dosis,AstraZeneca,503
+Guaviare,12-17,Segunda dosis,Janssen,183
+Guaviare,12-17,Segunda dosis,Moderna,342
+Guaviare,12-17,Refuerzo,Pfizer,472
+Guaviare,12-17,Refuerzo,Sinovac,406
+Guaviare,12-17,Refuerzo,AstraZeneca,177
+Guaviare,12-17,Refuerzo,Janssen,72
+Guaviare,12-17,Refuerzo,Moderna,73
+Guaviare,18-29,Primera dosis,Pfizer,2927
+Guaviare,18-29,Primera dosis,Sinovac,1939
+Guaviare,18-29,Primera dosis,AstraZeneca,1179
+Guaviare,18-29,Primera dosis,Janssen,574
+Guaviare,18-29,Primera dosis,Moderna,869
+Guaviare,18-29,Segunda dosis,Pfizer,2376
+Guaviare,18-29,Segunda dosis,Sinovac,2193
+Guaviare,18-29,Segunda dosis,AstraZeneca,1221
+Guaviare,18-29,Segunda dosis,Janssen,375
+Guaviare,18-29,Segunda dosis,Moderna,216
+Guaviare,18-29,Refuerzo,Pfizer,1434
+Guaviare,18-29,Refuerzo,Sinovac,988
+Guaviare,18-29,Refuerzo,AstraZeneca,709
+Guaviare,18-29,Refuerzo,Janssen,369
+Guaviare,18-29,Refuerzo,Moderna,193
+Guaviare,30-39,Primera dosis,Pfizer,2510
+Guaviare,30-39,Primera dosis,Sinovac,2170
+Guaviare,30-39,Primera dosis,AstraZeneca,1188
+Guaviare,30-39,Primera dosis,Janssen,319
+Guaviare,30-39,Primera dosis,Moderna,145
+Guaviare,30-39,Segunda dosis,Pfizer,1965
+Guaviare,30-39,Segunda dosis,Sinovac,1436
+Guaviare,30-39,Segunda dosis,AstraZeneca,1092
+Guaviare,30-39,Segunda dosis,Janssen,353
+Guaviare,30-39,Segunda dosis,Moderna,660
+Guaviare,30-39,Refuerzo,Pfizer,1400
+Guaviare,30-39,Refuerzo,Sinovac,1068
+Guaviare,30-39,Refuerzo,AstraZeneca,524
+Guaviare,30-39,Refuerzo,Janssen,340
+Guaviare,30-39,Refuerzo,Moderna,177
+Guaviare,40-49,Primera dosis,Pfizer,1763
+Guaviare,40-49,Primera dosis,Sinovac,1508
+Guaviare,40-49,Primera dosis,AstraZeneca,826
+Guaviare,40-49,Primera dosis,Janssen,356
+Guaviare,40-49,Primera dosis,Moderna,1211
+Guaviare,40-49,Segunda dosis,Pfizer,1564
+Guaviare,40-49,Segunda dosis,Sinovac,1589
+Guaviare,40-49,Segunda dosis,AstraZeneca,879
+Guaviare,40-49,Segunda dosis,Janssen,384
+Guaviare,40-49,Segunda dosis,Moderna,492
+Guaviare,40-49,Refuerzo,Pfizer,901
+Guaviare,40-49,Refuerzo,Sinovac,641
+Guaviare,40-49,Refuerzo,AstraZeneca,445
+Guaviare,40-49,Refuerzo,Janssen,227
+Guaviare,40-49,Refuerzo,Moderna,182
+Guaviare,50-59,Primera dosis,Pfizer,1675
+Guaviare,50-59,Primera dosis,Sinovac,1225
+Guaviare,50-59,Primera dosis,AstraZeneca,520
+Guaviare,50-59,Primera dosis,Janssen,302
+Guaviare,50-59,Primera dosis,Moderna,841
+Guaviare,50-59,Segunda dosis,Pfizer,1292
+Guaviare,50-59,Segunda dosis,Sinovac,1098
+Guaviare,50-59,Segunda dosis,AstraZeneca,491
+Guaviare,50-59,Segunda dosis,Janssen,348
+Guaviare,50-59,Segunda dosis,Moderna,747
+Guaviare,50-59,Refuerzo,Pfizer,735
+Guaviare,50-59,Refuerzo,Sinovac,520
+Guaviare,50-59,Refuerzo,AstraZeneca,320
+Guaviare,50-59,Refuerzo,Janssen,94
+Guaviare,50-59,Refuerzo,Moderna,188
+Guaviare,60-69,Primera dosis,Pfizer,1026
+Guaviare,60-69,Primera dosis,Sinovac,924
+Guaviare,60-69,Primera dosis,AstraZeneca,462
+Guaviare,60-69,Primera dosis,Janssen,247
+Guaviare,60-69,Primera dosis,Moderna,631
+Guaviare,60-69,Segunda dosis,Pfizer,1140
+Guaviare,60-69,Segunda dosis,Sinovac,937
+Guaviare,60-69,Segunda dosis,AstraZeneca,383
+Guaviare,60-69,Segunda dosis,Janssen,163
+Guaviare,60-69,Segunda dosis,Moderna,301
+Guaviare,60-69,Refuerzo,Pfizer,529
+Guaviare,60-69,Refuerzo,Sinovac,378
+Guaviare,60-69,Refuerzo,AstraZeneca,218
+Guaviare,60-69,Refuerzo,Janssen,82
+Guaviare,60-69,Refuerzo,Moderna,144
+Guaviare,70-79,Primera dosis,Pfizer,655
+Guaviare,70-79,Primera dosis,Sinovac,529
+Guaviare,70-79,Primera dosis,AstraZeneca,281
+Guaviare,70-79,Primera dosis,Janssen,133
+Guaviare,70-79,Primera dosis,Moderna,216
+Guaviare,70-79,Segunda dosis,Pfizer,536
+Guaviare,70-79,Segunda dosis,Sinovac,479
+Guaviare,70-79,Segunda dosis,AstraZeneca,184
+Guaviare,70-79,Segunda dosis,Janssen,94
+Guaviare,70-79,Segunda dosis,Moderna,220
+Guaviare,70-79,Refuerzo,Pfizer,341
+Guaviare,70-79,Refuerzo,Sinovac,306
+Guaviare,70-79,Refuerzo,AstraZeneca,98
+Guaviare,70-79,Refuerzo,Janssen,65
+Guaviare,70-79,Refuerzo,Moderna,96
+Guaviare,80+,Primera dosis,Pfizer,453
+Guaviare,80+,Primera dosis,Sinovac,451
+Guaviare,80+,Primera dosis,AstraZeneca,223
+Guaviare,80+,Primera dosis,Janssen,116
+Guaviare,80+,Primera dosis,Moderna,236
+Guaviare,80+,Segunda dosis,Pfizer,386
+Guaviare,80+,Segunda dosis,Sinovac,346
+Guaviare,80+,Segunda dosis,AstraZeneca,186
+Guaviare,80+,Segunda dosis,Janssen,68
+Guaviare,80+,Segunda dosis,Moderna,238
+Guaviare,80+,Refuerzo,Pfizer,221
+Guaviare,80+,Refuerzo,Sinovac,212
+Guaviare,80+,Refuerzo,AstraZeneca,75
+Guaviare,80+,Refuerzo,Janssen,52
+Guaviare,80+,Refuerzo,Moderna,128
+Huila,12-17,Primera dosis,Pfizer,19879
+Huila,12-17,Primera dosis,Sinovac,14709
+Huila,12-17,Primera dosis,AstraZeneca,8409
+Huila,12-17,Primera dosis,Janssen,5195
+Huila,12-17,Primera dosis,Moderna,9314
+Huila,12-17,Segunda dosis,Pfizer,18528
+Huila,12-17,Segunda dosis,Sinovac,14411
+Huila,12-17,Segunda dosis,AstraZeneca,9039
+Huila,12-17,Segunda dosis,Janssen,4343
+Huila,12-17,Segunda dosis,Moderna,3440
+Huila,12-17,Refuerzo,Pfizer,9841
+Huila,12-17,Refuerzo,Sinovac,7000
+Huila,12-17,Refuerzo,AstraZeneca,3697
+Huila,12-17,Refuerzo,Janssen,1462
+Huila,12-17,Refuerzo,Moderna,5500
+Huila,18-29,Primera dosis,Pfizer,55929
+Huila,18-29,Primera dosis,Sinovac,35995
+Huila,18-29,Primera dosis,AstraZeneca,20030
+Huila,18-29,Primera dosis,Janssen,12575
+Huila,18-29,Primera dosis,Moderna,17646
+Huila,18-29,Segunda dosis,Pfizer,48907
+Huila,18-29,Segunda dosis,Sinovac,45174
+Huila,18-29,Segunda dosis,AstraZeneca,21375
+Huila,18-29,Segunda dosis,Janssen,9223
+Huila,18-29,Segunda dosis,Moderna,5192
+Huila,18-29,Refuerzo,Pfizer,24050
+Huila,18-29,Refuerzo,Sinovac,17362
+Huila,18-29,Refuerzo,AstraZeneca,11261
+Huila,18-29,Refuerzo,Janssen,5742
+Huila,18-29,Refuerzo,Moderna,1817
+Huila,30-39,Primera dosis,Pfizer,42341
+Huila,30-39,Primera dosis,Sinovac,37726
+Huila,30-39,Primera dosis,AstraZeneca,16123
+Huila,30-39,Primera dosis,Janssen,7049
+Huila,30-39,Primera dosis,Moderna,16391
+Huila,30-39,Segunda dosis,Pfizer,37588
+Huila,30-39,Segunda dosis,Sinovac,32185
+Huila,30-39,Segunda dosis,AstraZeneca,18360
+Huila,30-39,Segunda dosis,Janssen,6496
+Huila,30-39,Segunda dosis,Moderna,11632
+Huila,30-39,Refuerzo,Pfizer,18586
+Huila,30-39,Refuerzo,Sinovac,15611
+Huila,30-39,Refuerzo,AstraZeneca,8034
+Huila,30-39,Refuerzo,Janssen,5178
+Huila,30-39,Refuerzo,Moderna,14472
+Huila,40-49,Primera dosis,Pfizer,33795
+Huila,40-49,Primera dosis,Sinovac,29618
+Huila,40-49,Primera dosis,AstraZeneca,13275
+Huila,40-49,Primera dosis,Janssen,10080
+Huila,40-49,Primera dosis,Moderna,17295
+Huila,40-49,Segunda dosis,Pfizer,33848
+Huila,40-49,Segunda dosis,Sinovac,23742
+Huila,40-49,Segunda dosis,AstraZeneca,16442
+Huila,40-49,Segunda dosis,Janssen,6448
+Huila,40-49,Segunda dosis,Moderna,10386
+Huila,40-49,Refuerzo,Pfizer,21034
+Huila,40-49,Refuerzo,Sinovac,18899
+Huila,40-49,Refuerzo,AstraZeneca,5672
+Huila,40-49,Refuerzo,Janssen,3368
+Huila,40-49,Refuerzo,Moderna,6878
+Huila,50-59,Primera dosis,Pfizer,29752
+Huila,50-59,Primera dosis,Sinovac,20476
+Huila,50-59,Primera dosis,AstraZeneca,13983
+Huila,50-59,Primera dosis,Janssen,5632
+Huila,50-59,Primera dosis,Moderna,10495
+Huila,50-59,Segunda dosis,Pfizer,21394
+Huila,50-59,Segunda dosis,Sinovac,17974
+Huila,50-59,Segunda dosis,AstraZeneca,12328
+Huila,50-59,Segunda dosis,Janssen,3494
+Huila,50-59,Segunda dosis,Moderna,10957
+Huila,50-59,Refuerzo,Pfizer,13200
+Huila,50-59,Refuerzo,Sinovac,10508
+Huila,50-59,Refuerzo,AstraZeneca,6840
+Huila,50-59,Refuerzo,Janssen,3261
+Huila,50-59,Refuerzo,Moderna,3862
+Huila,60-69,Primera dosis,Pfizer,20008
+Huila,60-69,Primera dosis,Sinovac,16881
+Huila,60-69,Primera dosis,AstraZeneca,6888
+Huila,60-69,Primera dosis,Janssen,5001
+Huila,60-69,Primera dosis,Moderna,11473
+Huila,60-69,Segunda dosis,Pfizer,17074
+Huila,60-69,Segunda dosis,Sinovac,14845
+Huila,60-69,Segunda dosis,AstraZeneca,5624
+Huila,60-69,Segunda dosis,Janssen,5164
+Huila,60-69,Segunda dosis,Moderna,10301
+Huila,60-69,Refuerzo,Pfizer,12020
+Huila,60-69,Refuerzo,Sinovac,10570
+Huila,60-69,Refuerzo,AstraZeneca,5037
+Huila,60-69,Refuerzo,Janssen,2211
+Huila,60-69,Refuerzo,Moderna,1143
+Huila,70-79,Primera dosis,Pfizer,13101
+Huila,70-79,Primera dosis,Sinovac,11726
+Huila,70-79,Primera dosis,AstraZeneca,4706
+Huila,70-79,Primera dosis,Janssen,2527
+Huila,70-79,Primera dosis,Moderna,3625
+Huila,70-79,Segunda dosis,Pfizer,10308
+Huila,70-79,Segunda dosis,Sinovac,9415
+Huila,70-79,Segunda dosis,AstraZeneca,5742
+Huila,70-79,Segunda dosis,Janssen,2411
+Huila,70-79,Segunda dosis,Moderna,4854
+Huila,70-79,Refuerzo,Pfizer,8042
+Huila,70-79,Refuerzo,Sinovac,5851
+Huila,70-79,Refuerzo,AstraZeneca,3567
+Huila,70-79,Refuerzo,Janssen,1886
+Huila,70-79,Refuerzo,Moderna,1545
+Huila,80+,Primera dosis,Pfizer,10185
+Huila,80+,Primera dosis,Sinovac,7542
+Huila,80+,Primera dosis,AstraZeneca,3558
+Huila,80+,Primera dosis,Janssen,1722
+Huila,80+,Primera dosis,Moderna,5623
+Huila,80+,Segunda dosis,Pfizer,9149
+Huila,80+,Segunda dosis,Sinovac,8586
+Huila,80+,Segunda dosis,AstraZeneca,4634
+Huila,80+,Segunda dosis,Janssen,1370
+Huila,80+,Segunda dosis,Moderna,1349
+Huila,80+,Refuerzo,Pfizer,6013
+Huila,80+,Refuerzo,Sinovac,4344
+Huila,80+,Refuerzo,AstraZeneca,2048
+Huila,80+,Refuerzo,Janssen,1351
+Huila,80+,Refuerzo,Moderna,2389
+La Guajira,12-17,Primera dosis,Pfizer,14093
+La Guajira,12-17,Primera dosis,Sinovac,12080
+La Guajira,12-17,Primera dosis,AstraZeneca,5840
+La Guajira,12-17,Primera dosis,Janssen,2771
+La Guajira,12-17,Primera dosis,Moderna,2680
+La Guajira,12-17,Segunda dosis,Pfizer,13154
+La Guajira,12-17,Segunda dosis,Sinovac,9630
+La Guajira,12-17,Segunda dosis,AstraZeneca,6652
+La Guajira,12-17,Segunda dosis,Janssen,1725
+La Guajira,12-17,Segunda dosis,Moderna,2831
+La Guajira,12-17,Refuerzo,Pfizer,6526
+La Guajira,12-17,Refuerzo,Sinovac,5739
+La Guajira,12-17,Refuerzo,AstraZeneca,1852
+La Guajira,12-17,Refuerzo,Janssen,1657
+La Guajira,12-17,Refuerzo,Moderna,801
+La Guajira,18-29,Primera dosis,Pfizer,28800
+La Guajira,18-29,Primera dosis,Sinovac,30693
+La Guajira,18-29,Primera dosis,AstraZeneca,13949
+La Guajira,18-29,Primera dosis,Janssen,7978
+La Guajira,18-29,Primera dosis,Moderna,8452
+La Guajira,18-29,Segunda dosis,Pfizer,25651
+La Guajira,18-29,Segunda dosis,Sinovac,23018
+La Guajira,18-29,Segunda dosis,AstraZeneca,10313
+La Guajira,18-29,Segunda dosis,Janssen,4786
+La Guajira,18-29,Segunda dosis,Moderna,12107
+La Guajira,18-29,Refuerzo,Pfizer,15216
+La Guajira,18-29,Refuerzo,Sinovac,12983
+La Guajira,18-29,Refuerzo,AstraZeneca,4758
+La Guajira,18-29,Refuerzo,Janssen,4291
+La Guajira,18-29,Refuerzo,Moderna,6067
+La Guajira,30-39,Primera dosis,Pfizer,27060
+La Guajira,30-39,Primera dosis,Sinovac,23393
+La Guajira,30-39,Primera dosis,AstraZeneca,12544
+La Guajira,30-39,Primera dosis,Janssen,4902
+La Guajira,30-39,Primera dosis,Moderna,12381
+La Guajira,30-39,Segunda dosis,Pfizer,22830
+La Guajira,30-39,Segunda dosis,Sinovac,20035
+La Guajira,30-39,Segunda dosis,AstraZeneca,14040
+La Guajira,30-39,Segunda dosis,Janssen,5730
+La Guajira,30-39,Segunda dosis,Moderna,9934
+La Guajira,30-39,Refuerzo,Pfizer,15696
+La Guajira,30-39,Refuerzo,Sinovac,12181
+La Guajira,30-39,Refuerzo,AstraZeneca,6107
+La Guajira,30-39,Refuerzo,Janssen,3168
+La Guajira,30-39,Refuerzo,Moderna,8773
+La Guajira,40-49,Primera dosis,Pfizer,26224
+La Guajira,40-49,Primera dosis,Sinovac,19623
+La Guajira,40-49,Primera dosis,AstraZeneca,12963
+La Guajira,40-49,Primera dosis,Janssen,6997
+La Guajira,40-49,Primera dosis,Moderna,5358
+La Guajira,40-49,Segunda dosis,Pfizer,22546
+La Guajira,40-49,Segunda dosis,Sinovac,18515
+La Guajira,40-49,Segunda dosis,AstraZeneca,7232
+La Guajira,40-49,Segunda dosis,Janssen,5556
+La Guajira,40-49,Segunda dosis,Moderna,8060
+La Guajira,40-49,Refuerzo,Pfizer,11398
+La Guajira,40-49,Refuerzo,Sinovac,11581
+La Guajira,40-49,Refuerzo,AstraZeneca,5352
+La Guajira,40-49,Refuerzo,Janssen,3447
+La Guajira,40-49,Refuerzo,Moderna,4185
+La Guajira,50-59,Primera dosis,Pfizer,16947
+La Guajira,50-59,Primera dosis,Sinovac,18694
+La Guajira,50-59,Primera dosis,AstraZeneca,10866
+La Guajira,50-59,Primera dosis,Janssen,4659
+La Guajira,50-59,Primera dosis,Moderna,4693
+La Guajira,50-59,Segunda dosis,Pfizer,18592
+La Guajira,50-59,Segunda dosis,Sinovac,14384
+La Guajira,50-59,Segunda dosis,AstraZeneca,9100
+La Guajira,50-59,Segunda dosis,Janssen,3041
+La Guajira,50-59,Segunda dosis,Moderna,4272
+La Guajira,50-59,Refuerzo,Pfizer,8454
+La Guajira,50-59,Refuerzo,Sinovac,5722
+La Guajira,50-59,Refuerzo,AstraZeneca,3433
+La Guajira,50-59,Refuerzo,Janssen,1565
+La Guajira,50-59,Refuerzo,Moderna,3629
+La Guajira,60-69,Primera dosis,Pfizer,14376
+La Guajira,60-69,Primera dosis,Sinovac,12332
+La Guajira,60-69,Primera dosis,AstraZeneca,4154
+La Guajira,60-69,Primera dosis,Janssen,3202
+La Guajira,60-69,Primera dosis,Moderna,7208
+La Guajira,60-69,Segunda dosis,Pfizer,11022
+La Guajira,60-69,Segunda dosis,Sinovac,11086
+La Guajira,60-69,Segunda dosis,AstraZeneca,4665
+La Guajira,60-69,Segunda dosis,Janssen,3618
+La Guajira,60-69,Segunda dosis,Moderna,6203
+La Guajira,60-69,Refuerzo,Pfizer,6329
+La Guajira,60-69,Refuerzo,Sinovac,6951
+La Guajira,60-69,Refuerzo,AstraZeneca,3512
+La Guajira,60-69,Refuerzo,Janssen,1894
+La Guajira,60-69,Refuerzo,Moderna,2292
+La Guajira,70-79,Primera dosis,Pfizer,7779
+La Guajira,70-79,Primera dosis,Sinovac,6650
+La Guajira,70-79,Primera dosis,AstraZeneca,3771
+La Guajira,70-79,Primera dosis,Janssen,2242
+La Guajira,70-79,Primera dosis,Moderna,4262
+La Guajira,70-79,Segunda dosis,Pfizer,6705
+La Guajira,70-79,Segunda dosis,Sinovac,5945
+La Guajira,70-79,Segunda dosis,AstraZeneca,2818
+La Guajira,70-79,Segunda dosis,Janssen,1442
+La Guajira,70-79,Segunda dosis,Moderna,3611
+La Guajira,70-79,Refuerzo,Pfizer,3433
+La Guajira,70-79,Refuerzo,Sinovac,3361
+La Guajira,70-79,Refuerzo,AstraZeneca,1180
+La Guajira,70-79,Refuerzo,Janssen,810
+La Guajira,70-79,Refuerzo,Moderna,844
+La Guajira,80+,Primera dosis,Pfizer,7110
+La Guajira,80+,Primera dosis,Sinovac,4905
+La Guajira,80+,Primera dosis,AstraZeneca,2608
+La Guajira,80+,Primera dosis,Janssen,1468
+La Guajira,80+,Primera dosis,Moderna,2820
+La Guajira,80+,Segunda dosis,Pfizer,5117
+La Guajira,80+,Segunda dosis,Sinovac,4202
+La Guajira,80+,Segunda dosis,AstraZeneca,1961
+La Guajira,80+,Segunda dosis,Janssen,1255
+La Guajira,80+,Segunda dosis,Moderna,4208
+La Guajira,80+,Refuerzo,Pfizer,3574
+La Guajira,80+,Refuerzo,Sinovac,3418
+La Guajira,80+,Refuerzo,AstraZeneca,1629
+La Guajira,80+,Refuerzo,Janssen,966
+La Guajira,80+,Refuerzo,Moderna,819
+Magdalena,12-17,Primera dosis,Pfizer,18441
+Magdalena,12-17,Primera dosis,Sinovac,19341
+Magdalena,12-17,Primera dosis,AstraZeneca,10839
+Magdalena,12-17,Primera dosis,Janssen,4236
+Magdalena,12-17,Primera dosis,Moderna,4566
+Magdalena,12-17,Segunda dosis,Pfizer,15269
+Magdalena,12-17,Segunda dosis,Sinovac,12902
+Magdalena,12-17,Segunda dosis,AstraZeneca,9651
+Magdalena,12-17,Segunda dosis,Janssen,4759
+Magdalena,12-17,Segunda dosis,Moderna,7537
+Magdalena,12-17,Refuerzo,Pfizer,8188
+Magdalena,12-17,Refuerzo,Sinovac,5820
+Magdalena,12-17,Refuerzo,AstraZeneca,4432
+Magdalena,12-17,Refuerzo,Janssen,1510
+Magdalena,12-17,Refuerzo,Moderna,3027
+Magdalena,18-29,Primera dosis,Pfizer,56451
+Magdalena,18-29,Primera dosis,Sinovac,44068
+Magdalena,18-29,Primera dosis,AstraZeneca,16374
+Magdalena,18-29,Primera dosis,Janssen,8837
+Magdalena,18-29,Primera dosis,Moderna,26317
+Magdalena,18-29,Segunda dosis,Pfizer,43294
+Magdalena,18-29,Segunda dosis,Sinovac,44552
+Magdalena,18-29,Segunda dosis,AstraZeneca,18559
+Magdalena,18-29,Segunda dosis,Janssen,12669
+Magdalena,18-29,Segunda dosis,Moderna,14529
+Magdalena,18-29,Refuerzo,Pfizer,26728
+Magdalena,18-29,Refuerzo,Sinovac,26117
+Magdalena,18-29,Refuerzo,AstraZeneca,9145
+Magdalena,18-29,Refuerzo,Janssen,7976
+Magdalena,18-29,Refuerzo,Moderna,10256
+Magdalena,30-39,Primera dosis,Pfizer,40573
+Magdalena,30-39,Primera dosis,Sinovac,39023
+Magdalena,30-39,Primera dosis,AstraZeneca,24429
+Magdalena,30-39,Primera dosis,Janssen,8905
+Magdalena,30-39,Primera dosis,Moderna,19933
+Magdalena,30-39,Segunda dosis,Pfizer,43570
+Magdalena,30-39,Segunda dosis,Sinovac,39939
+Magdalena,30-39,Segunda dosis,AstraZeneca,16146
+Magdalena,30-39,Segunda dosis,Janssen,10251
+Magdalena,30-39,Segunda dosis,Moderna,5695
+Magdalena,30-39,Refuerzo,Pfizer,22585
+Magdalena,30-39,Refuerzo,Sinovac,20674
+Magdalena,30-39,Refuerzo,AstraZeneca,14854
+Magdalena,30-39,Refuerzo,Janssen,5556
+Magdalena,30-39,Refuerzo,Moderna,10877
+Magdalena,40-49,Primera dosis,Pfizer,40308
+Magdalena,40-49,Primera dosis,Sinovac,34622
+Magdalena,40-49,Primera dosis,AstraZeneca,11892
+Magdalena,40-49,Primera dosis,Janssen,8865
+Magdalena,40-49,Primera dosis,Moderna,13853
+Magdalena,40-49,Segunda dosis,Pfizer,38031
+Magdalena,40-49,Segunda dosis,Sinovac,32173
+Magdalena,40-49,Segunda dosis,AstraZeneca,10834
+Magdalena,40-49,Segunda dosis,Janssen,5778
+Magdalena,40-49,Segunda dosis,Moderna,13314
+Magdalena,40-49,Refuerzo,Pfizer,19934
+Magdalena,40-49,Refuerzo,Sinovac,16831
+Magdalena,40-49,Refuerzo,AstraZeneca,9343
+Magdalena,40-49,Refuerzo,Janssen,3535
+Magdalena,40-49,Refuerzo,Moderna,4062
+Magdalena,50-59,Primera dosis,Pfizer,28975
+Magdalena,50-59,Primera dosis,Sinovac,23885
+Magdalena,50-59,Primera dosis,AstraZeneca,9766
+Magdalena,50-59,Primera dosis,Janssen,5119
+Magdalena,50-59,Primera dosis,Moderna,18490
+Magdalena,50-59,Segunda dosis,Pfizer,24403
+Magdalena,50-59,Segunda dosis,Sinovac,21615
+Magdalena,50-59,Segunda dosis,AstraZeneca,9963
+Magdalena,50-59,Segunda dosis,Janssen,3630
+Magdalena,50-59,Segunda dosis,Moderna,11146
+Magdalena,50-59,Refuerzo,Pfizer,12142
+Magdalena,50-59,Refuerzo,Sinovac,9387
+Magdalena,50-59,Refuerzo,AstraZeneca,5785
+Magdalena,50-59,Refuerzo,Janssen,2397
+Magdalena,50-59,Refuerzo,Moderna,6490
+Magdalena,60-69,Primera dosis,Pfizer,20073
+Magdalena,60-69,Primera dosis,Sinovac,22133
+Magdalena,60-69,Primera dosis,AstraZeneca,12398
+Magdalena,60-69,Primera dosis,Janssen,6436
+Magdalena,60-69,Primera dosis,Moderna,4033
+Magdalena,60-69,Segunda dosis,Pfizer,19739
+Magdalena,60-69,Segunda dosis,Sinovac,14752
+Magdalena,60-69,Segunda dosis,AstraZeneca,7630
+Magdalena,60-69,Segunda dosis,Janssen,3146
+Magdalena,60-69,Segunda dosis,Moderna,9992
+Magdalena,60-69,Refuerzo,Pfizer,9623
+Magdalena,60-69,Refuerzo,Sinovac,8725
+Magdalena,60-69,Refuerzo,AstraZeneca,3099
+Magdalena,60-69,Refuerzo,Janssen,2091
+Magdalena,60-69,Refuerzo,Moderna,5612
+Magdalena,70-79,Primera dosis,Pfizer,12356
+Magdalena,70-79,Primera dosis,Sinovac,10436
+Magdalena,70-79,Primera dosis,AstraZeneca,6174
+Magdalena,70-79,Primera dosis,Janssen,3028
+Magdalena,70-79,Primera dosis,Moderna,6002
+Magdalena,70-79,Segunda dosis,Pfizer,10544
+Magdalena,70-79,Segunda dosis,Sinovac,8602
+Magdalena,70-79,Segunda dosis,AstraZeneca,4305
+Magdalena,70-79,Segunda dosis,Janssen,3215
+Magdalena,70-79,Segunda dosis,Moderna,6330
+Magdalena,70-79,Refuerzo,Pfizer,5117
+Magdalena,70-79,Refuerzo,Sinovac,4791
+Magdalena,70-79,Refuerzo,AstraZeneca,2770
+Magdalena,70-79,Refuerzo,Janssen,1020
+Magdalena,70-79,Refuerzo,Moderna,1656
+Magdalena,80+,Primera dosis,Pfizer,11528
+Magdalena,80+,Primera dosis,Sinovac,7646
+Magdalena,80+,Primera dosis,AstraZeneca,3830
+Magdalena,80+,Primera dosis,Janssen,2824
+Magdalena,80+,Primera dosis,Moderna,3177
+Magdalena,80+,Segunda dosis,Pfizer,8370
+Magdalena,80+,Segunda dosis,Sinovac,7359
+Magdalena,80+,Segunda dosis,AstraZeneca,5137
+Magdalena,80+,Segunda dosis,Janssen,2574
+Magdalena,80+,Segunda dosis,Moderna,2709
+Magdalena,80+,Refuerzo,Pfizer,5352
+Magdalena,80+,Refuerzo,Sinovac,5195
+Magdalena,80+,Refuerzo,AstraZeneca,2424
+Magdalena,80+,Refuerzo,Janssen,1281
+Magdalena,80+,Refuerzo,Moderna,2007
+Meta,12-17,Primera dosis,Pfizer,16889
+Meta,12-17,Primera dosis,Sinovac,13011
+Meta,12-17,Primera dosis,AstraZeneca,7784
+Meta,12-17,Primera dosis,Janssen,3962
+Meta,12-17,Primera dosis,Moderna,8129
+Meta,12-17,Segunda dosis,Pfizer,15136
+Meta,12-17,Segunda dosis,Sinovac,13582
+Meta,12-17,Segunda dosis,AstraZeneca,6617
+Meta,12-17,Segunda dosis,Janssen,4168
+Meta,12-17,Segunda dosis,Moderna,3184
+Meta,12-17,Refuerzo,Pfizer,9062
+Meta,12-17,Refuerzo,Sinovac,8399
+Meta,12-17,Refuerzo,AstraZeneca,3766
+Meta,12-17,Refuerzo,Janssen,1690
+Meta,12-17,Refuerzo,Moderna,3261
+Meta,18-29,Primera dosis,Pfizer,43119
+Meta,18-29,Primera dosis,Sinovac,37935
+Meta,18-29,Primera dosis,AstraZeneca,20658
+Meta,18-29,Primera dosis,Janssen,7854
+Meta,18-29,Primera dosis,Moderna,16913
+Meta,18-29,Segunda dosis,Pfizer,41735
+Meta,18-29,Segunda dosis,Sinovac,36677
+Meta,18-29,Segunda dosis,AstraZeneca,20408
+Meta,18-29,Segunda dosis,Janssen,6125
+Meta,18-29,Segunda dosis,Moderna,9126
+Meta,18-29,Refuerzo,Pfizer,27729
+Meta,18-29,Refuerzo,Sinovac,20701
+Meta,18-29,Refuerzo,AstraZeneca,9733
+Meta,18-29,Refuerzo,Janssen,5234
+Meta,18-29,Refuerzo,Moderna,6086
+Meta,30-39,Primera dosis,Pfizer,43826
+Meta,30-39,Primera dosis,Sinovac,33060
+Meta,30-39,Primera dosis,AstraZeneca,21914
+Meta,30-39,Primera dosis,Janssen,8884
+Meta,30-39,Primera dosis,Moderna,7928
+Meta,30-39,Segunda dosis,Pfizer,37400
+Meta,30-39,Segunda dosis,Sinovac,26573
+Meta,30-39,Segunda dosis,AstraZeneca,18185
+Meta,30-39,Segunda dosis,Janssen,8520
+Meta,30-39,Segunda dosis,Moderna,12121
+Meta,30-39,Refuerzo,Pfizer,19270
+Meta,30-39,Refuerzo,Sinovac,18075
+Meta,30-39,Refuerzo,AstraZeneca,5998
+Meta,30-39,Refuerzo,Janssen,5696
+Meta,30-39,Refuerzo,Moderna,8396
+Meta,40-49,Primera dosis,Pfizer,38299
+Meta,40-49,Primera dosis,Sinovac,28301
+Meta,40-49,Primera dosis,AstraZeneca,9759
+Meta,40-49,Primera dosis,Janssen,6078
+Meta,40-49,Primera dosis,Moderna,14137
+Meta,40-49,Segunda dosis,Pfizer,29156
+Meta,40-49,Segunda dosis,Sinovac,25071
+Meta,40-49,Segunda dosis,AstraZeneca,13126
+Meta,40-49,Segunda dosis,Janssen,6541
+Meta,40-49,Segunda dosis,Moderna,9155
+Meta,40-49,Refuerzo,Pfizer,17185
+Meta,40-49,Refuerzo,Sinovac,14419
+Meta,40-49,Refuerzo,AstraZeneca,8839
+Meta,40-49,Refuerzo,Janssen,3961
+Meta,40-49,Refuerzo,Moderna,5468
+Meta,50-59,Primera dosis,Pfizer,23795
+Meta,50-59,Primera dosis,Sinovac,22350
+Meta,50-59,Primera dosis,AstraZeneca,15036
+Meta,50-59,Primera dosis,Janssen,4277
+Meta,50-59,Primera dosis,Moderna,11188
+Meta,50-59,Segunda dosis,Pfizer,25809
+Meta,50-59,Segunda dosis,Sinovac,17301
+Meta,50-59,Segunda dosis,AstraZeneca,8592
+Meta,50-59,Segunda dosis,Janssen,4765
+Meta,50-59,Segunda dosis,Moderna,9025
+Meta,50-59,Refuerzo,Pfizer,9554
+Meta,50-59,Refuerzo,Sinovac,8887
+Meta,50-59,Refuerzo,AstraZeneca,4398
+Meta,50-59,Refuerzo,Janssen,2142
+Meta,50-59,Refuerzo,Moderna,4811
+Meta,60-69,Primera dosis,Pfizer,21836
+Meta,60-69,Primera dosis,Sinovac,14987
+Meta,60-69,Primera dosis,AstraZeneca,10597
+Meta,60-69,Primera dosis,Janssen,4722
+Meta,60-69,Primera dosis,Moderna,5166
+Meta,60-69,Segunda dosis,Pfizer,17952
+Meta,60-69,Segunda dosis,Sinovac,13007
+Meta,60-69,Segunda dosis,AstraZeneca,9685
+Meta,60-69,Segunda dosis,Janssen,3036
+Meta,60-69,Segunda dosis,Moderna,5139
+Meta,60-69,Refuerzo,Pfizer,7904
+Meta,60-69,Refuerzo,Sinovac,6624
+Meta,60-69,Refuerzo,AstraZeneca,3884
+Meta,60-69,Refuerzo,Janssen,2438
+Meta,60-69,Refuerzo,Moderna,4049
+Meta,70-79,Primera dosis,Pfizer,11585
+Meta,70-79,Primera dosis,Sinovac,9331
+Meta,70-79,Primera dosis,AstraZeneca,3275
+Meta,70-79,Primera dosis,Janssen,2568
+Meta,70-79,Primera dosis,Moderna,5063
+Meta,70-79,Segunda dosis,Pfizer,8755
+Meta,70-79,Segunda dosis,Sinovac,8467
+Meta,70-79,Segunda dosis,AstraZeneca,3803
+Meta,70-79,Segunda dosis,Janssen,2334
+Meta,70-79,Segunda dosis,Moderna,4023
+Meta,70-79,Refuerzo,Pfizer,4274
+Meta,70-79,Refuerzo,Sinovac,4336
+Meta,70-79,Refuerzo,AstraZeneca,2411
+Meta,70-79,Refuerzo,Janssen,708
+Meta,70-79,Refuerzo,Moderna,1602
+Meta,80+,Primera dosis,Pfizer,8041
+Meta,80+,Primera dosis,Sinovac,7151
+Meta,80+,Primera dosis,AstraZeneca,3052
+Meta,80+,Primera dosis,Janssen,2251
+Meta,80+,Primera dosis,Moderna,3681
+Meta,80+,Segunda dosis,Pfizer,7738
+Meta,80+,Segunda dosis,Sinovac,6885
+Meta,80+,Segunda dosis,AstraZeneca,3502
+Meta,80+,Segunda dosis,Janssen,1767
+Meta,80+,Segunda dosis,Moderna,2041
+Meta,80+,Refuerzo,Pfizer,3834
+Meta,80+,Refuerzo,Sinovac,3044
+Meta,80+,Refuerzo,AstraZeneca,1972
+Meta,80+,Refuerzo,Janssen,864
+Meta,80+,Refuerzo,Moderna,973
+Nariño,12-17,Primera dosis,Pfizer,28546
+Nariño,12-17,Primera dosis,Sinovac,20413
+Nariño,12-17,Primera dosis,AstraZeneca,8955
+Nariño,12-17,Primera dosis,Janssen,4414
+Nariño,12-17,Primera dosis,Moderna,16647
+Nariño,12-17,Segunda dosis,Pfizer,23248
+Nariño,12-17,Segunda dosis,Sinovac,18871
+Nariño,12-17,Segunda dosis,AstraZeneca,11910
+Nariño,12-17,Segunda dosis,Janssen,5313
+Nariño,12-17,Segunda dosis,Moderna,10991
+Nariño,12-17,Refuerzo,Pfizer,12249
+Nariño,12-17,Refuerzo,Sinovac,9452
+Nariño,12-17,Refuerzo,AstraZeneca,4958
+Nariño,12-17,Refuerzo,Janssen,2124
+Nariño,12-17,Refuerzo,Moderna,7049
+Nariño,18-29,Primera dosis,Pfizer,75393
+Nariño,18-29,Primera dosis,Sinovac,57581
+Nariño,18-29,Primera dosis,AstraZeneca,28077
+Nariño,18-29,Primera dosis,Janssen,10746
+Nariño,18-29,Primera dosis,Moderna,16688
+Nariño,18-29,Segunda dosis,Pfizer,55562
+Nariño,18-29,Segunda dosis,Sinovac,49467
+Nariño,18-29,Segunda dosis,AstraZeneca,17661
+Nariño,18-29,Segunda dosis,Janssen,11390
+Nariño,18-29,Segunda dosis,Moderna,33547
+Nariño,18-29,Refuerzo,Pfizer,29212
+Nariño,18-29,Refuerzo,Sinovac,25591
+Nariño,18-29,Refuerzo,AstraZeneca,17619
+Nariño,18-29,Refuerzo,Janssen,9531
+Nariño,18-29,Refuerzo,Moderna,15110
+Nariño,30-39,Primera dosis,Pfizer,56825
+Nariño,30-39,Primera dosis,Sinovac,55565
+Nariño,30-39,Primera dosis,AstraZeneca,24767
+Nariño,30-39,Primera dosis,Janssen,9006
+Nariño,30-39,Primera dosis,Moderna,20204
+Nariño,30-39,Segunda dosis,Pfizer,43843
+Nariño,30-39,Segunda dosis,Sinovac,47173
+Nariño,30-39,Segunda dosis,AstraZeneca,18690
+Nariño,30-39,Segunda dosis,Janssen,9220
+Nariño,30-39,Segunda dosis,Moderna,25728
+Nariño,30-39,Refuerzo,Pfizer,30035
+Nariño,30-39,Refuerzo,Sinovac,22654
+Nariño,30-39,Refuerzo,AstraZeneca,12373
+Nariño,30-39,Refuerzo,Janssen,7397
+Nariño,30-39,Refuerzo,Moderna,12443
+Nariño,40-49,Primera dosis,Pfizer,45465
+Nariño,40-49,Primera dosis,Sinovac,47814
+Nariño,40-49,Primera dosis,AstraZeneca,26618
+Nariño,40-49,Primera dosis,Janssen,9977
+Nariño,40-49,Primera dosis,Moderna,16117
+Nariño,40-49,Segunda dosis,Pfizer,48829
+Nariño,40-49,Segunda dosis,Sinovac,32466
+Nariño,40-49,Segunda dosis,AstraZeneca,21958
+Nariño,40-49,Segunda dosis,Janssen,9876
+Nariño,40-49,Segunda dosis,Moderna,14608
+Nariño,40-49,Refuerzo,Pfizer,24087
+Nariño,40-49,Refuerzo,Sinovac,15711
+Nariño,40-49,Refuerzo,AstraZeneca,11048
+Nariño,40-49,Refuerzo,Janssen,5286
+Nariño,40-49,Refuerzo,Moderna,4238
+Nariño,50-59,Primera dosis,Pfizer,37684
+Nariño,50-59,Primera dosis,Sinovac,37326
+Nariño,50-59,Primera dosis,AstraZeneca,16195
+Nariño,50-59,Primera dosis,Janssen,11219
+Nariño,50-59,Primera dosis,Moderna,10113
+Nariño,50-59,Segunda dosis,Pfizer,39088
+Nariño,50-59,Segunda dosis,Sinovac,28335
+Nariño,50-59,Segunda dosis,AstraZeneca,18745
+Nariño,50-59,Segunda dosis,Janssen,8219
+Nariño,50-59,Segunda dosis,Moderna,9139
+Nariño,50-59,Refuerzo,Pfizer,18729
+Nariño,50-59,Refuerzo,Sinovac,17947
+Nariño,50-59,Refuerzo,AstraZeneca,9127
+Nariño,50-59,Refuerzo,Janssen,3258
+Nariño,50-59,Refuerzo,Moderna,6835
+Nariño,60-69,Primera dosis,Pfizer,24839
+Nariño,60-69,Primera dosis,Sinovac,23146
+Nariño,60-69,Primera dosis,AstraZeneca,10401
+Nariño,60-69,Primera dosis,Janssen,6246
+Nariño,60-69,Primera dosis,Moderna,16558
+Nariño,60-69,Segunda dosis,Pfizer,22685
+Nariño,60-69,Segunda dosis,Sinovac,21869
+Nariño,60-69,Segunda dosis,AstraZeneca,8800
+Nariño,60-69,Segunda dosis,Janssen,4325
+Nariño,60-69,Segunda dosis,Moderna,10574
+Nariño,60-69,Refuerzo,Pfizer,12939
+Nariño,60-69,Refuerzo,Sinovac,11689
+Nariño,60-69,Refuerzo,AstraZeneca,5632
+Nariño,60-69,Refuerzo,Janssen,1836
+Nariño,60-69,Refuerzo,Moderna,1440
+Nariño,70-79,Primera dosis,Pfizer,20471
+Nariño,70-79,Primera dosis,Sinovac,17264
+Nariño,70-79,Primera dosis,AstraZeneca,5778
+Nariño,70-79,Primera dosis,Janssen,4784
+Nariño,70-79,Primera dosis,Moderna,2976
+Nariño,70-79,Segunda dosis,Pfizer,14972
+Nariño,70-79,Segunda dosis,Sinovac,14796
+Nariño,70-79,Segunda dosis,AstraZeneca,8424
+Nariño,70-79,Segunda dosis,Janssen,4057
+Nariño,70-79,Segunda dosis,Moderna,3822
+Nariño,70-79,Refuerzo,Pfizer,10734
+Nariño,70-79,Refuerzo,Sinovac,8728
+Nariño,70-79,Refuerzo,AstraZeneca,4605
+Nariño,70-79,Refuerzo,Janssen,1852
+Nariño,70-79,Refuerzo,Moderna,3277
+Nariño,80+,Primera dosis,Pfizer,14517
+Nariño,80+,Primera dosis,Sinovac,9702
+Nariño,80+,Primera dosis,AstraZeneca,5670
+Nariño,80+,Primera dosis,Janssen,2391
+Nariño,80+,Primera dosis,Moderna,5133
+Nariño,80+,Segunda dosis,Pfizer,12742
+Nariño,80+,Segunda dosis,Sinovac,9287
+Nariño,80+,Segunda dosis,AstraZeneca,6313
+Nariño,80+,Segunda dosis,Janssen,2148
+Nariño,80+,Segunda dosis,Moderna,1879
+Nariño,80+,Refuerzo,Pfizer,5605
+Nariño,80+,Refuerzo,Sinovac,6112
+Nariño,80+,Refuerzo,AstraZeneca,3234
+Nariño,80+,Refuerzo,Janssen,1615
+Nariño,80+,Refuerzo,Moderna,2100
+Norte de Santander,12-17,Primera dosis,Pfizer,20723
+Norte de Santander,12-17,Primera dosis,Sinovac,20528
+Norte de Santander,12-17,Primera dosis,AstraZeneca,8238
+Norte de Santander,12-17,Primera dosis,Janssen,4835
+Norte de Santander,12-17,Primera dosis,Moderna,13324
+Norte de Santander,12-17,Segunda dosis,Pfizer,19260
+Norte de Santander,12-17,Segunda dosis,Sinovac,16601
+Norte de Santander,12-17,Segunda dosis,AstraZeneca,10963
+Norte de Santander,12-17,Segunda dosis,Janssen,4010
+Norte de Santander,12-17,Segunda dosis,Moderna,9129
+Norte de Santander,12-17,Refuerzo,Pfizer,11191
+Norte de Santander,12-17,Refuerzo,Sinovac,9590
+Norte de Santander,12-17,Refuerzo,AstraZeneca,4646
+Norte de Santander,12-17,Refuerzo,Janssen,2101
+Norte de Santander,12-17,Refuerzo,Moderna,3749
+Norte de Santander,18-29,Primera dosis,Pfizer,63566
+Norte de Santander,18-29,Primera dosis,Sinovac,49718
+Norte de Santander,18-29,Primera dosis,AstraZeneca,18886
+Norte de Santander,18-29,Primera dosis,Janssen,15603
+Norte de Santander,18-29,Primera dosis,Moderna,20217
+Norte de Santander,18-29,Segunda dosis,Pfizer,47684
+Norte de Santander,18-29,Segunda dosis,Sinovac,34651
+Norte de Santander,18-29,Segunda dosis,AstraZeneca,27131
+Norte de Santander,18-29,Segunda dosis,Janssen,8330
+Norte de Santander,18-29,Segunda dosis,Moderna,20769
+Norte de Santander,18-29,Refuerzo,Pfizer,24017
+Norte de Santander,18-29,Refuerzo,Sinovac,17137
+Norte de Santander,18-29,Refuerzo,AstraZeneca,10743
+Norte de Santander,18-29,Refuerzo,Janssen,3773
+Norte de Santander,18-29,Refuerzo,Moderna,9441
+Norte de Santander,30-39,Primera dosis,Pfizer,50022
+Norte de Santander,30-39,Primera dosis,Sinovac,44196
+Norte de Santander,30-39,Primera dosis,AstraZeneca,29298
+Norte de Santander,30-39,Primera dosis,Janssen,8968
+Norte de Santander,30-39,Primera dosis,Moderna,21410
+Norte de Santander,30-39,Segunda dosis,Pfizer,44292
+Norte de Santander,30-39,Segunda dosis,Sinovac,36586
+Norte de Santander,30-39,Segunda dosis,AstraZeneca,22162
+Norte de Santander,30-39,Segunda dosis,Janssen,8047
+Norte de Santander,30-39,Segunda dosis,Moderna,19322
+Norte de Santander,30-39,Refuerzo,Pfizer,27693
+Norte de Santander,30-39,Refuerzo,Sinovac,24270
+Norte de Santander,30-39,Refuerzo,AstraZeneca,7584
+Norte de Santander,30-39,Refuerzo,Janssen,5593
+Norte de Santander,30-39,Refuerzo,Moderna,10616
+Norte de Santander,40-49,Primera dosis,Pfizer,36571
+Norte de Santander,40-49,Primera dosis,Sinovac,38835
+Norte de Santander,40-49,Primera dosis,AstraZeneca,22082
+Norte de Santander,40-49,Primera dosis,Janssen,12080
+Norte de Santander,40-49,Primera dosis,Moderna,11957
+Norte de Santander,40-49,Segunda dosis,Pfizer,35044
+Norte de Santander,40-49,Segunda dosis,Sinovac,26953
+Norte de Santander,40-49,Segunda dosis,AstraZeneca,10965
+Norte de Santander,40-49,Segunda dosis,Janssen,7081
+Norte de Santander,40-49,Segunda dosis,Moderna,22355
+Norte de Santander,40-49,Refuerzo,Pfizer,22386
+Norte de Santander,40-49,Refuerzo,Sinovac,15616
+Norte de Santander,40-49,Refuerzo,AstraZeneca,7880
+Norte de Santander,40-49,Refuerzo,Janssen,5643
+Norte de Santander,40-49,Refuerzo,Moderna,8478
+Norte de Santander,50-59,Primera dosis,Pfizer,30768
+Norte de Santander,50-59,Primera dosis,Sinovac,34301
+Norte de Santander,50-59,Primera dosis,AstraZeneca,11223
+Norte de Santander,50-59,Primera dosis,Janssen,7515
+Norte de Santander,50-59,Primera dosis,Moderna,14394
+Norte de Santander,50-59,Segunda dosis,Pfizer,26511
+Norte de Santander,50-59,Segunda dosis,Sinovac,27758
+Norte de Santander,50-59,Segunda dosis,AstraZeneca,12690
+Norte de Santander,50-59,Segunda dosis,Janssen,7589
+Norte de Santander,50-59,Segunda dosis,Moderna,13572
+Norte de Santander,50-59,Refuerzo,Pfizer,19202
+Norte de Santander,50-59,Refuerzo,Sinovac,14033
+Norte de Santander,50-59,Refuerzo,AstraZeneca,7471
+Norte de Santander,50-59,Refuerzo,Janssen,4463
+Norte de Santander,50-59,Refuerzo,Moderna,7756
+Norte de Santander,60-69,Primera dosis,Pfizer,29049
+Norte de Santander,60-69,Primera dosis,Sinovac,23918
+Norte de Santander,60-69,Primera dosis,AstraZeneca,10714
+Norte de Santander,60-69,Primera dosis,Janssen,7599
+Norte de Santander,60-69,Primera dosis,Moderna,6133
+Norte de Santander,60-69,Segunda dosis,Pfizer,21263
+Norte de Santander,60-69,Segunda dosis,Sinovac,16935
+Norte de Santander,60-69,Segunda dosis,AstraZeneca,8192
+Norte de Santander,60-69,Segunda dosis,Janssen,3477
+Norte de Santander,60-69,Segunda dosis,Moderna,14283
+Norte de Santander,60-69,Refuerzo,Pfizer,10715
+Norte de Santander,60-69,Refuerzo,Sinovac,9348
+Norte de Santander,60-69,Refuerzo,AstraZeneca,4848
+Norte de Santander,60-69,Refuerzo,Janssen,2682
+Norte de Santander,60-69,Refuerzo,Moderna,2561
+Norte de Santander,70-79,Primera dosis,Pfizer,14627
+Norte de Santander,70-79,Primera dosis,Sinovac,13370
+Norte de Santander,70-79,Primera dosis,AstraZeneca,6687
+Norte de Santander,70-79,Primera dosis,Janssen,3871
+Norte de Santander,70-79,Primera dosis,Moderna,5747
+Norte de Santander,70-79,Segunda dosis,Pfizer,13210
+Norte de Santander,70-79,Segunda dosis,Sinovac,10240
+Norte de Santander,70-79,Segunda dosis,AstraZeneca,7607
+Norte de Santander,70-79,Segunda dosis,Janssen,3917
+Norte de Santander,70-79,Segunda dosis,Moderna,5109
+Norte de Santander,70-79,Refuerzo,Pfizer,8149
+Norte de Santander,70-79,Refuerzo,Sinovac,6092
+Norte de Santander,70-79,Refuerzo,AstraZeneca,3496
+Norte de Santander,70-79,Refuerzo,Janssen,1858
+Norte de Santander,70-79,Refuerzo,Moderna,3720
+Norte de Santander,80+,Primera dosis,Pfizer,13208
+Norte de Santander,80+,Primera dosis,Sinovac,8837
+Norte de Santander,80+,Primera dosis,AstraZeneca,6247
+Norte de Santander,80+,Primera dosis,Janssen,2632
+Norte de Santander,80+,Primera dosis,Moderna,2649
+Norte de Santander,80+,Segunda dosis,Pfizer,10370
+Norte de Santander,80+,Segunda dosis,Sinovac,9808
+Norte de Santander,80+,Segunda dosis,AstraZeneca,5431
+Norte de Santander,80+,Segunda dosis,Janssen,3011
+Norte de Santander,80+,Segunda dosis,Moderna,2193
+Norte de Santander,80+,Refuerzo,Pfizer,7521
+Norte de Santander,80+,Refuerzo,Sinovac,5020
+Norte de Santander,80+,Refuerzo,AstraZeneca,2129
+Norte de Santander,80+,Refuerzo,Janssen,1258
+Norte de Santander,80+,Refuerzo,Moderna,4018
+Putumayo,12-17,Primera dosis,Pfizer,4442
+Putumayo,12-17,Primera dosis,Sinovac,3963
+Putumayo,12-17,Primera dosis,AstraZeneca,1901
+Putumayo,12-17,Primera dosis,Janssen,896
+Putumayo,12-17,Primera dosis,Moderna,1464
+Putumayo,12-17,Segunda dosis,Pfizer,3873
+Putumayo,12-17,Segunda dosis,Sinovac,2702
+Putumayo,12-17,Segunda dosis,AstraZeneca,1608
+Putumayo,12-17,Segunda dosis,Janssen,845
+Putumayo,12-17,Segunda dosis,Moderna,1434
+Putumayo,12-17,Refuerzo,Pfizer,2084
+Putumayo,12-17,Refuerzo,Sinovac,1787
+Putumayo,12-17,Refuerzo,AstraZeneca,961
+Putumayo,12-17,Refuerzo,Janssen,382
+Putumayo,12-17,Refuerzo,Moderna,1144
+Putumayo,18-29,Primera dosis,Pfizer,12082
+Putumayo,18-29,Primera dosis,Sinovac,11085
+Putumayo,18-29,Primera dosis,AstraZeneca,5588
+Putumayo,18-29,Primera dosis,Janssen,1772
+Putumayo,18-29,Primera dosis,Moderna,2716
+Putumayo,18-29,Segunda dosis,Pfizer,10742
+Putumayo,18-29,Segunda dosis,Sinovac,9381
+Putumayo,18-29,Segunda dosis,AstraZeneca,5362
+Putumayo,18-29,Segunda dosis,Janssen,1536
+Putumayo,18-29,Segunda dosis,Moderna,2021
+Putumayo,18-29,Refuerzo,Pfizer,4733
+Putumayo,18-29,Refuerzo,Sinovac,4501
+Putumayo,18-29,Refuerzo,AstraZeneca,2229
+Putumayo,18-29,Refuerzo,Janssen,1233
+Putumayo,18-29,Refuerzo,Moderna,2640
+Putumayo,30-39,Primera dosis,Pfizer,8823
+Putumayo,30-39,Primera dosis,Sinovac,9074
+Putumayo,30-39,Primera dosis,AstraZeneca,4813
+Putumayo,30-39,Primera dosis,Janssen,1646
+Putumayo,30-39,Primera dosis,Moderna,3929
+Putumayo,30-39,Segunda dosis,Pfizer,9998
+Putumayo,30-39,Segunda dosis,Sinovac,7646
+Putumayo,30-39,Segunda dosis,AstraZeneca,4509
+Putumayo,30-39,Segunda dosis,Janssen,2176
+Putumayo,30-39,Segunda dosis,Moderna,962
+Putumayo,30-39,Refuerzo,Pfizer,4790
+Putumayo,30-39,Refuerzo,Sinovac,3974
+Putumayo,30-39,Refuerzo,AstraZeneca,2694
+Putumayo,30-39,Refuerzo,Janssen,959
+Putumayo,30-39,Refuerzo,Moderna,2708
+Putumayo,40-49,Primera dosis,Pfizer,9752
+Putumayo,40-49,Primera dosis,Sinovac,7100
+Putumayo,40-49,Primera dosis,AstraZeneca,2725
+Putumayo,40-49,Primera dosis,Janssen,2193
+Putumayo,40-49,Primera dosis,Moderna,3844
+Putumayo,40-49,Segunda dosis,Pfizer,8219
+Putumayo,40-49,Segunda dosis,Sinovac,5922
+Putumayo,40-49,Segunda dosis,AstraZeneca,3344
+Putumayo,40-49,Segunda dosis,Janssen,1562
+Putumayo,40-49,Segunda dosis,Moderna,3932
+Putumayo,40-49,Refuerzo,Pfizer,3666
+Putumayo,40-49,Refuerzo,Sinovac,3212
+Putumayo,40-49,Refuerzo,AstraZeneca,1432
+Putumayo,40-49,Refuerzo,Janssen,657
+Putumayo,40-49,Refuerzo,Moderna,1506
+Putumayo,50-59,Primera dosis,Pfizer,6175
+Putumayo,50-59,Primera dosis,Sinovac,5755
+Putumayo,50-59,Primera dosis,AstraZeneca,1997
+Putumayo,50-59,Primera dosis,Janssen,1781
+Putumayo,50-59,Primera dosis,Moderna,3418
+Putumayo,50-59,Segunda dosis,Pfizer,5445
+Putumayo,50-59,Segunda dosis,Sinovac,4987
+Putumayo,50-59,Segunda dosis,AstraZeneca,2321
+Putumayo,50-59,Segunda dosis,Janssen,965
+Putumayo,50-59,Segunda dosis,Moderna,3064
+Putumayo,50-59,Refuerzo,Pfizer,3922
+Putumayo,50-59,Refuerzo,Sinovac,3350
+Putumayo,50-59,Refuerzo,AstraZeneca,1549
+Putumayo,50-59,Refuerzo,Janssen,954
+Putumayo,50-59,Refuerzo,Moderna,201
+Putumayo,60-69,Primera dosis,Pfizer,5110
+Putumayo,60-69,Primera dosis,Sinovac,4817
+Putumayo,60-69,Primera dosis,AstraZeneca,1901
+Putumayo,60-69,Primera dosis,Janssen,806
+Putumayo,60-69,Primera dosis,Moderna,2323
+Putumayo,60-69,Segunda dosis,Pfizer,4348
+Putumayo,60-69,Segunda dosis,Sinovac,3870
+Putumayo,60-69,Segunda dosis,AstraZeneca,2452
+Putumayo,60-69,Segunda dosis,Janssen,760
+Putumayo,60-69,Segunda dosis,Moderna,1461
+Putumayo,60-69,Refuerzo,Pfizer,2522
+Putumayo,60-69,Refuerzo,Sinovac,2308
+Putumayo,60-69,Refuerzo,AstraZeneca,1295
+Putumayo,60-69,Refuerzo,Janssen,354
+Putumayo,60-69,Refuerzo,Moderna,149
+Putumayo,70-79,Primera dosis,Pfizer,2817
+Putumayo,70-79,Primera dosis,Sinovac,2585
+Putumayo,70-79,Primera dosis,AstraZeneca,853
+Putumayo,70-79,Primera dosis,Janssen,508
+Putumayo,70-79,Primera dosis,Moderna,1703
+Putumayo,70-79,Segunda dosis,Pfizer,2559
+Putumayo,70-79,Segunda dosis,Sinovac,2014
+Putumayo,70-79,Segunda dosis,AstraZeneca,1165
+Putumayo,70-79,Segunda dosis,Janssen,525
+Putumayo,70-79,Segunda dosis,Moderna,917
+Putumayo,70-79,Refuerzo,Pfizer,1596
+Putumayo,70-79,Refuerzo,Sinovac,1330
+Putumayo,70-79,Refuerzo,AstraZeneca,788
+Putumayo,70-79,Refuerzo,Janssen,265
+Putumayo,70-79,Refuerzo,Moderna,464
+Putumayo,80+,Primera dosis,Pfizer,2046
+Putumayo,80+,Primera dosis,Sinovac,1980
+Putumayo,80+,Primera dosis,AstraZeneca,839
+Putumayo,80+,Primera dosis,Janssen,458
+Putumayo,80+,Primera dosis,Moderna,1482
+Putumayo,80+,Segunda dosis,Pfizer,2341
+Putumayo,80+,Segunda dosis,Sinovac,2059
+Putumayo,80+,Segunda dosis,AstraZeneca,1189
+Putumayo,80+,Segunda dosis,Janssen,305
+Putumayo,80+,Segunda dosis,Moderna,202
+Putumayo,80+,Refuerzo,Pfizer,1112
+Putumayo,80+,Refuerzo,Sinovac,1019
+Putumayo,80+,Refuerzo,AstraZeneca,525
+Putumayo,80+,Refuerzo,Janssen,167
+Putumayo,80+,Refuerzo,Moderna,217
+Quindío,12-17,Primera dosis,Pfizer,8906
+Quindío,12-17,Primera dosis,Sinovac,10178
+Quindío,12-17,Primera dosis,AstraZeneca,4982
+Quindío,12-17,Primera dosis,Janssen,1590
+Quindío,12-17,Primera dosis,Moderna,3449
+Quindío,12-17,Segunda dosis,Pfizer,9630
+Quindío,12-17,Segunda dosis,Sinovac,8343
+Quindío,12-17,Segunda dosis,AstraZeneca,3732
+Quindío,12-17,Segunda dosis,Janssen,2088
+Quindío,12-17,Segunda dosis,Moderna,764
+Quindío,12-17,Refuerzo,Pfizer,4542
+Quindío,12-17,Refuerzo,Sinovac,4679
+Quindío,12-17,Refuerzo,AstraZeneca,1461
+Quindío,12-17,Refuerzo,Janssen,737
+Quindío,12-17,Refuerzo,Moderna,2047
+Quindío,18-29,Primera dosis,Pfizer,24224
+Quindío,18-29,Primera dosis,Sinovac,19927
+Quindío,18-29,Primera dosis,AstraZeneca,13336
+Quindío,18-29,Primera dosis,Janssen,4198
+Quindío,18-29,Primera dosis,Moderna,6209
+Quindío,18-29,Segunda dosis,Pfizer,19970
+Quindío,18-29,Segunda dosis,Sinovac,17239
+Quindío,18-29,Segunda dosis,AstraZeneca,11028
+Quindío,18-29,Segunda dosis,Janssen,5207
+Quindío,18-29,Segunda dosis,Moderna,7795
+Quindío,18-29,Refuerzo,Pfizer,10636
+Quindío,18-29,Refuerzo,Sinovac,8024
+Quindío,18-29,Refuerzo,AstraZeneca,3621
+Quindío,18-29,Refuerzo,Janssen,1530
+Quindío,18-29,Refuerzo,Moderna,4662
+Quindío,30-39,Primera dosis,Pfizer,19293
+Quindío,30-39,Primera dosis,Sinovac,16291
+Quindío,30-39,Primera dosis,AstraZeneca,8964
+Quindío,30-39,Primera dosis,Janssen,4299
+Quindío,30-39,Primera dosis,Moderna,12295
+Quindío,30-39,Segunda dosis,Pfizer,19414
+Quindío,30-39,Segunda dosis,Sinovac,19022
+Quindío,30-39,Segunda dosis,AstraZeneca,6630
+Quindío,30-39,Segunda dosis,Janssen,3591
+Quindío,30-39,Segunda dosis,Moderna,6246
+Quindío,30-39,Refuerzo,Pfizer,10163
+Quindío,30-39,Refuerzo,Sinovac,8155
+Quindío,30-39,Refuerzo,AstraZeneca,3603
+Quindío,30-39,Refuerzo,Janssen,2624
+Quindío,30-39,Refuerzo,Moderna,6581
+Quindío,40-49,Primera dosis,Pfizer,21348
+Quindío,40-49,Primera dosis,Sinovac,15738
+Quindío,40-49,Primera dosis,AstraZeneca,6073
+Quindío,40-49,Primera dosis,Janssen,3473
+Quindío,40-49,Primera dosis,Moderna,9021
+Quindío,40-49,Segunda dosis,Pfizer,16615
+Quindío,40-49,Segunda dosis,Sinovac,14921
+Quindío,40-49,Segunda dosis,AstraZeneca,8304
+Quindío,40-49,Segunda dosis,Janssen,3119
+Quindío,40-49,Segunda dosis,Moderna,6553
+Quindío,40-49,Refuerzo,Pfizer,9051
+Quindío,40-49,Refuerzo,Sinovac,5740
+Quindío,40-49,Refuerzo,AstraZeneca,3185
+Quindío,40-49,Refuerzo,Janssen,1646
+Quindío,40-49,Refuerzo,Moderna,3056
+Quindío,50-59,Primera dosis,Pfizer,16969
+Quindío,50-59,Primera dosis,Sinovac,11776
+Quindío,50-59,Primera dosis,AstraZeneca,4514
+Quindío,50-59,Primera dosis,Janssen,4082
+Quindío,50-59,Primera dosis,Moderna,7267
+Quindío,50-59,Segunda dosis,Pfizer,15012
+Quindío,50-59,Segunda dosis,Sinovac,9916
+Quindío,50-59,Segunda dosis,AstraZeneca,6874
+Quindío,50-59,Segunda dosis,Janssen,2586
+Quindío,50-59,Segunda dosis,Moderna,3305
+Quindío,50-59,Refuerzo,Pfizer,7422
+Quindío,50-59,Refuerzo,Sinovac,6429
+Quindío,50-59,Refuerzo,AstraZeneca,3235
+Quindío,50-59,Refuerzo,Janssen,1286
+Quindío,50-59,Refuerzo,Moderna,2071
+Quindío,60-69,Primera dosis,Pfizer,12847
+Quindío,60-69,Primera dosis,Sinovac,9690
+Quindío,60-69,Primera dosis,AstraZeneca,3716
+Quindío,60-69,Primera dosis,Janssen,3135
+Quindío,60-69,Primera dosis,Moderna,3531
+Quindío,60-69,Segunda dosis,Pfizer,10364
+Quindío,60-69,Segunda dosis,Sinovac,7663
+Quindío,60-69,Segunda dosis,AstraZeneca,2822
+Quindío,60-69,Segunda dosis,Janssen,1977
+Quindío,60-69,Segunda dosis,Moderna,4238
+Quindío,60-69,Refuerzo,Pfizer,3968
+Quindío,60-69,Refuerzo,Sinovac,3850
+Quindío,60-69,Refuerzo,AstraZeneca,2282
+Quindío,60-69,Refuerzo,Janssen,873
+Quindío,60-69,Refuerzo,Moderna,1552
+Quindío,70-79,Primera dosis,Pfizer,5689
+Quindío,70-79,Primera dosis,Sinovac,4755
+Quindío,70-79,Primera dosis,AstraZeneca,2265
+Quindío,70-79,Primera dosis,Janssen,1666
+Quindío,70-79,Primera dosis,Moderna,3321
+Quindío,70-79,Segunda dosis,Pfizer,4771
+Quindío,70-79,Segunda dosis,Sinovac,4903
+Quindío,70-79,Segunda dosis,AstraZeneca,1958
+Quindío,70-79,Segunda dosis,Janssen,1018
+Quindío,70-79,Segunda dosis,Moderna,3070
+Quindío,70-79,Refuerzo,Pfizer,2599
+Quindío,70-79,Refuerzo,Sinovac,2324
+Quindío,70-79,Refuerzo,AstraZeneca,808
+Quindío,70-79,Refuerzo,Janssen,487
+Quindío,70-79,Refuerzo,Moderna,1399
+Quindío,80+,Primera dosis,Pfizer,4859
+Quindío,80+,Primera dosis,Sinovac,4315
+Quindío,80+,Primera dosis,AstraZeneca,2484
+Quindío,80+,Primera dosis,Janssen,1237
+Quindío,80+,Primera dosis,Moderna,887
+Quindío,80+,Segunda dosis,Pfizer,4618
+Quindío,80+,Segunda dosis,Sinovac,3799
+Quindío,80+,Segunda dosis,AstraZeneca,1573
+Quindío,80+,Segunda dosis,Janssen,894
+Quindío,80+,Segunda dosis,Moderna,691
+Quindío,80+,Refuerzo,Pfizer,2528
+Quindío,80+,Refuerzo,Sinovac,2476
+Quindío,80+,Refuerzo,AstraZeneca,1090
+Quindío,80+,Refuerzo,Janssen,503
+Quindío,80+,Refuerzo,Moderna,657
+Risaralda,12-17,Primera dosis,Pfizer,19071
+Risaralda,12-17,Primera dosis,Sinovac,16050
+Risaralda,12-17,Primera dosis,AstraZeneca,5182
+Risaralda,12-17,Primera dosis,Janssen,4874
+Risaralda,12-17,Primera dosis,Moderna,3776
+Risaralda,12-17,Segunda dosis,Pfizer,14719
+Risaralda,12-17,Segunda dosis,Sinovac,13624
+Risaralda,12-17,Segunda dosis,AstraZeneca,8339
+Risaralda,12-17,Segunda dosis,Janssen,4116
+Risaralda,12-17,Segunda dosis,Moderna,905
+Risaralda,12-17,Refuerzo,Pfizer,6384
+Risaralda,12-17,Refuerzo,Sinovac,6500
+Risaralda,12-17,Refuerzo,AstraZeneca,2608
+Risaralda,12-17,Refuerzo,Janssen,1870
+Risaralda,12-17,Refuerzo,Moderna,3229
+Risaralda,18-29,Primera dosis,Pfizer,41192
+Risaralda,18-29,Primera dosis,Sinovac,42818
+Risaralda,18-29,Primera dosis,AstraZeneca,22997
+Risaralda,18-29,Primera dosis,Janssen,8667
+Risaralda,18-29,Primera dosis,Moderna,12274
+Risaralda,18-29,Segunda dosis,Pfizer,40554
+Risaralda,18-29,Segunda dosis,Sinovac,35336
+Risaralda,18-29,Segunda dosis,AstraZeneca,12423
+Risaralda,18-29,Segunda dosis,Janssen,8411
+Risaralda,18-29,Segunda dosis,Moderna,8906
+Risaralda,18-29,Refuerzo,Pfizer,26104
+Risaralda,18-29,Refuerzo,Sinovac,21930
+Risaralda,18-29,Refuerzo,AstraZeneca,13127
+Risaralda,18-29,Refuerzo,Janssen,3525
+Risaralda,18-29,Refuerzo,Moderna,3896
+Risaralda,30-39,Primera dosis,Pfizer,39914
+Risaralda,30-39,Primera dosis,Sinovac,30113
+Risaralda,30-39,Primera dosis,AstraZeneca,22269
+Risaralda,30-39,Primera dosis,Janssen,10539
+Risaralda,30-39,Primera dosis,Moderna,9183
+Risaralda,30-39,Segunda dosis,Pfizer,35785
+Risaralda,30-39,Segunda dosis,Sinovac,28784
+Risaralda,30-39,Segunda dosis,AstraZeneca,15272
+Risaralda,30-39,Segunda dosis,Janssen,5585
+Risaralda,30-39,Segunda dosis,Moderna,17042
+Risaralda,30-39,Refuerzo,Pfizer,18639
+Risaralda,30-39,Refuerzo,Sinovac,15677
+Risaralda,30-39,Refuerzo,AstraZeneca,8801
+Risaralda,30-39,Refuerzo,Janssen,2885
+Risaralda,30-39,Refuerzo,Moderna,11657
+Risaralda,40-49,Primera dosis,Pfizer,36369
+Risaralda,40-49,Primera dosis,Sinovac,33452
+Risaralda,40-49,Primera dosis,AstraZeneca,18046
+Risaralda,40-49,Primera dosis,Janssen,6475
+Risaralda,40-49,Primera dosis,Moderna,3504
+Risaralda,40-49,Segunda dosis,Pfizer,24842
+Risaralda,40-49,Segunda dosis,Sinovac,25374
+Risaralda,40-49,Segunda dosis,AstraZeneca,15760
+Risaralda,40-49,Segunda dosis,Janssen,7293
+Risaralda,40-49,Segunda dosis,Moderna,8936
+Risaralda,40-49,Refuerzo,Pfizer,15054
+Risaralda,40-49,Refuerzo,Sinovac,13152
+Risaralda,40-49,Refuerzo,AstraZeneca,7673
+Risaralda,40-49,Refuerzo,Janssen,2687
+Risaralda,40-49,Refuerzo,Moderna,569
+Risaralda,50-59,Primera dosis,Pfizer,26154
+Risaralda,50-59,Primera dosis,Sinovac,20884
+Risaralda,50-59,Primera dosis,AstraZeneca,9169
+Risaralda,50-59,Primera dosis,Janssen,7718
+Risaralda,50-59,Primera dosis,Moderna,15287
+Risaralda,50-59,Segunda dosis,Pfizer,25818
+Risaralda,50-59,Segunda dosis,Sinovac,23563
+Risaralda,50-59,Segunda dosis,AstraZeneca,11229
+Risaralda,50-59,Segunda dosis,Janssen,3997
+Risaralda,50-59,Segunda dosis,Moderna,3480
+Risaralda,50-59,Refuerzo,Pfizer,12705
+Risaralda,50-59,Refuerzo,Sinovac,10224
+Risaralda,50-59,Refuerzo,AstraZeneca,6175
+Risaralda,50-59,Refuerzo,Janssen,2860
+Risaralda,50-59,Refuerzo,Moderna,49
+Risaralda,60-69,Primera dosis,Pfizer,17886
+Risaralda,60-69,Primera dosis,Sinovac,17246
+Risaralda,60-69,Primera dosis,AstraZeneca,6097
+Risaralda,60-69,Primera dosis,Janssen,4675
+Risaralda,60-69,Primera dosis,Moderna,8183
+Risaralda,60-69,Segunda dosis,Pfizer,18772
+Risaralda,60-69,Segunda dosis,Sinovac,16395
+Risaralda,60-69,Segunda dosis,AstraZeneca,6615
+Risaralda,60-69,Segunda dosis,Janssen,4740
+Risaralda,60-69,Segunda dosis,Moderna,1016
+Risaralda,60-69,Refuerzo,Pfizer,9143
+Risaralda,60-69,Refuerzo,Sinovac,5839
+Risaralda,60-69,Refuerzo,AstraZeneca,3695
+Risaralda,60-69,Refuerzo,Janssen,2214
+Risaralda,60-69,Refuerzo,Moderna,2166
+Risaralda,70-79,Primera dosis,Pfizer,13337
+Risaralda,70-79,Primera dosis,Sinovac,8946
+Risaralda,70-79,Primera dosis,AstraZeneca,5913
+Risaralda,70-79,Primera dosis,Janssen,2097
+Risaralda,70-79,Primera dosis,Moderna,3585
+Risaralda,70-79,Segunda dosis,Pfizer,11361
+Risaralda,70-79,Segunda dosis,Sinovac,7611
+Risaralda,70-79,Segunda dosis,AstraZeneca,5378
+Risaralda,70-79,Segunda dosis,Janssen,1553
+Risaralda,70-79,Segunda dosis,Moderna,2624
+Risaralda,70-79,Refuerzo,Pfizer,5958
+Risaralda,70-79,Refuerzo,Sinovac,5042
+Risaralda,70-79,Refuerzo,AstraZeneca,3030
+Risaralda,70-79,Refuerzo,Janssen,1161
+Risaralda,70-79,Refuerzo,Moderna,870
+Risaralda,80+,Primera dosis,Pfizer,7926
+Risaralda,80+,Primera dosis,Sinovac,6347
+Risaralda,80+,Primera dosis,AstraZeneca,2437
+Risaralda,80+,Primera dosis,Janssen,1686
+Risaralda,80+,Primera dosis,Moderna,5941
+Risaralda,80+,Segunda dosis,Pfizer,7676
+Risaralda,80+,Segunda dosis,Sinovac,7134
+Risaralda,80+,Segunda dosis,AstraZeneca,3875
+Risaralda,80+,Segunda dosis,Janssen,1535
+Risaralda,80+,Segunda dosis,Moderna,343
+Risaralda,80+,Refuerzo,Pfizer,3220
+Risaralda,80+,Refuerzo,Sinovac,2903
+Risaralda,80+,Refuerzo,AstraZeneca,1049
+Risaralda,80+,Refuerzo,Janssen,705
+Risaralda,80+,Refuerzo,Moderna,1653
+San Andrés,12-17,Primera dosis,Pfizer,1352
+San Andrés,12-17,Primera dosis,Sinovac,1100
+San Andrés,12-17,Primera dosis,AstraZeneca,789
+San Andrés,12-17,Primera dosis,Janssen,276
+San Andrés,12-17,Primera dosis,Moderna,757
+San Andrés,12-17,Segunda dosis,Pfizer,1255
+San Andrés,12-17,Segunda dosis,Sinovac,1306
+San Andrés,12-17,Segunda dosis,AstraZeneca,406
+San Andrés,12-17,Segunda dosis,Janssen,221
+San Andrés,12-17,Segunda dosis,Moderna,594
+San Andrés,12-17,Refuerzo,Pfizer,750
+San Andrés,12-17,Refuerzo,Sinovac,718
+San Andrés,12-17,Refuerzo,AstraZeneca,343
+San Andrés,12-17,Refuerzo,Janssen,210
+San Andrés,12-17,Refuerzo,Moderna,199
+San Andrés,18-29,Primera dosis,Pfizer,3347
+San Andrés,18-29,Primera dosis,Sinovac,2432
+San Andrés,18-29,Primera dosis,AstraZeneca,1867
+San Andrés,18-29,Primera dosis,Janssen,559
+San Andrés,18-29,Primera dosis,Moderna,1404
+San Andrés,18-29,Segunda dosis,Pfizer,3287
+San Andrés,18-29,Segunda dosis,Sinovac,2245
+San Andrés,18-29,Segunda dosis,AstraZeneca,930
+San Andrés,18-29,Segunda dosis,Janssen,509
+San Andrés,18-29,Segunda dosis,Moderna,1478
+San Andrés,18-29,Refuerzo,Pfizer,1543
+San Andrés,18-29,Refuerzo,Sinovac,1547
+San Andrés,18-29,Refuerzo,AstraZeneca,833
+San Andrés,18-29,Refuerzo,Janssen,418
+San Andrés,18-29,Refuerzo,Moderna,496
+San Andrés,30-39,Primera dosis,Pfizer,2668
+San Andrés,30-39,Primera dosis,Sinovac,2687
+San Andrés,30-39,Primera dosis,AstraZeneca,1609
+San Andrés,30-39,Primera dosis,Janssen,504
+San Andrés,30-39,Primera dosis,Moderna,1279
+San Andrés,30-39,Segunda dosis,Pfizer,2493
+San Andrés,30-39,Segunda dosis,Sinovac,2172
+San Andrés,30-39,Segunda dosis,AstraZeneca,960
+San Andrés,30-39,Segunda dosis,Janssen,616
+San Andrés,30-39,Segunda dosis,Moderna,1176
+San Andrés,30-39,Refuerzo,Pfizer,1328
+San Andrés,30-39,Refuerzo,Sinovac,996
+San Andrés,30-39,Refuerzo,AstraZeneca,378
+San Andrés,30-39,Refuerzo,Janssen,216
+San Andrés,30-39,Refuerzo,Moderna,771
+San Andrés,40-49,Primera dosis,Pfizer,2482
+San Andrés,40-49,Primera dosis,Sinovac,2173
+San Andrés,40-49,Primera dosis,AstraZeneca,1117
+San Andrés,40-49,Primera dosis,Janssen,623
+San Andrés,40-49,Primera dosis,Moderna,1106
+San Andrés,40-49,Segunda dosis,Pfizer,1920
+San Andrés,40-49,Segunda dosis,Sinovac,1891
+San Andrés,40-49,Segunda dosis,AstraZeneca,736
+San Andrés,40-49,Segunda dosis,Janssen,585
+San Andrés,40-49,Segunda dosis,Moderna,1079
+San Andrés,40-49,Refuerzo,Pfizer,1295
+San Andrés,40-49,Refuerzo,Sinovac,1132
+San Andrés,40-49,Refuerzo,AstraZeneca,485
+San Andrés,40-49,Refuerzo,Janssen,281
+San Andrés,40-49,Refuerzo,Moderna,649
+San Andrés,50-59,Primera dosis,Pfizer,2258
+San Andrés,50-59,Primera dosis,Sinovac,1906
+San Andrés,50-59,Primera dosis,AstraZeneca,653
+San Andrés,50-59,Primera dosis,Janssen,404
+San Andrés,50-59,Primera dosis,Moderna,796
+San Andrés,50-59,Segunda dosis,Pfizer,1805
+San Andrés,50-59,Segunda dosis,Sinovac,1769
+San Andrés,50-59,Segunda dosis,AstraZeneca,810
+San Andrés,50-59,Segunda dosis,Janssen,395
+San Andrés,50-59,Segunda dosis,Moderna,316
+San Andrés,50-59,Refuerzo,Pfizer,904
+San Andrés,50-59,Refuerzo,Sinovac,781
+San Andrés,50-59,Refuerzo,AstraZeneca,334
+San Andrés,50-59,Refuerzo,Janssen,180
+San Andrés,50-59,Refuerzo,Moderna,154
+San Andrés,60-69,Primera dosis,Pfizer,1635
+San Andrés,60-69,Primera dosis,Sinovac,1213
+San Andrés,60-69,Primera dosis,AstraZeneca,895
+San Andrés,60-69,Primera dosis,Janssen,403
+San Andrés,60-69,Primera dosis,Moderna,557
+San Andrés,60-69,Segunda dosis,Pfizer,1428
+San Andrés,60-69,Segunda dosis,Sinovac,1387
+San Andrés,60-69,Segunda dosis,AstraZeneca,734
+San Andrés,60-69,Segunda dosis,Janssen,342
+San Andrés,60-69,Segunda dosis,Moderna,186
+San Andrés,60-69,Refuerzo,Pfizer,924
+San Andrés,60-69,Refuerzo,Sinovac,669
+San Andrés,60-69,Refuerzo,AstraZeneca,448
+San Andrés,60-69,Refuerzo,Janssen,149
+San Andrés,60-69,Refuerzo,Moderna,361
+San Andrés,70-79,Primera dosis,Pfizer,865
+San Andrés,70-79,Primera dosis,Sinovac,809
+San Andrés,70-79,Primera dosis,AstraZeneca,550
+San Andrés,70-79,Primera dosis,Janssen,198
+San Andrés,70-79,Primera dosis,Moderna,344
+San Andrés,70-79,Segunda dosis,Pfizer,1014
+San Andrés,70-79,Segunda dosis,Sinovac,793
+San Andrés,70-79,Segunda dosis,AstraZeneca,465
+San Andrés,70-79,Segunda dosis,Janssen,159
+San Andrés,70-79,Segunda dosis,Moderna,104
+San Andrés,70-79,Refuerzo,Pfizer,606
+San Andrés,70-79,Refuerzo,Sinovac,529
+San Andrés,70-79,Refuerzo,AstraZeneca,165
+San Andrés,70-79,Refuerzo,Janssen,107
+San Andrés,70-79,Refuerzo,Moderna,141
+San Andrés,80+,Primera dosis,Pfizer,695
+San Andrés,80+,Primera dosis,Sinovac,678
+San Andrés,80+,Primera dosis,AstraZeneca,359
+San Andrés,80+,Primera dosis,Janssen,163
+San Andrés,80+,Primera dosis,Moderna,114
+San Andrés,80+,Segunda dosis,Pfizer,604
+San Andrés,80+,Segunda dosis,Sinovac,500
+San Andrés,80+,Segunda dosis,AstraZeneca,242
+San Andrés,80+,Segunda dosis,Janssen,98
+San Andrés,80+,Segunda dosis,Moderna,269
+San Andrés,80+,Refuerzo,Pfizer,310
+San Andrés,80+,Refuerzo,Sinovac,282
+San Andrés,80+,Refuerzo,AstraZeneca,167
+San Andrés,80+,Refuerzo,Janssen,83
+San Andrés,80+,Refuerzo,Moderna,21
+Santander,12-17,Primera dosis,Pfizer,41770
+Santander,12-17,Primera dosis,Sinovac,33598
+Santander,12-17,Primera dosis,AstraZeneca,16668
+Santander,12-17,Primera dosis,Janssen,8169
+Santander,12-17,Primera dosis,Moderna,17934
+Santander,12-17,Segunda dosis,Pfizer,34182
+Santander,12-17,Segunda dosis,Sinovac,30489
+Santander,12-17,Segunda dosis,AstraZeneca,10174
+Santander,12-17,Segunda dosis,Janssen,6253
+Santander,12-17,Segunda dosis,Moderna,16968
+Santander,12-17,Refuerzo,Pfizer,15638
+Santander,12-17,Refuerzo,Sinovac,15463
+Santander,12-17,Refuerzo,AstraZeneca,8424
+Santander,12-17,Refuerzo,Janssen,2583
+Santander,12-17,Refuerzo,Moderna,7632
+Santander,18-29,Primera dosis,Pfizer,110963
+Santander,18-29,Primera dosis,Sinovac,101338
+Santander,18-29,Primera dosis,AstraZeneca,56197
+Santander,18-29,Primera dosis,Janssen,15111
+Santander,18-29,Primera dosis,Moderna,12627
+Santander,18-29,Segunda dosis,Pfizer,96479
+Santander,18-29,Segunda dosis,Sinovac,70843
+Santander,18-29,Segunda dosis,AstraZeneca,32358
+Santander,18-29,Segunda dosis,Janssen,18849
+Santander,18-29,Segunda dosis,Moderna,34205
+Santander,18-29,Refuerzo,Pfizer,46475
+Santander,18-29,Refuerzo,Sinovac,32669
+Santander,18-29,Refuerzo,AstraZeneca,23499
+Santander,18-29,Refuerzo,Janssen,7131
+Santander,18-29,Refuerzo,Moderna,15962
+Santander,30-39,Primera dosis,Pfizer,87303
+Santander,30-39,Primera dosis,Sinovac,77886
+Santander,30-39,Primera dosis,AstraZeneca,43941
+Santander,30-39,Primera dosis,Janssen,15860
+Santander,30-39,Primera dosis,Moderna,42038
+Santander,30-39,Segunda dosis,Pfizer,74117
+Santander,30-39,Segunda dosis,Sinovac,76715
+Santander,30-39,Segunda dosis,AstraZeneca,40180
+Santander,30-39,Segunda dosis,Janssen,20304
+Santander,30-39,Segunda dosis,Moderna,19477
+Santander,30-39,Refuerzo,Pfizer,54905
+Santander,30-39,Refuerzo,Sinovac,47150
+Santander,30-39,Refuerzo,AstraZeneca,21513
+Santander,30-39,Refuerzo,Janssen,8227
+Santander,30-39,Refuerzo,Moderna,10180
+Santander,40-49,Primera dosis,Pfizer,82388
+Santander,40-49,Primera dosis,Sinovac,72291
+Santander,40-49,Primera dosis,AstraZeneca,22011
+Santander,40-49,Primera dosis,Janssen,12757
+Santander,40-49,Primera dosis,Moderna,24473
+Santander,40-49,Segunda dosis,Pfizer,71391
+Santander,40-49,Segunda dosis,Sinovac,62153
+Santander,40-49,Segunda dosis,AstraZeneca,23272
+Santander,40-49,Segunda dosis,Janssen,13563
+Santander,40-49,Segunda dosis,Moderna,15876
+Santander,40-49,Refuerzo,Pfizer,34819
+Santander,40-49,Refuerzo,Sinovac,28479
+Santander,40-49,Refuerzo,AstraZeneca,11321
+Santander,40-49,Refuerzo,Janssen,8102
+Santander,40-49,Refuerzo,Moderna,6146
+Santander,50-59,Primera dosis,Pfizer,53398
+Santander,50-59,Primera dosis,Sinovac,50612
+Santander,50-59,Primera dosis,AstraZeneca,28087
+Santander,50-59,Primera dosis,Janssen,10374
+Santander,50-59,Primera dosis,Moderna,33727
+Santander,50-59,Segunda dosis,Pfizer,60255
+Santander,50-59,Segunda dosis,Sinovac,48056
+Santander,50-59,Segunda dosis,AstraZeneca,21012
+Santander,50-59,Segunda dosis,Janssen,9056
+Santander,50-59,Segunda dosis,Moderna,17297
+Santander,50-59,Refuerzo,Pfizer,28784
+Santander,50-59,Refuerzo,Sinovac,24013
+Santander,50-59,Refuerzo,AstraZeneca,12482
+Santander,50-59,Refuerzo,Janssen,4749
+Santander,50-59,Refuerzo,Moderna,3881
+Santander,60-69,Primera dosis,Pfizer,50624
+Santander,60-69,Primera dosis,Sinovac,42864
+Santander,60-69,Primera dosis,AstraZeneca,21034
+Santander,60-69,Primera dosis,Janssen,10710
+Santander,60-69,Primera dosis,Moderna,2448
+Santander,60-69,Segunda dosis,Pfizer,34906
+Santander,60-69,Segunda dosis,Sinovac,31067
+Santander,60-69,Segunda dosis,AstraZeneca,10892
+Santander,60-69,Segunda dosis,Janssen,9504
+Santander,60-69,Segunda dosis,Moderna,20407
+Santander,60-69,Refuerzo,Pfizer,22707
+Santander,60-69,Refuerzo,Sinovac,15121
+Santander,60-69,Refuerzo,AstraZeneca,11520
+Santander,60-69,Refuerzo,Janssen,4964
+Santander,60-69,Refuerzo,Moderna,5956
+Santander,70-79,Primera dosis,Pfizer,28880
+Santander,70-79,Primera dosis,Sinovac,21293
+Santander,70-79,Primera dosis,AstraZeneca,14929
+Santander,70-79,Primera dosis,Janssen,6234
+Santander,70-79,Primera dosis,Moderna,4562
+Santander,70-79,Segunda dosis,Pfizer,21331
+Santander,70-79,Segunda dosis,Sinovac,17921
+Santander,70-79,Segunda dosis,AstraZeneca,8402
+Santander,70-79,Segunda dosis,Janssen,3900
+Santander,70-79,Segunda dosis,Moderna,10747
+Santander,70-79,Refuerzo,Pfizer,10809
+Santander,70-79,Refuerzo,Sinovac,9906
+Santander,70-79,Refuerzo,AstraZeneca,5688
+Santander,70-79,Refuerzo,Janssen,2178
+Santander,70-79,Refuerzo,Moderna,2597
+Santander,80+,Primera dosis,Pfizer,21354
+Santander,80+,Primera dosis,Sinovac,15970
+Santander,80+,Primera dosis,AstraZeneca,9153
+Santander,80+,Primera dosis,Janssen,4470
+Santander,80+,Primera dosis,Moderna,4615
+Santander,80+,Segunda dosis,Pfizer,15965
+Santander,80+,Segunda dosis,Sinovac,12624
+Santander,80+,Segunda dosis,AstraZeneca,5149
+Santander,80+,Segunda dosis,Janssen,4812
+Santander,80+,Segunda dosis,Moderna,9851
+Santander,80+,Refuerzo,Pfizer,10263
+Santander,80+,Refuerzo,Sinovac,9477
+Santander,80+,Refuerzo,AstraZeneca,3555
+Santander,80+,Refuerzo,Janssen,2412
+Santander,80+,Refuerzo,Moderna,2484
+Sucre,12-17,Primera dosis,Pfizer,14636
+Sucre,12-17,Primera dosis,Sinovac,13214
+Sucre,12-17,Primera dosis,AstraZeneca,7017
+Sucre,12-17,Primera dosis,Janssen,3502
+Sucre,12-17,Primera dosis,Moderna,498
+Sucre,12-17,Segunda dosis,Pfizer,11891
+Sucre,12-17,Segunda dosis,Sinovac,10440
+Sucre,12-17,Segunda dosis,AstraZeneca,5552
+Sucre,12-17,Segunda dosis,Janssen,2842
+Sucre,12-17,Segunda dosis,Moderna,2305
+Sucre,12-17,Refuerzo,Pfizer,5795
+Sucre,12-17,Refuerzo,Sinovac,5545
+Sucre,12-17,Refuerzo,AstraZeneca,1996
+Sucre,12-17,Refuerzo,Janssen,1124
+Sucre,12-17,Refuerzo,Moderna,1392
+Sucre,18-29,Primera dosis,Pfizer,32083
+Sucre,18-29,Primera dosis,Sinovac,24160
+Sucre,18-29,Primera dosis,AstraZeneca,15507
+Sucre,18-29,Primera dosis,Janssen,5489
+Sucre,18-29,Primera dosis,Moderna,12577
+Sucre,18-29,Segunda dosis,Pfizer,26144
+Sucre,18-29,Segunda dosis,Sinovac,24297
+Sucre,18-29,Segunda dosis,AstraZeneca,14102
+Sucre,18-29,Segunda dosis,Janssen,6183
+Sucre,18-29,Segunda dosis,Moderna,3239
+Sucre,18-29,Refuerzo,Pfizer,15347
+Sucre,18-29,Refuerzo,Sinovac,14639
+Sucre,18-29,Refuerzo,AstraZeneca,8054
+Sucre,18-29,Refuerzo,Janssen,4105
+Sucre,18-29,Refuerzo,Moderna,1611
+Sucre,30-39,Primera dosis,Pfizer,25621
+Sucre,30-39,Primera dosis,Sinovac,26011
+Sucre,30-39,Primera dosis,AstraZeneca,13860
+Sucre,30-39,Primera dosis,Janssen,4650
+Sucre,30-39,Primera dosis,Moderna,8480
+Sucre,30-39,Segunda dosis,Pfizer,24006
+Sucre,30-39,Segunda dosis,Sinovac,18499
+Sucre,30-39,Segunda dosis,AstraZeneca,7106
+Sucre,30-39,Segunda dosis,Janssen,4420
+Sucre,30-39,Segunda dosis,Moderna,11206
+Sucre,30-39,Refuerzo,Pfizer,11616
+Sucre,30-39,Refuerzo,Sinovac,8709
+Sucre,30-39,Refuerzo,AstraZeneca,5547
+Sucre,30-39,Refuerzo,Janssen,2065
+Sucre,30-39,Refuerzo,Moderna,3086
+Sucre,40-49,Primera dosis,Pfizer,23529
+Sucre,40-49,Primera dosis,Sinovac,22823
+Sucre,40-49,Primera dosis,AstraZeneca,10736
+Sucre,40-49,Primera dosis,Janssen,6590
+Sucre,40-49,Primera dosis,Moderna,4117
+Sucre,40-49,Segunda dosis,Pfizer,17686
+Sucre,40-49,Segunda dosis,Sinovac,19518
+Sucre,40-49,Segunda dosis,AstraZeneca,8640
+Sucre,40-49,Segunda dosis,Janssen,5377
+Sucre,40-49,Segunda dosis,Moderna,6364
+Sucre,40-49,Refuerzo,Pfizer,12078
+Sucre,40-49,Refuerzo,Sinovac,9994
+Sucre,40-49,Refuerzo,AstraZeneca,3764
+Sucre,40-49,Refuerzo,Janssen,3311
+Sucre,40-49,Refuerzo,Moderna,6567
+Sucre,50-59,Primera dosis,Pfizer,19299
+Sucre,50-59,Primera dosis,Sinovac,18418
+Sucre,50-59,Primera dosis,AstraZeneca,7880
+Sucre,50-59,Primera dosis,Janssen,3558
+Sucre,50-59,Primera dosis,Moderna,4910
+Sucre,50-59,Segunda dosis,Pfizer,16875
+Sucre,50-59,Segunda dosis,Sinovac,14892
+Sucre,50-59,Segunda dosis,AstraZeneca,6756
+Sucre,50-59,Segunda dosis,Janssen,3703
+Sucre,50-59,Segunda dosis,Moderna,3189
+Sucre,50-59,Refuerzo,Pfizer,7673
+Sucre,50-59,Refuerzo,Sinovac,7571
+Sucre,50-59,Refuerzo,AstraZeneca,2426
+Sucre,50-59,Refuerzo,Janssen,1538
+Sucre,50-59,Refuerzo,Moderna,4945
+Sucre,60-69,Primera dosis,Pfizer,14731
+Sucre,60-69,Primera dosis,Sinovac,13777
+Sucre,60-69,Primera dosis,AstraZeneca,4593
+Sucre,60-69,Primera dosis,Janssen,3407
+Sucre,60-69,Primera dosis,Moderna,5705
+Sucre,60-69,Segunda dosis,Pfizer,12836
+Sucre,60-69,Segunda dosis,Sinovac,10257
+Sucre,60-69,Segunda dosis,AstraZeneca,6943
+Sucre,60-69,Segunda dosis,Janssen,2443
+Sucre,60-69,Segunda dosis,Moderna,2847
+Sucre,60-69,Refuerzo,Pfizer,6470
+Sucre,60-69,Refuerzo,Sinovac,5749
+Sucre,60-69,Refuerzo,AstraZeneca,2924
+Sucre,60-69,Refuerzo,Janssen,1079
+Sucre,60-69,Refuerzo,Moderna,5074
+Sucre,70-79,Primera dosis,Pfizer,8644
+Sucre,70-79,Primera dosis,Sinovac,7351
+Sucre,70-79,Primera dosis,AstraZeneca,2936
+Sucre,70-79,Primera dosis,Janssen,1990
+Sucre,70-79,Primera dosis,Moderna,2588
+Sucre,70-79,Segunda dosis,Pfizer,7102
+Sucre,70-79,Segunda dosis,Sinovac,5583
+Sucre,70-79,Segunda dosis,AstraZeneca,2938
+Sucre,70-79,Segunda dosis,Janssen,1687
+Sucre,70-79,Segunda dosis,Moderna,3926
+Sucre,70-79,Refuerzo,Pfizer,3282
+Sucre,70-79,Refuerzo,Sinovac,3445
+Sucre,70-79,Refuerzo,AstraZeneca,1345
+Sucre,70-79,Refuerzo,Janssen,669
+Sucre,70-79,Refuerzo,Moderna,1622
+Sucre,80+,Primera dosis,Pfizer,7329
+Sucre,80+,Primera dosis,Sinovac,6590
+Sucre,80+,Primera dosis,AstraZeneca,2531
+Sucre,80+,Primera dosis,Janssen,1792
+Sucre,80+,Primera dosis,Moderna,609
+Sucre,80+,Segunda dosis,Pfizer,5570
+Sucre,80+,Segunda dosis,Sinovac,4458
+Sucre,80+,Segunda dosis,AstraZeneca,3230
+Sucre,80+,Segunda dosis,Janssen,1590
+Sucre,80+,Segunda dosis,Moderna,1733
+Sucre,80+,Refuerzo,Pfizer,2920
+Sucre,80+,Refuerzo,Sinovac,2341
+Sucre,80+,Refuerzo,AstraZeneca,1482
+Sucre,80+,Refuerzo,Janssen,485
+Sucre,80+,Refuerzo,Moderna,1352
+Tolima,12-17,Primera dosis,Pfizer,22524
+Tolima,12-17,Primera dosis,Sinovac,21079
+Tolima,12-17,Primera dosis,AstraZeneca,6940
+Tolima,12-17,Primera dosis,Janssen,6277
+Tolima,12-17,Primera dosis,Moderna,10084
+Tolima,12-17,Segunda dosis,Pfizer,19146
+Tolima,12-17,Segunda dosis,Sinovac,17846
+Tolima,12-17,Segunda dosis,AstraZeneca,6166
+Tolima,12-17,Segunda dosis,Janssen,5865
+Tolima,12-17,Segunda dosis,Moderna,9783
+Tolima,12-17,Refuerzo,Pfizer,10418
+Tolima,12-17,Refuerzo,Sinovac,8972
+Tolima,12-17,Refuerzo,AstraZeneca,2901
+Tolima,12-17,Refuerzo,Janssen,2403
+Tolima,12-17,Refuerzo,Moderna,3755
+Tolima,18-29,Primera dosis,Pfizer,54705
+Tolima,18-29,Primera dosis,Sinovac,41774
+Tolima,18-29,Primera dosis,AstraZeneca,26691
+Tolima,18-29,Primera dosis,Janssen,12834
+Tolima,18-29,Primera dosis,Moderna,21447
+Tolima,18-29,Segunda dosis,Pfizer,44597
+Tolima,18-29,Segunda dosis,Sinovac,42713
+Tolima,18-29,Segunda dosis,AstraZeneca,22459
+Tolima,18-29,Segunda dosis,Janssen,8578
+Tolima,18-29,Segunda dosis,Moderna,16748
+Tolima,18-29,Refuerzo,Pfizer,27251
+Tolima,18-29,Refuerzo,Sinovac,19931
+Tolima,18-29,Refuerzo,AstraZeneca,13836
+Tolima,18-29,Refuerzo,Janssen,4175
+Tolima,18-29,Refuerzo,Moderna,10385
+Tolima,30-39,Primera dosis,Pfizer,45062
+Tolima,30-39,Primera dosis,Sinovac,39148
+Tolima,30-39,Primera dosis,AstraZeneca,17404
+Tolima,30-39,Primera dosis,Janssen,9161
+Tolima,30-39,Primera dosis,Moderna,34292
+Tolima,30-39,Segunda dosis,Pfizer,42511
+Tolima,30-39,Segunda dosis,Sinovac,32599
+Tolima,30-39,Segunda dosis,AstraZeneca,20554
+Tolima,30-39,Segunda dosis,Janssen,7815
+Tolima,30-39,Segunda dosis,Moderna,17183
+Tolima,30-39,Refuerzo,Pfizer,17339
+Tolima,30-39,Refuerzo,Sinovac,17094
+Tolima,30-39,Refuerzo,AstraZeneca,6889
+Tolima,30-39,Refuerzo,Janssen,5514
+Tolima,30-39,Refuerzo,Moderna,10211
+Tolima,40-49,Primera dosis,Pfizer,46631
+Tolima,40-49,Primera dosis,Sinovac,39808
+Tolima,40-49,Primera dosis,AstraZeneca,19921
+Tolima,40-49,Primera dosis,Janssen,6857
+Tolima,40-49,Primera dosis,Moderna,6138
+Tolima,40-49,Segunda dosis,Pfizer,30253
+Tolima,40-49,Segunda dosis,Sinovac,29486
+Tolima,40-49,Segunda dosis,AstraZeneca,16874
+Tolima,40-49,Segunda dosis,Janssen,5391
+Tolima,40-49,Segunda dosis,Moderna,15899
+Tolima,40-49,Refuerzo,Pfizer,18626
+Tolima,40-49,Refuerzo,Sinovac,15624
+Tolima,40-49,Refuerzo,AstraZeneca,11376
+Tolima,40-49,Refuerzo,Janssen,3707
+Tolima,40-49,Refuerzo,Moderna,7873
+Tolima,50-59,Primera dosis,Pfizer,29700
+Tolima,50-59,Primera dosis,Sinovac,27268
+Tolima,50-59,Primera dosis,AstraZeneca,17604
+Tolima,50-59,Primera dosis,Janssen,6413
+Tolima,50-59,Primera dosis,Moderna,16729
+Tolima,50-59,Segunda dosis,Pfizer,30320
+Tolima,50-59,Segunda dosis,Sinovac,21045
+Tolima,50-59,Segunda dosis,AstraZeneca,14259
+Tolima,50-59,Segunda dosis,Janssen,4241
+Tolima,50-59,Segunda dosis,Moderna,11235
+Tolima,50-59,Refuerzo,Pfizer,15149
+Tolima,50-59,Refuerzo,Sinovac,12441
+Tolima,50-59,Refuerzo,AstraZeneca,4603
+Tolima,50-59,Refuerzo,Janssen,2669
+Tolima,50-59,Refuerzo,Moderna,4465
+Tolima,60-69,Primera dosis,Pfizer,22104
+Tolima,60-69,Primera dosis,Sinovac,23691
+Tolima,60-69,Primera dosis,AstraZeneca,8453
+Tolima,60-69,Primera dosis,Janssen,5005
+Tolima,60-69,Primera dosis,Moderna,12212
+Tolima,60-69,Segunda dosis,Pfizer,24980
+Tolima,60-69,Segunda dosis,Sinovac,17475
+Tolima,60-69,Segunda dosis,AstraZeneca,8736
+Tolima,60-69,Segunda dosis,Janssen,5833
+Tolima,60-69,Segunda dosis,Moderna,6019
+Tolima,60-69,Refuerzo,Pfizer,14989
+Tolima,60-69,Refuerzo,Sinovac,12421
+Tolima,60-69,Refuerzo,AstraZeneca,7088
+Tolima,60-69,Refuerzo,Janssen,2195
+Tolima,60-69,Refuerzo,Moderna,2752
+Tolima,70-79,Primera dosis,Pfizer,13478
+Tolima,70-79,Primera dosis,Sinovac,12440
+Tolima,70-79,Primera dosis,AstraZeneca,6786
+Tolima,70-79,Primera dosis,Janssen,3844
+Tolima,70-79,Primera dosis,Moderna,6112
+Tolima,70-79,Segunda dosis,Pfizer,12960
+Tolima,70-79,Segunda dosis,Sinovac,9446
+Tolima,70-79,Segunda dosis,AstraZeneca,4861
+Tolima,70-79,Segunda dosis,Janssen,2393
+Tolima,70-79,Segunda dosis,Moderna,5571
+Tolima,70-79,Refuerzo,Pfizer,6813
+Tolima,70-79,Refuerzo,Sinovac,7163
+Tolima,70-79,Refuerzo,AstraZeneca,4135
+Tolima,70-79,Refuerzo,Janssen,2219
+Tolima,70-79,Refuerzo,Moderna,2162
+Tolima,80+,Primera dosis,Pfizer,10585
+Tolima,80+,Primera dosis,Sinovac,7900
+Tolima,80+,Primera dosis,AstraZeneca,3914
+Tolima,80+,Primera dosis,Janssen,2039
+Tolima,80+,Primera dosis,Moderna,6591
+Tolima,80+,Segunda dosis,Pfizer,10484
+Tolima,80+,Segunda dosis,Sinovac,8993
+Tolima,80+,Segunda dosis,AstraZeneca,5002
+Tolima,80+,Segunda dosis,Janssen,2231
+Tolima,80+,Segunda dosis,Moderna,1589
+Tolima,80+,Refuerzo,Pfizer,4767
+Tolima,80+,Refuerzo,Sinovac,4651
+Tolima,80+,Refuerzo,AstraZeneca,2233
+Tolima,80+,Refuerzo,Janssen,894
+Tolima,80+,Refuerzo,Moderna,826
+Valle del Cauca,12-17,Primera dosis,Pfizer,95157
+Valle del Cauca,12-17,Primera dosis,Sinovac,71427
+Valle del Cauca,12-17,Primera dosis,AstraZeneca,34972
+Valle del Cauca,12-17,Primera dosis,Janssen,21781
+Valle del Cauca,12-17,Primera dosis,Moderna,36532
+Valle del Cauca,12-17,Segunda dosis,Pfizer,78292
+Valle del Cauca,12-17,Segunda dosis,Sinovac,77231
+Valle del Cauca,12-17,Segunda dosis,AstraZeneca,36044
+Valle del Cauca,12-17,Segunda dosis,Janssen,22988
+Valle del Cauca,12-17,Segunda dosis,Moderna,16742
+Valle del Cauca,12-17,Refuerzo,Pfizer,33138
+Valle del Cauca,12-17,Refuerzo,Sinovac,34102
+Valle del Cauca,12-17,Refuerzo,AstraZeneca,12551
+Valle del Cauca,12-17,Refuerzo,Janssen,10029
+Valle del Cauca,12-17,Refuerzo,Moderna,18667
+Valle del Cauca,18-29,Primera dosis,Pfizer,227591
+Valle del Cauca,18-29,Primera dosis,Sinovac,178656
+Valle del Cauca,18-29,Primera dosis,AstraZeneca,128417
+Valle del Cauca,18-29,Primera dosis,Janssen,34231
+Valle del Cauca,18-29,Primera dosis,Moderna,82920
+Valle del Cauca,18-29,Segunda dosis,Pfizer,190513
+Valle del Cauca,18-29,Segunda dosis,Sinovac,185820
+Valle del Cauca,18-29,Segunda dosis,AstraZeneca,82956
+Valle del Cauca,18-29,Segunda dosis,Janssen,36504
+Valle del Cauca,18-29,Segunda dosis,Moderna,95365
+Valle del Cauca,18-29,Refuerzo,Pfizer,95081
+Valle del Cauca,18-29,Refuerzo,Sinovac,90742
+Valle del Cauca,18-29,Refuerzo,AstraZeneca,39804
+Valle del Cauca,18-29,Refuerzo,Janssen,25516
+Valle del Cauca,18-29,Refuerzo,Moderna,23728
+Valle del Cauca,30-39,Primera dosis,Pfizer,204592
+Valle del Cauca,30-39,Primera dosis,Sinovac,145750
+Valle del Cauca,30-39,Primera dosis,AstraZeneca,79092
+Valle del Cauca,30-39,Primera dosis,Janssen,43600
+Valle del Cauca,30-39,Primera dosis,Moderna,86974
+Valle del Cauca,30-39,Segunda dosis,Pfizer,139764
+Valle del Cauca,30-39,Segunda dosis,Sinovac,120698
+Valle del Cauca,30-39,Segunda dosis,AstraZeneca,74732
+Valle del Cauca,30-39,Segunda dosis,Janssen,37712
+Valle del Cauca,30-39,Segunda dosis,Moderna,92947
+Valle del Cauca,30-39,Refuerzo,Pfizer,84589
+Valle del Cauca,30-39,Refuerzo,Sinovac,77006
+Valle del Cauca,30-39,Refuerzo,AstraZeneca,30892
+Valle del Cauca,30-39,Refuerzo,Janssen,21392
+Valle del Cauca,30-39,Refuerzo,Moderna,42094
+Valle del Cauca,40-49,Primera dosis,Pfizer,162174
+Valle del Cauca,40-49,Primera dosis,Sinovac,148665
+Valle del Cauca,40-49,Primera dosis,AstraZeneca,78505
+Valle del Cauca,40-49,Primera dosis,Janssen,40752
+Valle del Cauca,40-49,Primera dosis,Moderna,73093
+Valle del Cauca,40-49,Segunda dosis,Pfizer,149656
+Valle del Cauca,40-49,Segunda dosis,Sinovac,136042
+Valle del Cauca,40-49,Segunda dosis,AstraZeneca,73938
+Valle del Cauca,40-49,Segunda dosis,Janssen,24001
+Valle del Cauca,40-49,Segunda dosis,Moderna,47259
+Valle del Cauca,40-49,Refuerzo,Pfizer,74652
+Valle del Cauca,40-49,Refuerzo,Sinovac,54048
+Valle del Cauca,40-49,Refuerzo,AstraZeneca,26636
+Valle del Cauca,40-49,Refuerzo,Janssen,18169
+Valle del Cauca,40-49,Refuerzo,Moderna,25073
+Valle del Cauca,50-59,Primera dosis,Pfizer,150664
+Valle del Cauca,50-59,Primera dosis,Sinovac,103605
+Valle del Cauca,50-59,Primera dosis,AstraZeneca,47377
+Valle del Cauca,50-59,Primera dosis,Janssen,23206
+Valle del Cauca,50-59,Primera dosis,Moderna,82116
+Valle del Cauca,50-59,Segunda dosis,Pfizer,128453
+Valle del Cauca,50-59,Segunda dosis,Sinovac,111336
+Valle del Cauca,50-59,Segunda dosis,AstraZeneca,38256
+Valle del Cauca,50-59,Segunda dosis,Janssen,27835
+Valle del Cauca,50-59,Segunda dosis,Moderna,39716
+Valle del Cauca,50-59,Refuerzo,Pfizer,61072
+Valle del Cauca,50-59,Refuerzo,Sinovac,65722
+Valle del Cauca,50-59,Refuerzo,AstraZeneca,26687
+Valle del Cauca,50-59,Refuerzo,Janssen,13958
+Valle del Cauca,50-59,Refuerzo,Moderna,24157
+Valle del Cauca,60-69,Primera dosis,Pfizer,100120
+Valle del Cauca,60-69,Primera dosis,Sinovac,100477
+Valle del Cauca,60-69,Primera dosis,AstraZeneca,53879
+Valle del Cauca,60-69,Primera dosis,Janssen,23293
+Valle del Cauca,60-69,Primera dosis,Moderna,15453
+Valle del Cauca,60-69,Segunda dosis,Pfizer,98627
+Valle del Cauca,60-69,Segunda dosis,Sinovac,77144
+Valle del Cauca,60-69,Segunda dosis,AstraZeneca,43362
+Valle del Cauca,60-69,Segunda dosis,Janssen,25573
+Valle del Cauca,60-69,Segunda dosis,Moderna,16754
+Valle del Cauca,60-69,Refuerzo,Pfizer,38647
+Valle del Cauca,60-69,Refuerzo,Sinovac,36973
+Valle del Cauca,60-69,Refuerzo,AstraZeneca,18868
+Valle del Cauca,60-69,Refuerzo,Janssen,6464
+Valle del Cauca,60-69,Refuerzo,Moderna,22339
+Valle del Cauca,70-79,Primera dosis,Pfizer,60749
+Valle del Cauca,70-79,Primera dosis,Sinovac,59239
+Valle del Cauca,70-79,Primera dosis,AstraZeneca,20384
+Valle del Cauca,70-79,Primera dosis,Janssen,13666
+Valle del Cauca,70-79,Primera dosis,Moderna,19116
+Valle del Cauca,70-79,Segunda dosis,Pfizer,58387
+Valle del Cauca,70-79,Segunda dosis,Sinovac,41137
+Valle del Cauca,70-79,Segunda dosis,AstraZeneca,21714
+Valle del Cauca,70-79,Segunda dosis,Janssen,12525
+Valle del Cauca,70-79,Segunda dosis,Moderna,22748
+Valle del Cauca,70-79,Refuerzo,Pfizer,33215
+Valle del Cauca,70-79,Refuerzo,Sinovac,25699
+Valle del Cauca,70-79,Refuerzo,AstraZeneca,11845
+Valle del Cauca,70-79,Refuerzo,Janssen,8467
+Valle del Cauca,70-79,Refuerzo,Moderna,6320
+Valle del Cauca,80+,Primera dosis,Pfizer,52754
+Valle del Cauca,80+,Primera dosis,Sinovac,46191
+Valle del Cauca,80+,Primera dosis,AstraZeneca,19337
+Valle del Cauca,80+,Primera dosis,Janssen,7542
+Valle del Cauca,80+,Primera dosis,Moderna,7272
+Valle del Cauca,80+,Segunda dosis,Pfizer,40709
+Valle del Cauca,80+,Segunda dosis,Sinovac,38172
+Valle del Cauca,80+,Segunda dosis,AstraZeneca,20856
+Valle del Cauca,80+,Segunda dosis,Janssen,7747
+Valle del Cauca,80+,Segunda dosis,Moderna,11801
+Valle del Cauca,80+,Refuerzo,Pfizer,22285
+Valle del Cauca,80+,Refuerzo,Sinovac,20233
+Valle del Cauca,80+,Refuerzo,AstraZeneca,10306
+Valle del Cauca,80+,Refuerzo,Janssen,5826
+Valle del Cauca,80+,Refuerzo,Moderna,1554
+Vaupés,12-17,Primera dosis,Pfizer,391
+Vaupés,12-17,Primera dosis,Sinovac,338
+Vaupés,12-17,Primera dosis,AstraZeneca,198
+Vaupés,12-17,Primera dosis,Janssen,117
+Vaupés,12-17,Primera dosis,Moderna,142
+Vaupés,12-17,Segunda dosis,Pfizer,364
+Vaupés,12-17,Segunda dosis,Sinovac,345
+Vaupés,12-17,Segunda dosis,AstraZeneca,150
+Vaupés,12-17,Segunda dosis,Janssen,84
+Vaupés,12-17,Segunda dosis,Moderna,53
+Vaupés,12-17,Refuerzo,Pfizer,190
+Vaupés,12-17,Refuerzo,Sinovac,149
+Vaupés,12-17,Refuerzo,AstraZeneca,77
+Vaupés,12-17,Refuerzo,Janssen,42
+Vaupés,12-17,Refuerzo,Moderna,112
+Vaupés,18-29,Primera dosis,Pfizer,1076
+Vaupés,18-29,Primera dosis,Sinovac,959
+Vaupés,18-29,Primera dosis,AstraZeneca,369
+Vaupés,18-29,Primera dosis,Janssen,265
+Vaupés,18-29,Primera dosis,Moderna,201
+Vaupés,18-29,Segunda dosis,Pfizer,969
+Vaupés,18-29,Segunda dosis,Sinovac,769
+Vaupés,18-29,Segunda dosis,AstraZeneca,260
+Vaupés,18-29,Segunda dosis,Janssen,145
+Vaupés,18-29,Segunda dosis,Moderna,399
+Vaupés,18-29,Refuerzo,Pfizer,498
+Vaupés,18-29,Refuerzo,Sinovac,366
+Vaupés,18-29,Refuerzo,AstraZeneca,237
+Vaupés,18-29,Refuerzo,Janssen,78
+Vaupés,18-29,Refuerzo,Moderna,176
+Vaupés,30-39,Primera dosis,Pfizer,920
+Vaupés,30-39,Primera dosis,Sinovac,697
+Vaupés,30-39,Primera dosis,AstraZeneca,437
+Vaupés,30-39,Primera dosis,Janssen,128
+Vaupés,30-39,Primera dosis,Moderna,310
+Vaupés,30-39,Segunda dosis,Pfizer,803
+Vaupés,30-39,Segunda dosis,Sinovac,548
+Vaupés,30-39,Segunda dosis,AstraZeneca,393
+Vaupés,30-39,Segunda dosis,Janssen,183
+Vaupés,30-39,Segunda dosis,Moderna,178
+Vaupés,30-39,Refuerzo,Pfizer,502
+Vaupés,30-39,Refuerzo,Sinovac,421
+Vaupés,30-39,Refuerzo,AstraZeneca,203
+Vaupés,30-39,Refuerzo,Janssen,80
+Vaupés,30-39,Refuerzo,Moderna,92
+Vaupés,40-49,Primera dosis,Pfizer,821
+Vaupés,40-49,Primera dosis,Sinovac,768
+Vaupés,40-49,Primera dosis,AstraZeneca,311
+Vaupés,40-49,Primera dosis,Janssen,219
+Vaupés,40-49,Primera dosis,Moderna,121
+Vaupés,40-49,Segunda dosis,Pfizer,801
+Vaupés,40-49,Segunda dosis,Sinovac,567
+Vaupés,40-49,Segunda dosis,AstraZeneca,313
+Vaupés,40-49,Segunda dosis,Janssen,102
+Vaupés,40-49,Segunda dosis,Moderna,232
+Vaupés,40-49,Refuerzo,Pfizer,332
+Vaupés,40-49,Refuerzo,Sinovac,319
+Vaupés,40-49,Refuerzo,AstraZeneca,182
+Vaupés,40-49,Refuerzo,Janssen,95
+Vaupés,40-49,Refuerzo,Moderna,93
+Vaupés,50-59,Primera dosis,Pfizer,663
+Vaupés,50-59,Primera dosis,Sinovac,591
+Vaupés,50-59,Primera dosis,AstraZeneca,281
+Vaupés,50-59,Primera dosis,Janssen,145
+Vaupés,50-59,Primera dosis,Moderna,136
+Vaupés,50-59,Segunda dosis,Pfizer,625
+Vaupés,50-59,Segunda dosis,Sinovac,573
+Vaupés,50-59,Segunda dosis,AstraZeneca,214
+Vaupés,50-59,Segunda dosis,Janssen,97
+Vaupés,50-59,Segunda dosis,Moderna,145
+Vaupés,50-59,Refuerzo,Pfizer,360
+Vaupés,50-59,Refuerzo,Sinovac,262
+Vaupés,50-59,Refuerzo,AstraZeneca,114
+Vaupés,50-59,Refuerzo,Janssen,74
+Vaupés,50-59,Refuerzo,Moderna,166
+Vaupés,60-69,Primera dosis,Pfizer,399
+Vaupés,60-69,Primera dosis,Sinovac,393
+Vaupés,60-69,Primera dosis,AstraZeneca,160
+Vaupés,60-69,Primera dosis,Janssen,84
+Vaupés,60-69,Primera dosis,Moderna,237
+Vaupés,60-69,Segunda dosis,Pfizer,408
+Vaupés,60-69,Segunda dosis,Sinovac,292
+Vaupés,60-69,Segunda dosis,AstraZeneca,126
+Vaupés,60-69,Segunda dosis,Janssen,72
+Vaupés,60-69,Segunda dosis,Moderna,200
+Vaupés,60-69,Refuerzo,Pfizer,188
+Vaupés,60-69,Refuerzo,Sinovac,211
+Vaupés,60-69,Refuerzo,AstraZeneca,99
+Vaupés,60-69,Refuerzo,Janssen,51
+Vaupés,60-69,Refuerzo,Moderna,66
+Vaupés,70-79,Primera dosis,Pfizer,283
+Vaupés,70-79,Primera dosis,Sinovac,211
+Vaupés,70-79,Primera dosis,AstraZeneca,91
+Vaupés,70-79,Primera dosis,Janssen,44
+Vaupés,70-79,Primera dosis,Moderna,118
+Vaupés,70-79,Segunda dosis,Pfizer,201
+Vaupés,70-79,Segunda dosis,Sinovac,197
+Vaupés,70-79,Segunda dosis,AstraZeneca,93
+Vaupés,70-79,Segunda dosis,Janssen,50
+Vaupés,70-79,Segunda dosis,Moderna,114
+Vaupés,70-79,Refuerzo,Pfizer,105
+Vaupés,70-79,Refuerzo,Sinovac,93
+Vaupés,70-79,Refuerzo,AstraZeneca,41
+Vaupés,70-79,Refuerzo,Janssen,22
+Vaupés,70-79,Refuerzo,Moderna,78
+Vaupés,80+,Primera dosis,Pfizer,201
+Vaupés,80+,Primera dosis,Sinovac,199
+Vaupés,80+,Primera dosis,AstraZeneca,103
+Vaupés,80+,Primera dosis,Janssen,56
+Vaupés,80+,Primera dosis,Moderna,9
+Vaupés,80+,Segunda dosis,Pfizer,144
+Vaupés,80+,Segunda dosis,Sinovac,151
+Vaupés,80+,Segunda dosis,AstraZeneca,69
+Vaupés,80+,Segunda dosis,Janssen,45
+Vaupés,80+,Segunda dosis,Moderna,68
+Vaupés,80+,Refuerzo,Pfizer,103
+Vaupés,80+,Refuerzo,Sinovac,89
+Vaupés,80+,Refuerzo,AstraZeneca,56
+Vaupés,80+,Refuerzo,Janssen,24
+Vaupés,80+,Refuerzo,Moderna,13
+Vichada,12-17,Primera dosis,Pfizer,1101
+Vichada,12-17,Primera dosis,Sinovac,989
+Vichada,12-17,Primera dosis,AstraZeneca,417
+Vichada,12-17,Primera dosis,Janssen,310
+Vichada,12-17,Primera dosis,Moderna,434
+Vichada,12-17,Segunda dosis,Pfizer,1133
+Vichada,12-17,Segunda dosis,Sinovac,852
+Vichada,12-17,Segunda dosis,AstraZeneca,534
+Vichada,12-17,Segunda dosis,Janssen,214
+Vichada,12-17,Segunda dosis,Moderna,230
+Vichada,12-17,Refuerzo,Pfizer,576
+Vichada,12-17,Refuerzo,Sinovac,643
+Vichada,12-17,Refuerzo,AstraZeneca,225
+Vichada,12-17,Refuerzo,Janssen,143
+Vichada,12-17,Refuerzo,Moderna,304
+Vichada,18-29,Primera dosis,Pfizer,2974
+Vichada,18-29,Primera dosis,Sinovac,2107
+Vichada,18-29,Primera dosis,AstraZeneca,895
+Vichada,18-29,Primera dosis,Janssen,702
+Vichada,18-29,Primera dosis,Moderna,1726
+Vichada,18-29,Segunda dosis,Pfizer,2654
+Vichada,18-29,Segunda dosis,Sinovac,2366
+Vichada,18-29,Segunda dosis,AstraZeneca,1001
+Vichada,18-29,Segunda dosis,Janssen,388
+Vichada,18-29,Segunda dosis,Moderna,622
+Vichada,18-29,Refuerzo,Pfizer,1595
+Vichada,18-29,Refuerzo,Sinovac,1444
+Vichada,18-29,Refuerzo,AstraZeneca,891
+Vichada,18-29,Refuerzo,Janssen,400
+Vichada,18-29,Refuerzo,Moderna,178
+Vichada,30-39,Primera dosis,Pfizer,2302
+Vichada,30-39,Primera dosis,Sinovac,2160
+Vichada,30-39,Primera dosis,AstraZeneca,972
+Vichada,30-39,Primera dosis,Janssen,396
+Vichada,30-39,Primera dosis,Moderna,1468
+Vichada,30-39,Segunda dosis,Pfizer,2037
+Vichada,30-39,Segunda dosis,Sinovac,2197
+Vichada,30-39,Segunda dosis,AstraZeneca,1039
+Vichada,30-39,Segunda dosis,Janssen,525
+Vichada,30-39,Segunda dosis,Moderna,871
+Vichada,30-39,Refuerzo,Pfizer,1290
+Vichada,30-39,Refuerzo,Sinovac,1103
+Vichada,30-39,Refuerzo,AstraZeneca,555
+Vichada,30-39,Refuerzo,Janssen,325
+Vichada,30-39,Refuerzo,Moderna,724
+Vichada,40-49,Primera dosis,Pfizer,2160
+Vichada,40-49,Primera dosis,Sinovac,1920
+Vichada,40-49,Primera dosis,AstraZeneca,989
+Vichada,40-49,Primera dosis,Janssen,536
+Vichada,40-49,Primera dosis,Moderna,505
+Vichada,40-49,Segunda dosis,Pfizer,1800
+Vichada,40-49,Segunda dosis,Sinovac,1607
+Vichada,40-49,Segunda dosis,AstraZeneca,538
+Vichada,40-49,Segunda dosis,Janssen,484
+Vichada,40-49,Segunda dosis,Moderna,591
+Vichada,40-49,Refuerzo,Pfizer,911
+Vichada,40-49,Refuerzo,Sinovac,965
+Vichada,40-49,Refuerzo,AstraZeneca,382
+Vichada,40-49,Refuerzo,Janssen,159
+Vichada,40-49,Refuerzo,Moderna,517
+Vichada,50-59,Primera dosis,Pfizer,1867
+Vichada,50-59,Primera dosis,Sinovac,1517
+Vichada,50-59,Primera dosis,AstraZeneca,782
+Vichada,50-59,Primera dosis,Janssen,289
+Vichada,50-59,Primera dosis,Moderna,644
+Vichada,50-59,Segunda dosis,Pfizer,1494
+Vichada,50-59,Segunda dosis,Sinovac,1452
+Vichada,50-59,Segunda dosis,AstraZeneca,681
+Vichada,50-59,Segunda dosis,Janssen,431
+Vichada,50-59,Segunda dosis,Moderna,346
+Vichada,50-59,Refuerzo,Pfizer,732
+Vichada,50-59,Refuerzo,Sinovac,740
+Vichada,50-59,Refuerzo,AstraZeneca,446
+Vichada,50-59,Refuerzo,Janssen,209
+Vichada,50-59,Refuerzo,Moderna,202
+Vichada,60-69,Primera dosis,Pfizer,1324
+Vichada,60-69,Primera dosis,Sinovac,1138
+Vichada,60-69,Primera dosis,AstraZeneca,418
+Vichada,60-69,Primera dosis,Janssen,187
+Vichada,60-69,Primera dosis,Moderna,658
+Vichada,60-69,Segunda dosis,Pfizer,1149
+Vichada,60-69,Segunda dosis,Sinovac,970
+Vichada,60-69,Segunda dosis,AstraZeneca,622
+Vichada,60-69,Segunda dosis,Janssen,208
+Vichada,60-69,Segunda dosis,Moderna,245
+Vichada,60-69,Refuerzo,Pfizer,766
+Vichada,60-69,Refuerzo,Sinovac,696
+Vichada,60-69,Refuerzo,AstraZeneca,274
+Vichada,60-69,Refuerzo,Janssen,144
+Vichada,60-69,Refuerzo,Moderna,163
+Vichada,70-79,Primera dosis,Pfizer,692
+Vichada,70-79,Primera dosis,Sinovac,717
+Vichada,70-79,Primera dosis,AstraZeneca,256
+Vichada,70-79,Primera dosis,Janssen,127
+Vichada,70-79,Primera dosis,Moderna,356
+Vichada,70-79,Segunda dosis,Pfizer,712
+Vichada,70-79,Segunda dosis,Sinovac,628
+Vichada,70-79,Segunda dosis,AstraZeneca,346
+Vichada,70-79,Segunda dosis,Janssen,181
+Vichada,70-79,Segunda dosis,Moderna,5
+Vichada,70-79,Refuerzo,Pfizer,360
+Vichada,70-79,Refuerzo,Sinovac,267
+Vichada,70-79,Refuerzo,AstraZeneca,139
+Vichada,70-79,Refuerzo,Janssen,58
+Vichada,70-79,Refuerzo,Moderna,76
+Vichada,80+,Primera dosis,Pfizer,544
+Vichada,80+,Primera dosis,Sinovac,442
+Vichada,80+,Primera dosis,AstraZeneca,176
+Vichada,80+,Primera dosis,Janssen,129
+Vichada,80+,Primera dosis,Moderna,269
+Vichada,80+,Segunda dosis,Pfizer,401
+Vichada,80+,Segunda dosis,Sinovac,404
+Vichada,80+,Segunda dosis,AstraZeneca,246
+Vichada,80+,Segunda dosis,Janssen,85
+Vichada,80+,Segunda dosis,Moderna,158
+Vichada,80+,Refuerzo,Pfizer,266
+Vichada,80+,Refuerzo,Sinovac,240
+Vichada,80+,Refuerzo,AstraZeneca,100
+Vichada,80+,Refuerzo,Janssen,61
+Vichada,80+,Refuerzo,Moderna,102
+Bogotá D.C.,12-17,Primera dosis,Pfizer,156511
+Bogotá D.C.,12-17,Primera dosis,Sinovac,114352
+Bogotá D.C.,12-17,Primera dosis,AstraZeneca,56891
+Bogotá D.C.,12-17,Primera dosis,Janssen,27882
+Bogotá D.C.,12-17,Primera dosis,Moderna,100888
+Bogotá D.C.,12-17,Segunda dosis,Pfizer,146223
+Bogotá D.C.,12-17,Segunda dosis,Sinovac,114800
+Bogotá D.C.,12-17,Segunda dosis,AstraZeneca,71946
+Bogotá D.C.,12-17,Segunda dosis,Janssen,22175
+Bogotá D.C.,12-17,Segunda dosis,Moderna,35846
+Bogotá D.C.,12-17,Refuerzo,Pfizer,74914
+Bogotá D.C.,12-17,Refuerzo,Sinovac,67788
+Bogotá D.C.,12-17,Refuerzo,AstraZeneca,29356
+Bogotá D.C.,12-17,Refuerzo,Janssen,13633
+Bogotá D.C.,12-17,Refuerzo,Moderna,14989
+Bogotá D.C.,18-29,Primera dosis,Pfizer,389538
+Bogotá D.C.,18-29,Primera dosis,Sinovac,360934
+Bogotá D.C.,18-29,Primera dosis,AstraZeneca,200752
+Bogotá D.C.,18-29,Primera dosis,Janssen,61563
+Bogotá D.C.,18-29,Primera dosis,Moderna,67273
+Bogotá D.C.,18-29,Segunda dosis,Pfizer,334482
+Bogotá D.C.,18-29,Segunda dosis,Sinovac,261190
+Bogotá D.C.,18-29,Segunda dosis,AstraZeneca,178302
+Bogotá D.C.,18-29,Segunda dosis,Janssen,50875
+Bogotá D.C.,18-29,Segunda dosis,Moderna,120383
+Bogotá D.C.,18-29,Refuerzo,Pfizer,141032
+Bogotá D.C.,18-29,Refuerzo,Sinovac,115500
+Bogotá D.C.,18-29,Refuerzo,AstraZeneca,69116
+Bogotá D.C.,18-29,Refuerzo,Janssen,23644
+Bogotá D.C.,18-29,Refuerzo,Moderna,109289
+Bogotá D.C.,30-39,Primera dosis,Pfizer,387867
+Bogotá D.C.,30-39,Primera dosis,Sinovac,303000
+Bogotá D.C.,30-39,Primera dosis,AstraZeneca,153255
+Bogotá D.C.,30-39,Primera dosis,Janssen,99229
+Bogotá D.C.,30-39,Primera dosis,Moderna,49573
+Bogotá D.C.,30-39,Segunda dosis,Pfizer,296665
+Bogotá D.C.,30-39,Segunda dosis,Sinovac,279841
+Bogotá D.C.,30-39,Segunda dosis,AstraZeneca,116699
+Bogotá D.C.,30-39,Segunda dosis,Janssen,52261
+Bogotá D.C.,30-39,Segunda dosis,Moderna,108958
+Bogotá D.C.,30-39,Refuerzo,Pfizer,183069
+Bogotá D.C.,30-39,Refuerzo,Sinovac,156914
+Bogotá D.C.,30-39,Refuerzo,AstraZeneca,62654
+Bogotá D.C.,30-39,Refuerzo,Janssen,35542
+Bogotá D.C.,30-39,Refuerzo,Moderna,47138
+Bogotá D.C.,40-49,Primera dosis,Pfizer,308834
+Bogotá D.C.,40-49,Primera dosis,Sinovac,282299
+Bogotá D.C.,40-49,Primera dosis,AstraZeneca,152326
+Bogotá D.C.,40-49,Primera dosis,Janssen,68047
+Bogotá D.C.,40-49,Primera dosis,Moderna,31685
+Bogotá D.C.,40-49,Segunda dosis,Pfizer,229483
+Bogotá D.C.,40-49,Segunda dosis,Sinovac,218486
+Bogotá D.C.,40-49,Segunda dosis,AstraZeneca,104832
+Bogotá D.C.,40-49,Segunda dosis,Janssen,42736
+Bogotá D.C.,40-49,Segunda dosis,Moderna,129333
+Bogotá D.C.,40-49,Refuerzo,Pfizer,157551
+Bogotá D.C.,40-49,Refuerzo,Sinovac,126058
+Bogotá D.C.,40-49,Refuerzo,AstraZeneca,78511
+Bogotá D.C.,40-49,Refuerzo,Janssen,34631
+Bogotá D.C.,40-49,Refuerzo,Moderna,2241
+Bogotá D.C.,50-59,Primera dosis,Pfizer,236883
+Bogotá D.C.,50-59,Primera dosis,Sinovac,174071
+Bogotá D.C.,50-59,Primera dosis,AstraZeneca,93013
+Bogotá D.C.,50-59,Primera dosis,Janssen,35414
+Bogotá D.C.,50-59,Primera dosis,Moderna,139825
+Bogotá D.C.,50-59,Segunda dosis,Pfizer,186416
+Bogotá D.C.,50-59,Segunda dosis,Sinovac,198098
+Bogotá D.C.,50-59,Segunda dosis,AstraZeneca,79132
+Bogotá D.C.,50-59,Segunda dosis,Janssen,42717
+Bogotá D.C.,50-59,Segunda dosis,Moderna,74956
+Bogotá D.C.,50-59,Refuerzo,Pfizer,99160
+Bogotá D.C.,50-59,Refuerzo,Sinovac,73091
+Bogotá D.C.,50-59,Refuerzo,AstraZeneca,56849
+Bogotá D.C.,50-59,Refuerzo,Janssen,19002
+Bogotá D.C.,50-59,Refuerzo,Moderna,38930
+Bogotá D.C.,60-69,Primera dosis,Pfizer,195223
+Bogotá D.C.,60-69,Primera dosis,Sinovac,140673
+Bogotá D.C.,60-69,Primera dosis,AstraZeneca,78618
+Bogotá D.C.,60-69,Primera dosis,Janssen,29878
+Bogotá D.C.,60-69,Primera dosis,Moderna,64679
+Bogotá D.C.,60-69,Segunda dosis,Pfizer,162216
+Bogotá D.C.,60-69,Segunda dosis,Sinovac,127214
+Bogotá D.C.,60-69,Segunda dosis,AstraZeneca,73405
+Bogotá D.C.,60-69,Segunda dosis,Janssen,40745
+Bogotá D.C.,60-69,Segunda dosis,Moderna,40400
+Bogotá D.C.,60-69,Refuerzo,Pfizer,96167
+Bogotá D.C.,60-69,Refuerzo,Sinovac,78656
+Bogotá D.C.,60-69,Refuerzo,AstraZeneca,52155
+Bogotá D.C.,60-69,Refuerzo,Janssen,20733
+Bogotá D.C.,60-69,Refuerzo,Moderna,25748
+Bogotá D.C.,70-79,Primera dosis,Pfizer,99590
+Bogotá D.C.,70-79,Primera dosis,Sinovac,88781
+Bogotá D.C.,70-79,Primera dosis,AstraZeneca,42953
+Bogotá D.C.,70-79,Primera dosis,Janssen,16287
+Bogotá D.C.,70-79,Primera dosis,Moderna,38392
+Bogotá D.C.,70-79,Segunda dosis,Pfizer,82097
+Bogotá D.C.,70-79,Segunda dosis,Sinovac,66834
+Bogotá D.C.,70-79,Segunda dosis,AstraZeneca,42622
+Bogotá D.C.,70-79,Segunda dosis,Janssen,15709
+Bogotá D.C.,70-79,Segunda dosis,Moderna,52077
+Bogotá D.C.,70-79,Refuerzo,Pfizer,45240
+Bogotá D.C.,70-79,Refuerzo,Sinovac,40630
+Bogotá D.C.,70-79,Refuerzo,AstraZeneca,24378
+Bogotá D.C.,70-79,Refuerzo,Janssen,7937
+Bogotá D.C.,70-79,Refuerzo,Moderna,23769
+Bogotá D.C.,80+,Primera dosis,Pfizer,75726
+Bogotá D.C.,80+,Primera dosis,Sinovac,64791
+Bogotá D.C.,80+,Primera dosis,AstraZeneca,26333
+Bogotá D.C.,80+,Primera dosis,Janssen,12629
+Bogotá D.C.,80+,Primera dosis,Moderna,38028
+Bogotá D.C.,80+,Segunda dosis,Pfizer,75134
+Bogotá D.C.,80+,Segunda dosis,Sinovac,49440
+Bogotá D.C.,80+,Segunda dosis,AstraZeneca,20445
+Bogotá D.C.,80+,Segunda dosis,Janssen,15420
+Bogotá D.C.,80+,Segunda dosis,Moderna,35560
+Bogotá D.C.,80+,Refuerzo,Pfizer,36806
+Bogotá D.C.,80+,Refuerzo,Sinovac,36438
+Bogotá D.C.,80+,Refuerzo,AstraZeneca,12099
+Bogotá D.C.,80+,Refuerzo,Janssen,9153
+Bogotá D.C.,80+,Refuerzo,Moderna,21936

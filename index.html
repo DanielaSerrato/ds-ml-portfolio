@@ -335,7 +335,6 @@
 
   <div class="section-tabs">
     <button class="section-tab active" onclick="showTab('all')"><span data-lang="en">All</span><span data-lang="es">Todos</span></button>
-    <button class="section-tab" onclick="showTab('bi')">Analytics & BI</button>
     <button class="section-tab" onclick="showTab('ml')">Data Science & ML</button>
     <button class="section-tab" onclick="showTab('ai')">AI in Production</button>
     <button class="section-tab" onclick="showTab('edu')">EdTech & Teaching</button>
@@ -343,65 +342,7 @@
 
   <div class="projects-grid" id="projects-grid">
 
-    <!-- ═══ ANALYTICS & BI ═══ -->
-
-    <div class="card card-dark project-card fade-in" data-cat="bi">
-      <div class="card-dots"><span></span><span></span><span></span></div>
-      <div class="card-body">
-        <span class="project-tag tag-bi">Analytics & BI</span>
-        <h3 data-lang="en">Executive KPI Dashboard</h3>
-        <h3 data-lang="es">Dashboard Ejecutivo de KPIs</h3>
-        <div class="project-context">
-          <div class="ctx"><span class="ctx-l">Problem</span><span data-lang="en">C-suite needs real-time visibility into business performance across multiple commercial partners — reporting takes days.</span><span data-lang="es">La alta direccion necesita visibilidad en tiempo real del desempeno del negocio — la reporteria tarda dias.</span></div>
-          <div class="ctx"><span class="ctx-l">Approach</span><span data-lang="en">Designed semantic model in Power BI with automated monthly close. KPI governance across 8 partners. DAX measures for roll rates, NCL, vintage analysis.</span><span data-lang="es">Disene modelo semantico en Power BI con cierre mensual automatizado. Gobierno de KPIs para 8 socios. Medidas DAX para roll rates, NCL, vintage.</span></div>
-          <div class="ctx"><span class="ctx-l res">Result</span><span data-lang="en">Reduced reporting turnaround from several days to one. Single source of truth for executive decisions.</span><span data-lang="es">Reduje el tiempo de reporte de varios dias a uno. Fuente unica de verdad para decisiones ejecutivas.</span></div>
-        </div>
-        <div class="project-tech"><span>Streamlit</span><span>Python</span><span>Plotly</span><span>Pandas</span><span>KPI Governance</span></div>
-        <div class="project-links">
-          <a href="https://ds-kpi-dashboard.streamlit.app" target="_blank" class="project-link pl-solid-green" data-lang="en">Open Streamlit App &rarr;</a>
-          <a href="https://ds-kpi-dashboard.streamlit.app" target="_blank" class="project-link pl-solid-green" data-lang="es">Abrir App Streamlit &rarr;</a>
-          <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/tree/master/dashboards/streamlit_kpi" target="_blank" class="project-link pl-outline-green">Code</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card card-light project-card fade-in" data-cat="bi">
-      <div class="card-dots"><span></span><span></span><span></span></div>
-      <div class="card-body">
-        <span class="project-tag tag-bi">Analytics & BI</span>
-        <h3 data-lang="en">Credit Risk Portfolio Monitor</h3>
-        <h3 data-lang="es">Monitor de Portafolio de Riesgo Crediticio</h3>
-        <div class="project-context dk">
-          <div class="ctx"><span class="ctx-l">Problem</span><span data-lang="en">Risk team manually tracks delinquency across 50GB+ portfolio tables — no centralized view of Over 30/90 metrics.</span><span data-lang="es">El equipo de riesgo rastrea mora manualmente en tablas de 50GB+ — sin vista centralizada de metricas Over 30/90.</span></div>
-          <div class="ctx"><span class="ctx-l">Approach</span><span data-lang="en">Redesigned processing with permanent indexed tables in SQL Server. Built semantic model tracking roll rates, vintage curves, delinquency bands.</span><span data-lang="es">Redisene el procesamiento con tablas permanentes indexadas en SQL Server. Modelo semantico con roll rates, curvas vintage, bandas de mora.</span></div>
-          <div class="ctx"><span class="ctx-l res">Result</span><span data-lang="en">Automated credit risk analytics for C-suite and HQ in Brazil. Scalable to growing portfolio.</span><span data-lang="es">Analitica de riesgo crediticio automatizada para la alta direccion y casa matriz en Brasil. Escalable.</span></div>
-        </div>
-        <div class="project-tech"><span>Power BI</span><span>SQL Server</span><span>PySpark</span><span>Databricks</span><span>Risk Analytics</span></div>
-        <div class="project-links">
-          <a href="dashboards/powerbi_credit_risk/README_BUILD_GUIDE.md" class="project-link pl-solid-navy" data-lang="en">View Dashboard &rarr;</a>
-          <a href="dashboards/powerbi_credit_risk/README_BUILD_GUIDE.md" class="project-link pl-solid-navy" data-lang="es">Ver Dashboard &rarr;</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card card-dark project-card fade-in" data-cat="bi">
-      <div class="card-dots"><span></span><span></span><span></span></div>
-      <div class="card-body">
-        <span class="project-tag tag-bi">Analytics & BI</span>
-        <h3 data-lang="en">E-commerce Logistics Operations</h3>
-        <h3 data-lang="es">Operaciones Logisticas E-commerce</h3>
-        <div class="project-context">
-          <div class="ctx"><span class="ctx-l">Problem</span><span data-lang="en">Delivery times vary wildly across zones. No visibility into last-mile performance or carrier efficiency.</span><span data-lang="es">Los tiempos de entrega varian entre zonas. Sin visibilidad de desempeno de ultima milla o eficiencia de transportadoras.</span></div>
-          <div class="ctx"><span class="ctx-l">Approach</span><span data-lang="en">Built geospatial seller-to-carrier model. Integrated traffic, demand, and ops data. Interactive dashboard with drill-down by zone, carrier, and time.</span><span data-lang="es">Construi modelo geoespacial vendedor-transportadora. Integre datos de trafico, demanda y operacion. Dashboard interactivo con drill-down.</span></div>
-          <div class="ctx"><span class="ctx-l res">Result</span><span data-lang="en">Contributed to 23% delivery time reduction. Real-time operational visibility for business teams.</span><span data-lang="es">Contribui a reduccion del 23% en tiempos de entrega. Visibilidad operacional en tiempo real.</span></div>
-        </div>
-        <div class="project-tech"><span>HTML</span><span>Chart.js</span><span>JavaScript</span><span>Geospatial</span><span>Logistics</span></div>
-        <div class="project-links">
-          <a href="dashboards/html_logistics/index.html" target="_blank" class="project-link pl-solid-green" data-lang="en">Open Dashboard &rarr;</a>
-          <a href="dashboards/html_logistics/index.html" target="_blank" class="project-link pl-solid-green" data-lang="es">Abrir Dashboard &rarr;</a>
-        </div>
-      </div>
-    </div>
+    <!-- ═══ ANALYTICS & BI (dashboards coming soon) ═══ -->
 
     <!-- ═══ DATA SCIENCE & ML ═══ -->
 
@@ -417,8 +358,9 @@
         </div>
         <div class="project-tech"><span>Python</span><span>Scikit-learn</span><span>K-Means</span><span>RFM</span></div>
         <div class="project-links">
-          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/01_customer_segmentation.ipynb" target="_blank" class="project-link pl-solid-navy">Colab &rarr;</a>
-          <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/01_customer_segmentation.ipynb" target="_blank" class="project-link pl-outline-navy">GitHub</a>
+          <a href="projects/01-customer-segmentation.html" class="project-link pl-solid-navy" data-lang="en">View Details &rarr;</a>
+          <a href="projects/01-customer-segmentation.html" class="project-link pl-solid-navy" data-lang="es">Ver Detalle &rarr;</a>
+          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/01_customer_segmentation.ipynb" target="_blank" class="project-link pl-outline-navy">Colab</a>
         </div>
       </div>
     </div>
@@ -435,8 +377,9 @@
         </div>
         <div class="project-tech"><span>Python</span><span>XGBoost</span><span>SMOTE</span><span>GridSearchCV</span></div>
         <div class="project-links">
-          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/02_churn_prediction.ipynb" target="_blank" class="project-link pl-solid-green">Colab &rarr;</a>
-          <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/02_churn_prediction.ipynb" target="_blank" class="project-link pl-outline-green">GitHub</a>
+          <a href="projects/02-churn-prediction.html" class="project-link pl-solid-green" data-lang="en">View Details &rarr;</a>
+          <a href="projects/02-churn-prediction.html" class="project-link pl-solid-green" data-lang="es">Ver Detalle &rarr;</a>
+          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/02_churn_prediction.ipynb" target="_blank" class="project-link pl-outline-green">Colab</a>
         </div>
       </div>
     </div>
@@ -453,8 +396,9 @@
         </div>
         <div class="project-tech"><span>Python</span><span>LightGBM</span><span>XGBoost</span><span>Scorecard</span></div>
         <div class="project-links">
-          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/03_credit_risk_scoring.ipynb" target="_blank" class="project-link pl-solid-navy">Colab &rarr;</a>
-          <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/03_credit_risk_scoring.ipynb" target="_blank" class="project-link pl-outline-navy">GitHub</a>
+          <a href="projects/03-credit-risk-scoring.html" class="project-link pl-solid-navy" data-lang="en">View Details &rarr;</a>
+          <a href="projects/03-credit-risk-scoring.html" class="project-link pl-solid-navy" data-lang="es">Ver Detalle &rarr;</a>
+          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/03_credit_risk_scoring.ipynb" target="_blank" class="project-link pl-outline-navy">Colab</a>
         </div>
       </div>
     </div>
@@ -471,8 +415,9 @@
         </div>
         <div class="project-tech"><span>Python</span><span>Statsmodels</span><span>ARIMA</span><span>SARIMA</span></div>
         <div class="project-links">
-          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/04_sales_forecasting.ipynb" target="_blank" class="project-link pl-solid-green">Colab &rarr;</a>
-          <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/04_sales_forecasting.ipynb" target="_blank" class="project-link pl-outline-green">GitHub</a>
+          <a href="projects/04-sales-forecasting.html" class="project-link pl-solid-green" data-lang="en">View Details &rarr;</a>
+          <a href="projects/04-sales-forecasting.html" class="project-link pl-solid-green" data-lang="es">Ver Detalle &rarr;</a>
+          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/04_sales_forecasting.ipynb" target="_blank" class="project-link pl-outline-green">Colab</a>
         </div>
       </div>
     </div>
@@ -489,8 +434,9 @@
         </div>
         <div class="project-tech"><span>Python</span><span>TF-IDF</span><span>NLP</span><span>WordCloud</span></div>
         <div class="project-links">
-          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/05_nlp_sentiment_analysis.ipynb" target="_blank" class="project-link pl-solid-navy">Colab &rarr;</a>
-          <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/05_nlp_sentiment_analysis.ipynb" target="_blank" class="project-link pl-outline-navy">GitHub</a>
+          <a href="projects/05-nlp-sentiment.html" class="project-link pl-solid-navy" data-lang="en">View Details &rarr;</a>
+          <a href="projects/05-nlp-sentiment.html" class="project-link pl-solid-navy" data-lang="es">Ver Detalle &rarr;</a>
+          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/05_nlp_sentiment_analysis.ipynb" target="_blank" class="project-link pl-outline-navy">Colab</a>
         </div>
       </div>
     </div>
@@ -507,8 +453,47 @@
         </div>
         <div class="project-tech"><span>Python</span><span>DBSCAN</span><span>SciPy</span><span>Geospatial</span></div>
         <div class="project-links">
-          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/06_geospatial_delivery_optimization.ipynb" target="_blank" class="project-link pl-solid-green">Colab &rarr;</a>
-          <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/06_geospatial_delivery_optimization.ipynb" target="_blank" class="project-link pl-outline-green">GitHub</a>
+          <a href="projects/06-geospatial-delivery.html" class="project-link pl-solid-green" data-lang="en">View Details &rarr;</a>
+          <a href="projects/06-geospatial-delivery.html" class="project-link pl-solid-green" data-lang="es">Ver Detalle &rarr;</a>
+          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/06_geospatial_delivery_optimization.ipynb" target="_blank" class="project-link pl-outline-green">Colab</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-light project-card fade-in" data-cat="ml">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-ds">SQL</span>
+        <h3>SQL Exploratory Analysis — Colombian Indicators</h3>
+        <div class="project-context dk">
+          <div class="ctx"><span class="ctx-l">Problem</span><span data-lang="en">Multiple government datasets (population, poverty, education, employment) need cross-analysis to identify socioeconomic patterns across 33 departments.</span><span data-lang="es">Multiples datasets del gobierno (poblacion, pobreza, educacion, empleo) requieren analisis cruzado para identificar patrones socioeconomicos en 33 departamentos.</span></div>
+          <div class="ctx"><span class="ctx-l">Approach</span><span data-lang="en">Advanced SQL with DuckDB: multi-table JOINs, window functions (ROW_NUMBER, LAG, NTILE), CTEs, correlated subqueries, conditional aggregation pivots, comprehensive scorecard.</span><span data-lang="es">SQL avanzado con DuckDB: JOINs multi-tabla, window functions (ROW_NUMBER, LAG, NTILE), CTEs, subqueries correlacionados, pivots de agregacion condicional, scorecard integral.</span></div>
+          <div class="ctx"><span class="ctx-l res">Result</span><span data-lang="en">Comprehensive department-level scorecard combining 4 data sources. Regional patterns identified: Pacific and Caribbean regions consistently underperform.</span><span data-lang="es">Scorecard departamental integrando 4 fuentes. Patrones regionales: Pacifica y Caribe consistentemente rezagadas.</span></div>
+        </div>
+        <div class="project-tech"><span>SQL</span><span>DuckDB</span><span>Python</span><span>CTEs</span><span>Window Functions</span></div>
+        <div class="project-links">
+          <a href="projects/07-sql-analysis.html" class="project-link pl-solid-navy" data-lang="en">View Details &rarr;</a>
+          <a href="projects/07-sql-analysis.html" class="project-link pl-solid-navy" data-lang="es">Ver Detalle &rarr;</a>
+          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/07_sql_exploratory_analysis.ipynb" target="_blank" class="project-link pl-outline-navy">Colab</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-dark project-card fade-in" data-cat="ml">
+      <div class="card-dots"><span></span><span></span><span></span></div>
+      <div class="card-body">
+        <span class="project-tag tag-ts">Deep Learning</span>
+        <h3>Economic Forecasting with LSTM</h3>
+        <div class="project-context">
+          <div class="ctx"><span class="ctx-l">Problem</span><span data-lang="en">Colombian economic indicators (unemployment, inflation) show complex seasonal and shock patterns — traditional models miss non-linear dynamics.</span><span data-lang="es">Indicadores economicos colombianos (desempleo, inflacion) muestran patrones estacionales y de shock complejos — modelos tradicionales pierden dinamicas no lineales.</span></div>
+          <div class="ctx"><span class="ctx-l">Approach</span><span data-lang="en">4 deep learning architectures: Simple LSTM, Stacked LSTM, GRU, Bidirectional LSTM. Multi-step forecasting (3-month horizon). Department-level predictions for 10 departments.</span><span data-lang="es">4 arquitecturas de deep learning: LSTM simple, LSTM apilado, GRU, LSTM bidireccional. Forecasting multi-paso (horizonte 3 meses). Predicciones por departamento para 10 departamentos.</span></div>
+          <div class="ctx"><span class="ctx-l res">Result</span><span data-lang="en">LSTM captures COVID shock recovery and seasonal patterns. Multi-step forecast degrades gracefully. Architecture comparison reveals GRU as efficient alternative.</span><span data-lang="es">LSTM captura recuperacion post-COVID y patrones estacionales. Forecast multi-paso degrada gradualmente. Comparacion revela GRU como alternativa eficiente.</span></div>
+        </div>
+        <div class="project-tech"><span>TensorFlow</span><span>Keras</span><span>LSTM</span><span>GRU</span><span>Python</span></div>
+        <div class="project-links">
+          <a href="projects/08-deep-learning-forecasting.html" class="project-link pl-solid-green" data-lang="en">View Details &rarr;</a>
+          <a href="projects/08-deep-learning-forecasting.html" class="project-link pl-solid-green" data-lang="es">Ver Detalle &rarr;</a>
+          <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/08_deep_learning_economic_forecasting.ipynb" target="_blank" class="project-link pl-outline-green">Colab</a>
         </div>
       </div>
     </div>

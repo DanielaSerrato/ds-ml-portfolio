@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sales Forecasting — Daniela Serrato</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0F1E3D;--navy-deep:#091327;--cream:#F7F4ED;--red:#ff5f57;--yellow:#febc2e;--green:#28c840;--blue:#6495ed;--grid-line:rgba(174,198,230,0.08);--card-shadow:0 8px 32px rgba(0,0,0,0.3);--card-radius:12px}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'JetBrains Mono',monospace;background:var(--navy);color:var(--cream);min-height:100vh;background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:70px 70px;font-size:clamp(14px,1.6vw,18px);line-height:1.6}
+  .top-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,30,61,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(174,198,230,0.12);padding:0.8rem 2rem;display:flex;align-items:center;justify-content:space-between}
+  .back-link{color:var(--cream);text-decoration:none;font-size:0.82em;font-weight:500;opacity:0.7;transition:opacity 0.2s}.back-link:hover{opacity:1;color:var(--green)}
+  .lang-toggle{display:flex;gap:2px;background:rgba(174,198,230,0.1);border-radius:6px;padding:2px}
+  .lang-btn{padding:0.2rem 0.5rem;border:none;background:transparent;color:var(--cream);font-family:inherit;font-size:0.7em;font-weight:600;cursor:pointer;border-radius:4px;opacity:0.5;transition:all 0.2s}.lang-btn.active{background:var(--green);color:var(--navy);opacity:1}
+  .container{max-width:900px;margin:0 auto;padding:6rem 2rem 3rem}
+  .project-hero{margin-bottom:2.5rem}
+  .project-tag{display:inline-block;font-size:0.6em;font-weight:600;text-transform:uppercase;letter-spacing:1px;padding:0.25rem 0.7rem;border-radius:4px;margin-bottom:0.8rem}
+  .tag-ts{background:rgba(255,165,0,0.15);color:orange}
+  .project-hero h1{font-size:clamp(1.5rem,3.5vw,2.4rem);font-weight:700;line-height:1.15;letter-spacing:-1px}.project-hero h1 .accent{color:var(--green)}
+  .card{border-radius:var(--card-radius);box-shadow:var(--card-shadow);overflow:hidden;position:relative;margin-bottom:2rem}
+  .card-light{background:var(--cream);color:var(--navy)}.card-dark{background:var(--navy-deep);color:var(--cream);border:1px solid rgba(174,198,230,0.1)}
+  .card-dots{display:flex;gap:6px;padding:12px 16px;position:absolute;top:0;left:0;z-index:2}.card-dots span{width:12px;height:12px;border-radius:50%}.card-dots span:nth-child(1){background:var(--red)}.card-dots span:nth-child(2){background:var(--yellow)}.card-dots span:nth-child(3){background:var(--green)}
+  .card-body{padding:2.8rem 2rem 2rem}
+  .section-title{font-size:clamp(1rem,2vw,1.3rem);font-weight:700;margin-bottom:1rem;letter-spacing:-0.5px}.section-title .dot{color:var(--green)}
+  .text-block{font-size:0.82em;font-weight:300;opacity:0.85;line-height:1.7}.text-block p{margin-bottom:1rem}.text-block p:last-child{margin-bottom:0}
+  .steps{list-style:none;counter-reset:step}.steps li{counter-increment:step;position:relative;padding-left:2.5rem;margin-bottom:1.2rem;font-size:0.82em;font-weight:300;line-height:1.6}.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:1.8rem;height:1.8rem;border-radius:50%;background:var(--green);color:var(--navy);font-weight:700;font-size:0.78em;display:flex;align-items:center;justify-content:center}.card-light .steps li::before{background:var(--navy);color:var(--cream)}.steps li strong{font-weight:600}
+  .metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+  .metric-card{background:rgba(40,200,64,0.08);border:1px solid rgba(40,200,64,0.2);border-radius:10px;padding:1.2rem;text-align:center}.card-light .metric-card{background:rgba(40,200,64,0.1);border-color:rgba(40,200,64,0.25)}
+  .metric-value{font-size:1.6rem;font-weight:700;color:var(--green)}.card-light .metric-value{color:#1a7a2e}.metric-label{font-size:0.68em;font-weight:400;opacity:0.7;margin-top:0.2rem}
+  .tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.8rem}
+  .tech-item{display:flex;align-items:baseline;gap:0.6rem;font-size:0.82em}.tech-item .tech-name{font-weight:600;white-space:nowrap}.tech-item .tech-role{font-weight:300;opacity:0.7}.tech-item::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0}
+  .cta-row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}
+  .btn{display:inline-block;font-family:inherit;font-size:0.82em;font-weight:600;padding:0.7rem 1.8rem;border-radius:8px;text-decoration:none;cursor:pointer;transition:all 0.2s;border:2px solid transparent}
+  .btn-solid{background:var(--green);color:var(--navy);border-color:var(--green)}.btn-solid:hover{background:var(--cream);border-color:var(--cream)}
+  .btn-outline{background:transparent;color:var(--green);border-color:var(--green)}.btn-outline:hover{background:var(--green);color:var(--navy)}
+  footer{text-align:center;padding:2rem;font-size:0.7em;opacity:0.4}
+  @media(max-width:768px){.container{padding:5rem 1rem 2rem}.metrics-grid{grid-template-columns:1fr 1fr}.tech-grid{grid-template-columns:1fr}}
+  .fade-in{opacity:0;transform:translateY(20px);transition:all 0.6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+  [data-lang="es"]{display:none}body.lang-es [data-lang="es"]{display:initial}body.lang-es [data-lang="en"]{display:none}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="../index.html" class="back-link" data-lang="en">&larr; Back to Portfolio</a>
+  <a href="../index.html" class="back-link" data-lang="es">&larr; Volver al Portafolio</a>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="project-hero fade-in">
+    <span class="project-tag tag-ts">Time Series</span>
+    <h1 data-lang="en">Sales Forecasting<span class="accent">.</span></h1>
+    <h1 data-lang="es">Pronostico de Ventas<span class="accent">.</span></h1>
+  </div>
+
+  <div class="card card-dark fade-in">
+    <div class="card-dots"><span></span><span></span><span></span></div>
+    <div class="card-body">
+      <div class="section-title" data-lang="en">Overview<span class="dot">.</span></div>
+      <div class="section-title" data-lang="es">Descripcion General<span class="dot">.</span></div>
+      <div class="text-block">
+        <p data-lang="en">Retail businesses make inventory and budget decisions months in advance. Overstock ties up capital; understock means lost sales. Accurate demand forecasting is the bridge between operational planning and financial reality.</p>
+        <p data-lang="es">Los negocios de retail toman decisiones de inventario y presupuesto con meses de anticipacion. El sobrestock inmoviliza capital; el substock significa ventas perdidas. El pronostico preciso de demanda es el puente entre la planeacion operativa y la realidad financiera.</p>
+        <p data-lang="en">This project builds a 3-month sales forecast using two complementary approaches: statistical time series models (ARIMA/SARIMA with systematic grid search) and machine learning (Random Forest with engineered lag features). Both are evaluated on a 12-week holdout to ensure the forecast generalizes to unseen periods.</p>
+        <p data-lang="es">Este proyecto construye un pronostico de ventas a 3 meses usando dos enfoques complementarios: modelos estadisticos de series de tiempo (ARIMA/SARIMA con busqueda sistematica de parametros) y machine learning (Random Forest con variables de rezago ingenierizadas). Ambos se evaluan en un holdout de 12 semanas para asegurar que el pronostico generalice a periodos no vistos.</p>
+        <p data-lang="en">The comparison matters: SARIMA captures seasonality explicitly, while Random Forest can learn non-linear demand patterns. Understanding when each excels guides production model selection.</p>
+        <p data-lang="es">La comparacion importa: SARIMA captura estacionalidad explicitamente, mientras Random Forest puede aprender patrones de demanda no lineales. Entender cuando cada uno sobresale guia la seleccion del modelo en produccion.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-light fade-in">
+    <div class="card-dots"><span></span><span></span><span></span></div>
+    <div class="card-body">
+      <div class="section-title" data-lang="en">Approach<span class="dot">.</span></div>
+      <div class="section-title" data-lang="es">Metodologia<span class="dot">.</span></div>
+      <ol class="steps">
+        <li data-lang="en"><strong>Time Series EDA:</strong> Decomposed series into trend, seasonality, and residual components. Tested stationarity with ADF test. Analyzed ACF/PACF for parameter hints.</li>
+        <li data-lang="es"><strong>EDA de Series de Tiempo:</strong> Descompuse la serie en componentes de tendencia, estacionalidad y residuos. Probe estacionariedad con test ADF. Analice ACF/PACF para pistas de parametros.</li>
+        <li data-lang="en"><strong>ARIMA/SARIMA Grid Search:</strong> Systematic search over (p,d,q) and seasonal (P,D,Q,s) parameters. Ranked by AIC/BIC. Best model: SARIMA with weekly seasonality.</li>
+        <li data-lang="es"><strong>Busqueda de Parametros ARIMA/SARIMA:</strong> Busqueda sistematica sobre parametros (p,d,q) y estacionales (P,D,Q,s). Rankeados por AIC/BIC. Mejor modelo: SARIMA con estacionalidad semanal.</li>
+        <li data-lang="en"><strong>ML Feature Engineering:</strong> Created lag features (1, 7, 14, 28 days), rolling means/std (7, 14, 30 windows), day-of-week, month, and holiday indicators for Random Forest.</li>
+        <li data-lang="es"><strong>Ingenieria de Variables ML:</strong> Cree variables de rezago (1, 7, 14, 28 dias), medias/std moviles (ventanas 7, 14, 30), dia de semana, mes e indicadores de festivos para Random Forest.</li>
+        <li data-lang="en"><strong>Model Evaluation:</strong> Both models evaluated on 12-week holdout. Metrics: MAPE, RMSE, MAE. Full residual diagnostics (normality, autocorrelation, heteroscedasticity).</li>
+        <li data-lang="es"><strong>Evaluacion de Modelos:</strong> Ambos modelos evaluados en holdout de 12 semanas. Metricas: MAPE, RMSE, MAE. Diagnostico completo de residuos (normalidad, autocorrelacion, heterocedasticidad).</li>
+        <li data-lang="en"><strong>Forecast & Comparison:</strong> Generated 3-month forward forecasts from both models. RF matched SARIMA accuracy, offering a non-parametric alternative for production deployment.</li>
+        <li data-lang="es"><strong>Pronostico y Comparacion:</strong> Genere pronosticos a 3 meses de ambos modelos. RF igualo la precision de SARIMA, ofreciendo una alternativa no parametrica para despliegue en produccion.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card card-dark fade-in">
+    <div class="card-dots"><span></span><span></span><span></span></div>
+    <div class="card-body">
+      <div class="section-title" data-lang="en">Key Results<span class="dot">.</span></div>
+      <div class="section-title" data-lang="es">Resultados Clave<span class="dot">.</span></div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value">6.2%</div>
+          <div class="metric-label">MAPE</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">12 wk</div>
+          <div class="metric-label" data-lang="en">Holdout Period</div>
+          <div class="metric-label" data-lang="es">Periodo de Holdout</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">2</div>
+          <div class="metric-label" data-lang="en">Model Families Compared</div>
+          <div class="metric-label" data-lang="es">Familias de Modelos Comparadas</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">SARIMA</div>
+          <div class="metric-label" data-lang="en">Best Statistical Model</div>
+          <div class="metric-label" data-lang="es">Mejor Modelo Estadistico</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">RF</div>
+          <div class="metric-label" data-lang="en">Competitive ML Alternative</div>
+          <div class="metric-label" data-lang="es">Alternativa ML Competitiva</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">3 mo</div>
+          <div class="metric-label" data-lang="en">Forecast Horizon</div>
+          <div class="metric-label" data-lang="es">Horizonte de Pronostico</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-light fade-in">
+    <div class="card-dots"><span></span><span></span><span></span></div>
+    <div class="card-body">
+      <div class="section-title" data-lang="en">Tech Stack<span class="dot">.</span></div>
+      <div class="section-title" data-lang="es">Stack Tecnologico<span class="dot">.</span></div>
+      <div class="tech-grid">
+        <div class="tech-item"><span class="tech-name">Python</span><span class="tech-role" data-lang="en">Core language</span><span class="tech-role" data-lang="es">Lenguaje principal</span></div>
+        <div class="tech-item"><span class="tech-name">Statsmodels</span><span class="tech-role" data-lang="en">ARIMA, SARIMA, diagnostics</span><span class="tech-role" data-lang="es">ARIMA, SARIMA, diagnosticos</span></div>
+        <div class="tech-item"><span class="tech-name">Scikit-learn</span><span class="tech-role" data-lang="en">Random Forest, metrics</span><span class="tech-role" data-lang="es">Random Forest, metricas</span></div>
+        <div class="tech-item"><span class="tech-name">Pandas</span><span class="tech-role" data-lang="en">Time series manipulation, lag features</span><span class="tech-role" data-lang="es">Manipulacion de series, variables de rezago</span></div>
+        <div class="tech-item"><span class="tech-name">Matplotlib</span><span class="tech-role" data-lang="en">Forecast plots, residual diagnostics</span><span class="tech-role" data-lang="es">Graficos de pronostico, diagnosticos</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-row fade-in">
+    <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/04_sales_forecasting.ipynb" target="_blank" class="btn btn-solid" data-lang="en">Open in Colab &rarr;</a>
+    <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/04_sales_forecasting.ipynb" target="_blank" class="btn btn-solid" data-lang="es">Abrir en Colab &rarr;</a>
+    <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/04_sales_forecasting.ipynb" target="_blank" class="btn btn-outline" data-lang="en">View Source Code</a>
+    <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/04_sales_forecasting.ipynb" target="_blank" class="btn btn-outline" data-lang="es">Ver Codigo Fuente</a>
+  </div>
+
+</div>
+
+<footer>&copy; 2026 Daniela Serrato</footer>
+
+<script>
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+function setLang(lang){document.body.classList.toggle('lang-es',lang==='es');document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===lang.toUpperCase()))}
+</script>
+
+</body>
+</html>

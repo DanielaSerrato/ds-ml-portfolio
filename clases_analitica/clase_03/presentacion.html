@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 3 — Estadística descriptiva para no estadísticos</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --navy: #0F1E3D;
+            --navy-light: #1A2E55;
+            --accent: #4A9DFF;
+            --accent-green: #34D399;
+            --accent-orange: #F59E0B;
+            --accent-red: #EF4444;
+            --text: #E2E8F0;
+            --text-muted: #94A3B8;
+            --card-bg: rgba(255,255,255,0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--navy);
+            color: var(--text);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: clamp(2rem, 5vw, 6rem);
+            text-align: center;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .slide.active { display: flex; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(1.6rem, 3.5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        p, li {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 900px;
+        }
+
+        .highlight { color: var(--accent); font-weight: 600; }
+        .highlight-green { color: var(--accent-green); font-weight: 600; }
+        .highlight-orange { color: var(--accent-orange); font-weight: 600; }
+
+        ul {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        ul li {
+            padding: 0.6rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '\25B8';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+
+        .card h4 {
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        }
+
+        .big-icon {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(74,157,255,0.3);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+            margin-top: 1rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .table-visual {
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+        }
+
+        .table-visual th {
+            background: var(--accent);
+            color: var(--navy);
+            padding: 0.8rem 1.5rem;
+            font-weight: 700;
+        }
+
+        .table-visual td {
+            padding: 0.6rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+        }
+
+        .table-visual tr:nth-child(even) td {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+
+        .nav button {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s;
+        }
+
+        .nav button:hover {
+            background: var(--accent);
+            color: var(--navy);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 2.2rem;
+            left: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 100;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .exercise-box {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .exercise-box h4 {
+            color: var(--accent-green);
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 1.2rem;
+            height: 200px;
+            margin-top: 1.5rem;
+            max-width: 700px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .bar-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .bar {
+            width: clamp(40px, 6vw, 70px);
+            border-radius: 6px 6px 0 0;
+            transition: height 0.4s ease;
+        }
+
+        .bar-label {
+            font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .bar-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .visual-row {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            max-width: 900px;
+        }
+
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .marker-line {
+            width: 3px;
+            height: 40px;
+            display: inline-block;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Slide 1: Title -->
+<div class="slide active" id="slide-1">
+    <div class="big-icon">📐</div>
+    <h1>Estadística descriptiva para no estadísticos</h1>
+    <p class="subtitle">Analítica de Datos — Clase 3</p>
+    <p>Medir, resumir e interpretar datos de vacunación COVID en Colombia</p>
+</div>
+
+<!-- Slide 2: Goal -->
+<div class="slide" id="slide-2">
+    <div class="big-icon">🎯</div>
+    <h2>Objetivo de hoy</h2>
+    <h3 style="color: var(--accent-green); max-width: 700px;">Calcular e interpretar medidas básicas sin fórmulas complejas</h3>
+    <ul style="margin-top: 1.5rem;">
+        <li>Entender qué son la <span class="highlight">media</span>, <span class="highlight">mediana</span> y <span class="highlight">moda</span></li>
+        <li>Saber cuándo usar cada una</li>
+        <li>Calcular proporciones y tasas que permitan <span class="highlight-green">comparar departamentos</span></li>
+        <li>Crear tablas resumen con funciones de Excel</li>
+    </ul>
+</div>
+
+<!-- Slide 3: The dataset -->
+<div class="slide" id="slide-3">
+    <h2>Nuestro dataset</h2>
+    <h3>Vacunación COVID por departamento — MinSalud</h3>
+    <p style="margin-bottom: 1rem;">Fuente: <span class="highlight">datos.gov.co</span> — Ministerio de Salud y Protección Social</p>
+    <div class="card-grid">
+        <div class="card">
+            <h4>Departamento</h4>
+            <p>Antioquia, Bogotá, Valle del Cauca, etc. <span class="highlight-orange">(categórica)</span></p>
+        </div>
+        <div class="card">
+            <h4>Dosis aplicadas</h4>
+            <p>Cantidad de dosis por registro <span class="highlight-orange">(numérica)</span></p>
+        </div>
+        <div class="card">
+            <h4>Tipo de vacuna</h4>
+            <p>Pfizer, Sinovac, AstraZeneca, etc. <span class="highlight-orange">(categórica)</span></p>
+        </div>
+        <div class="card">
+            <h4>Grupo etario</h4>
+            <p>Rango de edad de los vacunados <span class="highlight-orange">(categórica)</span></p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: Central tendency -->
+<div class="slide" id="slide-4">
+    <h2>Medidas de tendencia central</h2>
+    <h3>Tres formas de responder: "¿cuál es el valor típico?"</h3>
+    <div class="card-grid">
+        <div class="card">
+            <h4 style="color: var(--accent);">Media (Promedio)</h4>
+            <p>Sumar todos los valores y dividir entre la cantidad.</p>
+            <p style="margin-top: 0.5rem; color: var(--text);">Ejemplo: (10+20+30) / 3 = <span class="highlight">20</span></p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-green);">Mediana</h4>
+            <p>El valor que queda justo en la mitad cuando se ordenan los datos.</p>
+            <p style="margin-top: 0.5rem; color: var(--text);">Ejemplo: 10, <span class="highlight-green">20</span>, 30</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-orange);">Moda</h4>
+            <p>El valor que más se repite.</p>
+            <p style="margin-top: 0.5rem; color: var(--text);">Ejemplo: 10, 20, 20, 30 → Moda = <span class="highlight-orange">20</span></p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: When to use each -->
+<div class="slide" id="slide-5">
+    <h2>¿Cuándo usar cada una?</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h4 style="color: var(--accent);">Media</h4>
+            <p>Cuando los datos son <span class="highlight">simétricos</span> y no hay valores extremos.</p>
+            <p style="margin-top: 0.5rem;">Ejemplo: calificaciones de un examen.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-green);">Mediana</h4>
+            <p>Cuando los datos tienen <span class="highlight-green">valores atípicos</span> que distorsionan el promedio.</p>
+            <p style="margin-top: 0.5rem;">Ejemplo: salarios (pocos muy altos "jalan" la media).</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-orange);">Moda</h4>
+            <p>Para datos <span class="highlight-orange">categóricos</span> o cuando buscamos "lo más frecuente".</p>
+            <p style="margin-top: 0.5rem;">Ejemplo: vacuna más aplicada, grupo etario más vacunado.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 6: Why is the median different from the mean? -->
+<div class="slide" id="slide-6">
+    <h2>¿Por qué la mediana es diferente al promedio?</h2>
+    <h3>Ejemplo: salarios mensuales en una oficina</h3>
+    <table class="table-visual">
+        <thead>
+            <tr>
+                <th>Empleado</th>
+                <th>Salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Ana</td><td>$1.800.000</td></tr>
+            <tr><td>Carlos</td><td>$2.000.000</td></tr>
+            <tr><td>Diana</td><td>$2.200.000</td></tr>
+            <tr><td>Esteban</td><td>$2.500.000</td></tr>
+            <tr><td style="color: var(--accent-orange);">Gerente</td><td style="color: var(--accent-orange);">$18.000.000</td></tr>
+        </tbody>
+    </table>
+    <p style="margin-top: 1.5rem;">
+        Media = <span class="highlight">$5.300.000</span> — Mediana = <span class="highlight-green">$2.200.000</span>
+    </p>
+    <p>Un solo valor extremo "jaló" la media. La <span class="highlight-green">mediana</span> refleja mejor la realidad del grupo.</p>
+</div>
+
+<!-- Slide 7: Dispersion -->
+<div class="slide" id="slide-7">
+    <h2>Medidas de dispersión</h2>
+    <h3>¿Qué tan dispersos están los datos?</h3>
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="card">
+            <h4>Rango</h4>
+            <p>Diferencia entre el valor máximo y el mínimo.</p>
+            <p style="margin-top: 0.5rem; color: var(--text);">Rango = <span class="highlight">MAX</span> - <span class="highlight">MIN</span></p>
+            <p style="margin-top: 0.5rem;">Si el rango es grande, los datos varían mucho entre departamentos.</p>
+        </div>
+        <div class="card">
+            <h4>Desviación estándar</h4>
+            <p>Mide qué tan lejos están los valores del promedio, en promedio.</p>
+            <p style="margin-top: 0.5rem; color: var(--text);"><span class="highlight-green">Baja</span> = datos agrupados cerca del promedio</p>
+            <p><span class="highlight-orange">Alta</span> = datos muy dispersos</p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">No necesitan memorizar fórmulas: Excel las calcula con <span class="highlight">DESVEST()</span> y <span class="highlight">MAX()-MIN()</span></p>
+</div>
+
+<!-- Slide 8: Exercise 1 -->
+<div class="slide" id="slide-8">
+    <h2>Ejercicio 1 — Resumen por departamento</h2>
+    <div class="exercise-box">
+        <h4>Instrucciones (15 min)</h4>
+        <ul>
+            <li>Abrir el dataset de vacunación COVID en Excel</li>
+            <li>Para la columna de <span class="highlight">dosis aplicadas por departamento</span>, calcular:</li>
+            <li style="padding-left: 3rem;"><span class="highlight">SUMA()</span> — Total de dosis</li>
+            <li style="padding-left: 3rem;"><span class="highlight">PROMEDIO()</span> — Media</li>
+            <li style="padding-left: 3rem;"><span class="highlight">MEDIANA()</span> — Mediana</li>
+            <li style="padding-left: 3rem;"><span class="highlight">MIN()</span> y <span class="highlight">MAX()</span></li>
+            <li>Comparar media vs. mediana: ¿son similares o muy diferentes? ¿Por qué?</li>
+        </ul>
+    </div>
+    <p style="margin-top: 1rem;">⏱️ <span class="highlight-orange">15 minutos</span></p>
+</div>
+
+<!-- Slide 9: Proportions and rates -->
+<div class="slide" id="slide-9">
+    <h2>Proporciones y tasas</h2>
+    <h3>¿Por qué los totales engañan?</h3>
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="card" style="border-color: rgba(239,68,68,0.4);">
+            <h4 style="color: var(--accent-red);">Solo con totales</h4>
+            <p>Bogotá: <span class="highlight">5.200.000</span> dosis</p>
+            <p>Vaupés: <span class="highlight">28.000</span> dosis</p>
+            <p style="margin-top: 0.5rem;">Conclusión: "Bogotá vacunó mucho más"</p>
+        </div>
+        <div class="card" style="border-color: rgba(52,211,153,0.4);">
+            <h4 style="color: var(--accent-green);">Con tasa por 1.000 hab.</h4>
+            <p>Bogotá: <span class="highlight-green">680</span> dosis / 1.000 hab.</p>
+            <p>Vaupés: <span class="highlight-green">620</span> dosis / 1.000 hab.</p>
+            <p style="margin-top: 0.5rem;">Conclusión: "La cobertura es comparable"</p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">
+        Fórmula: <span class="highlight">(dosis / población) × 1.000</span> — Así comparamos departamentos de forma justa.
+    </p>
+</div>
+
+<!-- Slide 10: Excel functions -->
+<div class="slide" id="slide-10">
+    <h2>Funciones condicionales en Excel</h2>
+    <h3>Resumir datos con condiciones</h3>
+    <div class="code-block">
+        <span style="color: var(--accent-green);">// Sumar dosis solo de un departamento</span><br>
+        =SUMAR.SI(<span style="color: var(--accent);">rango_criterio</span>, <span style="color: var(--accent-orange);">"Antioquia"</span>, <span style="color: var(--accent);">rango_suma</span>)<br><br>
+
+        <span style="color: var(--accent-green);">// Contar registros de una vacuna específica</span><br>
+        =CONTAR.SI(<span style="color: var(--accent);">rango</span>, <span style="color: var(--accent-orange);">"Pfizer"</span>)<br><br>
+
+        <span style="color: var(--accent-green);">// Promedio de dosis para un grupo etario</span><br>
+        =PROMEDIO.SI(<span style="color: var(--accent);">rango_criterio</span>, <span style="color: var(--accent-orange);">"60-69"</span>, <span style="color: var(--accent);">rango_promedio</span>)
+    </div>
+    <p style="margin-top: 1rem;">Estas funciones permiten <span class="highlight-green">filtrar y resumir</span> sin necesidad de ordenar ni copiar datos.</p>
+</div>
+
+<!-- Slide 11: Exercise 2 -->
+<div class="slide" id="slide-11">
+    <h2>Ejercicio 2 — Tabla comparativa</h2>
+    <div class="exercise-box">
+        <h4>Instrucciones (20 min)</h4>
+        <ul>
+            <li>Crear una tabla resumen con al menos <span class="highlight">5 departamentos</span></li>
+            <li>Columnas de la tabla:</li>
+            <li style="padding-left: 3rem;">Departamento</li>
+            <li style="padding-left: 3rem;">Total dosis (<span class="highlight">SUMAR.SI</span>)</li>
+            <li style="padding-left: 3rem;">Cantidad de registros (<span class="highlight">CONTAR.SI</span>)</li>
+            <li style="padding-left: 3rem;">Promedio de dosis (<span class="highlight">PROMEDIO.SI</span>)</li>
+            <li>¿Cuál departamento tiene el mayor total? ¿Y el mayor promedio? ¿Son el mismo?</li>
+        </ul>
+    </div>
+    <p style="margin-top: 1rem;">⏱️ <span class="highlight-orange">20 minutos</span></p>
+</div>
+
+<!-- Slide 12: Pivot tables intro -->
+<div class="slide" id="slide-12">
+    <h2>Tablas dinámicas</h2>
+    <h3>Resumir arrastrando y soltando</h3>
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="card">
+            <h4>¿Qué son?</h4>
+            <p>Una herramienta de Excel que crea resúmenes automáticos: totales, promedios, conteos, por categoría.</p>
+            <p style="margin-top: 0.5rem;">Sin fórmulas. Solo <span class="highlight">arrastrar campos</span>.</p>
+        </div>
+        <div class="card">
+            <h4>¿Cómo se crean?</h4>
+            <p><span style="color: var(--accent);">Paso 1:</span> Seleccionar todos los datos</p>
+            <p><span style="color: var(--accent);">Paso 2:</span> Insertar → Tabla dinámica</p>
+            <p><span style="color: var(--accent);">Paso 3:</span> Arrastrar "Departamento" a filas</p>
+            <p><span style="color: var(--accent);">Paso 4:</span> Arrastrar "Dosis" a valores (Suma)</p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">Las tablas dinámicas hacen en <span class="highlight-green">segundos</span> lo que las funciones SI hacen en minutos.</p>
+</div>
+
+<!-- Slide 13: Interpretation -->
+<div class="slide" id="slide-13">
+    <div class="big-icon">💡</div>
+    <h2>Interpretar los resultados</h2>
+    <h3 style="color: var(--accent-green);">Los números solos no dicen nada — hay que hacerles preguntas</h3>
+    <ul style="margin-top: 1rem;">
+        <li>¿Qué <span class="highlight">departamentos</span> vacunaron más en proporción a su población?</li>
+        <li>¿Qué <span class="highlight-green">grupos etarios</span> tienen mayor cobertura?</li>
+        <li>¿Hay departamentos con muchos registros pero pocas dosis? ¿Qué significa?</li>
+        <li>¿La <span class="highlight-orange">vacuna más usada</span> es la misma en todos los departamentos?</li>
+        <li>¿Los datos sugieren algún patrón regional (costa, interior, amazonia)?</li>
+    </ul>
+    <p style="margin-top: 1.5rem;">La estadística descriptiva es el primer paso: <span class="highlight">describir antes de concluir</span>.</p>
+</div>
+
+<!-- Slide 14: Deliverable -->
+<div class="slide" id="slide-14">
+    <h2>Entregable de hoy</h2>
+    <div class="exercise-box">
+        <h4>Para entregar</h4>
+        <ul>
+            <li>Tabla resumen con al menos 5 departamentos comparando: total de dosis, promedio, mediana, mínimo y máximo</li>
+            <li>Uso de al menos una función condicional (<span class="highlight">SUMAR.SI</span>, <span class="highlight">CONTAR.SI</span> o <span class="highlight">PROMEDIO.SI</span>)</li>
+            <li>Un párrafo de <span class="highlight-green">interpretación</span>: ¿Qué departamentos vacunaron más? ¿Qué grupos etarios tienen mayor cobertura? Escribir en oraciones completas, no solo números.</li>
+        </ul>
+    </div>
+    <p style="margin-top: 2rem; font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--text);">
+        Un buen análisis no es el que tiene más fórmulas, sino el que <span class="highlight-green">cuenta una historia con los datos</span>.
+    </p>
+</div>
+
+<!-- Slide 15: What's coming -->
+<div class="slide" id="slide-15">
+    <h2>Lo que viene</h2>
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="card" style="opacity: 0.5;">
+            <h4>Clase 1</h4>
+            <p>¿Qué son los datos y dónde encontrarlos?</p>
+        </div>
+        <div class="card" style="opacity: 0.5;">
+            <h4>Clase 2</h4>
+            <p>Limpiar datos — porque nunca vienen perfectos</p>
+        </div>
+        <div class="card" style="border-color: var(--accent-green);">
+            <h4 style="color: var(--accent-green);">✓ Hoy — Clase 3</h4>
+            <p>Estadística descriptiva — promedios, medianas, tasas</p>
+        </div>
+        <div class="card" style="border-color: var(--accent);">
+            <h4 style="color: var(--accent);">→ Clase 4</h4>
+            <p>Visualización: contar historias con gráficos</p>
+        </div>
+        <div class="card">
+            <h4>Clase 5-6</h4>
+            <p>Análisis exploratorio y Power BI</p>
+        </div>
+        <div class="card">
+            <h4>Clase 7-8</h4>
+            <p>Dashboards interactivos y proyecto final</p>
+        </div>
+    </div>
+</div>
+
+<div class="slide-counter" id="slideCounter">1 / 15</div>
+
+<div class="nav">
+    <button onclick="changeSlide(-1)">&larr; Anterior</button>
+    <button onclick="changeSlide(1)">Siguiente &rarr;</button>
+</div>
+
+<script>
+    let current = 1;
+    const total = 15;
+
+    function changeSlide(dir) {
+        const next = current + dir;
+        if (next < 1 || next > total) return;
+        document.getElementById('slide-' + current).classList.remove('active');
+        current = next;
+        document.getElementById('slide-' + current).classList.add('active');
+        document.getElementById('slideCounter').textContent = current + ' / ' + total;
+        document.getElementById('progressBar').style.width = ((current / total) * 100) + '%';
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); changeSlide(1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); changeSlide(-1); }
+    });
+
+    document.getElementById('progressBar').style.width = ((1 / total) * 100) + '%';
+</script>
+
+</body>
+</html>

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 8 — Proyecto final: dashboard completo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --navy: #0F1E3D;
+            --navy-light: #1A2E55;
+            --accent: #4A9DFF;
+            --green: #34D399;
+            --orange: #F59E0B;
+            --red: #EF4444;
+            --text: #E2E8F0;
+            --text-muted: #94A3B8;
+            --card-bg: rgba(255,255,255,0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--navy);
+            color: var(--text);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: clamp(2rem, 5vw, 6rem);
+            text-align: center;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .slide.active { display: flex; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(1.6rem, 3.5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        p, li {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 900px;
+        }
+
+        .highlight { color: var(--accent); font-weight: 600; }
+        .highlight-green { color: var(--green); font-weight: 600; }
+        .highlight-orange { color: var(--orange); font-weight: 600; }
+        .highlight-red { color: var(--red); font-weight: 600; }
+
+        ul {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        ul li {
+            padding: 0.6rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '\25B8';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+
+        .card h4 {
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        }
+
+        .big-icon {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(74,157,255,0.3);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+            margin-top: 1rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .exercise-box {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .exercise-box h4 {
+            color: var(--green);
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+
+        .nav button {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s;
+        }
+
+        .nav button:hover {
+            background: var(--accent);
+            color: var(--navy);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 2.2rem;
+            left: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 100;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* Timeline styles */
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+            max-width: 1100px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .timeline-item {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            text-align: center;
+            flex: 1 1 130px;
+            max-width: 150px;
+            position: relative;
+        }
+
+        .timeline-item.current {
+            border-color: var(--accent);
+            background: rgba(74, 157, 255, 0.12);
+        }
+
+        .timeline-item .num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+            color: var(--accent);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-item .skill {
+            font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
+        /* Story arc */
+        .story-arc {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .story-phase {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .story-phase h4 {
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .story-phase p {
+            font-size: clamp(0.85rem, 1.4vw, 1rem);
+        }
+
+        /* Star schema visual */
+        .schema-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .schema-center {
+            background: rgba(74, 157, 255, 0.15);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .schema-dims {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .schema-dim {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.75rem, 1.3vw, 0.95rem);
+            color: var(--text-muted);
+        }
+
+        .schema-connector {
+            color: var(--accent);
+            font-size: 1.2rem;
+            letter-spacing: 1rem;
+        }
+
+        /* Page preview cards */
+        .page-preview {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            max-width: 850px;
+            width: 100%;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .page-preview h4 {
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+
+        .page-preview .viz-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .viz-tag {
+            background: rgba(74, 157, 255, 0.12);
+            border: 1px solid rgba(74, 157, 255, 0.25);
+            border-radius: 6px;
+            padding: 0.3rem 0.8rem;
+            font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Celebratory styles */
+        .celebration h2 {
+            background: linear-gradient(135deg, var(--accent), var(--green), var(--orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .badge-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            max-width: 900px;
+            margin-top: 1.5rem;
+        }
+
+        .badge {
+            background: rgba(74, 157, 255, 0.08);
+            border: 1px solid rgba(74, 157, 255, 0.2);
+            border-radius: 20px;
+            padding: 0.5rem 1.2rem;
+            font-size: clamp(0.8rem, 1.3vw, 1rem);
+            color: var(--accent);
+        }
+
+        .deliverable-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            max-width: 700px;
+            width: 100%;
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+
+        .deliverable-box h4 {
+            color: var(--orange);
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Slide 1: Title -->
+<div class="slide active" id="slide-1">
+    <div class="big-icon">&#127919;</div>
+    <h1>Proyecto final:<br><span class="highlight">dashboard completo</span></h1>
+    <p class="subtitle">Clase 8 &mdash; Integramos todo lo aprendido en un solo dashboard</p>
+    <p style="font-size: clamp(0.85rem, 1.4vw, 1.1rem); color: var(--text-muted); margin-top: 1rem;">
+        La clase donde todo se conecta.
+    </p>
+</div>
+
+<!-- Slide 2: Journey recap -->
+<div class="slide" id="slide-2">
+    <h2>Nuestro recorrido</h2>
+    <p style="margin-bottom: 0.5rem;">8 clases, del Excel crudo al dashboard ejecutivo</p>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="num">C1</div>
+            <div class="skill">Excel & limpieza</div>
+        </div>
+        <div class="timeline-item">
+            <div class="num">C2</div>
+            <div class="skill">Poblacion & fuentes</div>
+        </div>
+        <div class="timeline-item">
+            <div class="num">C3</div>
+            <div class="skill">Estadistica descriptiva</div>
+        </div>
+        <div class="timeline-item">
+            <div class="num">C4</div>
+            <div class="skill">Visualizacion & storytelling</div>
+        </div>
+        <div class="timeline-item">
+            <div class="num">C5</div>
+            <div class="skill">Educacion & EDA</div>
+        </div>
+        <div class="timeline-item">
+            <div class="num">C6</div>
+            <div class="skill">Empleo & Power BI</div>
+        </div>
+        <div class="timeline-item">
+            <div class="num">C7</div>
+            <div class="skill">Seguridad & DAX</div>
+        </div>
+        <div class="timeline-item current">
+            <div class="num">C8</div>
+            <div class="skill">Integracion total</div>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem; font-size: clamp(1.1rem, 2vw, 1.5rem); color: var(--text);">
+        Cada clase fue una pieza. Hoy armamos <span class="highlight">el rompecabezas completo</span>.
+    </p>
+</div>
+
+<!-- Slide 3: Today's mission -->
+<div class="slide" id="slide-3">
+    <div class="big-icon">&#127793;</div>
+    <h2>Mision de hoy</h2>
+    <p style="font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--text); margin-bottom: 1.5rem;">
+        Construir un dashboard <span class="highlight">multi-fuente</span> que cuente<br>
+        una historia para <span class="highlight-green">tomadores de decisiones</span>.
+    </p>
+    <div class="card-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 800px;">
+        <div class="card" style="text-align: center;">
+            <h4>Integrar</h4>
+            <p>5 datasets en un solo modelo</p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <h4>Narrar</h4>
+            <p>Historia con inicio, nudo y desenlace</p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <h4>Presentar</h4>
+            <p>Comunicar hallazgos con impacto</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: Available datasets -->
+<div class="slide" id="slide-4">
+    <h2>Datasets disponibles</h2>
+    <p style="margin-bottom: 0.5rem;">Cada uno cuenta una parte de la realidad colombiana</p>
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); max-width: 1050px;">
+        <div class="card" style="border-left: 3px solid var(--accent);">
+            <h4>&#128101; Poblacion</h4>
+            <p>Clase 2 &mdash; Proyecciones DANE por departamento, edad y genero</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--red);">
+            <h4 style="color: var(--red);">&#128200; Pobreza</h4>
+            <p>Clase 4 &mdash; Indice de pobreza multidimensional, NBI por departamento</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--green);">
+            <h4 style="color: var(--green);">&#127891; Educacion</h4>
+            <p>Clase 5 &mdash; Matricula, desercion, cobertura por nivel educativo</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--orange);">
+            <h4 style="color: var(--orange);">&#128188; Empleo</h4>
+            <p>Clase 6 &mdash; Tasa de desempleo, informalidad, ocupacion por sector</p>
+        </div>
+        <div class="card" style="border-left: 3px solid #A78BFA;">
+            <h4 style="color: #A78BFA;">&#128722; Seguridad</h4>
+            <p>Clase 7 &mdash; Homicidios, hurtos y delitos por departamento</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: Step 1 — Design -->
+<div class="slide" id="slide-5">
+    <h3>Paso 1</h3>
+    <h2>Diseno: <span class="highlight">audiencia primero</span></h2>
+    <p style="font-size: clamp(1.1rem, 2vw, 1.5rem); color: var(--text); margin-bottom: 1.5rem;">
+        Antes de abrir Power BI, responde dos preguntas:
+    </p>
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr; max-width: 700px;">
+        <div class="card" style="text-align: center; border-color: rgba(74,157,255,0.3);">
+            <h4>&#129300; Que historia quiero contar?</h4>
+            <p>Un hallazgo central que conecte los datos</p>
+        </div>
+        <div class="card" style="text-align: center; border-color: rgba(52,211,153,0.3);">
+            <h4 style="color: var(--green);">&#127919; Para quien?</h4>
+            <p>Gobernador? Ministro? Inversionista? Ciudadano?</p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">
+        La <span class="highlight-orange">audiencia</span> define el nivel de detalle, el lenguaje y las metricas clave.
+    </p>
+</div>
+
+<!-- Slide 6: Data storytelling arc -->
+<div class="slide" id="slide-6">
+    <h2>Data Storytelling</h2>
+    <p>Todo buen dashboard sigue una narrativa</p>
+    <div class="story-arc">
+        <div class="story-phase" style="border-color: rgba(74,157,255,0.3);">
+            <h4 style="color: var(--accent);">&#128214; Inicio</h4>
+            <p><strong>Contexto:</strong> Asi esta Colombia hoy &mdash; panorama general con KPIs de poblacion y economia</p>
+        </div>
+        <div class="story-phase" style="border-color: rgba(245,158,11,0.3);">
+            <h4 style="color: var(--orange);">&#128293; Nudo</h4>
+            <p><strong>Problema:</strong> Donde estan las brechas? Correlaciones entre educacion, empleo, seguridad y pobreza</p>
+        </div>
+        <div class="story-phase" style="border-color: rgba(52,211,153,0.3);">
+            <h4 style="color: var(--green);">&#9989; Desenlace</h4>
+            <p><strong>Recomendacion:</strong> Que deberia priorizar el tomador de decisiones? Con datos que lo respalden</p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem; font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--text);">
+        Un dashboard sin narrativa es solo <span class="highlight-red">una coleccion de graficos</span>.
+    </p>
+</div>
+
+<!-- Slide 7: Step 2 — Star schema -->
+<div class="slide" id="slide-7">
+    <h3>Paso 2</h3>
+    <h2>Modelo de datos: <span class="highlight">esquema estrella</span></h2>
+    <p>4-5 tablas conectadas por una dimension comun</p>
+    <div class="schema-visual">
+        <div class="schema-dims">
+            <div class="schema-dim">Poblacion</div>
+            <div class="schema-dim">Educacion</div>
+        </div>
+        <div class="schema-connector">&#8595; &nbsp; &#8595;</div>
+        <div class="schema-center">dim_Departamento (codigo, nombre, region)</div>
+        <div class="schema-connector">&#8593; &nbsp; &#8593; &nbsp; &#8593;</div>
+        <div class="schema-dims">
+            <div class="schema-dim">Empleo</div>
+            <div class="schema-dim">Seguridad</div>
+            <div class="schema-dim">Pobreza</div>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">
+        La tabla <span class="highlight">dim_Departamento</span> es el corazon del modelo.<br>
+        <span style="color: var(--text-muted); font-size: clamp(0.9rem, 1.4vw, 1.1rem);">Todas las tablas de hechos se relacionan con ella via codigo de departamento.</span>
+    </p>
+</div>
+
+<!-- Slide 8: Exercise 1 -->
+<div class="slide" id="slide-8">
+    <div class="big-icon">&#9997;&#65039;</div>
+    <h2>Ejercicio 1: <span class="highlight-green">Planifica tu dashboard</span></h2>
+    <div class="exercise-box">
+        <h4>&#9200; 15 minutos</h4>
+        <ul>
+            <li><strong>Define tu audiencia:</strong> Para quien es este dashboard? Que rol tiene?</li>
+            <li><strong>3 preguntas clave:</strong> Que preguntas debe responder tu dashboard?</li>
+            <li><strong>Sketch de paginas:</strong> Dibuja en papel las 3-4 paginas de tu dashboard (nombre, visualizaciones principales, filtros)</li>
+            <li><strong>Historia:</strong> Cual es tu inicio, nudo y desenlace?</li>
+        </ul>
+        <p style="margin-top: 1rem; color: var(--green); font-size: clamp(0.9rem, 1.4vw, 1.1rem);">
+            Tip: Empieza por el desenlace (la recomendacion) y construye hacia atras.
+        </p>
+    </div>
+</div>
+
+<!-- Slide 9: Page 1 — Panorama -->
+<div class="slide" id="slide-9">
+    <h3>Paso 3 &mdash; Construir</h3>
+    <h2>Pagina 1: <span class="highlight">Panorama departamental</span></h2>
+    <div class="page-preview">
+        <h4>&#127758; Vista general &mdash; El contexto</h4>
+        <p>El usuario aterriza aqui y entiende el escenario general de Colombia.</p>
+        <div class="viz-list">
+            <span class="viz-tag">Mapa coropleta</span>
+            <span class="viz-tag">KPI poblacion</span>
+            <span class="viz-tag">KPI pobreza</span>
+            <span class="viz-tag">KPI desempleo</span>
+            <span class="viz-tag">Filtro departamento</span>
+        </div>
+        <p style="margin-top: 0.8rem; font-size: clamp(0.85rem, 1.3vw, 1rem);">
+            <span class="highlight-orange">Medidas DAX sugeridas:</span> Poblacion total, % pobreza promedio, tasa desempleo promedio
+        </p>
+    </div>
+    <p style="margin-top: 1rem;">
+        El mapa es el <span class="highlight">ancla visual</span>: al hacer clic en un departamento, todo se filtra.
+    </p>
+</div>
+
+<!-- Slide 10: Page 2 — Educacion y Empleo -->
+<div class="slide" id="slide-10">
+    <h2>Pagina 2: <span class="highlight">Educacion y empleo</span></h2>
+    <div class="page-preview">
+        <h4>&#127891; La relacion desercion &rarr; desempleo</h4>
+        <p>Aqui exploramos si donde hay mas desercion escolar tambien hay mas desempleo.</p>
+        <div class="viz-list">
+            <span class="viz-tag">Scatter plot</span>
+            <span class="viz-tag">Barras agrupadas</span>
+            <span class="viz-tag">Linea temporal</span>
+            <span class="viz-tag">Tooltip enriquecido</span>
+        </div>
+        <p style="margin-top: 0.8rem; font-size: clamp(0.85rem, 1.3vw, 1rem);">
+            <span class="highlight-orange">Pregunta guia:</span> Los departamentos con menor cobertura educativa tienen mayor desempleo?
+        </p>
+    </div>
+    <p style="margin-top: 1rem;">
+        El <span class="highlight">scatter plot</span> con departamentos revela patrones que las tablas esconden.
+    </p>
+</div>
+
+<!-- Slide 11: Page 3 — Seguridad y pobreza -->
+<div class="slide" id="slide-11">
+    <h2>Pagina 3: <span class="highlight">Seguridad y pobreza</span></h2>
+    <div class="page-preview">
+        <h4>&#128722; Correlaciones por departamento</h4>
+        <p>Existe relacion entre pobreza y tasas de criminalidad?</p>
+        <div class="viz-list">
+            <span class="viz-tag">Scatter plot</span>
+            <span class="viz-tag">Barras apiladas</span>
+            <span class="viz-tag">Mapa de calor</span>
+            <span class="viz-tag">Segmentador region</span>
+        </div>
+        <p style="margin-top: 0.8rem; font-size: clamp(0.85rem, 1.3vw, 1rem);">
+            <span class="highlight-orange">Cuidado:</span> Correlacion &ne; causalidad. Siempre narrar con precaucion.
+        </p>
+    </div>
+    <p style="margin-top: 1rem;">
+        Departamentos con alta pobreza y alta criminalidad: <span class="highlight-red">alerta roja</span> para politica publica.
+    </p>
+</div>
+
+<!-- Slide 12: Page 4 — Inversion publica (avanzado) -->
+<div class="slide" id="slide-12">
+    <h2>Pagina 4: <span class="highlight-orange">Inversion vs resultados</span></h2>
+    <p style="color: var(--orange); font-size: clamp(0.9rem, 1.5vw, 1.1rem); margin-bottom: 1rem;">Pagina avanzada (opcional)</p>
+    <div class="page-preview" style="border-color: rgba(245,158,11,0.3);">
+        <h4 style="color: var(--orange);">&#128176; Donde se invierte vs que resultados se obtienen</h4>
+        <p>Si se tiene data de inversion publica por departamento, cruzarla con indicadores de resultado.</p>
+        <div class="viz-list">
+            <span class="viz-tag" style="border-color: rgba(245,158,11,0.3); color: var(--orange);">Cuadrante eficiencia</span>
+            <span class="viz-tag" style="border-color: rgba(245,158,11,0.3); color: var(--orange);">KPI ROI social</span>
+            <span class="viz-tag" style="border-color: rgba(245,158,11,0.3); color: var(--orange);">Ranking dptos</span>
+        </div>
+        <p style="margin-top: 0.8rem; font-size: clamp(0.85rem, 1.3vw, 1rem);">
+            <span class="highlight">Idea:</span> Cuadrante &mdash; eje X = inversion per capita, eje Y = mejora en indicador social
+        </p>
+    </div>
+    <p style="margin-top: 1rem;">
+        Esta pagina transforma el dashboard de <span class="highlight">descriptivo</span> a <span class="highlight-green">prescriptivo</span>.
+    </p>
+</div>
+
+<!-- Slide 13: Exercise 2 — Build -->
+<div class="slide" id="slide-13">
+    <div class="big-icon">&#128187;</div>
+    <h2>Ejercicio 2: <span class="highlight-green">Construye tu dashboard</span></h2>
+    <div class="exercise-box">
+        <h4>&#9200; 45 minutos &mdash; Tiempo principal de trabajo</h4>
+        <ul>
+            <li><strong>Carga los datasets</strong> en Power BI (Get Data &rarr; Excel/CSV)</li>
+            <li><strong>Crea dim_Departamento</strong> y establece relaciones en el modelo</li>
+            <li><strong>Construye 3-4 paginas</strong> siguiendo tu plan del Ejercicio 1</li>
+            <li><strong>Agrega al menos 3 medidas DAX</strong> (promedios, totales, ratios)</li>
+            <li><strong>Aplica formato consistente:</strong> colores, titulos, filtros</li>
+        </ul>
+        <p style="margin-top: 1rem; color: var(--green); font-size: clamp(0.9rem, 1.4vw, 1.1rem);">
+            No busques perfeccion &mdash; busca una historia coherente con datos reales.
+        </p>
+    </div>
+</div>
+
+<!-- Slide 14: Presenting -->
+<div class="slide" id="slide-14">
+    <h2>Presentaciones: <span class="highlight">5 min por grupo</span></h2>
+    <p style="margin-bottom: 1rem;">Cada grupo comparte sus hallazgos y recomendaciones</p>
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr; max-width: 800px;">
+        <div class="card">
+            <h4>&#9989; Estructura sugerida</h4>
+            <ul style="max-width: 100%;">
+                <li>Audiencia elegida (30 seg)</li>
+                <li>Recorrido por las paginas (2 min)</li>
+                <li>Hallazgo principal (1 min)</li>
+                <li>Recomendacion (1 min)</li>
+                <li>Que harian diferente (30 seg)</li>
+            </ul>
+        </div>
+        <div class="card" style="border-color: rgba(52,211,153,0.3);">
+            <h4 style="color: var(--green);">&#128161; Tips para presentar datos</h4>
+            <ul style="max-width: 100%;">
+                <li>Empieza con el hallazgo, no con la metodologia</li>
+                <li>Un dato impactante > diez graficos</li>
+                <li>Senala lo que <em>no esperabas</em> encontrar</li>
+                <li>Cierra con una accion concreta</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 15: Course wrap-up (celebratory) -->
+<div class="slide celebration" id="slide-15">
+    <div class="big-icon">&#127942;</div>
+    <h2>Lo lograron!</h2>
+    <p style="font-size: clamp(1.1rem, 2vw, 1.5rem); color: var(--text); margin-bottom: 1rem;">
+        En 8 clases pasaron de datos crudos a dashboards ejecutivos
+    </p>
+    <div class="badge-grid">
+        <div class="badge">Excel & limpieza</div>
+        <div class="badge">Fuentes de datos</div>
+        <div class="badge">Estadistica descriptiva</div>
+        <div class="badge">Visualizacion</div>
+        <div class="badge">EDA</div>
+        <div class="badge">Power BI</div>
+        <div class="badge">DAX</div>
+        <div class="badge" style="border-color: var(--green); color: var(--green);">Integracion completa</div>
+    </div>
+    <div class="deliverable-box">
+        <h4>&#128230; Entregable final</h4>
+        <ul style="max-width: 100%;">
+            <li>Archivo <span class="highlight">.pbix</span> con 3-4 paginas y modelo de datos completo</li>
+            <li>Presentacion de <span class="highlight">5 minutos</span> con hallazgos y recomendaciones</li>
+        </ul>
+    </div>
+    <p style="margin-top: 1.5rem; font-size: clamp(1rem, 1.8vw, 1.3rem); color: var(--text);">
+        Ahora tienen las herramientas. <span class="highlight-green">Sigan explorando, sigan preguntando.</span><br>
+        <span style="font-size: clamp(0.9rem, 1.5vw, 1.1rem); color: var(--text-muted);">Los datos siempre tienen algo mas que contar.</span>
+    </p>
+</div>
+
+<div class="slide-counter" id="slideCounter">1 / 15</div>
+
+<div class="nav">
+    <button onclick="changeSlide(-1)">&larr; Anterior</button>
+    <button onclick="changeSlide(1)">Siguiente &rarr;</button>
+</div>
+
+<script>
+    let current = 1;
+    const total = 15;
+
+    function changeSlide(dir) {
+        const next = current + dir;
+        if (next < 1 || next > total) return;
+        document.getElementById('slide-' + current).classList.remove('active');
+        current = next;
+        document.getElementById('slide-' + current).classList.add('active');
+        document.getElementById('slideCounter').textContent = current + ' / ' + total;
+        document.getElementById('progressBar').style.width = ((current / total) * 100) + '%';
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); changeSlide(1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); changeSlide(-1); }
+    });
+
+    document.getElementById('progressBar').style.width = ((1 / total) * 100) + '%';
+</script>
+
+</body>
+</html>

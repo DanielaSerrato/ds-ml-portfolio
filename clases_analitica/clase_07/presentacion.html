@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 7 — Power BI intermedio: DAX, relaciones, filtros</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --navy: #0F1E3D;
+            --navy-light: #1A2E55;
+            --accent: #4A9DFF;
+            --green: #34D399;
+            --orange: #F59E0B;
+            --red: #EF4444;
+            --text: #E2E8F0;
+            --text-muted: #94A3B8;
+            --card-bg: rgba(255,255,255,0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--navy);
+            color: var(--text);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: clamp(2rem, 5vw, 6rem);
+            text-align: center;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .slide.active { display: flex; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(1.6rem, 3.5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        p, li {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 900px;
+        }
+
+        .highlight { color: var(--accent); font-weight: 600; }
+        .highlight-green { color: var(--green); font-weight: 600; }
+        .highlight-orange { color: var(--orange); font-weight: 600; }
+        .highlight-red { color: var(--red); font-weight: 600; }
+
+        ul {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        ul li {
+            padding: 0.6rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '\25B8';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+
+        .card h4 {
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        }
+
+        .big-icon {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(74,157,255,0.3);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+            margin-top: 1rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .code-block .keyword { color: var(--accent); }
+        .code-block .function { color: var(--orange); }
+        .code-block .string { color: var(--green); }
+        .code-block .comment { color: var(--text-muted); font-style: italic; }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+
+        .nav button {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s;
+        }
+
+        .nav button:hover {
+            background: var(--accent);
+            color: var(--navy);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 2.2rem;
+            left: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 100;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .exercise-box {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .exercise-box h4 {
+            color: var(--green);
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .table-visual {
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+        }
+
+        .table-visual th {
+            background: var(--accent);
+            color: var(--navy);
+            padding: 0.8rem 1.5rem;
+            font-weight: 700;
+        }
+
+        .table-visual td {
+            padding: 0.6rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+        }
+
+        .table-visual tr:nth-child(even) td {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .vs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .vs-left {
+            background: rgba(74, 157, 255, 0.08);
+            border: 1px solid rgba(74, 157, 255, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .vs-right {
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .vs-left h4 { color: var(--accent); font-size: clamp(1rem, 1.6vw, 1.2rem); margin-bottom: 0.5rem; }
+        .vs-right h4 { color: var(--orange); font-size: clamp(1rem, 1.6vw, 1.2rem); margin-bottom: 0.5rem; }
+
+        .relationship-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .rel-table {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+            min-width: 220px;
+            text-align: left;
+        }
+
+        .rel-table h4 {
+            font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+            text-align: center;
+        }
+
+        .rel-table .field {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.8rem, 1.3vw, 1rem);
+            padding: 0.3rem 0.6rem;
+            color: var(--text-muted);
+        }
+
+        .rel-table .field.key {
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        .rel-arrow {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--green);
+        }
+
+        .dashboard-mockup {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 1rem;
+            max-width: 850px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .mock-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 1.2rem;
+            text-align: center;
+        }
+
+        .mock-card.wide { grid-column: 1 / -1; }
+
+        .mock-card h5 {
+            font-size: clamp(0.85rem, 1.3vw, 1rem);
+            color: var(--accent);
+            margin-bottom: 0.4rem;
+        }
+
+        .mock-card p {
+            font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Slide 1: Title -->
+<div class="slide active" id="slide-1">
+    <div class="big-icon">&#128202;</div>
+    <h1>Power BI intermedio:<br><span class="highlight">DAX, relaciones, filtros</span></h1>
+    <p class="subtitle">Clase 7 — Herramientas de Analisis de Datos</p>
+    <p style="margin-top: 1rem;">Conectar tablas, crear medidas y construir dashboards con profundidad.</p>
+</div>
+
+<!-- Slide 2: Today's challenge -->
+<div class="slide" id="slide-2">
+    <div class="big-icon">&#127919;</div>
+    <h2>El reto de hoy</h2>
+    <p style="font-size: clamp(1.1rem, 2.2vw, 1.6rem); color: var(--text); margin-bottom: 1.5rem;">
+        Conectar <span class="highlight">2 tablas</span> y crear <span class="highlight-green">medidas calculadas</span> para analizar datos reales.
+    </p>
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="card">
+            <h4>&#128203; Tabla 1: Delitos</h4>
+            <p>Delitos por municipio de la Policia Nacional: departamento, municipio, tipo de delito, anio, mes, cantidad</p>
+        </div>
+        <div class="card">
+            <h4>&#128101; Tabla 2: Poblacion</h4>
+            <p>Poblacion por municipio (de la Clase 2): departamento, municipio, poblacion</p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">Juntas nos permiten calcular <span class="highlight-orange">tasas por 100.000 habitantes</span>.</p>
+</div>
+
+<!-- Slide 3: Dataset -->
+<div class="slide" id="slide-3">
+    <h2>Nuestros datos</h2>
+    <h3>Policia Nacional — delitos por municipio</h3>
+    <table class="table-visual">
+        <tr>
+            <th>departamento</th><th>municipio</th><th>tipo_delito</th><th>anio</th><th>mes</th><th>cantidad</th>
+        </tr>
+        <tr>
+            <td>ANTIOQUIA</td><td>MEDELLIN</td><td>Hurto</td><td>2023</td><td>1</td><td>1542</td>
+        </tr>
+        <tr>
+            <td>ANTIOQUIA</td><td>MEDELLIN</td><td>Homicidio</td><td>2023</td><td>1</td><td>38</td>
+        </tr>
+        <tr>
+            <td>CUNDINAMARCA</td><td>BOGOTA</td><td>Hurto</td><td>2023</td><td>2</td><td>3201</td>
+        </tr>
+        <tr>
+            <td>VALLE</td><td>CALI</td><td>Lesiones</td><td>2023</td><td>3</td><td>287</td>
+        </tr>
+    </table>
+    <p style="margin-top: 1.5rem;">Tabla de poblacion: <span class="highlight">departamento + municipio + poblacion</span></p>
+</div>
+
+<!-- Slide 4: Step 1 — Import -->
+<div class="slide" id="slide-4">
+    <h2>Paso 1: Importar las 2 tablas</h2>
+    <div class="big-icon">&#128229;</div>
+    <ul>
+        <li><span class="highlight">Obtener datos</span> &rarr; Texto/CSV &rarr; seleccionar archivo de delitos</li>
+        <li>Repetir para la tabla de <span class="highlight-green">poblacion</span></li>
+        <li>Verificar en el panel de <span class="highlight-orange">Campos</span> que aparezcan ambas tablas</li>
+        <li>Revisar tipos de datos: texto para nombres, numeros para cantidades</li>
+    </ul>
+    <p style="margin-top: 1.5rem;">Dos tablas separadas... por ahora. Necesitamos <span class="highlight">conectarlas</span>.</p>
+</div>
+
+<!-- Slide 5: Step 2 — Relationship -->
+<div class="slide" id="slide-5">
+    <h2>Paso 2: Crear la relacion</h2>
+    <p style="margin-bottom: 1rem;">Ir a <span class="highlight">Vista de modelo</span> (icono de diagrama en el lado izquierdo)</p>
+    <div class="relationship-diagram">
+        <div class="rel-table">
+            <h4>&#128203; delitos</h4>
+            <div class="field key">&#128273; departamento</div>
+            <div class="field key">&#128273; municipio</div>
+            <div class="field">tipo_delito</div>
+            <div class="field">anio</div>
+            <div class="field">mes</div>
+            <div class="field">cantidad</div>
+        </div>
+        <div class="rel-arrow">&#8596;</div>
+        <div class="rel-table">
+            <h4>&#128101; poblacion</h4>
+            <div class="field key">&#128273; departamento</div>
+            <div class="field key">&#128273; municipio</div>
+            <div class="field">poblacion</div>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">Arrastrar <span class="highlight-orange">municipio</span> de una tabla a la otra para crear la conexion.</p>
+</div>
+
+<!-- Slide 6: Foreign keys -->
+<div class="slide" id="slide-6">
+    <div class="big-icon">&#128273;</div>
+    <h2>Foreign Keys (llaves foraneas)</h2>
+    <p style="font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--text); margin-bottom: 1.5rem;">
+        "La columna que <span class="highlight">conecta</span> dos tablas"
+    </p>
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div class="card">
+            <h4>&#128218; Concepto</h4>
+            <p>Una columna en la tabla A que hace referencia a la misma columna en la tabla B</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--green);">&#9989; En nuestro caso</h4>
+            <p><strong>municipio</strong> y <strong>departamento</strong> existen en ambas tablas: es el puente</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--orange);">&#9888;&#65039; Cuidado</h4>
+            <p>Los valores deben coincidir exactamente: mayusculas, tildes, espacios</p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">Sin esta conexion, Power BI no sabe como <span class="highlight-red">cruzar</span> la informacion.</p>
+</div>
+
+<!-- Slide 7: Exercise 1 -->
+<div class="slide" id="slide-7">
+    <div class="big-icon">&#9997;&#65039;</div>
+    <h2>Ejercicio 1</h2>
+    <div class="exercise-box">
+        <h4>&#128640; Importar y relacionar (10 min)</h4>
+        <ul>
+            <li>Importar la tabla de <span class="highlight">delitos</span> (CSV de Policia Nacional)</li>
+            <li>Importar la tabla de <span class="highlight-green">poblacion</span> (CSV de la Clase 2)</li>
+            <li>Ir a <span class="highlight-orange">Vista de modelo</span></li>
+            <li>Crear la relacion arrastrando <strong>municipio</strong> entre las tablas</li>
+            <li>Verificar que aparezca la linea de conexion con la flecha</li>
+        </ul>
+    </div>
+    <p style="margin-top: 1.5rem;">Si la relacion esta bien, al usar campos de ambas tablas en un visual, <span class="highlight">los datos se cruzan automaticamente</span>.</p>
+</div>
+
+<!-- Slide 8: DAX intro -->
+<div class="slide" id="slide-8">
+    <div class="big-icon">&#128161;</div>
+    <h2>Que es DAX?</h2>
+    <p style="font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--text); margin-bottom: 1.5rem;">
+        <span class="highlight">D</span>ata <span class="highlight">A</span>nalysis e<span class="highlight">X</span>pressions
+    </p>
+    <p style="margin-bottom: 1.5rem;">Formulas de Power BI, como las de Excel pero <span class="highlight-green">mas poderosas</span>.</p>
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="card">
+            <h4>&#128200; Excel</h4>
+            <p>=SUMA(A1:A100)</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Opera sobre celdas fijas</p>
+        </div>
+        <div class="card" style="border-color: rgba(74,157,255,0.3);">
+            <h4>&#9889; DAX</h4>
+            <p>=SUM(tabla[columna])</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Opera sobre toda la columna y respeta filtros automaticamente</p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">DAX se adapta al <span class="highlight-orange">contexto</span>: si filtras por departamento, recalcula solo ese departamento.</p>
+</div>
+
+<!-- Slide 9: DAX Measure 1 -->
+<div class="slide" id="slide-9">
+    <h2>Medida 1: Total Delitos</h2>
+    <h3>Nuestra primera medida DAX</h3>
+    <div class="code-block">
+        <span class="comment">// Click derecho en la tabla delitos &rarr; Nueva medida</span><br><br>
+        <span class="keyword">Total Delitos</span> = <span class="function">SUM</span>( delitos[cantidad] )
+    </div>
+    <ul style="margin-top: 1.5rem;">
+        <li><span class="highlight">SUM</span> — suma todos los valores de la columna <code>cantidad</code></li>
+        <li>Se adapta al contexto: si hay un filtro por municipio, solo suma ese municipio</li>
+        <li>Arrastrar la medida a una tarjeta para ver el <span class="highlight-green">total general</span></li>
+    </ul>
+</div>
+
+<!-- Slide 10: DAX Measure 2 -->
+<div class="slide" id="slide-10">
+    <h2>Medida 2: Tasa por 100K</h2>
+    <h3>Delitos relativos a la poblacion</h3>
+    <div class="code-block">
+        <span class="keyword">Tasa por 100K</span> =<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">DIVIDE</span>(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Total Delitos],<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="function">SUM</span>( poblacion[poblacion] )<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;) * <span class="string">100000</span>
+    </div>
+    <ul style="margin-top: 1.5rem;">
+        <li><span class="highlight">DIVIDE</span> — division segura (no da error si el denominador es 0)</li>
+        <li>Usa la <span class="highlight-green">relacion</span> para traer la poblacion correcta de cada municipio</li>
+        <li>Multiplicamos por 100.000 para obtener una <span class="highlight-orange">tasa comparable</span></li>
+    </ul>
+</div>
+
+<!-- Slide 11: DAX Measure 3 -->
+<div class="slide" id="slide-11">
+    <h2>Medida 3: Variacion Anual</h2>
+    <h3>Comparar con el anio anterior</h3>
+    <div class="code-block">
+        <span class="keyword">Delitos Anio Anterior</span> =<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">CALCULATE</span>(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Total Delitos],<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="function">FILTER</span>(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delitos,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delitos[anio] = <span class="function">MAX</span>(delitos[anio]) - <span class="string">1</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;)<br><br>
+        <span class="keyword">Variacion %</span> =<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="function">DIVIDE</span>(<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Total Delitos] - [Delitos Anio Anterior],<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Delitos Anio Anterior]<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;)
+    </div>
+    <p style="margin-top: 1rem;"><span class="highlight">CALCULATE</span> cambia el contexto de filtro: evalua la misma formula pero en un periodo diferente.</p>
+</div>
+
+<!-- Slide 12: Measures vs Calculated columns -->
+<div class="slide" id="slide-12">
+    <h2>Medidas vs Columnas calculadas</h2>
+    <h3>Cuando usar cada una?</h3>
+    <div class="vs-grid">
+        <div class="vs-left">
+            <h4>&#128202; Medidas (Measures)</h4>
+            <ul>
+                <li>Se calculan <span class="highlight">al momento</span> de usar el visual</li>
+                <li>Se adaptan a los filtros</li>
+                <li>Ideales para <span class="highlight">agregaciones</span>: SUM, AVERAGE, COUNT</li>
+                <li>No agregan columnas a la tabla</li>
+            </ul>
+        </div>
+        <div class="vs-right">
+            <h4>&#128203; Columnas calculadas</h4>
+            <ul>
+                <li>Se calculan <span class="highlight-orange">una vez</span> al refrescar datos</li>
+                <li>Crean una nueva columna fija</li>
+                <li>Ideales para <span class="highlight-orange">valores por fila</span>: categorias, concatenaciones</li>
+                <li>Ocupan espacio en el modelo</li>
+            </ul>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">Regla general: si necesitas <span class="highlight">agregar</span> (sumar, promediar) &rarr; <strong>medida</strong>. Si necesitas un valor <span class="highlight-orange">por cada fila</span> &rarr; <strong>columna calculada</strong>.</p>
+</div>
+
+<!-- Slide 13: Exercise 2 -->
+<div class="slide" id="slide-13">
+    <div class="big-icon">&#9997;&#65039;</div>
+    <h2>Ejercicio 2</h2>
+    <div class="exercise-box">
+        <h4>&#128640; Crear las 3 medidas DAX (20 min)</h4>
+        <ul>
+            <li>Crear <span class="highlight">Total Delitos</span> = SUM(delitos[cantidad])</li>
+            <li>Crear <span class="highlight-green">Tasa por 100K</span> = DIVIDE([Total Delitos], SUM(poblacion[poblacion])) * 100000</li>
+            <li>Crear <span class="highlight-orange">Variacion %</span> comparando con el anio anterior</li>
+            <li>Agregar las 3 medidas a <strong>tarjetas KPI</strong> en el lienzo</li>
+            <li>Probar: agregar un filtro por departamento y ver como cambian los valores</li>
+        </ul>
+    </div>
+    <p style="margin-top: 1.5rem;">Las medidas deben <span class="highlight">reaccionar</span> cuando aplicas filtros. Si no cambian, algo esta mal.</p>
+</div>
+
+<!-- Slide 14: Building the dashboard -->
+<div class="slide" id="slide-14">
+    <h2>Construyendo el dashboard</h2>
+    <h3>2 paginas, 2 perspectivas</h3>
+    <div class="vs-grid">
+        <div class="vs-left">
+            <h4>Pagina 1: Panorama Nacional</h4>
+            <div class="dashboard-mockup" style="grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.8rem;">
+                <div class="mock-card"><h5>&#127758; Mapa</h5><p>Delitos por departamento (burbujas o color)</p></div>
+                <div class="mock-card"><h5>&#128202; KPIs</h5><p>Total Delitos, Tasa x 100K, Variacion %</p></div>
+                <div class="mock-card wide"><h5>&#128200; Linea de tendencia</h5><p>Evolucion mensual de delitos (eje X = mes, Y = cantidad)</p></div>
+            </div>
+        </div>
+        <div class="vs-right">
+            <h4>Pagina 2: Detalle por Delito</h4>
+            <div class="dashboard-mockup" style="grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.8rem;">
+                <div class="mock-card"><h5>&#128202; Barras</h5><p>Top 10 municipios por tipo de delito</p></div>
+                <div class="mock-card"><h5>&#128270; Filtros</h5><p>Segmentadores: delito, anio, departamento</p></div>
+                <div class="mock-card wide"><h5>&#128203; Tabla detalle</h5><p>Tabla con drill-down: depto &rarr; municipio &rarr; delito</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 15: Drill-down and drill-through -->
+<div class="slide" id="slide-15">
+    <h2>Drill-down y Drill-through</h2>
+    <h3>Navegar desde lo general al detalle</h3>
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="card">
+            <h4>&#128269; Drill-down</h4>
+            <p><strong>Dentro del mismo visual:</strong></p>
+            <p style="margin-top: 0.5rem;">Departamento &rarr; Municipio &rarr; Tipo de delito</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--green);">Agregar varios campos al eje del grafico. Usar las flechas de navegacion.</p>
+        </div>
+        <div class="card" style="border-color: rgba(245,158,11,0.3);">
+            <h4 style="color: var(--orange);">&#128196; Drill-through</h4>
+            <p><strong>Navegar a otra pagina:</strong></p>
+            <p style="margin-top: 0.5rem;">Click derecho en un departamento &rarr; "Obtener detalles" &rarr; pagina de detalle</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--orange);">Configurar campo de drill-through en la pagina destino.</p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">El drill-down explora <span class="highlight">dentro</span> del visual. El drill-through <span class="highlight-orange">salta a otra pagina</span> con contexto.</p>
+</div>
+
+<!-- Slide 16: Deliverable -->
+<div class="slide" id="slide-16">
+    <h2>Entregable de hoy</h2>
+    <div class="exercise-box">
+        <h4>&#128221; Para entregar: archivo .pbix</h4>
+        <ul>
+            <li><span class="highlight">2 tablas</span> importadas y relacionadas (delitos + poblacion)</li>
+            <li><span class="highlight-green">3 medidas DAX</span>: Total Delitos, Tasa por 100K, Variacion %</li>
+            <li><span class="highlight-orange">Pagina 1</span>: Seguridad Nacional — mapa, KPIs, linea de tendencia</li>
+            <li><span class="highlight-orange">Pagina 2</span>: Detalle por Delito — barras, segmentadores, tabla con drill-down</li>
+        </ul>
+    </div>
+    <div class="card-grid" style="grid-template-columns: 1fr 1fr; margin-top: 2rem;">
+        <div class="card" style="border-color: rgba(52,211,153,0.3);">
+            <h4 style="color: var(--green);">Clase 7 (hoy)</h4>
+            <p>DAX, relaciones, filtros, drill-down</p>
+        </div>
+        <div class="card" style="border-color: var(--accent);">
+            <h4>Clase 8</h4>
+            <p>Proyecto integrador final — dashboard completo</p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem; font-size: clamp(1.1rem, 2.2vw, 1.6rem); color: var(--text);">
+        Ya saben conectar tablas y escribir formulas DAX.<br>
+        La proxima clase: <span class="highlight">integrar todo en un proyecto final</span>.
+    </p>
+</div>
+
+<div class="slide-counter" id="slideCounter">1 / 16</div>
+
+<div class="nav">
+    <button onclick="changeSlide(-1)">&larr; Anterior</button>
+    <button onclick="changeSlide(1)">Siguiente &rarr;</button>
+</div>
+
+<script>
+    let current = 1;
+    const total = 16;
+
+    function changeSlide(dir) {
+        const next = current + dir;
+        if (next < 1 || next > total) return;
+        document.getElementById('slide-' + current).classList.remove('active');
+        current = next;
+        document.getElementById('slide-' + current).classList.add('active');
+        document.getElementById('slideCounter').textContent = current + ' / ' + total;
+        document.getElementById('progressBar').style.width = ((current / total) * 100) + '%';
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); changeSlide(1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); changeSlide(-1); }
+    });
+
+    document.getElementById('progressBar').style.width = ((1 / total) * 100) + '%';
+</script>
+
+</body>
+</html>

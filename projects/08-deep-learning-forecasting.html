@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Learning Economic Forecasting — Daniela Serrato</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0F1E3D;--navy-deep:#091327;--cream:#F7F4ED;--red:#ff5f57;--yellow:#febc2e;--green:#28c840;--blue:#6495ed;--grid-line:rgba(174,198,230,0.08);--card-shadow:0 8px 32px rgba(0,0,0,0.3);--card-radius:12px}
+  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'JetBrains Mono',monospace;background:var(--navy);color:var(--cream);min-height:100vh;background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:70px 70px;font-size:clamp(14px,1.6vw,18px);line-height:1.6}
+  .top-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,30,61,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(174,198,230,0.12);padding:0.8rem 2rem;display:flex;align-items:center;justify-content:space-between}
+  .back-link{color:var(--cream);text-decoration:none;font-size:0.82em;font-weight:500;opacity:0.7;transition:opacity 0.2s}.back-link:hover{opacity:1;color:var(--green)}
+  .lang-toggle{display:flex;gap:2px;background:rgba(174,198,230,0.1);border-radius:6px;padding:2px}
+  .lang-btn{padding:0.2rem 0.5rem;border:none;background:transparent;color:var(--cream);font-family:inherit;font-size:0.7em;font-weight:600;cursor:pointer;border-radius:4px;opacity:0.5;transition:all 0.2s}.lang-btn.active{background:var(--green);color:var(--navy);opacity:1}
+  .container{max-width:900px;margin:0 auto;padding:6rem 2rem 3rem}
+  .project-hero{margin-bottom:2.5rem}
+  .project-tag{display:inline-block;font-size:0.6em;font-weight:600;text-transform:uppercase;letter-spacing:1px;padding:0.25rem 0.7rem;border-radius:4px;margin-bottom:0.8rem}
+  .tag-ai{background:rgba(180,100,255,0.15);color:#b48aff}
+  .project-hero h1{font-size:clamp(1.5rem,3.5vw,2.4rem);font-weight:700;line-height:1.15;letter-spacing:-1px}.project-hero h1 .accent{color:var(--green)}
+  .card{border-radius:var(--card-radius);box-shadow:var(--card-shadow);overflow:hidden;position:relative;margin-bottom:2rem}
+  .card-light{background:var(--cream);color:var(--navy)}.card-dark{background:var(--navy-deep);color:var(--cream);border:1px solid rgba(174,198,230,0.1)}
+  .card-dots{display:flex;gap:6px;padding:12px 16px;position:absolute;top:0;left:0;z-index:2}.card-dots span{width:12px;height:12px;border-radius:50%}.card-dots span:nth-child(1){background:var(--red)}.card-dots span:nth-child(2){background:var(--yellow)}.card-dots span:nth-child(3){background:var(--green)}
+  .card-body{padding:2.8rem 2rem 2rem}
+  .section-title{font-size:clamp(1rem,2vw,1.3rem);font-weight:700;margin-bottom:1rem;letter-spacing:-0.5px}.section-title .dot{color:var(--green)}
+  .text-block{font-size:0.82em;font-weight:300;opacity:0.85;line-height:1.7}.text-block p{margin-bottom:1rem}.text-block p:last-child{margin-bottom:0}
+  .steps{list-style:none;counter-reset:step}.steps li{counter-increment:step;position:relative;padding-left:2.5rem;margin-bottom:1.2rem;font-size:0.82em;font-weight:300;line-height:1.6}.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:1.8rem;height:1.8rem;border-radius:50%;background:var(--green);color:var(--navy);font-weight:700;font-size:0.78em;display:flex;align-items:center;justify-content:center}.card-light .steps li::before{background:var(--navy);color:var(--cream)}.steps li strong{font-weight:600}
+  .metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+  .metric-card{background:rgba(40,200,64,0.08);border:1px solid rgba(40,200,64,0.2);border-radius:10px;padding:1.2rem;text-align:center}.card-light .metric-card{background:rgba(40,200,64,0.1);border-color:rgba(40,200,64,0.25)}
+  .metric-value{font-size:1.6rem;font-weight:700;color:var(--green)}.card-light .metric-value{color:#1a7a2e}.metric-label{font-size:0.68em;font-weight:400;opacity:0.7;margin-top:0.2rem}
+  .tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.8rem}
+  .tech-item{display:flex;align-items:baseline;gap:0.6rem;font-size:0.82em}.tech-item .tech-name{font-weight:600;white-space:nowrap}.tech-item .tech-role{font-weight:300;opacity:0.7}.tech-item::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0}
+  .cta-row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}
+  .btn{display:inline-block;font-family:inherit;font-size:0.82em;font-weight:600;padding:0.7rem 1.8rem;border-radius:8px;text-decoration:none;cursor:pointer;transition:all 0.2s;border:2px solid transparent}
+  .btn-solid{background:var(--green);color:var(--navy);border-color:var(--green)}.btn-solid:hover{background:var(--cream);border-color:var(--cream)}
+  .btn-outline{background:transparent;color:var(--green);border-color:var(--green)}.btn-outline:hover{background:var(--green);color:var(--navy)}
+  footer{text-align:center;padding:2rem;font-size:0.7em;opacity:0.4}
+  @media(max-width:768px){.container{padding:5rem 1rem 2rem}.metrics-grid{grid-template-columns:1fr 1fr}.tech-grid{grid-template-columns:1fr}}
+  .fade-in{opacity:0;transform:translateY(20px);transition:all 0.6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+  [data-lang="es"]{display:none}body.lang-es [data-lang="es"]{display:initial}body.lang-es [data-lang="en"]{display:none}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="../index.html" class="back-link" data-lang="en">&larr; Back to Portfolio</a>
+  <a href="../index.html" class="back-link" data-lang="es">&larr; Volver al Portafolio</a>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="project-hero fade-in">
+    <span class="project-tag tag-ai">Deep Learning</span>
+    <h1 data-lang="en">Economic Forecasting<span class="accent">.</span></h1>
+    <h1 data-lang="es">Pronostico Economico<span class="accent">.</span></h1>
+  </div>
+
+  <div class="card card-dark fade-in">
+    <div class="card-dots"><span></span><span></span><span></span></div>
+    <div class="card-body">
+      <div class="section-title" data-lang="en">Overview<span class="dot">.</span></div>
+      <div class="section-title" data-lang="es">Descripcion General<span class="dot">.</span></div>
+      <div class="text-block">
+        <p data-lang="en">Forecasting macroeconomic indicators — unemployment, inflation, and GDP — is critical for government planning, central bank policy, and business strategy. Traditional econometric approaches struggle with the non-linear interdependencies and structural breaks that characterize emerging economies like Colombia.</p>
+        <p data-lang="es">Pronosticar indicadores macroeconomicos — desempleo, inflacion y PIB — es critico para la planeacion gubernamental, la politica del banco central y la estrategia empresarial. Los enfoques econometricos tradicionales luchan con las interdependencias no lineales y los cambios estructurales que caracterizan economias emergentes como Colombia.</p>
+        <p data-lang="en">This project applies deep learning architectures — LSTM, Stacked LSTM, GRU, and Bidirectional LSTM — to monthly Colombian economic data from 2015 to 2024. The goal is to produce multi-step 3-month forecasts at both national and department level, comparing which neural network architecture best captures the temporal dynamics of each indicator.</p>
+        <p data-lang="es">Este proyecto aplica arquitecturas de deep learning — LSTM, LSTM Apilado, GRU y LSTM Bidireccional — a datos economicos colombianos mensuales de 2015 a 2024. El objetivo es producir pronosticos multi-paso a 3 meses a nivel nacional y departamental, comparando que arquitectura de red neuronal captura mejor las dinamicas temporales de cada indicador.</p>
+        <p data-lang="en">Beyond point forecasts, the analysis evaluates how different architectures handle the COVID-19 structural break, seasonal unemployment patterns, and inflation volatility — providing practical guidance on when deep learning adds value over simpler approaches for economic time series.</p>
+        <p data-lang="es">Mas alla de pronosticos puntuales, el analisis evalua como diferentes arquitecturas manejan el quiebre estructural del COVID-19, los patrones estacionales de desempleo y la volatilidad inflacionaria — proporcionando orientacion practica sobre cuando deep learning agrega valor sobre enfoques mas simples para series de tiempo economicas.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-light fade-in">
+    <div class="card-dots"><span></span><span></span><span></span></div>
+    <div class="card-body">
+      <div class="section-title" data-lang="en">Approach<span class="dot">.</span></div>
+      <div class="section-title" data-lang="es">Metodologia<span class="dot">.</span></div>
+      <ol class="steps">
+        <li data-lang="en"><strong>Data Collection & Preprocessing:</strong> Gathered monthly unemployment, inflation, and GDP data from DANE and Banco de la Republica (2015-2024). Handled missing months, seasonal adjustments, and normalization with MinMaxScaler.</li>
+        <li data-lang="es"><strong>Recoleccion y Preprocesamiento:</strong> Recopile datos mensuales de desempleo, inflacion y PIB del DANE y el Banco de la Republica (2015-2024). Maneje meses faltantes, ajustes estacionales y normalizacion con MinMaxScaler.</li>
+        <li data-lang="en"><strong>Sequence Construction:</strong> Created sliding window sequences (12-month lookback) for supervised learning. Split data chronologically: 80% train, 10% validation, 10% test — respecting temporal order.</li>
+        <li data-lang="es"><strong>Construccion de Secuencias:</strong> Cree secuencias de ventana deslizante (12 meses de retrospectiva) para aprendizaje supervisado. Dividi datos cronologicamente: 80% train, 10% validacion, 10% test — respetando el orden temporal.</li>
+        <li data-lang="en"><strong>Architecture Comparison:</strong> Implemented and trained 4 architectures: Simple LSTM (1 layer, 64 units), Stacked LSTM (2 layers, 64+32 units), GRU (1 layer, 64 units), and Bidirectional LSTM (1 layer, 64 units). Used early stopping and dropout for regularization.</li>
+        <li data-lang="es"><strong>Comparacion de Arquitecturas:</strong> Implemente y entrene 4 arquitecturas: LSTM Simple (1 capa, 64 unidades), LSTM Apilado (2 capas, 64+32 unidades), GRU (1 capa, 64 unidades) y LSTM Bidireccional (1 capa, 64 unidades). Use early stopping y dropout para regularizacion.</li>
+        <li data-lang="en"><strong>Multi-Step Forecasting:</strong> Extended models to predict 3 months ahead using recursive and direct forecasting strategies. Evaluated degradation of accuracy over the forecast horizon.</li>
+        <li data-lang="es"><strong>Pronostico Multi-Paso:</strong> Extendi los modelos para predecir 3 meses adelante usando estrategias de pronostico recursivo y directo. Evalue la degradacion de la precision a lo largo del horizonte de pronostico.</li>
+        <li data-lang="en"><strong>Department-Level Analysis:</strong> Applied best-performing architecture to department-level unemployment data. Assessed which regions show the most predictable patterns and where models struggle with high volatility.</li>
+        <li data-lang="es"><strong>Analisis a Nivel Departamental:</strong> Aplique la mejor arquitectura a datos de desempleo departamental. Evalue que regiones muestran patrones mas predecibles y donde los modelos luchan con alta volatilidad.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card card-dark fade-in">
+    <div class="card-dots"><span></span><span></span><span></span></div>
+    <div class="card-body">
+      <div class="section-title" data-lang="en">Key Results<span class="dot">.</span></div>
+      <div class="section-title" data-lang="es">Resultados Clave<span class="dot">.</span></div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value">4</div>
+          <div class="metric-label" data-lang="en">Architectures Compared</div>
+          <div class="metric-label" data-lang="es">Arquitecturas Comparadas</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">3 mo</div>
+          <div class="metric-label" data-lang="en">Multi-Step Horizon</div>
+          <div class="metric-label" data-lang="es">Horizonte Multi-Paso</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">3</div>
+          <div class="metric-label" data-lang="en">Economic Indicators</div>
+          <div class="metric-label" data-lang="es">Indicadores Economicos</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">2015-24</div>
+          <div class="metric-label" data-lang="en">Data Timespan</div>
+          <div class="metric-label" data-lang="es">Periodo de Datos</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">LSTM</div>
+          <div class="metric-label" data-lang="en">Best Overall Architecture</div>
+          <div class="metric-label" data-lang="es">Mejor Arquitectura General</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">Dept.</div>
+          <div class="metric-label" data-lang="en">Regional Predictions</div>
+          <div class="metric-label" data-lang="es">Predicciones Regionales</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-light fade-in">
+    <div class="card-dots"><span></span><span></span><span></span></div>
+    <div class="card-body">
+      <div class="section-title" data-lang="en">Tech Stack<span class="dot">.</span></div>
+      <div class="section-title" data-lang="es">Stack Tecnologico<span class="dot">.</span></div>
+      <div class="tech-grid">
+        <div class="tech-item"><span class="tech-name">Python</span><span class="tech-role" data-lang="en">Core language</span><span class="tech-role" data-lang="es">Lenguaje principal</span></div>
+        <div class="tech-item"><span class="tech-name">TensorFlow</span><span class="tech-role" data-lang="en">Deep learning framework</span><span class="tech-role" data-lang="es">Framework de deep learning</span></div>
+        <div class="tech-item"><span class="tech-name">Keras</span><span class="tech-role" data-lang="en">LSTM, GRU, Bidirectional layers</span><span class="tech-role" data-lang="es">Capas LSTM, GRU, Bidireccional</span></div>
+        <div class="tech-item"><span class="tech-name">Scikit-learn</span><span class="tech-role" data-lang="en">MinMaxScaler, metrics</span><span class="tech-role" data-lang="es">MinMaxScaler, metricas</span></div>
+        <div class="tech-item"><span class="tech-name">Matplotlib</span><span class="tech-role" data-lang="en">Forecast plots, loss curves</span><span class="tech-role" data-lang="es">Graficos de pronostico, curvas de perdida</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-row fade-in">
+    <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/08_deep_learning_economic_forecasting.ipynb" target="_blank" class="btn btn-solid" data-lang="en">Open in Colab &rarr;</a>
+    <a href="https://colab.research.google.com/github/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/08_deep_learning_economic_forecasting.ipynb" target="_blank" class="btn btn-solid" data-lang="es">Abrir en Colab &rarr;</a>
+    <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/08_deep_learning_economic_forecasting.ipynb" target="_blank" class="btn btn-outline" data-lang="en">View Source Code</a>
+    <a href="https://github.com/DanielaSerrato/ds-ml-portfolio/blob/master/notebooks/08_deep_learning_economic_forecasting.ipynb" target="_blank" class="btn btn-outline" data-lang="es">Ver Codigo Fuente</a>
+  </div>
+
+</div>
+
+<footer>&copy; 2026 Daniela Serrato</footer>
+
+<script>
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+function setLang(lang){document.body.classList.toggle('lang-es',lang==='es');document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===lang.toUpperCase()))}
+</script>
+
+</body>
+</html>

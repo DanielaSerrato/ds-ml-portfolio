@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 2 — Limpieza y preparación de datos</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --navy: #0F1E3D;
+            --navy-light: #1A2E55;
+            --accent: #4A9DFF;
+            --accent-green: #34D399;
+            --accent-orange: #F59E0B;
+            --accent-red: #EF4444;
+            --text: #E2E8F0;
+            --text-muted: #94A3B8;
+            --card-bg: rgba(255,255,255,0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--navy);
+            color: var(--text);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: clamp(2rem, 5vw, 6rem);
+            text-align: center;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .slide.active { display: flex; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(1.6rem, 3.5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        p, li {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 900px;
+        }
+
+        .highlight { color: var(--accent); font-weight: 600; }
+        .highlight-green { color: var(--accent-green); font-weight: 600; }
+        .highlight-orange { color: var(--accent-orange); font-weight: 600; }
+        .highlight-red { color: var(--accent-red); font-weight: 600; }
+
+        ul {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        ul li {
+            padding: 0.6rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '\25B8';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+
+        .card h4 {
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        }
+
+        .big-icon {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(74,157,255,0.3);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+            margin-top: 1rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .table-visual {
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+        }
+
+        .table-visual th {
+            background: var(--accent);
+            color: var(--navy);
+            padding: 0.8rem 1.5rem;
+            font-weight: 700;
+        }
+
+        .table-visual td {
+            padding: 0.6rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+        }
+
+        .table-visual tr:nth-child(even) td {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .table-visual.dirty td {
+            color: var(--accent-red);
+        }
+
+        .table-visual.clean td {
+            color: var(--accent-green);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+
+        .nav button {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s;
+        }
+
+        .nav button:hover {
+            background: var(--accent);
+            color: var(--navy);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 2.2rem;
+            left: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 100;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            max-width: 900px;
+            margin-top: 1.5rem;
+        }
+
+        .comparison .arrow {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .comparison .box {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .exercise-box {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .exercise-box h4 {
+            color: var(--accent-green);
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .warning-box p {
+            color: var(--accent-red);
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .steps-list {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .steps-list li {
+            padding: 0.7rem 0;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .steps-list li::before {
+            content: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Slide 1: Title -->
+<div class="slide active" id="slide-1">
+    <div class="big-icon">🧹</div>
+    <h1>Limpieza y preparación de datos</h1>
+    <p class="subtitle">Analítica de Datos — Clase 2</p>
+    <p>Porque los datos reales nunca vienen listos para analizar</p>
+</div>
+
+<!-- Slide 2: Why cleaning matters -->
+<div class="slide" id="slide-2">
+    <h2>Los datos reales <span class="highlight-red">NUNCA</span> vienen limpios</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h4>Celdas combinadas</h4>
+            <p>Excel no puede filtrar ni calcular sobre celdas fusionadas</p>
+        </div>
+        <div class="card">
+            <h4>Filas vacías</h4>
+            <p>Separadores visuales que rompen los rangos de datos</p>
+        </div>
+        <div class="card">
+            <h4>Nombres inconsistentes</h4>
+            <p>"BOGOTA", "Bogotá", "BOGOTA D.C." — el mismo lugar, tres formas</p>
+        </div>
+        <div class="card">
+            <h4>Tipos mezclados</h4>
+            <p>Una columna de población con números y textos como "N/D" o "-"</p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;"><span class="highlight-orange">Si no limpiamos, el análisis será incorrecto</span> — basura entra, basura sale.</p>
+</div>
+
+<!-- Slide 3: The DANE dataset -->
+<div class="slide" id="slide-3">
+    <div class="big-icon">🏛️</div>
+    <h2>El dataset del DANE</h2>
+    <h3>Proyecciones de población por departamento</h3>
+    <ul>
+        <li><span class="highlight">¿Qué es?</span> Estimaciones de población del DANE por municipio, departamento y año</li>
+        <li><span class="highlight">¿Dónde encontrarlo?</span> dane.gov.co → Estadísticas por tema → Demografía y Población → Proyecciones de población</li>
+        <li><span class="highlight">¿Por qué este dataset?</span> Es público, real, y tiene los problemas típicos de datos gubernamentales</li>
+        <li><span class="highlight">Formato:</span> Archivo Excel (.xlsx) con múltiples hojas y formatos complejos</li>
+    </ul>
+</div>
+
+<!-- Slide 4: Common problems in government data -->
+<div class="slide" id="slide-4">
+    <h2>Problemas típicos en datos del gobierno</h2>
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="card">
+            <h4 style="color: var(--accent-red);">Celdas combinadas</h4>
+            <p>Encabezados que abarcan varias columnas para "verse bonito"</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-red);">Múltiples filas de encabezado</h4>
+            <p>Títulos, subtítulos y notas antes de los datos reales</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-red);">Filas vacías como separadores</h4>
+            <p>Espacios en blanco entre secciones que rompen el análisis</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-red);">Nombres con variaciones</h4>
+            <p>"Nariño" vs "NARIÑO" vs "NARINO" — tildes y mayúsculas inconsistentes</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-red);">Números como texto</h4>
+            <p>Población guardada como texto con puntos de miles: "1.234.567"</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-red);">Notas al pie dentro de los datos</h4>
+            <p>Asteriscos, referencias y fuentes mezclados con las cifras</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: Step by step — identifying problems -->
+<div class="slide" id="slide-5">
+    <h2>Paso a paso: abrir e identificar problemas</h2>
+    <div class="code-block">
+        <span style="color: var(--accent);">Paso 1:</span> Abrir el archivo original — NO modificar nada todavía<br>
+        <span style="color: var(--accent);">Paso 2:</span> Observar las primeras filas — ¿dónde empiezan los datos reales?<br>
+        <span style="color: var(--accent);">Paso 3:</span> Revisar si hay celdas combinadas (Inicio → Combinar y centrar)<br>
+        <span style="color: var(--accent);">Paso 4:</span> Buscar filas vacías — Ctrl+End para ver dónde termina el rango<br>
+        <span style="color: var(--accent);">Paso 5:</span> Revisar tipos — ¿los números están alineados a la derecha?<br>
+        <span style="color: var(--accent);">Paso 6:</span> Anotar todos los problemas antes de empezar a limpiar
+    </div>
+    <p style="margin-top: 1.5rem;"><span class="highlight-green">Regla de oro:</span> primero diagnosticar, después limpiar.</p>
+</div>
+
+<!-- Slide 6: Exercise 1 -->
+<div class="slide" id="slide-6">
+    <h2>Ejercicio 1 — Identificar problemas</h2>
+    <div class="exercise-box">
+        <h4>🔍 Instrucciones</h4>
+        <ul>
+            <li>Abrir el archivo de proyecciones de población del DANE</li>
+            <li>Recorrer las primeras 20 filas — ¿qué ven?</li>
+            <li>Listar al menos <span class="highlight">5 problemas</span> que encuentren</li>
+            <li>Para cada problema escribir: fila/columna donde está y por qué es un problema</li>
+            <li>Compartir con su compañero de al lado</li>
+        </ul>
+    </div>
+    <p style="margin-top: 1.5rem;">⏱️ <span class="highlight-orange">15 minutos</span></p>
+</div>
+
+<!-- Slide 7: Cleaning technique 1 — Headers -->
+<div class="slide" id="slide-7">
+    <h2>Técnica 1: Deshacer celdas combinadas y fijar encabezados</h2>
+    <div class="code-block">
+        <span style="color: var(--accent-orange);">1.</span> Seleccionar todo: <span style="color: var(--accent);">Ctrl + E</span><br>
+        <span style="color: var(--accent-orange);">2.</span> Inicio → Combinar y centrar → <span style="color: var(--accent);">Separar celdas</span><br>
+        <span style="color: var(--accent-orange);">3.</span> Eliminar filas de título que no son datos (clic derecho → Eliminar fila)<br>
+        <span style="color: var(--accent-orange);">4.</span> La primera fila debe ser los <span style="color: var(--accent-green);">nombres de las columnas</span><br>
+        <span style="color: var(--accent-orange);">5.</span> Renombrar columnas con nombres claros y sin espacios innecesarios<br>
+        <span style="color: var(--accent-orange);">6.</span> Un encabezado por columna, una fila de encabezados
+    </div>
+    <div class="warning-box" style="margin-top: 1rem;">
+        <p>Siempre trabajar en una <strong>copia</strong> del archivo original. Nunca modificar la fuente.</p>
+    </div>
+</div>
+
+<!-- Slide 8: Cleaning technique 2 — Empty rows and types -->
+<div class="slide" id="slide-8">
+    <h2>Técnica 2: Eliminar filas vacías y corregir tipos</h2>
+    <div class="code-block">
+        <span style="color: var(--accent);">Filas vacías:</span><br>
+        &nbsp;&nbsp;Seleccionar rango → Ctrl+G → Especial → <span style="color: var(--accent-green);">Celdas en blanco</span><br>
+        &nbsp;&nbsp;Clic derecho → Eliminar fila completa<br><br>
+        <span style="color: var(--accent);">Tipos de datos:</span><br>
+        &nbsp;&nbsp;Seleccionar columna de población<br>
+        &nbsp;&nbsp;Datos → <span style="color: var(--accent-green);">Texto en columnas</span> → Delimitado → Finalizar<br>
+        &nbsp;&nbsp;Formato de celda → Número (sin decimales)
+    </div>
+    <p style="margin-top: 1rem;">Si ven un <span class="highlight-orange">triángulo verde</span> en la esquina de la celda, Excel detectó un número guardado como texto.</p>
+</div>
+
+<!-- Slide 9: Cleaning technique 3 — Consistent naming -->
+<div class="slide" id="slide-9">
+    <h2>Técnica 3: Nombres consistentes</h2>
+    <h3>Departamentos con tildes y mayúsculas uniformes</h3>
+    <div class="code-block">
+        <span style="color: var(--accent);">Problema:</span> "BOGOTA" ≠ "Bogotá" ≠ "BOGOTA D.C."<br><br>
+        <span style="color: var(--accent);">Solución con fórmulas:</span><br>
+        &nbsp;&nbsp;<span style="color: var(--accent-green);">=MAYUSC.INICIAL(A2)</span> → convierte a "Bogotá"<br>
+        &nbsp;&nbsp;<span style="color: var(--accent-green);">=SUSTITUIR(A2,"BOGOTA D.C.","Bogotá D.C.")</span><br><br>
+        <span style="color: var(--accent);">Buscar y reemplazar:</span><br>
+        &nbsp;&nbsp;Ctrl+H → Buscar "NARINO" → Reemplazar con "Nariño"<br>
+        &nbsp;&nbsp;Repetir para cada variación encontrada
+    </div>
+    <p style="margin-top: 1rem;"><span class="highlight">Clave:</span> un mismo lugar debe tener siempre el mismo nombre exacto.</p>
+</div>
+
+<!-- Slide 10: The goal — flat table -->
+<div class="slide" id="slide-10">
+    <h2>La meta: una tabla plana</h2>
+    <h3>Formato listo para analizar</h3>
+    <table class="table-visual">
+        <thead>
+            <tr>
+                <th>Municipio</th>
+                <th>Departamento</th>
+                <th>Año</th>
+                <th>Población</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Medellín</td><td>Antioquia</td><td>2025</td><td>2,612,000</td></tr>
+            <tr><td>Bogotá D.C.</td><td>Bogotá D.C.</td><td>2025</td><td>7,943,000</td></tr>
+            <tr><td>Cali</td><td>Valle del Cauca</td><td>2025</td><td>2,298,000</td></tr>
+            <tr><td>Barranquilla</td><td>Atlántico</td><td>2025</td><td>1,274,000</td></tr>
+            <tr><td>Cartagena</td><td>Bolívar</td><td>2025</td><td>1,063,000</td></tr>
+        </tbody>
+    </table>
+    <ul style="margin-top: 1.5rem;">
+        <li>Una fila = una observación (un municipio en un año)</li>
+        <li>Una columna = una variable</li>
+        <li>Sin celdas combinadas, sin filas vacías, sin notas al pie</li>
+        <li><span class="highlight-green">Excel puede filtrar, ordenar y calcular sobre esta tabla</span></li>
+    </ul>
+</div>
+
+<!-- Slide 11: Exercise 2 -->
+<div class="slide" id="slide-11">
+    <h2>Ejercicio 2 — Limpiar el dataset</h2>
+    <div class="exercise-box">
+        <h4>🛠️ Instrucciones</h4>
+        <ul>
+            <li><span class="highlight">Crear una copia</span> del archivo original</li>
+            <li>Deshacer todas las celdas combinadas</li>
+            <li>Eliminar filas de título y notas — dejar solo datos</li>
+            <li>Fijar los encabezados en la primera fila</li>
+            <li>Eliminar filas vacías</li>
+            <li>Corregir nombres de departamentos (tildes, mayúsculas)</li>
+            <li>Verificar que la columna de población sea numérica</li>
+            <li>Resultado esperado: tabla plana con 4 columnas</li>
+        </ul>
+    </div>
+    <p style="margin-top: 1.5rem;">⏱️ <span class="highlight-orange">25 minutos</span></p>
+</div>
+
+<!-- Slide 12: Before vs After -->
+<div class="slide" id="slide-12">
+    <h2>Antes vs. Después</h2>
+    <div class="comparison">
+        <div class="box" style="border-color: rgba(239,68,68,0.4);">
+            <h4 style="color: var(--accent-red); margin-bottom: 0.8rem;">Antes</h4>
+            <p style="font-size: clamp(0.8rem, 1.3vw, 1rem); font-family: 'JetBrains Mono', monospace; line-height: 1.6;">
+                <span style="color: var(--accent-red);">DANE - Proyecciones</span><br>
+                <span style="color: var(--text-muted);">[fila vacía]</span><br>
+                <span style="color: var(--accent-red);">Depto&nbsp;&nbsp;|&nbsp;&nbsp;2020&nbsp;&nbsp;|&nbsp;&nbsp;2021</span><br>
+                <span style="color: var(--text-muted);">BOGOTA&nbsp;|&nbsp;7.412&nbsp;|&nbsp;N/D</span><br>
+                <span style="color: var(--text-muted);">Bogotá&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;7.510</span><br>
+                <span style="color: var(--text-muted);">[fila vacía]</span><br>
+                <span style="color: var(--text-muted);">* Cifras en miles</span>
+            </p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="box" style="border-color: rgba(52,211,153,0.4);">
+            <h4 style="color: var(--accent-green); margin-bottom: 0.8rem;">Después</h4>
+            <p style="font-size: clamp(0.8rem, 1.3vw, 1rem); font-family: 'JetBrains Mono', monospace; line-height: 1.6;">
+                <span style="color: var(--accent-green);">Depto&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Año&nbsp;&nbsp;|&nbsp;Población</span><br>
+                <span style="color: var(--text);">Bogotá&nbsp;&nbsp;|&nbsp;2020&nbsp;|&nbsp;7,412,000</span><br>
+                <span style="color: var(--text);">Bogotá&nbsp;&nbsp;|&nbsp;2021&nbsp;|&nbsp;7,510,000</span><br>
+                <span style="color: var(--text);">Medellín|&nbsp;2020&nbsp;|&nbsp;2,569,000</span><br>
+                <span style="color: var(--text);">Medellín|&nbsp;2021&nbsp;|&nbsp;2,612,000</span><br>
+                <span style="color: var(--text);">...</span>
+            </p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">De un archivo <span class="highlight-red">hecho para verse bonito</span> a una tabla <span class="highlight-green">hecha para analizarse</span>.</p>
+</div>
+
+<!-- Slide 13: Filters in Excel -->
+<div class="slide" id="slide-13">
+    <h2>Filtros en Excel</h2>
+    <h3>Explorar la tabla limpia</h3>
+    <div class="code-block">
+        <span style="color: var(--accent);">Activar filtros:</span><br>
+        &nbsp;&nbsp;Seleccionar la tabla → Datos → <span style="color: var(--accent-green);">Filtro</span> (o Ctrl+Shift+L)<br><br>
+        <span style="color: var(--accent);">Filtrar por departamento:</span><br>
+        &nbsp;&nbsp;Clic en la flecha de "Departamento" → Seleccionar solo "Antioquia"<br><br>
+        <span style="color: var(--accent);">Filtrar por año:</span><br>
+        &nbsp;&nbsp;Clic en la flecha de "Año" → Seleccionar solo "2025"<br><br>
+        <span style="color: var(--accent);">Ordenar:</span><br>
+        &nbsp;&nbsp;Clic en la flecha de "Población" → Ordenar de mayor a menor
+    </div>
+    <p style="margin-top: 1rem;">Los filtros solo funcionan bien sobre <span class="highlight-green">tablas limpias y planas</span>.</p>
+</div>
+
+<!-- Slide 14: Deliverable -->
+<div class="slide" id="slide-14">
+    <h2>Entregable de hoy</h2>
+    <div class="exercise-box">
+        <h4>📝 Para entregar</h4>
+        <ul>
+            <li>Archivo Excel con la tabla de población <span class="highlight">limpia</span></li>
+            <li>Formato: tabla plana con columnas <span class="highlight">municipio, departamento, año, población</span></li>
+            <li>Sin celdas combinadas, sin filas vacías, sin notas mezcladas</li>
+            <li>Nombres de departamentos consistentes (con tildes correctas)</li>
+            <li>Columna de población en formato numérico</li>
+        </ul>
+    </div>
+    <p style="margin-top: 2rem; font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--text);">
+        Datos limpios = análisis confiable. <span class="highlight-green">Sin atajos.</span>
+    </p>
+</div>
+
+<!-- Slide 15: What's coming next -->
+<div class="slide" id="slide-15">
+    <h2>Lo que viene</h2>
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="card" style="border-color: rgba(52,211,153,0.4); opacity: 0.6;">
+            <h4 style="color: var(--text-muted);">Clase 1 ✓</h4>
+            <p>Qué son los datos, dónde encontrarlos</p>
+        </div>
+        <div class="card" style="border-color: var(--accent-green);">
+            <h4 style="color: var(--accent-green);">✓ Hoy — Clase 2</h4>
+            <p>Limpieza y preparación de datos</p>
+        </div>
+        <div class="card" style="border-color: var(--accent-orange);">
+            <h4 style="color: var(--accent-orange);">Siguiente — Clase 3</h4>
+            <p>Estadística descriptiva: promedios, medianas, distribución</p>
+        </div>
+        <div class="card">
+            <h4>Clase 4-5</h4>
+            <p>Visualización y análisis exploratorio</p>
+        </div>
+        <div class="card">
+            <h4>Clase 6-7</h4>
+            <p>Power BI — dashboards interactivos</p>
+        </div>
+        <div class="card">
+            <h4>Clase 8</h4>
+            <p>Proyecto final — dashboard integrador</p>
+        </div>
+    </div>
+</div>
+
+<div class="slide-counter" id="slideCounter">1 / 15</div>
+
+<div class="nav">
+    <button onclick="changeSlide(-1)">← Anterior</button>
+    <button onclick="changeSlide(1)">Siguiente →</button>
+</div>
+
+<script>
+    let current = 1;
+    const total = 15;
+
+    function changeSlide(dir) {
+        const next = current + dir;
+        if (next < 1 || next > total) return;
+        document.getElementById('slide-' + current).classList.remove('active');
+        current = next;
+        document.getElementById('slide-' + current).classList.add('active');
+        document.getElementById('slideCounter').textContent = current + ' / ' + total;
+        document.getElementById('progressBar').style.width = ((current / total) * 100) + '%';
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); changeSlide(1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); changeSlide(-1); }
+    });
+
+    document.getElementById('progressBar').style.width = ((1 / total) * 100) + '%';
+</script>
+
+</body>
+</html>

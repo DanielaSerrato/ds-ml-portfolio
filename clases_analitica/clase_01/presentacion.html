@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 1 — ¿Qué son los datos y por qué importan?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --navy: #0F1E3D;
+            --navy-light: #1A2E55;
+            --accent: #4A9DFF;
+            --accent-green: #34D399;
+            --accent-orange: #F59E0B;
+            --accent-red: #EF4444;
+            --text: #E2E8F0;
+            --text-muted: #94A3B8;
+            --card-bg: rgba(255,255,255,0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--navy);
+            color: var(--text);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: clamp(2rem, 5vw, 6rem);
+            text-align: center;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .slide.active { display: flex; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(1.6rem, 3.5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        p, li {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 900px;
+        }
+
+        .highlight { color: var(--accent); font-weight: 600; }
+        .highlight-green { color: var(--accent-green); font-weight: 600; }
+        .highlight-orange { color: var(--accent-orange); font-weight: 600; }
+
+        ul {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        ul li {
+            padding: 0.6rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+
+        .card h4 {
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        }
+
+        .big-icon {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(74,157,255,0.3);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+            margin-top: 1rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .table-visual {
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+        }
+
+        .table-visual th {
+            background: var(--accent);
+            color: var(--navy);
+            padding: 0.8rem 1.5rem;
+            font-weight: 700;
+        }
+
+        .table-visual td {
+            padding: 0.6rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+        }
+
+        .table-visual tr:nth-child(even) td {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+
+        .nav button {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s;
+        }
+
+        .nav button:hover {
+            background: var(--accent);
+            color: var(--navy);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 2.2rem;
+            left: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 100;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            max-width: 900px;
+            margin-top: 1.5rem;
+        }
+
+        .comparison .arrow {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .comparison .box {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .exercise-box {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .exercise-box h4 {
+            color: var(--accent-green);
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            margin-bottom: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Slide 1: Title -->
+<div class="slide active" id="slide-1">
+    <div class="big-icon">📊</div>
+    <h1>¿Qué son los datos y por qué importan?</h1>
+    <p class="subtitle">Analítica de Datos — Clase 1</p>
+    <p>De Excel a Power BI con datos del Estado colombiano</p>
+</div>
+
+<!-- Slide 2: Why data matters -->
+<div class="slide" id="slide-2">
+    <h2>¿Por qué hablar de datos?</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h4>Decisiones basadas en evidencia</h4>
+            <p>No en intuición ni en "siempre se ha hecho así"</p>
+        </div>
+        <div class="card">
+            <h4>Transparencia</h4>
+            <p>Los datos abiertos permiten que la ciudadanía entienda qué pasa</p>
+        </div>
+        <div class="card">
+            <h4>Eficiencia</h4>
+            <p>Identificar dónde están los problemas para enfocar recursos</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 3: Dato vs Información vs Conocimiento -->
+<div class="slide" id="slide-3">
+    <h2>Dato → Información → Conocimiento</h2>
+    <div class="comparison">
+        <div class="box">
+            <h4 style="color: var(--accent-orange);">Dato</h4>
+            <p style="font-size: 1rem;">32°C</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Un número sin contexto</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="box">
+            <h4 style="color: var(--accent);">Información</h4>
+            <p style="font-size: 1rem;">Bogotá tuvo 32°C ayer</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Dato + contexto</p>
+        </div>
+    </div>
+    <div style="margin-top: 1.5rem; max-width: 500px;">
+        <div class="box" style="background: var(--card-bg); border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(52,211,153,0.3);">
+            <h4 style="color: var(--accent-green);">Conocimiento</h4>
+            <p style="font-size: 1rem;">Bogotá tiene temperaturas inusuales — posible efecto del cambio climático</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Información + análisis + experiencia</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: Types of data -->
+<div class="slide" id="slide-4">
+    <h2>Tipos de datos</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h4>Numéricos</h4>
+            <p>Población: <span class="highlight">51,874,024</span><br>Se pueden sumar, promediar, comparar</p>
+        </div>
+        <div class="card">
+            <h4>Categóricos</h4>
+            <p>Departamento: <span class="highlight">Antioquia</span><br>Agrupan y clasifican</p>
+        </div>
+        <div class="card">
+            <h4>Fechas</h4>
+            <p>Registro: <span class="highlight">2024-03-15</span><br>Permiten ver tendencias</p>
+        </div>
+        <div class="card">
+            <h4>Texto</h4>
+            <p>Observación: <span class="highlight">"Caso resuelto"</span><br>Contexto cualitativo</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: Rows and Columns -->
+<div class="slide" id="slide-5">
+    <h2>La estructura de los datos</h2>
+    <h3>Filas = Observaciones &nbsp; | &nbsp; Columnas = Variables</h3>
+    <table class="table-visual">
+        <thead>
+            <tr>
+                <th>Departamento</th>
+                <th>Año</th>
+                <th>Población</th>
+                <th>Tasa desempleo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Antioquia</td><td>2024</td><td>7,044,013</td><td>11.2%</td></tr>
+            <tr><td>Valle del Cauca</td><td>2024</td><td>4,873,548</td><td>12.8%</td></tr>
+            <tr><td>Cundinamarca</td><td>2024</td><td>3,242,999</td><td>9.4%</td></tr>
+            <tr><td>Atlántico</td><td>2024</td><td>2,722,128</td><td>10.1%</td></tr>
+            <tr><td>Bolívar</td><td>2024</td><td>2,236,073</td><td>8.7%</td></tr>
+        </tbody>
+    </table>
+    <p style="margin-top: 1rem;">Cada <span class="highlight">fila</span> es un departamento. Cada <span class="highlight-green">columna</span> es una variable que medimos.</p>
+</div>
+
+<!-- Slide 6: Open Data -->
+<div class="slide" id="slide-6">
+    <div class="big-icon">🏛️</div>
+    <h2>Datos Abiertos de Colombia</h2>
+    <p style="margin-bottom: 1.5rem;"><span class="highlight">datos.gov.co</span> — El portal de datos abiertos del Estado</p>
+    <ul>
+        <li>Más de <span class="highlight">30,000 datasets</span> publicados</li>
+        <li>Entidades: DANE, MinSalud, MinEducación, Policía Nacional, DNP...</li>
+        <li>Temas: educación, salud, seguridad, economía, ambiente, transporte</li>
+        <li>Formatos: CSV, Excel, JSON, API</li>
+        <li>Gratuitos y de libre acceso — <span class="highlight-green">cualquiera puede descargarlos</span></li>
+    </ul>
+</div>
+
+<!-- Slide 7: What can you find? -->
+<div class="slide" id="slide-7">
+    <h2>¿Qué puedo encontrar?</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h4>🏥 Salud</h4>
+            <p>Vacunación COVID por departamento, mortalidad, camas UCI</p>
+        </div>
+        <div class="card">
+            <h4>📚 Educación</h4>
+            <p>Matrículas, deserción escolar, cobertura por nivel</p>
+        </div>
+        <div class="card">
+            <h4>🔒 Seguridad</h4>
+            <p>Delitos por municipio, hurtos, homicidios, lesiones</p>
+        </div>
+        <div class="card">
+            <h4>💰 Economía</h4>
+            <p>Desempleo, pobreza, inversión pública, PIB departamental</p>
+        </div>
+        <div class="card">
+            <h4>👥 Demografía</h4>
+            <p>Censos, proyecciones de población, migración</p>
+        </div>
+        <div class="card">
+            <h4>🌿 Ambiente</h4>
+            <p>Calidad del aire, deforestación, áreas protegidas</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 8: Exercise 1 -->
+<div class="slide" id="slide-8">
+    <h2>Ejercicio 1 — Explorar datos.gov.co</h2>
+    <div class="exercise-box">
+        <h4>🔍 Instrucciones</h4>
+        <ul>
+            <li>Ir a <span class="highlight">datos.gov.co</span></li>
+            <li>Explorar el catálogo: ¿cuántos datasets hay? ¿Qué entidades publican?</li>
+            <li>Buscar 3 datasets relevantes para su área de trabajo</li>
+            <li>Para cada uno anotar: nombre, entidad, qué contiene, por qué es útil</li>
+        </ul>
+    </div>
+    <p style="margin-top: 1.5rem;">⏱️ <span class="highlight-orange">15 minutos</span></p>
+</div>
+
+<!-- Slide 9: From web to Excel -->
+<div class="slide" id="slide-9">
+    <h2>De la web a Excel</h2>
+    <h3>Descargar un CSV y abrirlo</h3>
+    <div class="code-block">
+        <span style="color: var(--accent);">Paso 1:</span> En datos.gov.co → elegir un dataset → clic en "Exportar"<br>
+        <span style="color: var(--accent);">Paso 2:</span> Descargar como CSV<br>
+        <span style="color: var(--accent);">Paso 3:</span> Abrir Excel → Datos → Obtener datos → Desde archivo CSV<br>
+        <span style="color: var(--accent);">Paso 4:</span> Verificar: delimitador (coma o punto y coma), codificación UTF-8<br>
+        <span style="color: var(--accent);">Paso 5:</span> Explorar: ¿cuántas filas? ¿cuántas columnas? ¿qué tipos de datos?
+    </div>
+</div>
+
+<!-- Slide 10: Exercise 2 -->
+<div class="slide" id="slide-10">
+    <h2>Ejercicio 2 — Mi primer análisis</h2>
+    <div class="exercise-box">
+        <h4>📋 Instrucciones</h4>
+        <ul>
+            <li>Descargar uno de los 3 datasets que encontraron</li>
+            <li>Abrirlo en Excel</li>
+            <li>Identificar: ¿cuántas filas? ¿cuántas columnas?</li>
+            <li>Clasificar cada columna: numérica, categórica, fecha o texto</li>
+            <li>Encontrar un dato que les sorprenda</li>
+        </ul>
+    </div>
+    <p style="margin-top: 1.5rem;">⏱️ <span class="highlight-orange">20 minutos</span></p>
+</div>
+
+<!-- Slide 11: What would you decide differently? -->
+<div class="slide" id="slide-11">
+    <h2>Discusión</h2>
+    <div class="big-icon">💡</div>
+    <h3 style="color: var(--accent-green); max-width: 700px;">"¿Qué decisión tomarían diferente si tuvieran estos datos disponibles todos los días?"</h3>
+    <ul style="margin-top: 1.5rem;">
+        <li>¿Qué problemas de su trabajo se podrían resolver con datos?</li>
+        <li>¿Qué datos les gustaría tener que hoy no tienen?</li>
+        <li>¿Quién más en su organización se beneficiaría de ver estos datos?</li>
+    </ul>
+</div>
+
+<!-- Slide 12: What's coming -->
+<div class="slide" id="slide-12">
+    <h2>Lo que viene</h2>
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="card" style="border-color: var(--accent-green);">
+            <h4 style="color: var(--accent-green);">✓ Hoy</h4>
+            <p>Qué son los datos, dónde encontrarlos, abrir en Excel</p>
+        </div>
+        <div class="card">
+            <h4>Clase 2</h4>
+            <p>Limpiar datos — porque nunca vienen perfectos</p>
+        </div>
+        <div class="card">
+            <h4>Clase 3</h4>
+            <p>Estadística descriptiva — promedios, medianas, totales</p>
+        </div>
+        <div class="card">
+            <h4>Clase 4-5</h4>
+            <p>Visualización y análisis exploratorio</p>
+        </div>
+        <div class="card">
+            <h4>Clase 6-7</h4>
+            <p>Power BI — dashboards interactivos</p>
+        </div>
+        <div class="card">
+            <h4>Clase 8</h4>
+            <p>Proyecto final — dashboard integrador</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 13: Deliverable -->
+<div class="slide" id="slide-13">
+    <h2>Entregable de hoy</h2>
+    <div class="exercise-box">
+        <h4>📝 Para entregar</h4>
+        <ul>
+            <li>Lista de <span class="highlight">3 datasets</span> relevantes para su área</li>
+            <li>Para cada uno: nombre, entidad, descripción de contenido</li>
+            <li>Una oración: <span class="highlight-green">¿por qué es útil para mi trabajo?</span></li>
+        </ul>
+    </div>
+    <p style="margin-top: 2rem; font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--text);">
+        Los datos están ahí. Aprender a usarlos es la ventaja.
+    </p>
+</div>
+
+<div class="slide-counter" id="slideCounter">1 / 13</div>
+
+<div class="nav">
+    <button onclick="changeSlide(-1)">← Anterior</button>
+    <button onclick="changeSlide(1)">Siguiente →</button>
+</div>
+
+<script>
+    let current = 1;
+    const total = 13;
+
+    function changeSlide(dir) {
+        const next = current + dir;
+        if (next < 1 || next > total) return;
+        document.getElementById('slide-' + current).classList.remove('active');
+        current = next;
+        document.getElementById('slide-' + current).classList.add('active');
+        document.getElementById('slideCounter').textContent = current + ' / ' + total;
+        document.getElementById('progressBar').style.width = ((current / total) * 100) + '%';
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); changeSlide(1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); changeSlide(-1); }
+    });
+
+    document.getElementById('progressBar').style.width = ((1 / total) * 100) + '%';
+</script>
+
+</body>
+</html>

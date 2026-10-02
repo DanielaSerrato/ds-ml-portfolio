@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 4 — Visualización: contar historias con gráficos</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --navy: #0F1E3D;
+            --navy-light: #1A2E55;
+            --accent: #4A9DFF;
+            --accent-green: #34D399;
+            --accent-orange: #F59E0B;
+            --accent-red: #EF4444;
+            --text: #E2E8F0;
+            --text-muted: #94A3B8;
+            --card-bg: rgba(255,255,255,0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--navy);
+            color: var(--text);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .slide {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: clamp(2rem, 5vw, 6rem);
+            text-align: center;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .slide.active { display: flex; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(1.6rem, 3.5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        p, li {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 900px;
+        }
+
+        .highlight { color: var(--accent); font-weight: 600; }
+        .highlight-green { color: var(--accent-green); font-weight: 600; }
+        .highlight-orange { color: var(--accent-orange); font-weight: 600; }
+        .highlight-red { color: var(--accent-red); font-weight: 600; }
+
+        ul {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        ul li {
+            padding: 0.6rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '\25B8';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+
+        .card h4 {
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        }
+
+        .big-icon {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(74,157,255,0.3);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+            margin-top: 1rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .table-visual {
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+        }
+
+        .table-visual th {
+            background: var(--accent);
+            color: var(--navy);
+            padding: 0.8rem 1.5rem;
+            font-weight: 700;
+        }
+
+        .table-visual td {
+            padding: 0.6rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+        }
+
+        .table-visual tr:nth-child(even) td {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+
+        .nav button {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s;
+        }
+
+        .nav button:hover {
+            background: var(--accent);
+            color: var(--navy);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 2.2rem;
+            left: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 100;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .exercise-box {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .exercise-box h4 {
+            color: var(--accent-green);
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            max-width: 900px;
+            margin-top: 1.5rem;
+        }
+
+        .comparison .arrow {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .comparison .box {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .bad-example {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .bad-example h4 {
+            color: var(--accent-red);
+            font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+            margin-bottom: 0.4rem;
+        }
+
+        .bad-example p {
+            font-size: clamp(0.85rem, 1.4vw, 1rem);
+        }
+
+        .vs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .vs-bad {
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .vs-good {
+            background: rgba(52, 211, 153, 0.08);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .vs-bad h4 { color: var(--accent-red); font-size: clamp(0.95rem, 1.6vw, 1.2rem); margin-bottom: 0.5rem; }
+        .vs-good h4 { color: var(--accent-green); font-size: clamp(0.95rem, 1.6vw, 1.2rem); margin-bottom: 0.5rem; }
+
+        .finding-card {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+            margin-top: 0.8rem;
+        }
+
+        .finding-card p {
+            font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Slide 1: Title -->
+<div class="slide active" id="slide-1">
+    <div class="big-icon">📊</div>
+    <h1>Visualización: contar historias con gráficos</h1>
+    <p class="subtitle">Analítica de Datos — Clase 4</p>
+    <p>Un gráfico bien hecho convence más que una tabla de mil filas</p>
+</div>
+
+<!-- Slide 2: The power of visualization -->
+<div class="slide" id="slide-2">
+    <div class="big-icon">👁️</div>
+    <h2>Un buen gráfico dice más que mil filas</h2>
+    <ul>
+        <li>El cerebro humano procesa imágenes <span class="highlight">60,000 veces más rápido</span> que texto</li>
+        <li>Un gráfico revela patrones que una tabla esconde: tendencias, valores atípicos, comparaciones</li>
+        <li>En el sector público, un buen gráfico puede <span class="highlight-green">cambiar una decisión de política pública</span></li>
+        <li>Visualizar no es decorar — es <span class="highlight-orange">comunicar con precisión</span></li>
+    </ul>
+</div>
+
+<!-- Slide 3: The dataset -->
+<div class="slide" id="slide-3">
+    <h2>Nuestro dataset: Pobreza en Colombia</h2>
+    <h3>DANE — Pobreza monetaria y multidimensional</h3>
+    <table class="table-visual">
+        <thead>
+            <tr>
+                <th>Departamento</th>
+                <th>Año</th>
+                <th>Incidencia pobreza</th>
+                <th>Pobreza extrema</th>
+                <th>Gini</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Antioquia</td><td>2023</td><td>33.2%</td><td>10.1%</td><td>0.472</td></tr>
+            <tr><td>La Guajira</td><td>2023</td><td>67.4%</td><td>39.7%</td><td>0.538</td></tr>
+            <tr><td>Bogotá D.C.</td><td>2023</td><td>28.1%</td><td>5.8%</td><td>0.512</td></tr>
+            <tr><td>Chocó</td><td>2023</td><td>65.8%</td><td>35.2%</td><td>0.561</td></tr>
+            <tr><td>Valle del Cauca</td><td>2023</td><td>33.5%</td><td>9.4%</td><td>0.468</td></tr>
+        </tbody>
+    </table>
+    <p style="margin-top: 1rem;">Cada fila = un departamento. Variables: <span class="highlight">incidencia de pobreza</span>, <span class="highlight-red">pobreza extrema</span> y <span class="highlight-orange">coeficiente Gini</span> (desigualdad).</p>
+</div>
+
+<!-- Slide 4: Chart type guide -->
+<div class="slide" id="slide-4">
+    <h2>¿Qué gráfico uso?</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h4>📊 Barras</h4>
+            <p><span class="highlight">Comparar categorías</span><br>Ej: pobreza por departamento. Fácil de leer, ideal para rankings.</p>
+        </div>
+        <div class="card">
+            <h4>📈 Líneas</h4>
+            <p><span class="highlight">Tendencias en el tiempo</span><br>Ej: evolución de pobreza 2018-2023. Muestra si sube o baja.</p>
+        </div>
+        <div class="card">
+            <h4>⚬ Dispersión (Scatter)</h4>
+            <p><span class="highlight">Relación entre dos variables</span><br>Ej: pobreza vs. Gini. ¿Hay correlación?</p>
+        </div>
+        <div class="card">
+            <h4>🟥 Mapa de calor</h4>
+            <p><span class="highlight">Patrones en tablas</span><br>Ej: pobreza por departamento y año. El color intenso = valor alto.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: The pie chart myth -->
+<div class="slide" id="slide-5">
+    <h2>El mito del gráfico de torta</h2>
+    <div class="vs-grid">
+        <div class="vs-good">
+            <h4>Sí funciona</h4>
+            <p style="font-size: clamp(0.9rem, 1.5vw, 1.1rem);">2-3 categorías con proporciones claras<br><br>
+            Ej: "El 67% del presupuesto va a educación, 33% a salud"<br><br>
+            <span class="highlight-green">El lector compara pocas porciones fácilmente</span></p>
+        </div>
+        <div class="vs-bad">
+            <h4>No funciona</h4>
+            <p style="font-size: clamp(0.9rem, 1.5vw, 1.1rem);">15 departamentos en una torta<br><br>
+            Ej: pobreza de cada departamento en un pie chart<br><br>
+            <span class="highlight-red">Imposible comparar porciones similares — use barras</span></p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">Regla: si tiene más de <span class="highlight-orange">3 categorías</span>, casi siempre un gráfico de barras es mejor.</p>
+</div>
+
+<!-- Slide 6: Exercise 1 -->
+<div class="slide" id="slide-6">
+    <h2>Ejercicio 1 — Gráfico de barras en Excel</h2>
+    <div class="exercise-box">
+        <h4>📋 Instrucciones</h4>
+        <ul>
+            <li>Abrir el dataset de pobreza por departamento en Excel</li>
+            <li>Seleccionar la columna <span class="highlight">Departamento</span> y la columna <span class="highlight">Incidencia de pobreza</span></li>
+            <li>Insertar → Gráfico de barras (horizontal o vertical)</li>
+            <li>Agregar título: usar un hallazgo, no "Gráfico 1"</li>
+            <li>Ordenar las barras de mayor a menor — facilita la lectura</li>
+            <li>Poner etiquetas de valor en cada barra</li>
+        </ul>
+    </div>
+    <p style="margin-top: 1.5rem;">⏱️ <span class="highlight-orange">15 minutos</span></p>
+</div>
+
+<!-- Slide 7: Common chart mistakes -->
+<div class="slide" id="slide-7">
+    <h2>Errores comunes en gráficos</h2>
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+        <div class="card" style="border-color: rgba(239,68,68,0.3);">
+            <h4 style="color: var(--accent-red);">Gráficos 3D</h4>
+            <p>Distorsionan las proporciones. Las barras del fondo parecen más pequeñas. <span class="highlight-red">Nunca usar 3D.</span></p>
+        </div>
+        <div class="card" style="border-color: rgba(239,68,68,0.3);">
+            <h4 style="color: var(--accent-red);">Torta con 15 porciones</h4>
+            <p>Imposible distinguir porciones de 6% y 7%. El lector no puede comparar ángulos similares.</p>
+        </div>
+        <div class="card" style="border-color: rgba(239,68,68,0.3);">
+            <h4 style="color: var(--accent-red);">Eje Y truncado</h4>
+            <p>Empezar el eje en 50% en vez de 0% exagera las diferencias. <span class="highlight-red">Engaña visualmente.</span></p>
+        </div>
+        <div class="card" style="border-color: rgba(239,68,68,0.3);">
+            <h4 style="color: var(--accent-red);">Colores arcoíris</h4>
+            <p>Cada barra de un color sin significado. Confunde y distrae en vez de informar.</p>
+        </div>
+        <div class="card" style="border-color: rgba(239,68,68,0.3);">
+            <h4 style="color: var(--accent-red);">Sin título ni ejes</h4>
+            <p>Un gráfico sin título es un gráfico que nadie entiende. Sin etiquetas de ejes = misterio.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 8: How to fix them -->
+<div class="slide" id="slide-8">
+    <h2>Cómo corregirlos</h2>
+    <h3>4 principios de un buen gráfico</h3>
+    <div class="card-grid">
+        <div class="card" style="border-color: rgba(52,211,153,0.3);">
+            <h4 style="color: var(--accent-green);">1. Empezar en cero</h4>
+            <p>El eje Y debe empezar en 0 (casi siempre). Si no, hay que justificarlo y señalarlo.</p>
+        </div>
+        <div class="card" style="border-color: rgba(52,211,153,0.3);">
+            <h4 style="color: var(--accent-green);">2. Color con significado</h4>
+            <p>Un solo color para la serie base. Resaltar solo lo importante: el departamento más alto en rojo, por ejemplo.</p>
+        </div>
+        <div class="card" style="border-color: rgba(52,211,153,0.3);">
+            <h4 style="color: var(--accent-green);">3. Etiquetas claras</h4>
+            <p>Título que sea hallazgo, etiquetas de ejes, unidades (% o millones), fuente de datos.</p>
+        </div>
+        <div class="card" style="border-color: rgba(52,211,153,0.3);">
+            <h4 style="color: var(--accent-green);">4. Menos es más</h4>
+            <p>Quitar bordes innecesarios, fondos grises, cuadrículas excesivas. Que los datos sean protagonistas.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 9: The title IS the finding -->
+<div class="slide" id="slide-9">
+    <h2>El título ES el hallazgo</h2>
+    <div class="vs-grid">
+        <div class="vs-bad">
+            <h4>Título descriptivo</h4>
+            <p style="font-size: clamp(0.95rem, 1.5vw, 1.15rem); font-family: 'JetBrains Mono', monospace;">"Gráfico de pobreza por departamento"</p>
+            <p style="font-size: clamp(0.85rem, 1.3vw, 1rem); margin-top: 0.8rem;">No dice nada. El lector tiene que descifrar el mensaje solo.</p>
+        </div>
+        <div class="vs-good">
+            <h4>Título como hallazgo</h4>
+            <p style="font-size: clamp(0.95rem, 1.5vw, 1.15rem); font-family: 'JetBrains Mono', monospace;">"Pobreza bajó 3% en Antioquia entre 2022 y 2023"</p>
+            <p style="font-size: clamp(0.85rem, 1.3vw, 1rem); margin-top: 0.8rem;">El lector entiende el mensaje de inmediato. El gráfico lo respalda.</p>
+        </div>
+    </div>
+    <p style="margin-top: 2rem; font-size: clamp(1.1rem, 2.2vw, 1.6rem); color: var(--text);">
+        Piense: si alguien ve solo el título, <span class="highlight">¿entiende la conclusión?</span>
+    </p>
+</div>
+
+<!-- Slide 10: Exercise 2 -->
+<div class="slide" id="slide-10">
+    <h2>Ejercicio 2 — Corregir gráficos malos</h2>
+    <div class="exercise-box">
+        <h4>🔧 Instrucciones</h4>
+        <ul>
+            <li><span class="highlight">Gráfico malo 1:</span> Torta con 15 departamentos y colores arcoíris → Recrear como barras horizontales ordenadas</li>
+            <li><span class="highlight">Gráfico malo 2:</span> Línea de tendencia con eje Y que empieza en 50% → Recrear empezando en 0%</li>
+            <li><span class="highlight">Gráfico malo 3:</span> Barras 3D sin título ni etiquetas → Recrear en 2D con título-hallazgo y etiquetas de datos</li>
+        </ul>
+        <p style="margin-top: 1rem; color: var(--accent-green);">Para cada gráfico corregido: escribir el título como hallazgo.</p>
+    </div>
+    <p style="margin-top: 1.5rem;">⏱️ <span class="highlight-orange">20 minutos</span></p>
+</div>
+
+<!-- Slide 11: Line chart for trends -->
+<div class="slide" id="slide-11">
+    <h2>Gráfico de líneas: tendencia en el tiempo</h2>
+    <h3>¿La pobreza sube o baja?</h3>
+    <div class="code-block">
+        <span style="color: var(--accent);">En Excel:</span><br>
+        <span style="color: var(--text-muted);">1.</span> Seleccionar columnas <span style="color: var(--accent-green);">Año</span> e <span style="color: var(--accent-green);">Incidencia de pobreza</span> de un departamento<br>
+        <span style="color: var(--text-muted);">2.</span> Insertar → Gráfico de líneas<br>
+        <span style="color: var(--text-muted);">3.</span> Agregar una segunda línea para otro departamento (comparar)<br>
+        <span style="color: var(--text-muted);">4.</span> Título: <span style="color: var(--accent-orange);">"La Guajira mantiene pobreza sobre 60% mientras Bogotá baja del 30%"</span><br>
+        <span style="color: var(--text-muted);">5.</span> Agregar leyenda clara para cada línea
+    </div>
+    <p style="margin-top: 1rem;">La línea muestra la <span class="highlight">dirección</span> del cambio — algo que las barras no hacen tan bien.</p>
+</div>
+
+<!-- Slide 12: Color with purpose -->
+<div class="slide" id="slide-12">
+    <h2>Color con propósito</h2>
+    <h3>El color resalta, no decora</h3>
+    <div class="vs-grid">
+        <div class="vs-bad">
+            <h4>Color sin propósito</h4>
+            <p style="font-size: clamp(0.9rem, 1.5vw, 1.1rem);">
+                <span style="color: #EF4444;">■</span> Antioquia
+                <span style="color: #F59E0B;">■</span> Bogotá
+                <span style="color: #34D399;">■</span> Valle
+                <span style="color: #4A9DFF;">■</span> Chocó
+                <span style="color: #A78BFA;">■</span> Guajira<br><br>
+                Cada barra de un color distinto sin razón. El lector se pierde buscando la leyenda.
+            </p>
+        </div>
+        <div class="vs-good">
+            <h4>Color con significado</h4>
+            <p style="font-size: clamp(0.9rem, 1.5vw, 1.1rem);">
+                <span style="color: #94A3B8;">■■■■</span> Todos en gris neutro<br>
+                <span style="color: #EF4444;">■</span> La Guajira <span class="highlight-red">resaltada en rojo</span><br><br>
+                Un solo color destaca el hallazgo: "La Guajira tiene la mayor pobreza". El gris da contexto.
+            </p>
+        </div>
+    </div>
+    <p style="margin-top: 1.5rem;">Regla: use <span class="highlight">gris para el contexto</span> y <span class="highlight-red">un color fuerte para el dato clave</span>.</p>
+</div>
+
+<!-- Slide 13: Data storytelling -->
+<div class="slide" id="slide-13">
+    <h2>Data storytelling</h2>
+    <h3>3 hallazgos en una oración cada uno</h3>
+    <div class="finding-card" style="border-left-color: var(--accent-red);">
+        <p><span class="highlight-red">Hallazgo 1:</span> En 2023, La Guajira tuvo la mayor incidencia de pobreza del país con <span class="highlight">67.4%</span>, casi el doble que el promedio nacional.</p>
+    </div>
+    <div class="finding-card" style="border-left-color: var(--accent-orange);">
+        <p><span class="highlight-orange">Hallazgo 2:</span> Bogotá presenta el menor porcentaje de pobreza extrema (<span class="highlight">5.8%</span>), mientras que La Guajira alcanza el <span class="highlight">39.7%</span>.</p>
+    </div>
+    <div class="finding-card" style="border-left-color: var(--accent-green);">
+        <p><span class="highlight-green">Hallazgo 3:</span> Los departamentos con mayor pobreza también tienen los coeficientes Gini más altos, lo que sugiere que <span class="highlight">pobreza y desigualdad van de la mano</span>.</p>
+    </div>
+    <p style="margin-top: 1.5rem;">Un buen analista no solo muestra datos — <span class="highlight">cuenta lo que significan</span>.</p>
+</div>
+
+<!-- Slide 14: Deliverable -->
+<div class="slide" id="slide-14">
+    <h2>Entregable de hoy</h2>
+    <div class="exercise-box">
+        <h4>📝 Para entregar</h4>
+        <ul>
+            <li>Crear <span class="highlight">3 gráficos</span> usando los datos de pobreza del DANE</li>
+            <li>Cada gráfico debe tener un <span class="highlight-green">título que sea hallazgo</span> (no descripción genérica)</li>
+            <li>Debajo de cada gráfico, escribir <span class="highlight-orange">una oración de interpretación</span>: ¿qué nos dice este gráfico?</li>
+            <li>Usar los principios: eje desde cero, color con propósito, etiquetas claras</li>
+        </ul>
+    </div>
+    <p style="margin-top: 2rem; font-size: clamp(1.1rem, 2.2vw, 1.6rem); color: var(--text);">
+        Un gráfico sin interpretación es solo una imagen bonita.
+    </p>
+</div>
+
+<!-- Slide 15: What's coming -->
+<div class="slide" id="slide-15">
+    <h2>Lo que viene</h2>
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="card" style="border-color: rgba(52,211,153,0.3);">
+            <h4 style="color: var(--accent-green);">Clase 4 (hoy)</h4>
+            <p>Visualización: elegir el gráfico correcto, evitar errores, contar historias</p>
+        </div>
+        <div class="card" style="border-color: var(--accent);">
+            <h4>Clase 5</h4>
+            <p>Análisis exploratorio — hacer preguntas a los datos y buscar respuestas</p>
+        </div>
+        <div class="card">
+            <h4>Clase 6-7</h4>
+            <p>Power BI — dashboards interactivos</p>
+        </div>
+        <div class="card">
+            <h4>Clase 8</h4>
+            <p>Proyecto final — dashboard integrador</p>
+        </div>
+    </div>
+    <p style="margin-top: 2rem; font-size: clamp(1.2rem, 2.5vw, 1.8rem); color: var(--text);">
+        Ya saben limpiar datos, calcular estadísticas y crear gráficos.<br>
+        Ahora toca <span class="highlight">hacer preguntas inteligentes</span>.
+    </p>
+</div>
+
+<div class="slide-counter" id="slideCounter">1 / 15</div>
+
+<div class="nav">
+    <button onclick="changeSlide(-1)">&larr; Anterior</button>
+    <button onclick="changeSlide(1)">Siguiente &rarr;</button>
+</div>
+
+<script>
+    let current = 1;
+    const total = 15;
+
+    function changeSlide(dir) {
+        const next = current + dir;
+        if (next < 1 || next > total) return;
+        document.getElementById('slide-' + current).classList.remove('active');
+        current = next;
+        document.getElementById('slide-' + current).classList.add('active');
+        document.getElementById('slideCounter').textContent = current + ' / ' + total;
+        document.getElementById('progressBar').style.width = ((current / total) * 100) + '%';
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); changeSlide(1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); changeSlide(-1); }
+    });
+
+    document.getElementById('progressBar').style.width = ((1 / total) * 100) + '%';
+</script>
+
+</body>
+</html>
